@@ -1,0 +1,48 @@
+---
+permalink: health-checker/task_view_details_about_nfs_shares.html 
+sidebar: sidebar 
+keywords: view, details, nfs shares 
+summary: 使用运行状况页面上的所有 NFS 共享视图，查看有关 NFS 共享的详细信息，例如状态、卷路径、客户端访问级别和导出策略。 
+---
+= 查看 Active IQ Unified Manager 中 NFS 共享的详细信息
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以查看有关所有 NFS 共享的详细信息，例如其状态、与卷（FlexGroup 卷或 FlexVol 卷）关联的路径、客户端对 NFS 共享的访问级别以及为导出的卷定义的导出策略。使用运行状况：所有 NFS 共享视图查看所有受监视集群上的所有 NFS 共享，并使用 Storage VM / 运行状况详细信息页面查看特定存储虚拟机（SVM）上的所有 NFS 共享。
+
+.开始之前
+* 集群上必须启用 NFS 许可证。
+* 必须配置为 NFS 共享提供服务的网络接口。
+* 您必须具有操作员、应用程序管理员或存储管理员角色。
+
+
+.步骤
+. 在左侧导航窗格中，根据您是要查看所有 NFS 共享还是仅查看特定 SVM 的 NFS 共享，执行以下步骤。
++
+[cols="2*"]
+|===
+| 目的 | 按照下面的步骤进行操作...... 
+
+
+ a| 
+查看所有 NFS 共享
+ a| 
+单击 *Storage* > *NFS Shares*
+
+
+
+ a| 
+查看单个 SVM 的 NFS 共享
+ a| 
+.. 单击 *Storage* > *Storage VMs*
+.. 单击要查看其 NFS 共享详细信息的 SVM。
+.. 在 Storage VM / Health details 页面中，单击 *NFS Shares* 选项卡。
+
+
+|===
+
+
+有关详细信息，请参见 link:../storage-mgmt/task_provision_fileshares.html["配置文件共享卷"] 和 link:../api-automation/concept_provision_file_share.html["使用 API 配置 CIFS 和 NFS 文件共享"]。

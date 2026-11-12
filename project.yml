@@ -1,0 +1,54 @@
+---
+settings:
+  name: Active IQ Unified Manager
+  downlevel: true
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  versions:
+  - version-number: '9.18'
+    url: "/active-iq-unified-manager-918"
+  - version-number: '9.20'
+    url: "/active-iq-unified-manager"
+  - version-number: '9.16'
+    url: "/active-iq-unified-manager-916"
+  - version-number: '9.14'
+    url: "/active-iq-unified-manager-914"
+  - version-number: '9.13'
+    url: "/active-iq-unified-manager-913"
+  - version-number: '9.12'
+    url: "/active-iq-unified-manager-912"
+  - version-number: '9.11'
+    url: "/active-iq-unified-manager-911"
+  - version-number: '9.10'
+    url: "/active-iq-unified-manager-910"
+  langs: zh-cn,us-en,de-de,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-tw
+sidebar:
+  entries:
+  - title: Active IQ Unified Manager 9.18 文档
+    url: "/index.html"
+  - title: 发行说明
+    url: "/reference_release_notes.html"
+  - title: 开始使用
+    entries:
+    - title: 适用于 VMware vSphere 的快速入门安装
+      url: "/install-vapp/qsg-vapp.html"
+    - title: 适用于 Linux 的快速入门安装
+      url: "/install-linux/qsg-linux.html"
+    - title: 适用于 Windows 的快速入门安装
+      url: "/install-windows/qsg-windows.html"
+  - section: install-vapp
+  - section: install-linux
+  - section: install-windows
+  - section: config
+  - section: storage-mgmt
+  - section: events
+  - section: performance-checker
+  - section: health-checker
+  - section: data-protection
+  - section: reporting
+  - section: api-automation
+  - title: 法律声明
+    url: "/legal-notices.html"

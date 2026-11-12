@@ -1,0 +1,42 @@
+---
+permalink: events/task_manage_host_system_resource_events.html 
+sidebar: sidebar 
+keywords: manage, host, system, resource, events 
+summary: Unified Manager 包括一项服务，用于监控安装了 Unified Manager 的主机系统上的资源问题。主机系统上缺少可用磁盘空间或内存不足等问题可能会触发管理站事件，这些事件在 UI 的顶端显示为横幅消息。 
+---
+= 在 Active IQ Unified Manager 中管理主机系统资源事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 包括一项服务，用于监控安装了 Unified Manager 的主机系统上的资源问题。主机系统上缺少可用磁盘空间或内存不足等问题可能会触发管理站事件，这些事件在 UI 的顶端显示为横幅消息。
+
+管理站事件指示安装 Unified Manager 的主机系统出现问题。管理站问题的示例包括主机系统上的磁盘空间不足；Unified Manager 缺少常规数据收集周期；以及由于启动了下一次收集轮询而导致统计分析未完成或延迟完成。
+
+与所有其他 Unified Manager 事件消息不同，这些特定的管理站警告和关键事件显示在横幅消息中。
+
+.步骤
+. 要查看管理站事件信息，请执行以下操作：
++
+|===
+| 目的 | 操作 
+
+
+ a| 
+查看事件详情
+ a| 
+单击此事件横幅可显示“事件详细信息”页面，其中包含此问题的建议解决方案。
+
+
+
+ a| 
+查看所有管理站事件
+ a| 
+.. 在左侧导航窗格中，单击*事件管理*。
+.. 在“事件管理清单”页面的“过滤器”窗格中，单击“源类型”列表中“管理工作站”的框。
+
+
+|===
+

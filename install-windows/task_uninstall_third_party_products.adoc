@@ -1,0 +1,36 @@
+---
+permalink: install-windows/task_uninstall_third_party_products.html 
+sidebar: sidebar 
+keywords: MS Visual C, python, uninstall, uninstalling, 9.18 
+summary: 卸载第三方产品，包括 Python 和 Microsoft Visual C 2013 运行时。 
+---
+= 卸载 Active IQ Unified Manager 中的第三方产品
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+升级 Unified Manager 后，您可以卸载第三方产品，如 Python 或 Microsoft Visual C++ 2013。这是可选的。
+
+
+
+[[uninstall-python]]
+== 卸载 Python
+
+.步骤
+. 从*控制面板*中选择*程序* > *程序和功能*。
+. 从程序列表中选择 Python。
+. 选择*卸载此程序*。卸载除 3.13.3 之外的任何版本的 Python。确保保留 Python 版本 3.13.3。
+
+
+
+
+[[uninstall-microsoft-visual-c-2013]]
+== 卸载 Microsoft Visual C++ 2013
+
+.步骤
+. 从*控制面板*中选择*程序* > *程序和功能*。
+. 从程序列表中选择 *Microsoft Visual C++ 2013*。
+. 选择*卸载此程序*。
+

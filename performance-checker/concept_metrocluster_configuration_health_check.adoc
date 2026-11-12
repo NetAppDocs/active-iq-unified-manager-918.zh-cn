@@ -1,0 +1,18 @@
+---
+permalink: performance-checker/concept_metrocluster_configuration_health_check.html 
+sidebar: sidebar 
+keywords: metrocluster, configuration, health, check 
+summary: 您可以使用 Unified Manager 查看 MetroCluster 配置中群集的运行状况。运行状况和事件可帮助您确定是否存在可能影响工作负载性能的硬件或软件问题。 
+---
+= 在 Active IQ Unified Manager 中检查 MetroCluster 配置运行状况
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 Unified Manager 查看 IP 或 FC MetroCluster 配置中群集的运行状况。运行状况状态和事件可帮助您确定是否存在可能影响工作负载性能的硬件或软件问题。
+
+如果将 Unified Manager 配置为发送电子邮件警报，则可以检查电子邮件中是否存在本地或远程集群上可能导致性能事件的任何健康问题。在 Unified Manager GUI 中，您可以选择*事件管理*以查看当前事件列表，然后使用筛选器仅显示 MetroCluster 配置事件。
+
+有关详细信息，请参见 link:../health-checker/task_check_health_of_clusters_in_metrocluster_configuration.html["检查 MetroCluster 配置中集群的运行状况"]

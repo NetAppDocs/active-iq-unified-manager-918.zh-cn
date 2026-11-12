@@ -1,0 +1,22 @@
+---
+permalink: reporting/concept_sample_custom_reports.html 
+sidebar: sidebar 
+keywords: sample, custom, reports 
+summary: 这些示例自定义报告通常用于帮助您识别潜在问题并在问题发生之前做出响应。 
+---
+= 了解 Active IQ Unified Manager 中的自定义报告示例
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+这些示例自定义报告通常用于帮助您识别潜在问题并在问题发生之前做出响应。
+
+本节中的报告列表并非详尽无遗，并且会随着时间的推移而增加。您可以通过提供文档反馈，建议将自定义报告添加到本节中。
+
+[NOTE]
+====
+要管理报告，您必须具有应用程序管理员或存储管理员角色。
+
+====

@@ -1,0 +1,29 @@
+---
+permalink: health-checker/task_delete_annotations.html 
+sidebar: sidebar 
+keywords: delete, annotations 
+summary: 当不再需要自定义注释及其值时，您可以将其删除。 
+---
+= 删除 Active IQ Unified Manager 中的注释
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+当不再需要自定义注释及其值时，您可以将其删除。
+
+.开始之前
+* 您必须具有应用程序管理员或存储管理员角色。
+* 不得在其他注释或组规则中使用注释值。
+
+
+.步骤
+. 在左侧导航窗格中，单击 *存储管理* > *注释*。
+. 在*注释*选项卡中，选择要删除的注释。
++
+将显示所选批注的详细信息。
+
+. 单击*操作* > *删除*以删除选定注释及其值。
+. 在警告对话框中，单击*是*确认删除。
+

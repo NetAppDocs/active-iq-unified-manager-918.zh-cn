@@ -1,0 +1,27 @@
+---
+permalink: storage-mgmt/task_use_unified_manager_help.html 
+sidebar: sidebar 
+keywords: use, unified manager, help 
+summary: 帮助包含有关 Active IQ Unified Manager 中包含的所有功能的信息。您可以使用目录、索引或搜索工具来查找有关功能及其使用方法的信息。 
+---
+= 使用 Active IQ Unified Manager 帮助
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+帮助包含有关 Active IQ Unified Manager 中包含的所有功能的信息。您可以使用目录、索引或搜索工具来查找有关功能及其使用方法的信息。
+
+您可以从每个选项卡和 Unified Manager 用户界面的菜单栏获得帮助。
+
+帮助中的搜索工具不适用于部分单词。
+
+* 要了解特定字段或参数，请单击 image:../media/helpicon_um60.gif["上下文相关帮助的图标"]。
+* 要查看所有帮助内容，请在菜单栏中单击 *image:../media/helpicon_um60.gif["上下文相关帮助的图标"]* > *帮助/文档*。
++
+您可以通过展开导航窗格中目录的任何部分来查找更多详细信息。
+
+* 要搜索帮助内容，请单击导航窗格中的*搜索*选项卡，键入要查找的单词或一系列单词，然后单击*开始！*
+* 要打印“帮助”主题，请单击打印机图标。
+

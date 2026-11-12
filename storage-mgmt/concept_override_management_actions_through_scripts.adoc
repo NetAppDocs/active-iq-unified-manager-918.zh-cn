@@ -1,0 +1,16 @@
+---
+permalink: storage-mgmt/concept_override_management_actions_through_scripts.html 
+sidebar: sidebar 
+keywords: override, management, actions, scripts 
+summary: 您可以创建自定义脚本并将其关联到警报，以针对特定事件采取特定操作，而不是在“管理操作”页面或 Unified Manager 仪表板上选择可用于它们的默认管理操作。 
+---
+= 使用 Active IQ Unified Manager 中的脚本覆盖管理操作
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以创建自定义脚本并将其关联到警报，以针对特定事件采取特定操作，而不是在“管理操作”页面或 Unified Manager 仪表板上选择可用于它们的默认管理操作。
+
+如果要对事件类型采取特定操作，并选择不将其作为 Unified Manager 提供的管理操作功能的一部分进行修复，则可以为特定操作配置自定义脚本。然后，您可以将脚本与该事件类型的警报相关联，并单独处理此类事件。在此情况下，不会在“管理操作”页面或 Unified Manager 仪表板上为该特定事件类型生成管理操作。

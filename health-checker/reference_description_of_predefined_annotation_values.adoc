@@ -1,0 +1,28 @@
+---
+permalink: health-checker/reference_description_of_predefined_annotation_values.html 
+sidebar: sidebar 
+keywords: description, predefined, annotation values 
+summary: 数据优先级是一个预定义的批注，其值为关键任务、高和低。这些值使您能够根据存储对象包含的数据的优先级对其进行批注。您无法编辑或删除预定义的批注值。 
+---
+= 了解 Active IQ Unified Manager 中的预定义注释值
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+*数据优先级* 是一种预定义批注，其值为关键任务、高和低。这些值使您能够根据存储对象包含的数据的优先级对其进行批注。您无法编辑或删除预定义的批注值。
+
+* *数据优先级：关键任务*
++
+此注释适用于包含关键任务数据的存储对象。例如，包含生产应用程序的对象可被视为关键任务。
+
+* *数据优先级：高*
++
+此批注应用于包含高优先级数据的存储对象。例如，托管业务应用程序的对象可以被视为高优先级。
+
+* *数据优先级：低*
++
+此批注应用于包含低优先级数据的存储对象。例如，位于辅助存储上的对象（如备份和镜像目标）的优先级可能较低。
+
+

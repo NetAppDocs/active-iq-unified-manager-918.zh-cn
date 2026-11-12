@@ -1,0 +1,165 @@
+---
+permalink: install-linux/task_install_unified_manager_linux.html 
+sidebar: sidebar 
+keywords: install, unified manager 
+summary: 您可以在物理或虚拟 Red Hat Enterprise Linux 平台上安装 Unified Manager。 
+---
+= 在 Red Hat Enterprise Linux 上安装 Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在物理或虚拟 Red Hat Enterprise Linux 平台上安装 Unified Manager。
+
+.开始之前
+* 要安装 Unified Manager 的系统必须满足系统和软件要求。
++
+请参阅 link:concept_virtual_infrastructure_or_hardware_system_requirements.html["硬件系统要求"]。
+
++
+请参阅 link:reference_red_hat_software_and_installation_requirements.html["Linux 软件和安装要求"]。
+
+* 您必须已将 Unified Manager `.zip` 文件从 NetApp 支持站点下载到目标系统。
+* 您应该已经验证了下载的 `.zip`文件的完整性。
+* 您必须具有受支持的 Web 浏览器。
+* 您的终端仿真软件必须启用滚动回退。
+
+
+Red Hat Enterprise Linux 系统可能安装了所需支持软件的所有所需版本（Java、MySQL、其他实用程序），仅安装了某些所需软件，或者可能是未安装任何所需软件的新安装系统。
+
+.步骤
+. 登录到要安装 Unified Manager 的服务器。
+. 输入适当的命令来评估哪些软件可能需要在目标系统上安装或升级以支持安装：
++
+[cols="2*"]
+|===
+| 所需软件和最低版本 | 用于验证软件和版本的命令 
+
+
+ a| 
+OpenJDK 版本 17.0.14+6
+ a| 
+`java -version`
+
+
+
+ a| 
+MySQL 8.4.10 社区版
+ a| 
+`rpm -qa | grep -i mysql`
+
+
+
+ a| 
+7-zip
+ a| 
+`7zz -version`
+
+|===
+. 如果安装的 MySQL 版本早于 MySQL 8.4.10 Community Edition，请输入以下命令进行卸载：
++
+`rpm -e <mysql_package_name>`
+
++
+如果收到依赖关系错误，则必须添加  `--nodeps` 选项以卸载组件。
+
+. 导航到下载安装 `.zip`文件的目录并展开 Unified Manager 捆绑包：
++
+`unzip ActiveIQUnifiedManager-_<version>_.zip`
+
++
+Unified Manager 所需的 `.rpm`模块已解压缩到目标目录。
+
+. 验证目录中是否存在以下模块：
++
+`ls *.rpm`
+
++
+`netapp-um<version>.x86_64.rpm`
+
+. 运行预安装脚本，以确保没有可能与 Unified Manager 安装冲突的系统配置设置或任何已安装的软件：
++
+`sudo ./pre_install_check.sh`
+
++
+预安装脚本检查系统是否具有有效的 Red Hat Enterprise Linux 订阅，以及是否可以访问所需的软件存储库。如果脚本发现任何问题，您必须在安装 Unified Manager 之前修复这些问题。
+
++
+对于 Red Hat Enterprise Linux 8 系统，如果您的内部存储库包含 JDK 17 - OpenJDK、7-zip 和 AppStream 存储库提供的其他软件包，则必须禁用 AppStream 存储库并安装 MySQL Community Server。运行以下命令：
+
++
+[listing]
+----
+# sudo yum --disablerepo=rhel-8-for-x86_64-appstream-rpms install  mysql-community-server
+----
+. *可选：*仅当您的系统未连接到互联网并且必须手动下载安装所需的软件包时，才必须执行第 7 步。如果您的系统可以访问互联网，并且所有必需的软件包都可用，请转至第 8 步。对于未连接到互联网或未使用 Red Hat Enterprise Linux 存储库的系统，请执行以下步骤来确定是否缺少任何所需的软件包，然后下载这些软件包：
++
+.. 在安装 Unified Manager 的系统上，查看可用和不可用软件包的列表：+
+`yum install netapp-um<version>.x86_64.rpm --assumeno`
++
+“`Installing:`”部分中的项目是当前目录中可用的包，而“`Installing for dependencies:`”部分中的项目是系统中缺少的包。
+
+.. 在可以访问互联网的系统上，下载缺失的软件包：
++
+`yum install <package_name> --downloadonly --downloaddir=.`
+
++
+[NOTE]
+====
+由于插件 "`yum-plugin-downloadonly`" 在 Red Hat Enterprise Linux 系统上并不总是启用，因此您可能需要启用该功能以下载软件包而不安装它：
+`yum install yum-plugin-downloadonly`
+
+====
+.. 将缺失的软件包从已连接互联网的系统复制到您的安装系统。
+
+
+. 作为 root 用户，或者使用 `sudo`，运行以下命令来安装软件：
++
+`yum install netapp-um<version>.x86_64.rpm`
+
++
+此命令将安装 .rpm 软件包、所有其他必要的支持软件以及 Unified Manager 软件。
+
++
+如果安装失败并显示 GPG NOKEY 错误，请使用  `rpm --import` 从 URL 导入密钥：
+
++
+rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2023[]
+
++
+[NOTE]
+====
+请勿尝试使用其他命令（例如 `rpm -ivh`）进行安装。在 Red Hat Enterprise Linux 系统上成功安装 Unified Manager 需要将所有 Unified Manager 文件和相关文件按特定顺序安装到特定目录结构中，该结构由  `yum install netapp-um<version>.x86_64.rpm` 命令自动执行。
+
+====
+. 忽略安装消息后立即显示的电子邮件通知。
++
+该电子邮件会通知 root 用户初始 cron 作业失败，这对安装没有任何不良影响。
+
+. 安装消息完成后，向上滚动查看消息，直到看到系统显示 Unified Manager Web UI 的 IP 地址或 URL、维护用户名 （umadmin） 以及默认密码的消息。
++
+此消息与以下内容类似：
+
++
+[listing]
+----
+Active IQ Unified Manager installed successfully.
+Use a web browser and one of the following URL(s) to configure and access the Unified Manager GUI.
+https://default_ip_address/    (if using IPv4)
+https://[default_ip_address]/  (if using IPv6)
+https://fully_qualified_domain_name/
+
+Log in to Unified Manager in a web browser by using following details:
+  username: umadmin
+  password: admin
+----
+. 记录 IP 地址或 URL、分配的用户名（umadmin）和当前密码。
+. 如果在安装 Unified Manager 之前使用自定义主目录创建了 umadmin 用户帐户，则必须指定 umadmin 用户登录 shell：
++
+`usermod -s /bin/maintenance-user-shell.sh umadmin`
+
+
+
+访问 Web UI 以更改 umadmin 用户的默认密码，并执行 Unified Manager 的初始设置，如 link:../config/concept_configure_unified_manager.html["配置 Active IQ Unified Manager"] 中所述。必须更改 umadmin 用户的默认密码。

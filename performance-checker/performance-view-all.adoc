@@ -1,0 +1,232 @@
+---
+permalink: performance-checker/performance-view-all.html 
+sidebar: sidebar 
+keywords: performance view 
+summary: 所有存储对象性能视图 
+---
+= 查看 Active IQ Unified Manager 中所有存储对象的性能清单页面
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用性能清单页面可查看每个可用存储对象（如集群、聚合、卷等）的性能信息摘要。您可以链接到性能对象详细信息页面，以查看特定对象的详细信息。
+
+默认情况下，视图页面中的对象会根据事件关键程度进行排序。首先列出具有严重事件的对象，其次列出具有警告事件的对象。这为必须解决的问题提供了即时的可视化指示。
+
+您可以使用 *报告* 按钮将数据从这些页面导出为逗号分隔值 (`.csv`）文件、Microsoft Excel 文件 (`.xlsx`）或 (`.pdf`）文档，然后使用导出的数据生成报告。此外，您可以自定义页面，然后使用 *计划报告* 按钮计划定期创建报告并通过电子邮件发送。
+
+这些页面上的所有字段都可以在自定义视图和报告中使用。某些字段链接到相关页面，从而提供更详细的视图。
+
+
+
+[[performance-all-clusters-view]]
+== 性能：所有集群视图
+
+“性能：所有群集”视图显示由 Unified Manager 实例监控的每个群集的性能事件、数据和配置信息的概述。通过此页面，您可以监控群集的性能，并对性能问题和阈值事件进行故障排除。
+
+您可以使用*分配性能阈值策略*和*清除性能阈值策略*按钮将性能阈值策略分配给对象清单页面上的任何对象，或从中清除阈值策略。
+
+下面是“性能：所有群集”视图中的一些重要字段。
+
+* 群集 FQDN：群集的完全限定域名（FQDN）。
+* IOPS：集群上的每秒输入/输出操作。
+* MB/s：集群上的吞吐量，以 MiB/秒为单位。
+* 容量字段：可用容量和总容量（以 GiB 为单位）。
+* 主机名或 IP 地址：集群管理 LIF 的主机名或 IP 地址（IPv4 或 IPv6）。
+* 操作系统版本：集群上安装的 ONTAP 软件的版本。
++
+
+NOTE: 如果在集群中的节点上安装了不同版本的 ONTAP 软件，则会列出最低的版本号。您可以从性能：所有节点视图中查看每个节点上安装的 ONTAP 版本。
+
+* 阈值策略：在此存储对象上处于活动状态的用户定义的性能阈值策略。您可以将光标放在包含省略号（……）的策略名称上，以查看完整的策略名称或分配的策略名称列表。“分配性能阈值策略”和“清除性能阈值策略”按钮将保持禁用状态，直到您通过单击最左侧的复选框选择一个或多个对象。
+
+
+
+
+[[performance-all-volumes-view]]
+== 性能：所有卷视图
+
+“性能：所有卷”视图显示由 Unified Manager 实例监视的每个 FlexVol 卷和 FlexGroup 卷的性能事件、计数器数据和配置信息的概述。这使您能够快速监控卷的性能，并对性能问题和阈值事件进行故障排除。
+
+如果要分析特定对象的延迟和吞吐量，请单击更多选项按钮 image:icon_kabob.gif[""] ，然后单击 *分析工作负载*，您可以在工作负载分析页面上查看性能和容量图表。如果您具有 System Manager 的有效凭据，则可以在 System Manager 上查看详细信息。
+
+
+NOTE: 对于数据保护（DP）卷，仅显示用户生成的流量的计数器值。此页面上不显示根卷。
+
+下面是“性能：所有卷”视图中的一些重要字段。
+
+* 样式：FlexVol 或 FlexGroup。
+* 延迟：对于 FlexVol 卷，这是卷对所有 I/O 请求的平均响应时间，以每次操作的毫秒数为单位。对于 FlexGroup 卷，这是所有成分卷的平均延迟。
+* IOPS/TB：基于工作负载正在消耗的总空间，每秒处理的输入/输出操作数，以 TB 为单位。此计数器衡量给定存储容量可以提供多少性能。
+* IOPS：对于 FlexVol 卷，这是卷每秒的输入/输出操作数。对于 FlexGroup 卷，这是所有组成卷的 IOPS 之和。
+* MB/s：对于 FlexVol 卷，这是以 MB/秒表示的卷吞吐量。对于 FlexGroup 卷，这是所有组成卷的 MB/s 之和。
+* 容量字段：可用容量和总容量（以 GiB 为单位）。
+
+
+有关详细信息，请参见以下链接：
+
+* link:../performance-checker/task_assign_performance_threshold_policies_to_storage_objects.html["为存储对象分配性能阈值策略"]
+* link:../performance-checker/task_remove_performance_threshold_policies_from_storage_objects.html["从存储对象中删除性能阈值策略"]
+* link:../performance-checker/concept_types_of_workloads_monitored_by_unified_manager.html["由 Unified Manager 监控的工作负载类型"]
+* link:../performance-checker/task_view_qos_policy_group_settings_for_volumes_or_luns.html["查看应用于特定卷或 LUN 的 QoS 策略组设置"]
+* link:../performance-checker/concept_understand_um_recommendations_to_tier_data_to_cloud.html["了解将数据分层到云的 Unified Manager 建议"]
+* link:../performance-checker/task_view_performance_charts_to_compare_volumes_or_luns_in_qos_policy.html["查看性能图表以比较同一 QoS 策略组中的 volume 或 LUN"]
+
+
+
+
+[[performance-all-aggregates-view]]
+== 性能：所有聚合视图
+
+“性能：所有聚合”视图显示由 Unified Manager 实例监控的每个聚合的性能事件、数据和配置信息的概述。此页面使您能够监控聚合的性能，并对性能问题和阈值事件进行故障排除。
+
+下面是 Performance: All Aggregates 视图中的一些重要字段。
+
+* 类型：聚合的类型：
++
+** HDD
+** 混合。结合硬盘和固态硬盘，但未启用 Flash Pool。
+** 混合（Flash Pool）。结合了硬盘和固态硬盘，并且已启用 Flash Pool。
+** SSD
+** SSD（FabricPool）。将 SSD 和云层相结合
+** HDD（FabricPool）。将 HDD 和云层相结合
+** VMDisk (SDS)。虚拟机中的虚拟磁盘
+** VMDisk（FabricPool）。结合虚拟磁盘和云层
+** LUN
+
+
+* 非活动数据报告：是否在此聚合上启用或禁用非活动数据报告功能。启用后，此聚合上的卷会在“性能：所有卷”视图中显示冷数据量。当 ONTAP 版本不支持非活动数据报告时，此字段中的值为 "N/A"。
+* 阈值策略：在此存储对象上处于活动状态的用户定义的性能阈值策略。可以将光标放在包含省略号（……）的策略名称上，以查看完整的策略名称或分配的策略名称列表。“分配性能阈值策略”和“清除性能阈值策略”按钮保持禁用状态，直到您通过单击最左侧的复选框选择一个或多个对象。有关详细信息，请参见以下链接：
+* link:../performance-checker/task_assign_performance_threshold_policies_to_storage_objects.html["为存储对象分配性能阈值策略"]
+* link:../performance-checker/task_remove_performance_threshold_policies_from_storage_objects.html["从存储对象中删除性能阈值策略"]
+
+
+
+
+[[performance-all-nodes-view]]
+== 性能：所有节点视图
+
+“性能：所有节点”视图显示了由 Unified Manager 实例监视的每个节点的性能事件、数据和配置信息的概述。这使您能够快速监控节点的性能，并对性能问题和阈值事件进行故障排除。
+
+
+NOTE: Flash Cache Reads 返回节点上由缓存满足而不是从磁盘返回的读取操作的百分比。仅针对节点显示 Flash Cache 数据，并且仅当节点中安装了 Flash Cache 模块时才会显示。
+
+在*报告*菜单中，当 Unified Manager 及其管理的群集安装在没有外部网络连接的站点时，会提供*硬件清单报告*选项。此按钮生成一个 .csv 文件，其中包含完整的群集和节点信息列表；例如硬件型号和序列号、磁盘类型和计数、已安装的许可证等。此报告功能有助于在未连接到 NetApp Active IQ 平台的安全站点内续签合同。您可以使用*分配性能阈值策略*和*清除性能阈值策略*按钮，将性能阈值策略分配给对象清单页面上的任何对象，或从中清除阈值策略。
+
+有关详细信息，请参见以下链接：
+
+* link:../performance-checker/task_assign_performance_threshold_policies_to_storage_objects.html["为存储对象分配性能阈值策略"]
+* link:../performance-checker/task_remove_performance_threshold_policies_from_storage_objects.html["从存储对象中删除性能阈值策略"]
+* link:../health-checker/task_generate_hardware_inventory_report_for_contract_renewal.html["生成硬件清单报告以续订合同"]
+
+
+
+
+[[performance-all-storage-vms-view]]
+== 性能：所有 Storage VM 视图
+
+“性能：所有 Storage VM”视图显示由 Unified Manager 实例监控的每个存储虚拟机（SVM）的性能事件、数据和配置信息的概述。这使您能够快速监控 SVM 的性能，并对性能问题和阈值事件进行故障排除。此页面上的“延迟”字段报告所有 I/O 请求的平均响应时间，以每个操作的毫秒数为单位。
+
+
+NOTE: 此页面上列出的 SVM 仅包括数据和集群 SVM。Unified Manager 不使用或显示管理或节点 SVM。
+
+有关详细信息，请参见以下链接：
+
+* link:../performance-checker/task_assign_performance_threshold_policies_to_storage_objects.html["为存储对象分配性能阈值策略"]
+* link:../performance-checker/task_remove_performance_threshold_policies_from_storage_objects.html["从存储对象中删除性能阈值策略"]
+
+
+
+
+[[performance-all-luns-view]]
+== 性能：所有 LUN 视图
+
+“性能：所有 LUN”视图显示了由 Unified Manager 实例监视的每个 LUN 的性能事件、数据和配置信息的概述。这使您能够快速监控 LUN 的性能，并对性能问题和阈值事件进行故障排除。
+
+如果要分析特定对象的延迟和吞吐量，请单击更多图标 image:icon_kabob.gif[""]，然后单击*分析工作负载*，即可在*工作负载分析*页面上查看性能和容量图表。
+
+有关详细信息，请参见以下链接：
+
+* link:../data-protection/view-lun-relationships.html["监视一致性组关系中的 LUN"]
+* link:../storage-mgmt/task_provision_luns.html["配置 LUN"]
+* link:../performance-checker/task_assign_performance_threshold_policies_to_storage_objects.html["为存储对象分配性能阈值策略"]
+* link:../performance-checker/task_remove_performance_threshold_policies_from_storage_objects.html["从存储对象中删除性能阈值策略"]
+* link:../performance-checker/task_view_volumes_or_luns_in_same_qos_policy_group.html["查看同一 QoS 策略组中的卷或 LUN"]。
+* link:../performance-checker/task_view_qos_policy_group_settings_for_volumes_or_luns.html["查看应用于特定卷或 LUN 的 QoS 策略组设置"]
+* link:../api-automation/concept_provision_luns.html["使用 API 调配 LUN"]
+
+
+
+
+[[performance-all-nvme-namespaces-view]]
+== 性能：所有 NVMe 命名空间视图
+
+“性能：所有 NVMe 命名空间”视图显示由 Unified Manager 实例监视的每个 NVMe 命名空间的性能事件、数据和配置信息的概述。这使您能够快速监控命名空间的性能和运行状况，并对问题和阈值事件进行故障排除。
+
+报告了以下信息（其中包括）：命名空间的当前状态。* 离线 - 不允许对命名空间进行读取或写入访问。* 在线 - 允许对命名空间进行读写访问。* NVFail - 由于 NVRAM 故障，命名空间自动脱机。* 空间错误 - 命名空间的空间已用尽。
+
+有关详细信息，请参见以下链接：
+
+* link:../performance-checker/task_assign_performance_threshold_policies_to_storage_objects.html["为存储对象分配性能阈值策略"]
+* link:../performance-checker/task_remove_performance_threshold_policies_from_storage_objects.html["从存储对象中删除性能阈值策略"]
+
+
+
+
+[[performance-all-network-interfaces-view]]
+== 性能：所有网络接口视图
+
+“性能：所有网络接口”视图显示由此 Unified Manager 实例监视的每个网络接口（LIF）的性能事件、数据和配置信息的概述。此页面使您能够快速监控接口的性能，并对性能问题和阈值事件进行故障排除。下面是“性能：所有网络接口”视图中的一些重要字段。
+
+* IOPS：每秒的输入/输出操作。IOPS 不适用于 NFS LIF 和 CIFS LIF，并且对于这些类型显示为 N/A。
+* 延迟：所有 I/O 请求的平均响应时间，以每次操作的毫秒数为单位。延迟不适用于 NFS LIF 和 CIFS LIF，并且对于这些类型显示为 N/A。
+* 归属位置：接口的归属位置，显示为节点名称和端口名称，用冒号（:）分隔。如果位置以省略号（……）显示，则可以将光标悬停在位置名称上以查看完整位置。
+* 当前位置：接口的当前位置，显示为节点名称和端口名称，用冒号（:）分隔。如果位置以省略号（……）显示，则可以将光标放在位置名称上以查看完整位置。
+* 角色：接口角色：数据、集群、节点管理或集群间。
+
+
+
+NOTE: 此页面上列出的接口包括数据 LIF、集群 LIF、节点管理 LIF 和集群间 LIF。Unified Manager 不使用或显示系统 LIF。
+
+
+
+[[performance-all-ports-view]]
+== 性能：所有端口视图
+
+“性能：所有端口”视图显示由 Unified Manager 实例监视的每个端口的性能事件、数据和配置信息的概述。这使您能够快速监控端口的性能，并对性能问题和阈值事件进行故障排除。对于端口角色，将显示网络端口功能，即数据或集群。FCP 端口不能有角色，角色显示为 N/A。
+
+
+NOTE: 性能计数器值仅针对物理端口显示。计数器值不针对 VLAN 或接口组显示。
+
+有关详细信息，请参见以下链接：
+
+* link:../performance-checker/task_assign_performance_threshold_policies_to_storage_objects.html["为存储对象分配性能阈值策略"]
+* link:../performance-checker/task_remove_performance_threshold_policies_from_storage_objects.html["从存储对象中删除性能阈值策略"]
+
+
+
+
+[[performance-qos-policy-groups-view]]
+== 性能：QoS 策略组视图
+
+QoS 策略组视图显示 Unified Manager 正在监视的群集上可用的 QoS 策略组。这包括传统 QoS 策略、自适应 QoS 策略以及使用性能服务级别分配的 QoS 策略。
+
+以下是“性能：QoS 策略组”视图中的一些重要字段。
+
+* QoS Policy Group：QoS 策略组的名称。对于已导入 Unified Manager 9.7 或更高版本的 NetApp Service Level Manager （NSLM） 1.3 策略，此处显示的名称包含 SVM 名称及其他信息，而这些信息在 NSLM 中定义 Performance Service Level 时并不包含在名称中。例如，名称 "NSLM_vs6_Performance_2_0" 表示这是在 SVM "vs6" 上创建的 NSLM 系统定义的 "Performance" PSL 策略，预期延迟为 "2 ms/op"。
+* SVM：服务质量（QoS）策略组所属的存储虚拟机（SVM）。您可以单击存储虚拟机名称以导航到该存储虚拟机的详细信息页面。请注意，如果已在 Admin 存储虚拟机上创建了 QoS 策略，则此字段为空，因为此存储虚拟机类型表示集群。
+* 最小吞吐量：将保证策略组提供的最小吞吐量（以 IOPS 为单位）。对于自适应策略，这是根据分配的存储对象大小分配给卷或 LUN 的每 TB 的最低预期 IOPS。
+* 最大吞吐量：策略组不得超过的吞吐量（以 IOPS 和/或 MB/s 为单位）。当此字段为空时，这意味着在 ONTAP 中定义的最大吞吐量是无限的。对于自适应策略，这是分配给卷或 LUN 的每 TB 的最大（峰值）可能 IOPS，基于分配的存储对象大小或使用的存储对象大小。
+* 绝对最小 IOPS：对于自适应策略，这是在预期 IOPS 小于此值时用作覆盖的绝对最小 IOPS 值。
+* 块大小：为 QoS 自适应策略指定的块大小。
+* 最小分配：是否使用“已分配空间”或“已用空间”来确定最大吞吐量（峰值） IOPS。
+* 预期延迟：存储输入/输出操作的预期平均延迟。
+* 共享：对于传统 QoS 策略，策略组中定义的吞吐量值是否在多个对象之间共享。
+* 关联对象：分配给 QoS 策略组的工作负载数。您可以单击 QoS 策略组名称旁边的展开按钮（image:../media/chevron_down.gif[""]），查看有关策略组的更多详细信息。
+* 分配的容量：服务质量（QoS）策略组中的对象当前正在使用的空间量。
+* 关联对象：分配给 QoS 策略组的工作负载数，分为卷和 LUN。您可以单击该数字以导航到提供有关所选卷或 LUN 的更多详细信息的页面。
+
+
+有关详细信息，请参见 link:..//performance-checker/concept_manage_performance_using_qos_policy_group_information.html["使用 QoS 策略组信息管理性能"] 下的主题。

@@ -1,0 +1,22 @@
+---
+permalink: reporting/task_filter_data.html 
+sidebar: sidebar 
+keywords: filtering, data 
+summary: 筛选数据，以确保结果符合您的报告要求。筛选使您能够仅显示您感兴趣的数据。 
+---
+= 在 Active IQ Unified Manager 中筛选数据
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+筛选数据，以确保结果符合您的报告要求。筛选使您能够仅显示您感兴趣的数据。
+
+.步骤
+. 单击过滤器图标添加过滤器，以集中显示您要查看的结果，然后单击*应用过滤器*。
++
+image::../media/filter_cold_data_2.png[显示如何添加和应用筛选器的 UI 屏幕截图。]
+
+. 为未保存的视图命名以保存您的更改。
+

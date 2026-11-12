@@ -1,0 +1,25 @@
+---
+permalink: performance-checker/task_use_workload_analyzer.html 
+sidebar: sidebar 
+keywords: workload analyzer 
+summary: 从用户界面启动工作负载分析器的方法有很多。在这里，我们将介绍从左侧导航窗格启动该工具。 
+---
+= 在 Active IQ Unified Manager 中使用工作负载分析器
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+从用户界面启动工作负载分析器的方法有很多。在这里，我们将介绍从左侧导航窗格启动该工具。
+
+.步骤
+. 在左侧导航窗格中，单击*工作负载分析*。
++
+此时将显示工作负载分析页面。
+
+. 如果您知道工作负载名称，请输入名称。如果您不确定全名，请输入至少 3 个字符，系统将显示与字符串匹配的工作负载列表。
+. 如果要查看超过默认 2 小时的统计数据，请选择时间范围，然后单击*应用*。
+. 查看摘要区域以查看在时间范围内发生的事件。
+. 查看性能和容量图表，了解任何指标何时出现异常，并查看是否有任何事件与异常条目一致。
+

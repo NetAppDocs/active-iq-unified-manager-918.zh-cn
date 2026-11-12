@@ -1,0 +1,37 @@
+---
+permalink: data-protection/reference_relationship_last_1_month_transfer_rate_view.html 
+sidebar: sidebar 
+keywords: relationship, 1 month, transfer rate, view 
+summary: '"关系"页面上的"过去 1 个月的传输速率"视图显示异步关系中卷的每日数据传输量和传输时间。' 
+---
+= 在 Active IQ Unified Manager 中显示关系：过去 1 个月传输速率视图
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+“关系：过去 1 个月的传输速率”视图使您能够分析异步关系中的卷每天传输的数据量。此页面还提供有关每日传输以及完成卷和 Storage VM 传输操作所需时间的详细信息。
+
+页面顶部的控件使您能够执行搜索以查找特定对象，创建和应用筛选器以缩小显示数据的列表，在页面上添加/删除/重新排序列，并将页面上的数据导出为 .csv、.pdf 或 .xlsx 文件。自定义页面后，您可以将结果保存为自定义视图，然后计划定期生成此数据的报告并通过电子邮件发送。例如，如果要查看卷关系，您可以访问 *Storage* > *Volumes* > *Relationship: Last 1 Month Transfer Rate* 菜单或访问 *Protection* > *Relationships* > *Relationships:Last 1 Month Transfer Rate* 菜单，并使用 *Filter* 仅查看卷的数据。
+
+* *总传输大小*
++
+显示卷传输的总大小（以 GB 为单位）。
+
+* *日*
++
+显示启动卷传输的日期。
+
+* *结束时间*
++
+显示卷传输结束时间和日期。
+
+
+
+*相关信息*
+
+* 有关 *关系：MetroCluster* 视图的信息，请参见 link:../storage-mgmt/task_monitor_metrocluster_configurations.html["监控 MetroCluster 配置"]。
+* 有关 *关系：过去 1 个月的传输状态* 视图的信息，请参阅 link:../data-protection/reference_relationship_last_1_month_transfer_status_view.html["关系：过去 1 个月的传输状态视图"]。
+* 有关*关系：所有关系*视图的信息，请参见 link:../data-protection/reference_relationship_last_1_month_transfer_rate_view.html["关系：过去 1 个月的传输速率视图"]
+

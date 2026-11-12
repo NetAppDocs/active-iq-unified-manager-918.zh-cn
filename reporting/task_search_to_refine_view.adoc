@@ -1,0 +1,23 @@
+---
+permalink: reporting/task_search_to_refine_view.html 
+sidebar: sidebar 
+keywords: search, refine, view 
+summary: 在获得所需的视图后，您可以使用“搜索”字段进一步细化结果，以专注于要包含在报告中的结果。 
+---
+= 搜索以优化您在 Active IQ Unified Manager 中的视图
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在获得所需的视图后，您可以使用“搜索”字段进一步细化结果，以专注于要包含在报告中的结果。
+
+.步骤
+. 打开要用作报表基础的自定义或默认视图。
+. 在搜索字段中键入以细化视图中列出的数据。您可以在任何显示的列中输入部分数据。例如，如果要搜索名称中包含 "US_East" 的节点，则可以细化节点的完整列表。
++
+搜索结果将保存在自定义视图中，并在生成的计划报告中使用。
+
+. 为未保存的视图命名以保存您的更改。
+

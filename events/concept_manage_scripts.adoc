@@ -1,0 +1,20 @@
+---
+permalink: events/concept_manage_scripts.html 
+sidebar: sidebar 
+keywords: manage, scripts 
+summary: 您可以使用脚本自动修改或更新 Unified Manager 中的多个存储对象。该脚本与警报相关联。当事件触发警报时，将执行脚本。您可以在生成警报时上传自定义脚本并测试其执行情况。 
+---
+= 在 Active IQ Unified Manager 中管理脚本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用脚本自动修改或更新 Unified Manager 中的多个存储对象。该脚本与警报相关联。当事件触发警报时，将执行脚本。您可以在生成警报时上传自定义脚本并测试其执行情况。
+
+默认情况下，将脚本上传到 Unified Manager 并运行它们的功能处于启用状态。如果您的组织出于安全原因不想允许此功能，您可以从*存储管理* > *功能设置*禁用此功能。
+
+*相关信息*
+
+link:../config/task_enable_and_disable_ability_to_upload_scripts.html["启用和禁用上传脚本的功能"]

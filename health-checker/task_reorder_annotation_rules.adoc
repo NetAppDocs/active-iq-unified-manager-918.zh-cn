@@ -1,0 +1,29 @@
+---
+permalink: health-checker/task_reorder_annotation_rules.html 
+sidebar: sidebar 
+keywords: reorder, annotation rules 
+summary: 您可以更改 Unified Manager 将批注规则应用于存储对象的顺序。批注规则会根据其排名按顺序应用于存储对象。配置批注规则时，其排名最低。但是，您可以根据要求更改批注规则的排名。 
+---
+= 在 Active IQ Unified Manager 中重新排列注释规则
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以更改 Unified Manager 将批注规则应用于存储对象的顺序。批注规则会根据其排名按顺序应用于存储对象。配置批注规则时，其排名最低。但是，您可以根据要求更改批注规则的排名。
+
+.开始之前
+您必须具有应用程序管理员或存储管理员角色。
+
+您可以选择单行或多行，并执行许多拖放操作以更改批注规则的排名。但是，您必须保存更改，以便在批注规则选项卡中显示重新排序的优先级。
+
+.步骤
+. 在左侧导航窗格中，单击 *存储管理* > *注释*。
+. 在*注释规则*选项卡中，单击*重新排序*。
+. 在*重新排序标注规则*对话框中，拖放单行或多行以重新排列标注规则的顺序。
+. 单击 *Save*。
++
+您必须保存更改才能显示重新排序。
+
+

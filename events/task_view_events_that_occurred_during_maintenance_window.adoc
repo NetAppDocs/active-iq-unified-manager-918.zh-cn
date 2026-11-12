@@ -1,0 +1,31 @@
+---
+permalink: events/task_view_events_that_occurred_during_maintenance_window.html 
+sidebar: sidebar 
+keywords: view, events, occurred, maintenance, window 
+summary: 如果需要，您可以查看在 Unified Manager 维护窗口期间为所有存储对象生成的事件。一旦维护窗口结束且所有系统资源恢复运行，大多数事件将显示为“已过时”状态。 
+---
+= 查看在 Active IQ Unified Manager 维护窗口期间生成的事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果需要，您可以查看在 Unified Manager 维护窗口期间为所有存储对象生成的事件。一旦维护窗口结束且所有系统资源恢复运行，大多数事件将显示为“已过时”状态。
+
+.开始之前
+在任何事件可用之前，必须至少完成一个维护窗口。
+
+默认情况下，在维护窗口期间发生的事件不会显示在事件管理清单页面上。
+
+.步骤
+. 在左侧导航窗格中，单击*事件*。
++
+默认情况下，所有活动（新建和已确认）事件都将显示在事件管理清单页面上。
+
+. 从“查看”窗格中，选择选项*维护期间生成的所有事件*。
++
+显示过去 7 天内从所有维护时段会话和所有群集触发的事件列表。
+
+. 如果单个集群有多个维护窗口，则可以单击*触发时间*日历图标，并选择您有兴趣查看的维护窗口事件的时间段。
+

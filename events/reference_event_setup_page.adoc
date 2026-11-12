@@ -1,0 +1,62 @@
+---
+permalink: events/reference_event_setup_page.html 
+sidebar: sidebar 
+keywords: event, setup, page, command, buttons, list, view 
+summary: '"Event Setup"页面显示已禁用的事件列表，并提供关联对象类型和事件严重性等信息。您也可以执行全局禁用或启用事件等任务。' 
+---
+= 了解 Active IQ Unified Manager 中的事件设置页面
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+"Event Setup"页面显示已禁用的事件列表，并提供关联对象类型和事件严重性等信息。您也可以执行全局禁用或启用事件等任务。
+
+仅当您具有应用程序管理员或存储管理员角色时，才能访问此页面。
+
+
+
+[[command-buttons]]
+== 命令按钮
+
+命令按钮可用于为所选事件执行以下任务：
+
+* *禁用*
++
+启动“禁用事件”对话框，您可以使用它来禁用事件。
+
+* *启用*
++
+启用之前选择禁用的选定事件。
+
+* *上传规则*
++
+启动“上传规则”对话框，使没有外部网络访问权限的站点能够手动将 Active IQ 规则文件上传到 Unified Manager。这些规则根据群集 AutoSupport 消息运行，以生成 Active IQ 平台定义的系统配置、布线、最佳实践和可用性的事件。
+
+* *订阅 EMS 事件*
++
+启动 Subscribe to EMS Events（订阅 EMS 事件）对话框，使您能够订阅从正在监视的集群接收特定事件管理系统 (EMS) 事件。EMS 收集有关集群上发生的事件的信息。当收到已订阅 EMS 事件的通知时，将生成具有适当严重程度的 Unified Manager 事件。
+
+
+
+
+
+[[list-view]]
+== 列表视图
+
+列表视图以表格格式显示有关已禁用事件的信息。您可以使用列筛选器自定义显示的数据。
+
+* *事件*
++
+显示已禁用事件的名称。
+
+* *严重程度*
++
+显示事件的严重程度。严重程度可以是严重、错误、警告或信息。
+
+* *源类型*
++
+显示为其生成事件的源类型。
+
+

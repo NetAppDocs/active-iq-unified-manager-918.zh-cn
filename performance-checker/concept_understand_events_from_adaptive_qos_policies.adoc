@@ -1,0 +1,69 @@
+---
+permalink: performance-checker/concept_understand_events_from_adaptive_qos_policies.html 
+sidebar: sidebar 
+keywords: understand, events, adaptive, qos, policies, defined, block, size 
+summary: 自适应 QoS 策略组会根据卷大小自动缩放吞吐量上限或下限，并随着卷大小的变化保持 IOPS 与 TB 的比例。从 ONTAP 9.5 开始，您可以在 QoS 策略中指定块大小，以同时有效地应用 MB/s 阈值。 
+---
+= 了解 Active IQ Unified Manager 中具有已定义块大小的自适应 QoS 事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+自适应 QoS 策略组会根据卷大小自动缩放吞吐量上限或下限，并随着卷大小的变化保持 IOPS 与 TB 的比例。从 ONTAP 9.5 开始，您可以在 QoS 策略中指定块大小，以同时有效地应用 MB/s 阈值。
+
+在自适应 QoS 策略中分配 IOPS 阈值仅对每个工作负载中发生的操作数量设置限制。根据在生成工作负载的客户端上设置的块大小，某些 IOPS 包含更多数据，因此会给处理操作的节点带来更大的负担。
+
+使用以下公式生成工作负载的 MB/s 值：
+
+[listing]
+----
+MB/s = (IOPS * Block Size) / 1000
+----
+如果工作负载平均为 3,000 IOPS，并且客户端上的块大小设置为 32 KB，则此工作负载的有效 MB/s 为 96。如果相同的工作负载平均为 3,000 IOPS，并且客户端上的块大小设置为 48 KB，则此工作负载的有效 MB/s 为 144。可以看到，当块大小较大时，节点处理的数据量增加了 50%。
+
+让我们看一下以下具有定义块大小的自适应 QoS 策略，以及如何根据客户端上设置的块大小触发事件。
+
+创建策略并将峰值吞吐量设置为 2,500 IOPS/TB，块大小为 32KB。这有效地将已用容量为 1 TB 的卷的 MB/s 阈值设置为 80 MB/s（（2500 IOPS * 32KB）/ 1000）。请注意，当吞吐量值比定义的阈值低 10% 时，Unified Manager 会生成警告事件。事件在以下情况下生成：
+
+|===
+| 已用容量 2+| 当吞吐量超过此数量时生成事件…… 
+
+
+|  | IOPS | MB/秒 
+
+
+ a| 
+1 TB
+ a| 
+2,250 IOPS
+ a| 
+72 MB/s
+
+
+
+ a| 
+2 TB
+ a| 
+4,500 IOPS
+ a| 
+144 MB/s
+
+
+
+ a| 
+5 TB
+ a| 
+11,250 IOPS
+ a| 
+360 MB/s
+
+|===
+如果卷使用 2TB 的可用空间，并且 IOPS 为 4,000，并且客户端上的 QoS 块大小设置为 32KB，则 MB/ps 吞吐量为 128 MB/s（（4,000 IOPS * 32 KB）/ 1000）。在此方案中不会生成任何事件，因为 4,000 IOPS 和 128 MB/s 均低于使用 2 TB 空间的卷的阈值。
+
+如果卷正在使用可用空间中的 2TB，IOPS 为 4,000，且客户端上的 QoS 块大小设置为 64KB，则 MB/s 吞吐量为 256 MB/s （（4,000 IOPS * 64 KB）/ 1000）。在这种情况下，4,000 IOPS 不会生成事件，但 256 MB/s 的 MB/s 值超过了 144 MB/s 的阈值，因此会生成事件。
+
+因此，当基于包含块大小的自适应 QoS 策略的 MB/s 违规触发事件时，“事件详细信息”页面的“系统诊断”部分中将显示 MB/s 图表。如果基于自适应 QoS 策略的 IOPS 违规触发事件，则在“系统诊断”部分显示 IOPS 图表。如果 IOPS 和 MB/s 都发生违规，您将收到两个事件。
+
+有关调整 QoS 设置的更多信息，请参见 https://docs.netapp.com/us-en/ontap/performance-admin/index.html["性能管理概述"]。

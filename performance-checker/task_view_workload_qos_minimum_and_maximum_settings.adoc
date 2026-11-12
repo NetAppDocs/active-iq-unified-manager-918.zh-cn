@@ -1,0 +1,71 @@
+---
+permalink: performance-checker/task_view_workload_qos_minimum_and_maximum_settings.html 
+sidebar: sidebar 
+keywords: view, workload, qos, minimum, maximum, settings, performance, explorer 
+summary: 您可以在性能资源管理器图表中查看卷或 LUN 上的 ONTAP 定义的服务质量（Quality of Service，QoS）策略设置。吞吐量最大值设置限制了竞争工作负载对系统资源的影响。吞吐量最低设置可确保关键工作负载满足最低吞吐量目标，无论竞争工作负载的需求如何。 
+---
+= 在 Active IQ Unified Manager 中查看工作负载 QoS 最小值和最大值设置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在性能资源管理器图表中查看卷或 LUN 上的 ONTAP 定义的服务质量（Quality of Service，QoS）策略设置。吞吐量最大值设置限制了竞争工作负载对系统资源的影响。吞吐量最低设置可确保关键工作负载满足最低吞吐量目标，无论竞争工作负载的需求如何。
+
+只有在 ONTAP 中配置了 QoS 吞吐量“`minimum`”和“`maximum`” IOPS 及 MB/s 设置时，这些设置才会显示在计数器图表中。吞吐量最低设置仅在运行 ONTAP 9.2 或更高版本软件的系统上可用，且仅在 AFF 系统上可用，目前只能为 IOPS 设置此项。
+
+自适应 QoS 策略从 ONTAP 9.3 开始提供，使用 IOPS/TB 而非 IOPS 来表示。这些策略会根据卷大小自动调整每个工作负载的 QoS 策略值，从而在卷大小变化时保持 IOPS 与 TB 的比率。自适应 QoS 策略组只能应用于卷。QoS 术语 "`expected`"（预期）和 "`peak`"（峰值）用于自适应 QoS 策略，而非最小值和最大值。
+
+当工作负载吞吐量在前一小时的每个性能收集期间超过定义的 QoS 最大策略设置时，Unified Manager 会生成 QoS 策略违规的警告事件。在每个收集期间，工作负载吞吐量可能仅在短时间内超过 QoS 阈值，但 Unified Manager 会在图表上显示收集期间的“`average`”吞吐量。因此，您可能会看到 QoS 事件，而工作负载的吞吐量可能未超过图表中显示的策略阈值。
+
+.步骤
+. 在您选择的卷或 LUN 的*性能资源管理器*页面中，执行以下操作以查看 QoS 上限和下限设置：
++
+|===
+| 目的 | 操作 
+
+
+ a| 
+查看 IOPS 上限（QoS 最大值）
+ a| 
+在 IOPS 总计或分解图表中，单击*缩放视图*。
+
+
+
+ a| 
+查看 MB/s 上限（QoS 最大值）
+ a| 
+在 MB/s 总计或明细图表中，单击*缩放视图*。
+
+
+
+ a| 
+查看 IOPS 下限（QoS 最小值）
+ a| 
+在 IOPS 总计或分解图表中，单击*缩放视图*。
+
+
+
+ a| 
+查看 IOPS/TB 上限（QoS 峰值）
+ a| 
+对于卷，在 IOPS/TB 图表中，单击*缩放视图*。
+
+
+
+ a| 
+查看 IOPS/TB 下限（预期 QoS）
+ a| 
+对于卷，在 IOPS/TB 图表中，单击*缩放视图*。
+
+|===
++
+虚线水平线表示在 ONTAP 中设置的最大或最小吞吐量值。您还可以查看何时实施了对 QoS 值的更改。
+
+. 要查看与 QoS 设置相比的特定 IOPS 和 MB/s 值，请将光标移动到图表区域以查看弹出窗口。
+
+
+如果您注意到某些卷或 LUN 具有非常高的 IOPS 或 MB/s 并且对系统资源造成压力，您可以使用 System Manager 或 ONTAP CLI 调整 QoS 设置，以便这些工作负载不会影响其他工作负载的性能。
+
+有关调整 QoS 设置的详细信息，请参见 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-perf-mon/home.html["性能管理概述"]

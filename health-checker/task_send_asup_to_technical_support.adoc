@@ -1,0 +1,20 @@
+---
+permalink: health-checker/task_send_asup_to_technical_support.html 
+sidebar: sidebar 
+keywords: support bundle, web ui, maintenance console 
+summary: 当您遇到的问题需要比 AutoSupport 消息提供更详细的诊断和故障排除时，您应该发送支持包。您可以使用 Unified Manager Web UI 和维护控制台向技术支持发送支持包。 
+---
+= 通过 Active IQ Unified Manager 的 Web UI 和维护控制台发送支持包
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+当您遇到的问题需要比 AutoSupport 消息提供更详细的诊断和故障排除时，您应该发送支持包。您可以使用 Unified Manager Web UI 和维护控制台向技术支持发送支持包。
+
+Unified Manager 一次最多可存储两个完全支持捆绑包和三个轻量级支持捆绑包。
+
+*相关信息*
+
+link:../config/reference_unified_manager_roles_and_capabilities.html["Unified Manager 用户角色和功能"]

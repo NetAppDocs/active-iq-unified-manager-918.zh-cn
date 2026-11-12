@@ -1,0 +1,16 @@
+---
+permalink: health-checker/concept_monitor_and_troubleshoot_data_availability.html 
+sidebar: sidebar 
+keywords: monitor, troubleshoot, data availability 
+summary: Unified Manager 可监控授权用户访问您存储数据的可靠性，提醒您注意阻止或阻碍该访问的情况，并使您能够诊断这些情况以及分配和跟踪其解决过程。 
+---
+= 在 Active IQ Unified Manager 中监控和排除数据可用性故障
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 可监控授权用户访问您存储数据的可靠性，提醒您注意阻止或阻碍该访问的情况，并使您能够诊断这些情况以及分配和跟踪其解决过程。
+
+本节中的可用性工作流程主题介绍了存储管理员如何使用 Unified Manager Web UI 来发现、诊断并分配解决对数据可用性产生不利影响的硬件和软件状况的示例。

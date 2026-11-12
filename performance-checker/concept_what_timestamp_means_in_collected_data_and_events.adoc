@@ -1,0 +1,22 @@
+---
+permalink: performance-checker/concept_what_timestamp_means_in_collected_data_and_events.html 
+sidebar: sidebar 
+keywords: timestamp, means, collected, data, events 
+summary: 显示在收集的运行状况和性能数据中的时间戳，或显示为事件的检测时间的时间戳，基于 ONTAP 集群时间，并调整为 Web 浏览器上设置的时区。 
+---
+= 了解 Active IQ Unified Manager 中收集的数据和事件中的时间戳
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+显示在收集的运行状况和性能数据中的时间戳，或显示为事件的检测时间的时间戳，基于 ONTAP 集群时间，并调整为 Web 浏览器上设置的时区。
+
+强烈建议您使用网络时间协议（NTP）服务器来同步 Unified Manager 服务器、ONTAP 群集和 Web 浏览器上的时间。
+
+[NOTE]
+====
+如果您看到特定集群的时间戳看起来不正确，则可能需要检查集群时间是否已正确设置。
+
+====

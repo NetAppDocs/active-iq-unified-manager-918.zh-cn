@@ -1,0 +1,18 @@
+---
+permalink: performance-checker/concept_understand_performance_events_and_alerts.html 
+sidebar: sidebar 
+keywords: understand, performance, events, alerts 
+summary: 性能事件是 Unified Manager 在发生预定义条件或性能计数器值超过阈值时自动生成的通知。事件可帮助您识别被监控群集中的性能问题。 
+---
+= 了解 Active IQ Unified Manager 中的性能事件和警报
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+性能事件是与集群上的工作负载性能相关的事件。它们可帮助您识别响应时间较慢的工作负载。结合同时发生的运行状况事件，您可以确定可能导致或促成响应时间缓慢的问题。
+
+当 Unified Manager 检测到同一集群组件出现多次相同事件条件时，它会将所有事件视为单个事件，而不是单独的事件。
+
+您可以配置警报，以便在发生某些严重性类型的性能事件时自动发送电子邮件通知。

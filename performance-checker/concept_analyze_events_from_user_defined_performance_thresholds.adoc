@@ -1,0 +1,16 @@
+---
+permalink: performance-checker/concept_analyze_events_from_user_defined_performance_thresholds.html 
+sidebar: sidebar 
+keywords: analyze, events, user-defined, performance, thresholds 
+summary: 从用户定义的阈值生成的事件指示特定存储对象（例如聚合或卷）的性能计数器已超过您在策略中定义的阈值。这表示集群对象遇到性能问题。 
+---
+= 分析 Active IQ Unified Manager 中用户定义的性能阈值产生的事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+从用户定义的阈值生成的事件指示特定存储对象（例如聚合或卷）的性能计数器已超过您在策略中定义的阈值。这表示集群对象遇到性能问题。
+
+您可以使用“事件详细信息”页面分析性能事件，并在必要时采取纠正措施，使性能恢复正常。

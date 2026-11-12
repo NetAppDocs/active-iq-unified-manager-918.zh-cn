@@ -1,0 +1,46 @@
+---
+permalink: performance-checker/task_respond_to_performance_incident_caused_by_ha_takeover.html 
+sidebar: sidebar 
+keywords: dynamic, performance, event, ha, takeover 
+summary: 您可以使用 Unified Manager 调查由高可用性（HA）对中的群集节点上的高数据处理引起的性能事件。您还可以使用 Unified Manager 检查节点的运行状况，以查看在节点上检测到的任何最近的运行状况事件是否导致了性能事件。 
+---
+= 响应 Active IQ Unified Manager 中因 HA 接管引起的性能事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 Unified Manager 调查由高可用性（HA）对中的群集节点上的高数据处理引起的性能事件。您还可以使用 Unified Manager 检查节点的运行状况，以查看在节点上检测到的任何最近的运行状况事件是否导致了性能事件。
+
+.开始之前
+* 您必须具有操作员、应用程序管理员或存储管理员角色。
+* 必须存在新的、已确认的或已过时的性能事件。
+
+
+.步骤
+. 显示*事件详细信息*页面以查看有关该事件的信息。
+. 阅读*描述*，其中描述了事件中涉及的工作负载和争用中的集群组件。
++
+有一个受害者卷的延迟受到了发生争用的集群组件的影响。接管了其伙伴节点所有工作负载的数据处理节点是发生争用的集群组件。在“争用组件”下，Data Processing 图标突出显示为红色，并且事件发生时正在进行数据处理的节点名称显示在括号中。
+
+. 在*描述*中，单击卷的名称。
++
+此时将显示卷性能资源管理器页面。在页面的顶端，在事件时间线中，更改事件图标（image:../media/opm_change_icon.gif["更改事件图标"]）指示 Unified Manager 检测到 HA 接管开始的时间。
+
+. 将光标指向 HA 接管的更改事件图标，有关 HA 接管的详细信息将显示在悬停文本中。
++
+在延迟图表中，一个事件指示所选卷由于与 HA 接管大致相同时间的高延迟而超过性能阈值。
+
+. 单击*缩放视图*以在新页面上显示延迟图表。
+. 在视图菜单中，选择*集群组件*以按集群组件查看总延迟。
+. 将鼠标光标指向 HA 接管开始时的更改事件图标，并将 Data Processing 的延迟与总延迟进行比较。
++
+在 HA 接管时，由于数据处理节点上的工作负载需求增加，数据处理量出现了激增。CPU 利用率的增加推高了延迟并触发了该事件。
+
+. 修复故障节点后，使用 ONTAP System Manager 执行 HA 交还，将工作负载从配对节点移动到已修复的节点。
+. HA 交还完成后，在 Unified Manager 中进行下一次配置发现（大约 15 分钟）后，在*事件管理*清单页面中查找由 HA 接管触发的事件和工作负载。
++
+由 HA 接管触发的事件现在处于过时状态，这表明该事件已解决。Data Processing 组件的延迟已经降低，从而降低了总延迟。所选卷现在用于 Data Processing 的节点已解决该事件。
+
+

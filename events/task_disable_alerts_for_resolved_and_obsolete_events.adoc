@@ -1,0 +1,42 @@
+---
+permalink: events/task_disable_alerts_for_resolved_and_obsolete_events.html 
+sidebar: sidebar 
+keywords: enable, disable, alerts, resolved, obsolete, events 
+summary: 配置全局设置，以抑制进入已解决和已废弃状态的事件的警报。 
+---
+= 在 Active IQ Unified Manager 中禁用已解决和已过时事件的警报
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+对于已配置为发送警报的所有事件，当这些事件通过所有可用状态（新建、已解决和已过时）转换时，将发送警报消息。如果不希望在事件进入"已解决"和"已过时"状态时接收事件警报，则可以配置全局设置以抑制这些警报。
+
+.开始之前
+您必须具有应用程序管理员或存储管理员角色。
+
+默认情况下，事件进入“已解决”和“已废弃”状态时不会发送警报。
+
+.步骤
+. 在左侧导航窗格中，单击*存储管理* > *警报设置*。
+. 在*警报设置*页面中，使用项目*已解决和已废弃事件的警报*旁边的滑块控件执行以下操作之一：
++
+|===
+| 目的 | 操作 
+
+
+ a| 
+在事件已解决或已过时时停止发送警报
+ a| 
+将滑块控件向左移动
+
+
+
+ a| 
+在事件已解决或已过时时开始发送警报
+ a| 
+将滑块控件向右移动
+
+|===
+

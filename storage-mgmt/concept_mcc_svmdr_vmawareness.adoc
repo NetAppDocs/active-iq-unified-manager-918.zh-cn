@@ -1,0 +1,94 @@
+---
+permalink: storage-mgmt/concept_mcc_svmdr_vmawareness.html 
+sidebar: sidebar 
+keywords: view, virtual, infrastructure, disaster, recovery, setup, datastores, metrocluster configuration 
+summary: 您可以查看托管在 MetroCluster 配置或存储虚拟机（storage VM）灾难恢复（SVM DR）设置中的数据存储的配置和性能指标。 
+---
+= 使用 Active IQ Unified Manager 查看灾难恢复设置中的虚拟基础架构可见性
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以查看托管在 MetroCluster 配置或存储虚拟机（storage VM）灾难恢复（SVM DR）设置中的数据存储的配置和性能指标。
+
+在 Unified Manager 上，您可以查看 MetroCluster 配置中作为数据存储附加到 vCenter Server 的 NAS 卷或 LUN。在 MetroCluster 配置中托管的数据存储与标准环境中的数据存储在相同的拓扑视图中表示。
+
+您还可以查看存储 VM 灾难恢复配置中映射到 vCenter Server 中的数据存储的 NAS 卷或 LUN。
+
+
+
+[[view-datastores-in-metrocluster-configuration]]
+== 查看 MetroCluster 配置中的数据存储
+
+在 MetroCluster 配置中查看数据存储之前，请注意以下先决条件：
+
+* 在切换和切回的情况下，HA 对的主集群和二级集群以及 vCenter 服务器的发现应该是完整的。
+* HA 对的主集群和辅助集群以及 vCenter 服务器必须由 Unified Manager 管理。
+* 必须在 ONTAP 和 vCenter Server 上完成所需的设置。有关信息，请参阅 ONTAP 和 vCenter 文档。
++
+https://docs.netapp.com/ontap-9/index.jsp["ONTAP 9 文档中心"]
+
+
+
+请按照以下步骤查看数据存储：
+
+. 在 *VMWARE* > *虚拟机* 页面上，单击托管数据存储的虚拟机。单击 *Workload Analyzer* 或数据存储对象链接。在托管卷或 LUN 的主站点按预期运行的标准方案中，您可以查看主站点的 vServer 集群详细信息。
+. 如果发生灾难，并随后切换到辅助站点，则数据存储链接将指向辅助集群中卷或 LUN 的性能指标。这将在下一个集群和 vServer 发现（采集）周期完成之后反映出来。
+. 成功切回后，数据存储区链接将再次反映主集群中卷或 LUN 的性能指标。这将在下一个集群和 vServer 发现周期完成后反映出来。
+
+
+
+
+[[view-datastores-in-storage-vm-disaster-recovery-configuration]]
+== 在 Storage VM 灾难恢复配置中查看数据存储
+
+在查看 storage VM 灾难恢复配置中的数据存储之前，请注意以下先决条件：
+
+* 在切换和切回的情况下，HA 对的主集群和二级集群以及 vCenter 服务器的发现应该是完整的。
+* 源和目标集群以及存储 VM 对等方都应由 Unified Manager 管理。
+* 必须在 ONTAP 和 vCenter Server 上完成所需的设置。
++
+** 对于 NAS（NFS 和 VMFS）数据存储，在发生灾难时，步骤包括启动辅助存储虚拟机，验证数据 LIF 和路由，在 vCenter Server 上建立丢失的连接，以及启动虚拟机。
++
+对于切换回主站点，应在主站点开始提供数据之前同步卷之间的数据。
+
+** 对于 SAN（iSCSI 和 FC for VMFS）数据存储，vCenter Server 会将挂载的 LUN 格式化为 VMFS 格式。在发生灾难时，步骤包括启动二级存储 VM，验证数据 LIF 和路由。如果 iSCSI 目标 IP 与主 LIF 不同，则需要手动添加它们。新 LUN 应作为主机存储适配器的 iSCSI 适配器下的设备可用。此后，应使用新 LUN 创建新的 VMFS 数据存储，并使用新名称注册旧 VM。VM 必须已启动并正在运行。
++
+在恢复的情况下，应同步卷之间的数据。应再次使用 LUN 创建新的 VMFS 数据存储，并以新名称注册旧 VM。
+
++
+有关设置的信息，请参见 ONTAP 和 vCenter Server 文档。
+
++
+https://docs.netapp.com/ontap-9/index.jsp["ONTAP 9 文档中心"]
+
+
+
+
+
+请按照以下步骤查看数据存储：
+
+. 在 *VMWARE* > *虚拟机*页面上，单击托管数据存储的虚拟机清单。单击数据存储对象链接。在标准方案中，您可以查看主存储虚拟机中卷和 LUN 的性能数据。
+. 如果发生灾难，并随后切换到辅助存储 VM，则数据存储链接将指向辅助存储 VM 中卷或 LUN 的性能指标。在下一个集群和 vServer 发现（采集）周期完成之后，这将会反映出来。
+. 成功切回后，数据存储链接再次反映主存储 VM 中卷或 LUN 的性能指标。这会在下一个集群和 vServer 发现周期完成后反映出来。
+
+
+
+
+[[unsupported-scenarios]]
+== 不支持的场景
+
+* 对于 MetroCluster 配置，请注意以下限制：
++
+** 仅占用处于 `NORMAL`和 `SWITCHOVER`状态的集群。不支持其他状态，例如 `PARTIAL_SWITCHOVER, PARTIAL_SWITCHBACK`和 `NOT_REACHABLE`。
+** 除非启用自动切换 (ASO)，否则如果主集群发生故障，则无法发现辅助集群，并且拓扑继续指向主集群中的卷或 LUN。
+
+
+* 对于 storage VM 灾难恢复配置，请注意以下限制：
++
+** 不支持为 SAN 存储环境启用 Site Recovery Manager (SRM) 或 Storage Replication Adapter (SRA) 的配置。
+
+
+

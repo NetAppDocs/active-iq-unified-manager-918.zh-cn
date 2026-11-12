@@ -1,0 +1,28 @@
+---
+permalink: performance-checker/reference_performance_cluster_landing_page.html 
+sidebar: sidebar 
+keywords: performance, cluster, landing page 
+summary: “性能集群登录”页面显示选定集群的高级性能状态。通过该页面，您可以访问选定集群上存储对象的每个性能计数器的完整详细信息。 
+---
+= 在 Active IQ Unified Manager 中查看性能集群登录页面
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+“性能集群登录”页面显示选定集群的高级性能状态。通过该页面，您可以访问选定集群上存储对象的每个性能计数器的完整详细信息。
+
+性能集群登录页面包括四个选项卡，将集群详细信息分为四个信息区域：
+
+* 摘要页面
++
+** 集群事件窗格
+** MB/s 和 IOPS 性能图表
+** 受管对象窗格
+
+
+* 最高性能页面
+* 资源管理器页面
+* 信息页面
+

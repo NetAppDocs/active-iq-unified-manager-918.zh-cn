@@ -1,0 +1,61 @@
+---
+permalink: storage-mgmt/task_provision_luns.html 
+sidebar: sidebar 
+keywords: provision, luns 
+summary: 您可以从 Provision Workload 页面在现有集群和 Storage Virtual Machine （storage VM）上创建支持 CIFS/SMB 和 NFS 协议的 LUN。 
+---
+= 在 Active IQ Unified Manager 中配置 LUN
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以从 Provision Workload 页面在现有集群和 Storage Virtual Machine （storage VM）上创建支持 CIFS/SMB 和 NFS 协议的 LUN。
+
+.开始之前
+* 此存储 VM 必须具有调配此 LUN 的空间。
+* 必须在创建 LUN 的存储 VM 上同时启用 iSCSI 和 FCP。
+* 要为工作负载选择和分配性能服务级别（PSL）和存储效率策略（SEP），必须在开始创建工作负载之前创建这些策略。
+
+
+.步骤
+. 在 *配置工作负载* 页面上，添加要创建的工作负载的名称，然后从可用列表中选择集群。
++
+根据您选择的集群，*STORAGE VM* 字段会筛选该集群可用的存储虚拟机。
+
+. 从列表中选择支持 iSCSI 和 FCP 服务的 Storage VM。
++
+根据您的选择，系统会在主机信息部分中启用 SAN 选项。
+
+. 在*存储和优化*部分，为工作负载分配存储容量和 PSL，以及可选的 SEP。
++
+SEP 的规范分配给 LUN，PSL 的定义在创建时应用于工作负载。
+
+. 如果要在工作负载上强制执行分配的 PSL，请选中*强制执行性能限制*复选框。
++
+将 PSL 分配给工作负载可确保创建工作负载的聚合能够支持相应策略中定义的性能和容量目标。例如，如果为工作负载分配了“极限性能”PSL，则要配置该工作负载的聚合应具备支持“极限性能”策略的性能和容量目标的能力，例如 SSD 存储。
+
++
+[NOTE]
+====
+除非选中此复选框，否则 PSL 不会应用于工作负载，并且仪表板上工作负载的状态将显示为 `unassigned`。
+
+====
+. 选择 *SAN* 选项。如果未看到启用的 *SAN* 选项，请验证选定的存储虚拟机是否支持 iSCSI 和 FCP。
+. 选择主机操作系统。
+. 指定主机映射以控制启动程序对 LUN 的访问。您可以分配现有的启动程序组（igroup），或定义和映射新的 igroup。
++
+[NOTE]
+====
+如果在调配 LUN 时创建新的 igroup，则需要等到下一个发现周期（最多 15 分钟）才能使用它。因此，建议您使用可用 igroup 列表中的现有 igroup。
+
+====
++
+如果要创建新的 igroup，请选择*创建新的启动程序组*按钮，然后输入 igroup 的信息。
+
+. 单击 *Save*。
++
+该 LUN 已添加到存储工作负载列表中。
+
+

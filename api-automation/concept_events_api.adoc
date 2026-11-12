@@ -1,0 +1,140 @@
+---
+permalink: api-automation/concept_events_api.html 
+sidebar: sidebar 
+keywords: view, events, system, details 
+summary: 通过事件 API，您可以检索为数据中心中受监视的集群生成的事件。 
+---
+= 使用 Active IQ Unified Manager 中的 API 管理事件和警报
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ `management-server` 类别下的 `events`、 `alerts` 和 `scripts` API 使您能够管理 Active IQ Unified Manager 环境中的事件、警报以及与警报关联的脚本。
+
+
+
+[[view-and-modify-events]]
+== 查看和修改事件
+
+Unified Manager 接收在 ONTAP 上为由 Unified Manager 监控和管理的集群生成的事件。通过使用这些 API，您可以查看为集群生成的事件，并解决和更新它们。
+
+通过对  `GET` API 运行  `/management-server/events` 方法，您可以查询数据中心中的事件，包括历史数据。使用内置过滤器（例如名称、影响级别、影响区域、严重性、状态、资源名称和资源类型）来查看特定事件。资源类型和区域参数返回有关发生事件的存储对象的信息，影响区域返回有关引发事件的问题的信息，例如可用性、容量、配置、安全性、保护和性能。
+
+通过运行此 API 的 PATCH 操作，您可以为事件启用解决工作流。您可以将事件分配给自己或其他用户，并确认收到该事件。在对资源执行步骤以解决触发事件的问题后，您可以使用此 API 将事件标记为已解决。
+
+有关事件的详细信息，请参见 link:../events/concept_what_active_iq_platform_events_are.html["了解 Active IQ 平台事件"]。
+
+[cols="4*"]
+|===
+| 类别 | HTTP 谓词 | 路径 | 问题描述 
+
+
+ a| 
+management-server
+ a| 
+GET
+ a| 
+`/management-server/events`
+`/management-server/events/{key}`
+ a| 
+当您运行 Get ALL 方法时，响应正文由数据中心中所有事件的事件详细信息组成。当您通过特定键检索事件详细信息时，您可以查看特定事件的详细信息，并对资源运行下一组操作。响应正文由该事件的详细信息组成。
+
+
+
+ a| 
+management-server
+ a| 
+PATCH
+ a| 
+`management-server/events/{key}`
+ a| 
+运行此 API 以分配事件或将状态更改为“已确认”或“已解决”。您还可以使用此方法将此事件分配给自己或其他用户。这是一个同步操作。
+
+|===
+
+
+[[manage-alerts]]
+== 管理提醒
+
+事件会自动且持续地生成。只有当事件满足特定筛选条件时，Unified Manager 才会生成警报。您可以选择应为其生成警报的事件。通过使用 `/management-server/alerts` API，您可以配置警报，以便在发生特定事件或特定严重程度类型的事件时自动发送通知。
+
+有关警报的详细信息，请参见 link:../events/concept_what_alerts_are.html["了解警报"]。
+
+[cols="4*"]
+|===
+| 类别 | HTTP 谓词 | 路径 | 问题描述 
+
+
+ a| 
+management-server
+ a| 
+GET
+ a| 
+`/management-server/alerts`
+`/management-server/alerts/{key}`
+ a| 
+通过使用 alert 键，查询环境中的所有现有警报或特定警报。您可以查看环境中生成的警报的相关信息，例如警报描述、操作、发送通知的电子邮件 ID、事件和严重性。
+
+
+
+ a| 
+management-server
+ a| 
+POST
+ a| 
+`/management-server/alerts`
+ a| 
+通过此方法，您可以为特定事件添加警报。您必须添加警报名称、适用该警报的物理或逻辑资源或事件、警报是否已启用，以及是否要发送 SNMP 陷阱。您可以添加要为其生成警报的其他详细信息，例如操作、通知电子邮件 ID、脚本详细信息（如果您要添加警报脚本）等。
+
+
+
+ a| 
+management-server
+ a| 
+PATCH 和 DELETE
+ a| 
+`management-server/events/{key}`
+ a| 
+您可以使用这些方法来修改和删除特定的警报。您可以修改不同的属性，例如描述、名称以及启用和禁用警报。当不再需要警报时，您可以将其删除。
+
+|===
+
+NOTE: 在选择用于添加警报的资源时，请注意，选择集群作为资源不会自动选择该集群中的存储对象。例如，如果为所有集群的所有关键事件创建警报，则只会收到集群关键事件的警报。您不会收到有关节点、聚合等上的关键事件的警报。
+
+
+
+[[manage-scripts]]
+== 管理脚本
+
+通过使用 `/management-server/scripts` API，您还可以将警报与触发警报时执行的脚本相关联。您可以使用脚本自动修改或更新 Unified Manager 中的多个存储对象。该脚本与警报相关联。当事件触发警报时，将执行脚本。您可以在生成警报时上传自定义脚本并测试其执行情况。您可以将警报与脚本关联，以便在 Unified Manager 中引发事件警报时执行脚本。
+
+有关脚本的详细信息，请参见 link:../events/concept_manage_scripts.html["管理脚本"]。
+
+[cols="4*"]
+|===
+| 类别 | HTTP 谓词 | 路径 | 问题描述 
+
+
+ a| 
+management-server
+ a| 
+GET
+ a| 
+`/management-server/scripts`
+ a| 
+使用此 API 查询环境中的所有现有脚本。使用标准筛选和排序操作仅查看特定脚本。
+
+
+
+ a| 
+management-server
+ a| 
+POST
+ a| 
+`/management-server/scripts`
+ a| 
+使用此 API 可添加脚本的描述，并上传与警报关联的脚本文件。
+
+|===

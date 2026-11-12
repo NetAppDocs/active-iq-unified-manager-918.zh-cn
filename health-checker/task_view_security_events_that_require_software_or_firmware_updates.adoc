@@ -1,0 +1,30 @@
+---
+permalink: health-checker/task_view_security_events_that_require_software_or_firmware_updates.html 
+sidebar: sidebar 
+keywords: upgrade events, view, security events, software, firmware updates 
+summary: 某些安全事件的影响区域为“升级”。这些事件由 Active IQ 平台报告，它们识别出的问题需要您升级 ONTAP 软件、节点固件或操作系统软件（针对安全公告）来解决。 
+---
+= 查看 Active IQ Unified Manager 中可能需要软件或固件更新的安全事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+某些安全事件的影响区域为“`Upgrade`”。这些事件由 Active IQ 平台报告，它们指出的问题需要您通过升级 ONTAP 软件、节点固件或操作系统软件（针对安全公告）来解决。
+
+.开始之前
+您必须具有操作员、应用程序管理员或存储管理员角色。
+
+您可能需要立即对其中一些问题执行纠正措施，而其他问题可能要等到下一次定期维护时才能解决。您可以查看所有这些事件，并将其分配给可以解决问题的用户。此外，如果存在某些您不希望收到通知的安全升级事件，此列表可以帮助您识别这些事件，以便您可以将其禁用。
+
+.步骤
+. 在左侧导航窗格中，单击*事件管理*。
++
+默认情况下，所有活动（新建和已确认）事件都将显示在事件管理清单页面上。
+
+. 在“视图”菜单中，选择 *升级事件*。
++
+此页面显示所有活动升级安全事件。
+
+

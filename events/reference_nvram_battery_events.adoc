@@ -1,0 +1,56 @@
+---
+permalink: events/reference_nvram_battery_events.html 
+sidebar: sidebar 
+keywords: nvram, battery, events, impact area, availability 
+summary: NVRAM 电池事件可为您提供有关电池状态的信息，以便您监控潜在问题。事件按影响区域分组，包括事件和陷阱名称、影响级别、来源类型和严重程度。 
+---
+= 了解 Active IQ Unified Manager 中的 NVRAM 电池事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NVRAM 电池事件可为您提供有关电池状态的信息，以便您监控潜在问题。事件按影响区域分组，包括事件和陷阱名称、影响级别、来源类型和严重程度。
+
+
+
+[[impact-area-availability]]
+== 影响区域：可用性
+
+|===
+| 事件名称（陷阱名称） | 影响级别 | 源类型 | 严重性 
+
+
+ a| 
+NVRAM 电池电量低（ocumEvtNvramBatteryLow）
+ a| 
+风险
+ a| 
+节点
+ a| 
+警告
+
+
+
+ a| 
+NVRAM 电池已放电（ocumEvtNvramBatteryDischarged）
+ a| 
+风险
+ a| 
+节点
+ a| 
+错误
+
+
+
+ a| 
+NVRAM 电池充电过度（ocumEvtNvramBatteryOverCharged）
+ a| 
+意外事件
+ a| 
+节点
+ a| 
+关键
+
+|===

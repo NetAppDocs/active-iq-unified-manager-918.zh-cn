@@ -1,0 +1,187 @@
+---
+permalink: events/reference_nvme_namespace_events.html 
+sidebar: sidebar 
+keywords: nvme, namespace, events, impact area, availability, performance 
+summary: NVMe 命名空间事件可为您提供有关命名空间状态的信息，以便您可以监视潜在问题。事件按影响区域分组，包括事件和陷阱名称、影响级别、来源类型和严重程度。 
+---
+= 了解 Active IQ Unified Manager 中的 NVMe 命名空间事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NVMe 命名空间事件可为您提供有关命名空间状态的信息，以便您可以监视潜在问题。事件按影响区域分组，包括事件和陷阱名称、影响级别、来源类型和严重程度。
+
+星号（*）用于标识已转换为 Unified Manager 事件的 EMS 事件。
+
+
+
+[[impact-area-availability]]
+== 影响区域：可用性
+
+|===
+| 事件名称（陷阱名称） | 影响级别 | 源类型 | 严重性 
+
+
+ a| 
+NVMeNS 离线 *（nvmeNamespaceStatusOffline）
+ a| 
+事件
+ a| 
+命名空间
+ a| 
+信息
+
+
+
+ a| 
+NVMeNS 在线 *(nvmeNamespaceStatusOnline)
+ a| 
+事件
+ a| 
+命名空间
+ a| 
+信息
+
+
+
+ a| 
+NVMeNS 空间不足 *（nvmeNamespaceSpaceOutOfSpace）
+ a| 
+风险
+ a| 
+命名空间
+ a| 
+警告
+
+
+
+ a| 
+NVMeNS 销毁 *（nvmeNamespaceDestroy）
+ a| 
+事件
+ a| 
+命名空间
+ a| 
+信息
+
+|===
+
+
+[[impact-area-performance]]
+== 影响区域：性能
+
+|===
+| 事件名称（陷阱名称） | 影响级别 | 源类型 | 严重性 
+
+
+ a| 
+NVMe 命名空间 IOPS 严重阈值已突破（ocumNvmeNamespaceIopsIncident）
+ a| 
+意外事件
+ a| 
+命名空间
+ a| 
+关键
+
+
+
+ a| 
+已违反 NVMe 命名空间 IOPS 警告阈值（ocumNvmeNamespaceIopsWarning）
+ a| 
+风险
+ a| 
+命名空间
+ a| 
+警告
+
+
+
+ a| 
+NVMe 命名空间 MB/s 严重阈值已超出（ocumNvmeNamespaceMbpsIncident）
+ a| 
+意外事件
+ a| 
+命名空间
+ a| 
+关键
+
+
+
+ a| 
+已违反 NVMe 命名空间 MB/s 警告阈值（ocumNvmeNamespaceMbpsWarning）
+ a| 
+风险
+ a| 
+命名空间
+ a| 
+警告
+
+
+
+ a| 
+NVMe 命名空间延迟 ms/op 严重阈值已违反（ocumNvmeNamespaceLatencyIncident）
+ a| 
+意外事件
+ a| 
+命名空间
+ a| 
+关键
+
+
+
+ a| 
+已违反 NVMe 命名空间延迟 ms/op 警告阈值（ocumNvmeNamespaceLatencyWarning）
+ a| 
+风险
+ a| 
+命名空间
+ a| 
+警告
+
+
+
+ a| 
+已违反 NVMe 命名空间延迟和 IOPS 严重阈值（ocumNvmeNamespaceLatencyIopsIncident）
+ a| 
+意外事件
+ a| 
+命名空间
+ a| 
+关键
+
+
+
+ a| 
+已违反 NVMe 命名空间延迟和 IOPS 警告阈值（ocumNvmeNamespaceLatencyIopsWarning）
+ a| 
+风险
+ a| 
+命名空间
+ a| 
+警告
+
+
+
+ a| 
+已违反 NVMe 命名空间延迟和 MB/s 严重阈值（ocumNvmeNamespaceLatencyMbpsIncident）
+ a| 
+意外事件
+ a| 
+命名空间
+ a| 
+关键
+
+
+
+ a| 
+已违反 NVMe 命名空间延迟和 MB/s 警告阈值（ocumNvmeNamespaceLatencyMbpsWarning）
+ a| 
+风险
+ a| 
+命名空间
+ a| 
+警告
+
+|===

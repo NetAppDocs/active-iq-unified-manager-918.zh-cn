@@ -1,0 +1,61 @@
+---
+permalink: storage-mgmt/task_provision_fileshares.html 
+sidebar: sidebar 
+keywords: provision, file, share, volumes 
+summary: 您可以从 Provision Workload 页面在现有集群和 Storage Virtual Machine （storage VM） 上创建支持 CIFS/SMB 和 NFS 协议的文件共享卷。 
+---
+= 在 Active IQ Unified Manager 中配置文件共享卷
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以从 Provision Workload 页面在现有集群和 Storage Virtual Machine （storage VM） 上创建支持 CIFS/SMB 和 NFS 协议的文件共享卷。
+
+.开始之前
+* 此存储 VM 必须具有配置文件共享卷的空间。
+* 您的存储 VM 上应启用 SMB 和 NFS 服务之一或两者。
+* 要为工作负载选择和分配性能服务级别（PSL）和存储效率策略（SEP），必须在开始创建工作负载之前创建这些策略。
+
+
+.步骤
+. 在 *配置工作负载* 页面上，添加要创建的工作负载的名称，然后从可用列表中选择集群。
+. 根据您选择的集群，*STORAGE VM* 字段会筛选该集群可用的存储 VM。从列表中选择所需的存储 VM。
++
+基于存储虚拟机上支持的 SMB 和 NFS 服务，在主机信息部分中启用 NAS 选项。
+
+. 在存储和优化部分，为工作负载分配存储容量和 PSL，以及可选的 SEP。
++
+SEP 的规范分配给 LUN，PSL 的定义在创建时应用于工作负载。
+
+. 如果要强制执行分配给工作负载的 PSL，请选中 *强制执行性能限制* 复选框。
++
+将 PSL 分配给工作负载可确保创建工作负载的聚合可以支持相应策略中定义的性能和容量目标。例如，如果工作负载被分配了“Extreme Performance”PSL，则在其上配置工作负载的聚合应具有支持“Extreme Performance”策略的性能和容量目标的能力，例如 SSD 存储。
+
++
+[NOTE]
+====
+除非选中此复选框，否则 PSL 不会应用于工作负载，并且仪表板上工作负载的状态将显示为未分配。
+
+====
+. 选择 *NAS* 选项。
++
+如果看不到启用的 *NAS* 选项，请验证选定的存储 VM 是否支持 SMB 或 NFS，或者两者都支持。
+
++
+[NOTE]
+====
+如果您的存储 VM 同时启用了 SMB 和 NFS 服务，则可以选中 *通过 NFS 共享* 和 *通过 SMB 共享* 复选框，并创建同时支持 NFS 和 SMB 协议的文件共享。如果要创建 SMB 或 CIFS 共享，请仅选中相应的复选框。
+
+====
+. 对于 NFS 文件共享卷，指定要访问文件共享卷的主机或网络的 IP 地址。您可以为多台主机输入以逗号分隔的值。
++
+在添加主机 IP 地址时，将运行内部检查，以将主机详细信息与存储 VM 匹配，并创建该主机的导出策略，或者如果存在现有策略，则重用该策略。如果为同一主机创建了多个 NFS 共享，则对所有文件共享重复使用具有匹配规则的同一主机的可用导出策略。使用 API 配置 NFS 共享时，可以使用通过提供特定策略密钥来指定单个策略的规则或重用策略的功能。
+
+. 对于 SMB 共享，请指定可访问此 SMB 共享的用户或用户组，并分配所需权限。对于每组用户，在创建文件共享期间会生成一个新的访问控制列表 (Access Control List, ACL)。
+. 单击 *Save*。
++
+此时，此工作负载将添加到存储工作负载列表中。
+
+

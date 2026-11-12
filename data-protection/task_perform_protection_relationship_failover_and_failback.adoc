@@ -1,0 +1,48 @@
+---
+permalink: data-protection/task_perform_protection_relationship_failover_and_failback.html 
+sidebar: sidebar 
+keywords: perform, protection, relationship, failover, failback 
+summary: 在源卷不可用时故障切换到保护目标，然后在源卷可用后故障切换回原始源。 
+---
+= 在 Active IQ Unified Manager 中执行保护关系故障转移和故障恢复
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+当保护关系中的源卷因硬件故障或灾难而被禁用时，您可以使用 Unified Manager 中的保护关系功能使保护目标可读取/写入并故障切换到该卷，直到源再次联机；然后，当原始源可用于提供数据时，您可以故障回切到原始源。
+
+.开始之前
+* 您必须具有应用程序管理员或存储管理员角色。
+* 要执行此操作，您必须已设置 OnCommand Workflow Automation。
+
+
+.步骤
+. link:task_break_snapmirror_relationship_from_health_volume_details.html["断开 SnapMirror 关系"]。
++
+必须先断开关系，然后才能将目标从数据保护卷转换为读/写卷，然后才能逆转关系。
+
+. link:task_reverse_protection_relationships_from_health_volume_details.html["反转保护关系"]。
++
+当原始源卷再次可用时，您可以决定通过恢复源卷来重新建立原始保护关系。在恢复源之前，必须将其与写入前一个目标的数据同步。您可以使用反向重新同步操作通过反转原始关系的角色并将源卷与以前的目标同步来创建新的保护关系。将为新关系创建新的基线 Snapshot 副本。
+
++
+反向关系看起来类似于级联关系：
+
++
+image::../media/um_toplogy_reverse_resync.gif[显示反向关系流程的 UI 屏幕截图。]
+
+. link:task_break_snapmirror_relationship_from_health_volume_details.html["中断反向 SnapMirror 关系"]。
++
+当原始源卷重新同步并可再次提供数据时，请使用 break 操作断开反向关系。
+
+. link:task_remove_protection_relationship_voldtls.html["删除此关系"]。
++
+当不再需要反向关系时，您应该在重新建立原始关系之前删除该关系。
+
+. link:task_resynchronize_protection_relationships_voldtls.html["重新同步关系"]。
++
+使用重新同步操作将数据从源同步到目标，并重新建立原始关系。
+
+

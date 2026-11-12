@@ -1,0 +1,20 @@
+---
+permalink: performance-checker/concept_run_storage_efficiency_operations_at_less_busy_times.html 
+sidebar: sidebar 
+keywords: run, storage, efficiency, operations, less, busy, times 
+summary: 您可以修改处理存储效率操作的策略或计划，以在受影响的卷工作负载不太繁忙时运行。 
+---
+= 在 Active IQ Unified Manager 中安排在较空闲时段执行存储效率操作
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以修改处理存储效率操作的策略或计划，以在受影响的卷工作负载不太繁忙时运行。
+
+存储效率操作可能会使用大量的集群 CPU 资源，并成为运行这些操作的卷的欺凌者。如果受害者卷在运行存储效率操作的同时具有高活动性，则其延迟可能会增加并触发事件。
+
+在事件详细信息页面上，系统诊断部分按活动的峰值偏差显示 QoS 策略组中的工作负载，以标识欺凌工作负载。如果您在表格顶部附近看到“`storage efficiency`”，则表明这些操作正在欺凌受害者工作负载。通过修改效率策略或计划以在这些工作负载不太繁忙时运行，可以防止存储效率操作在集群上引起争用。
+
+您可以使用 ONTAP System Manager 管理效率策略。您可以使用 ONTAP 命令管理效率策略和计划。

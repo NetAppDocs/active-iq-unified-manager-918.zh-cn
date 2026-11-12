@@ -1,0 +1,18 @@
+---
+permalink: performance-checker/concept_performance_incident_analysis_for_metrocluster_configuration.html 
+sidebar: sidebar 
+keywords: performance, event, analysis, metrocluster, configuration 
+summary: 您可以使用 Unified Manager 分析 MetroCluster 配置的性能事件。您可以识别此事件所涉及的工作负载，并查看解决此问题的建议措施。 
+---
+= 使用 Active IQ Unified Manager 分析 MetroCluster 性能事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 Unified Manager 分析 MetroCluster 配置的性能事件。您可以识别此事件所涉及的工作负载，并查看解决此问题的建议措施。
+
+MetroCluster 性能事件可能是由于 _bully_ workloads 过度使用群集之间的交换机间链路（ISL），或是由于链路运行状况问题。Unified Manager 独立监控 MetroCluster 配置中的每个群集，而不考虑伙伴群集上的性能事件。
+
+MetroCluster 配置中两个集群的性能事件也会显示在 Unified Manager 仪表板页面上。您还可以查看 Unified Manager 的运行状况页面，以检查每个集群的运行状况并查看其关系。

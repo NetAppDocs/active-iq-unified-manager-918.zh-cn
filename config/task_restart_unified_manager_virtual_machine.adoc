@@ -1,0 +1,26 @@
+---
+permalink: config/task_restart_unified_manager_virtual_machine.html 
+sidebar: sidebar 
+keywords: restart, unified manager, virtual, machine 
+summary: 您可以从 Unified Manager 的维护控制台重新启动虚拟机。在生成新的安全证书后，或者如果虚拟机出现问题，您必须重新启动。 
+---
+= 重新启动 Active IQ Unified Manager 虚拟机
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以从 Unified Manager 的维护控制台重新启动虚拟机。在生成新的安全证书后，或者如果虚拟机出现问题，您必须重新启动。
+
+.开始之前
+已打开虚拟设备的电源。
+
+您以维护用户身份登录到维护控制台。
+
+您还可以使用 *Restart Guest* 选项从 vSphere 重新启动虚拟机。有关详细信息，请参见 VMware 文档。
+
+.步骤
+. 访问维护控制台。
+. 选择*系统配置* > *重启虚拟机*。
+

@@ -1,0 +1,28 @@
+---
+permalink: data-protection/concept_manage_and_monitor_protection_relationships.html 
+sidebar: sidebar 
+keywords: manage, monitor, protection, relationships 
+summary: Active IQ Unified Manager 使您能够创建保护关系，监控托管集群上的 SnapMirror 和 SnapVault 关系并对其进行故障排除，并在数据被覆盖或丢失时还原数据。 
+---
+= 了解如何在 Active IQ Unified Manager 中管理和监控保护关系
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Active IQ Unified Manager 使您能够创建保护关系，监控托管集群上的 SnapMirror 和 SnapVault 关系并对其进行故障排除，并在数据被覆盖或丢失时还原数据。
+
+对于 SnapMirror 操作，有两种复制类型：
+
+* 异步
++
+从主卷到二级卷的复制由计划决定。
+
+* 同步
++
+在主卷和二级卷上同时执行复制。
+
+
+
+您最多可以同时执行 10 个保护作业，而不会影响性能。当您同时运行 11 到 30 个作业时，可能会遇到一些性能影响。不建议同时运行 30 个以上的作业。

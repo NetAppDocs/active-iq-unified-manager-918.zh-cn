@@ -1,0 +1,23 @@
+---
+permalink: events/task_delete_alerts.html 
+sidebar: sidebar 
+keywords: delete, alerts 
+summary: 您可以在不再需要时删除警报。例如，当特定资源不再受 Unified Manager 监控时，您可以删除为该资源创建的警报。 
+---
+= 删除 Active IQ Unified Manager 中的警报
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在不再需要时删除警报。例如，当特定资源不再受 Unified Manager 监控时，您可以删除为该资源创建的警报。
+
+.开始之前
+您必须具有应用程序管理员角色。
+
+.步骤
+. 在左侧导航窗格中，单击*存储管理* > *警报设置*。
+. 在*警报设置*页面上，选择要删除的警报，然后单击*删除*。
+. 单击 *是* 确认删除请求。
+

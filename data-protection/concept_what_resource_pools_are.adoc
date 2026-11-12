@@ -1,0 +1,25 @@
+---
+permalink: data-protection/concept_what_resource_pools_are.html 
+sidebar: sidebar 
+keywords: resource pools 
+summary: 资源池是由存储管理员使用 Unified Manager 为合作伙伴应用程序提供调配以进行备份管理而创建的聚合组。 
+---
+= 了解 Active IQ Unified Manager 中的资源池
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+资源池是由存储管理员使用 Unified Manager 为合作伙伴应用程序提供调配以进行备份管理而创建的聚合组。
+
+您可以根据性能、成本、物理位置或可用性等属性将资源池化。通过将相关资源分组到一个池中，您可以将该池视为一个单一单元来进行监控和配置。这简化了这些资源的管理，并使存储的使用更加灵活高效。
+
+在辅助存储配置期间，Unified Manager 使用以下标准确定资源池中最适合保护的聚合：
+
+* 此聚合为数据聚合（而非根聚合），并且处于联机状态。
+* 聚合位于 ONTAP 版本等于或高于源集群主要版本的目标集群节点上。
+* 此聚合在资源池中的所有聚合中具有最大的可用空间。
+* 在配置目标卷后，聚合空间处于为聚合定义的几乎已满和几乎超额配置的阈值内（全局或本地阈值，以适用者为准）。
+* 目标节点上的 FlexVol 卷数不得超过平台限制。
+

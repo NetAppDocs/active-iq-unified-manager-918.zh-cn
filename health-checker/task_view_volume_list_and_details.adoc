@@ -1,0 +1,43 @@
+---
+permalink: health-checker/task_view_volume_list_and_details.html 
+sidebar: sidebar 
+keywords: view, volume list, details 
+summary: '使用"运行状况"页面上的"所有卷"视图来监视卷库存，并使用"容量"页面上的"所有卷"视图来查看容量和利用率详细信息。' 
+---
+= 在 Active IQ Unified Manager 中查看卷列表和详细信息
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+从“运行状况：所有卷”视图中，您可以监控卷清单。“容量：所有卷”视图使您可以查看有关集群中卷的容量和利用率的信息。
+
+.开始之前
+您必须具有操作员、应用程序管理员或存储管理员角色。
+
+您还可以使用卷/运行状况详细信息页面查看有关受监控卷的详细信息，包括卷的容量、效率、配置和保护。您还可以查看有关特定卷的相关设备和相关警报的信息。
+
+.步骤
+. 在左侧导航窗格中，单击 *Storage* > *Volumes*。
+. 从下列方法中选择一种，以查看卷的详细信息：
++
+** 要查看有关集群中卷运行状况的详细信息，请在“视图”菜单中选择“运行状况：所有卷”视图。
+** 要查看有关集群中卷的容量和利用率的详细信息，请在“视图”菜单中选择“容量：所有卷”视图。
+** 要查看完整的详细信息，请单击卷名。
++
+您还可以通过单击最小详细信息对话框中的*查看详细信息*来查看完整的详细信息。
+
+
+
+. *可选：*通过单击最小详细信息对话框中的*查看相关*，查看与卷相关的对象。
+
+
+*相关信息*
+
+* link:../health-checker/reference_health_volume_details_page.html["卷：健康详细信息页面"]
+* link:../performance-checker/performance-view-all.html#performance-all-volumes-view["性能：所有卷视图"]
+* link:../health-checker/task_view_antiransomware_status_of_all_volumes_storage_vms.html#view-security-details-of-all-volumes-with-anti-ransomware-detection["安全：反勒索软件视图"]
+* link:../data-protection/task_view_volume_protection_relationships.html["查看卷保护关系"]
+* link:../reporting/task_create_report_to_view_available_volume_capacity_charts.html["创建报告以查看可用卷容量图表"]
+

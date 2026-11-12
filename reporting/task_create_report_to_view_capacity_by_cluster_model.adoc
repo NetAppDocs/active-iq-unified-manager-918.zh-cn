@@ -1,0 +1,37 @@
+---
+permalink: reporting/task_create_report_to_view_capacity_by_cluster_model.html 
+sidebar: sidebar 
+keywords: create, report, view, capacity, cluster, model 
+summary: 您可以创建报告，以基于存储系统模型分析集群的存储容量和利用率。 
+---
+= 在 Active IQ Unified Manager 中创建报告以按集群型号查看容量
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以创建报告，以基于存储系统模型分析集群的存储容量和利用率。
+
+.开始之前
+* 您必须具有应用程序管理员或存储管理员角色。
+
+
+使用以下步骤创建按群集模型显示容量的自定义视图，然后计划为该视图生成报告。
+
+.步骤
+. 在左侧导航窗格中，单击 *存储* > *集群*。
+. 在 View 菜单中，选择 *Capacity* > *All Clusters*。
+. 选择 *显示/隐藏* 以删除报告中您不希望出现的任何列，例如 "`Cluster FQDN`" 和 "`OS Version`"。
+. 将“`总原始容量`”、“`型号/系列`”和三个聚合列拖到“`集群`”列附近。
+. 单击 "`Model/Family`" 列的顶部，按集群类型对结果进行排序。
+. 使用反映视图显示内容的特定名称保存视图，例如“`Capacity by Cluster Model`”。
+. 单击清单页面上的 *Scheduled Reports* 按钮。
+. 单击*添加计划*可将新行添加到*报告计划*页面，以便您可以定义新报告的计划特性。
+. 输入报告计划的名称并填写其他报告字段，然后单击该行末尾的复选标记（image:../media/blue_check.gif[""]）。
++
+此时将立即发送一个测试报告。之后，此报告将以指定频率生成并通过电子邮件发送给列出的收件人。
+
+
+
+根据报告中显示的结果，您可能需要向某些群集添加更多容量，或升级较旧的群集型号。

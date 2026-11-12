@@ -1,0 +1,56 @@
+---
+permalink: install-windows/task_uninstall_unified_manager_win.html 
+sidebar: sidebar 
+keywords: uninstall, unified manager 
+summary: 您可以通过使用程序和功能向导或从命令行界面执行无人参与卸载来卸载 Unified Manager。 
+---
+= 卸载 Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+:pp: &#43;&#43;
+
+
+[role="lead"]
+您可以通过使用程序和功能向导或从命令行界面执行无人参与卸载来卸载 Unified Manager。
+
+.开始之前
+* 您必须具有 Windows 管理员权限。
+* 在卸载软件之前，必须从 Unified Manager 服务器中删除所有集群（数据源）。
+* 您应该手动删除为允许或阻止 MySQL 端口 3306 而创建的防火墙规则。防火墙规则不会自动删除。
+
+
+.步骤
+. 通过选择以下选项之一卸载 Unified Manager：
++
+** 如果从*程序和功能*向导中卸载 Unified Manager，请执行以下步骤：
++
+... 导航到*控制面板* > *程序和功能*。
+... 选择 Active IQ Unified Manager，然后单击*卸载*。
+
+
+** 如果从命令行卸载 Unified Manager，请执行以下步骤：
++
+... 使用管理员权限登录到 Windows 命令行。
+... 请导航到 Active IQ Unified Manager 目录，然后运行以下命令：
++
+`+msiexec /x {A78760DB-7EC0-4305-97DB-E4A89CDFF4E1} /qn /l*v %systemdrive%\UmUnInstall.log+`
+
++
+如果已在服务器上启用用户帐户控制（UAC），并且以域用户身份登录，则必须使用命令行卸载方法。
+
++
+已从系统中卸载 Unified Manager。
+
+
+
+
+
+. 卸载在 Unified Manager 卸载过程中未删除的以下第三方软件包和数据：
++
+** 第三方软件包：JRE、MySQL、Microsoft Visual C&#43;&#43; 2015 Redistributable、Python 和 7zip
+** Unified Manager 生成的 MySQL 应用程序数据
+** 应用程序日志和应用程序数据目录的内容
+
+
+

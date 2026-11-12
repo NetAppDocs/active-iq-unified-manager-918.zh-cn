@@ -1,0 +1,91 @@
+---
+permalink: reporting/task_report_quick_start.html 
+sidebar: sidebar 
+keywords: reporting, quick, start 
+summary: 创建用于查找要移动到云层的卷的示例报告，自定义视图，将其另存为报告，并将其计划为每周共享。 
+---
+= 开始使用 Active IQ Unified Manager 中的报告功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+创建自定义报表示例，以体验浏览视图和计划报表。此快速入门报表会查找可能要移动到云层的卷列表，因为存在相当数量的非活动（冷）数据。您将打开“性能：所有卷”视图，使用筛选器和列自定义视图，将自定义视图另存为报表，并安排报表每周共享一次。
+
+.开始之前
+* 您必须具有应用程序管理员或存储管理员角色。
+* 您必须事先已配置 FabricPool 聚合，并且这些聚合包含一些卷。
+
+
+请按照以下步骤执行操作：
+
+* 打开默认视图
+* 通过筛选数据并对数据进行排序来自定义列
+* 保存此视图
+* 计划为此自定义视图生成报告
+
+
+.步骤
+. 在左侧导航窗格中，单击 *Storage* > *Volumes*。
+. 在“View”菜单中，选择 *Performance* > *All Volumes*。
+. 单击 *显示/隐藏* 以确保 "`磁盘类型`" 列显示在视图中。
++
+image::../media/show_hide_3.png[显示显示/隐藏菜单下拉列表的 UI 屏幕截图。]
+
++
+可添加或删除其他列以创建一个视图，其中包含对此报告重要的字段。
+
+. 将 "`Disk Types`" 列拖到 "`Cloud Recommendation`" 列旁边。
+. 单击筛选器图标以添加以下三个筛选器，然后单击*应用筛选器*：
++
+** 磁盘类型包含 FabricPool
+** “云建议”包含 tier
+** 冷数据大于 10 GB image:../media/filter_cold_data_2.png["显示如何从筛选器选项中应用筛选器的 UI 屏幕截图。"]
+
+
++
+请注意，每个筛选器都使用逻辑 AND 连接，因此返回的所有卷都必须满足所有条件。您最多可添加五个筛选器。
+
+. 单击冷数据列的顶部对结果进行排序，以便包含最多冷数据的卷显示在视图的顶部。
+. 自定义视图时，视图名称为“未保存的视图”。命名视图以反映视图显示的内容，例如“`Vols change tiering policy`”。完成后，单击复选标记或按 *Enter* 使用新名称保存视图。
++
+image::../media/report_vol_code_data_2.png[显示 Vols 更改分层策略页面的 UI 屏幕截图，所需列按正确的顺序排列。]
+
+. 将报告下载为 *CSV*、*Excel* 或 *PDF* 文件，以便在安排或共享之前查看输出。
++
+使用已安装的应用程序（如 Microsoft Excel（CSV 或 Excel）或 Adobe Acrobat（PDF））打开文件，或保存文件。
+
++
+[NOTE]
+====
+您可以通过将视图下载为 Excel 文件，使用复杂的筛选器、排序、数据透视表或图表进一步自定义报告。在 Excel 中打开文件后，使用高级功能自定义报告。满意后，上传 Excel 文件。运行报告时，系统会将此文件及其自定义设置应用于视图。
+
+====
++
+有关使用 Excel 自定义报告的详细信息，请参见 _Microsoft Excel 报告示例_。
+
+. 单击清单页面上的*计划报告*按钮。与该对象（在本例中为卷）相关的所有计划报告都将显示在列表中。
++
+image::../media/scheduled_reports_3.gif[显示与对象相关的所有计划报告的 UI 屏幕截图。]
+
+. 单击 *Add Schedule* 可在 Report Schedules 页面中添加新行，以便为新报告定义计划特征。
+. 输入报告的名称并填写其他报告字段，然后单击该行末尾的复选标记（image:../media/blue_check.gif[""]）。
++
+此时将立即发送一个测试报告。之后，此报告将以指定频率生成并通过电子邮件发送给列出的收件人。
+
++
+以下示例报告采用 CSV 格式：
+
++
+image::../media/csv_sample_report.gif[以 CSV 格式显示示例报告的用户界面屏幕截图。]
+
++
+以下示例报告采用 PDF 格式：
+
++
+image::../media/pdf_sample_report.gif[以 PDF 格式显示示例报告的 UI 屏幕截图。]
+
+
+
+根据报告中显示的结果，您可能需要使用 ONTAP System Manager 或 ONTAP CLI 将某些卷的分层策略更改为 "`auto`" 或 "`all`"，以便将更多冷数据卸载到云层。

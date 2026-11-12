@@ -1,0 +1,30 @@
+---
+permalink: storage-mgmt/concept_overview_of_quota_process_um_6_1.html 
+sidebar: sidebar 
+keywords: overview, quota, process 
+summary: 配额可以是软配额或硬配额。软配额会导致 ONTAP 在超过指定限制时发送通知，而硬配额会在超过指定限制时阻止写入操作成功。 
+---
+= 了解 Active IQ Unified Manager 配额流程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+配额可以是软配额或硬配额。软配额会导致 ONTAP 在超过指定限制时发送通知，而硬配额会在超过指定限制时阻止写入操作成功。
+
+当 ONTAP 收到用户或用户组对某个 FlexVol 卷的写入请求时，它会检查是否已在该卷上激活该用户或用户组的配额，并确定以下内容：
+
+* 是否达到硬限制
++
+如果是，则当达到硬限制并且发送硬配额通知时，写入操作将失败。
+
+* 是否会突破软限制
++
+如果是，则当超出软限制并发送软配额通知时，写入操作将成功。
+
+* 写入操作是否不会超过软限制
++
+如果是，则写入操作将成功，并且不会发送通知。
+
+

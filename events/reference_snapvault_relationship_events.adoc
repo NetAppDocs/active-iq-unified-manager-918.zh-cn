@@ -1,0 +1,100 @@
+---
+permalink: events/reference_snapvault_relationship_events.html 
+sidebar: sidebar 
+keywords: snapvault, relationship, events, impact area, protection 
+summary: SnapVault 关系事件可为您提供有关 SnapVault 关系状态的信息，以便您监控潜在问题。事件按影响区域分组，包括事件和陷阱名称、影响级别、来源类型和严重程度。 
+---
+= 了解 Active IQ Unified Manager 中的 SnapVault 关系事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapVault 关系事件可为您提供有关 SnapVault 关系状态的信息，以便您监控潜在问题。事件按影响区域分组，包括事件和陷阱名称、影响级别、来源类型和严重程度。
+
+
+
+[[impact-area-protection]]
+== 影响区域：保护
+
+|===
+| 事件名称（陷阱名称） | 影响级别 | 源类型 | 严重性 
+
+
+ a| 
+异步 Vault 不正常（ocumEvtSnapVaultRelationshipUnhealthy）
+ a| 
+风险
+ a| 
+SnapMirror 关系
+ a| 
+警告
+
+
+
+ a| 
+异步 Vault 已断开（ocumEvtSnapVaultRelationshipStateBrokenoff）
+ a| 
+风险
+ a| 
+SnapMirror 关系
+ a| 
+错误
+
+
+
+ a| 
+异步 Vault 初始化失败（ocumEvtSnapVaultRelationshipInitializeFailed）
+ a| 
+风险
+ a| 
+SnapMirror 关系
+ a| 
+错误
+
+
+
+ a| 
+异步 Vault 更新失败（ocumEvtSnapVaultRelationshipUpdateFailed）
+ a| 
+风险
+ a| 
+SnapMirror 关系
+ a| 
+错误
+
+
+
+ a| 
+异步 Vault 滞后错误（ocumEvtSnapVaultRelationshipLagError）
+ a| 
+风险
+ a| 
+SnapMirror 关系
+ a| 
+错误
+
+
+
+ a| 
+异步 Vault 滞后警告（ocumEvtSnapVaultRelationshipLagWarning）
+ a| 
+风险
+ a| 
+SnapMirror 关系
+ a| 
+警告
+
+
+
+ a| 
+异步 Vault 重新同步失败（ocumEvtSnapvaultRelationshipResyncFailed）
+ a| 
+风险
+ a| 
+SnapMirror 关系
+ a| 
+错误
+
+|===

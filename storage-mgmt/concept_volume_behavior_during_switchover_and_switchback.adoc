@@ -1,0 +1,56 @@
+---
+permalink: storage-mgmt/concept_volume_behavior_during_switchover_and_switchback.html 
+sidebar: sidebar 
+keywords: volume, behavior, switchover, switchback 
+summary: 触发切换或回切的事件会导致活动卷从灾难恢复组中的一个集群移动到另一个集群。处于活动状态并向客户端提供数据的集群上的卷将停止，而另一个集群上的卷将被激活并开始提供数据。Unified Manager 仅监控处于活动状态且正在运行的卷。 
+---
+= 了解 Active IQ Unified Manager 中切换和切回期间的卷行为
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+触发切换或回切的事件会导致活动卷从灾难恢复组中的一个集群移动到另一个集群。处于活动状态并向客户端提供数据的集群上的卷将停止，而另一个集群上的卷将被激活并开始提供数据。Unified Manager 仅监控处于活动状态且正在运行的卷。
+
+由于卷从一个群集移动到另一个群集，因此建议您监控这两个群集。Unified Manager 的单个实例可以监控 MetroCluster 配置中的两个群集，但有时两个位置之间的距离需要使用两个 Unified Manager 实例来监控这两个群集。下图显示了 Unified Manager 的单个实例：
+
+image::../media/opm_mcc_switchover.gif[显示 Unified Manager 单个实例的 UI 屏幕截图。]
+
+名称中带有 p 的卷表示主卷，名称中带有 b 的卷是由 SnapMirror 创建的镜像备份卷。
+
+正常运行期间：
+
+* 集群 A 有两个活动卷：Vol1p 和 Vol2p。
+* 集群 B 有两个活动卷：Vol3p 和 Vol4p。
+* 集群 A 有两个非活动卷：Vol3b 和 Vol4b。
+* 集群 B 有两个非活动卷：Vol1b 和 Vol2b。
+
+
+与每个活动卷（统计信息、事件等）相关的信息由 Unified Manager 收集。集群 A 收集 Vol1p 和 Vol2p 统计数据，集群 B 收集 Vol3p 和 Vol4p 统计数据。
+
+灾难性故障导致活动卷从集群 B 切换到集群 A 后：
+
+* 集群 A 有四个活动卷：Vol1p、Vol2p、Vol3b 和 Vol4b。
+* 集群 B 有四个非活动卷：Vol3p、Vol4p、Vol1b 和 Vol2b。
+
+
+与正常操作期间一样，与每个活动卷相关的信息由 Unified Manager 收集。但在这种情况下，Vol1p 和 Vol2p 统计数据由集群 A 收集，Vol3b 和 Vol4b 统计数据也由集群 A 收集。
+
+请注意，Vol3p 和 Vol3b 不是相同的卷，因为它们位于不同的集群上。Unified Manager 中 Vol3p 的信息与 Vol3b 不同：
+
+* 在切换到群集 A 期间，Vol3p 统计信息和事件不可见。
+* 在第一次切换时，Vol3b 看起来像一个没有历史信息的新卷。
+
+
+当集群 B 修复并执行切回时，Vol3p 在集群 B 上再次处于活动状态，并保留历史统计数据，但切换期间的统计数据会出现空白。在发生另一次切换之前，无法从集群 A 查看 Vol3b：
+
+image::../media/opm_mcc_volumes.gif[显示切换期间卷行为的 UI 屏幕截图。]
+
+[NOTE]
+====
+* 不活动的 MetroCluster 卷，例如，切回后集群 A 上的 Vol3b，将使用消息“`This volume was deleted`”进行标识。该卷实际上并未被删除，但由于它不是活动卷，因此 Unified Manager 当前未对其进行监控。
+* 如果单个 Unified Manager 正在监视 MetroCluster 配置中的两个群集，则卷搜索将返回当时处于活动状态的任何卷的信息。例如，如果已发生切换并且 Vol3 在群集 A 上变为活动状态，则搜索“Vol3”将返回群集 A 上 Vol3b 的统计数据和事件。
+
+
+====

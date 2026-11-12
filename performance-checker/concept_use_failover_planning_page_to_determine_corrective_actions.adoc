@@ -1,0 +1,16 @@
+---
+permalink: performance-checker/concept_use_failover_planning_page_to_determine_corrective_actions.html 
+sidebar: sidebar 
+keywords: node, failover, planning page, determine, corrective, actions 
+summary: 根据“性能/节点故障转移计划”页面中显示的信息，您可以采取措施确保故障转移不会导致 HA 对的性能下降到可接受的水平以下。 
+---
+= 从 Active IQ Unified Manager 的"性能/节点故障转移规划"页面确定纠正措施
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+根据“性能/节点故障转移计划”页面中显示的信息，您可以采取措施确保故障转移不会导致 HA 对的性能下降到可接受的水平以下。
+
+例如，要降低故障转移的预估性能影响，可以将某些卷或 LUN 从 HA 对中的节点移动到集群中的其他节点。这样做可以确保主节点在故障转移后继续提供可接受的性能。

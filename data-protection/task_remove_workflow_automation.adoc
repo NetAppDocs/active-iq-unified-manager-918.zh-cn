@@ -1,0 +1,22 @@
+---
+permalink: data-protection/task_remove_workflow_automation.html 
+sidebar: sidebar 
+keywords: remove, oncommand, workflow, automation, setup, unified manager 
+summary: 当您不再希望使用 Workflow Automation 时，可以从 Unified Manager 中删除 OnCommand Workflow Automation 设置。 
+---
+= 从 Active IQ Unified Manager 中删除 OnCommand Workflow Automation 设置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+当您不再希望使用 Workflow Automation 时，可以从 Unified Manager 中删除 OnCommand Workflow Automation 设置。
+
+.开始之前
+您必须具有应用程序管理员或存储管理员角色。
+
+.步骤
+. 在左侧导航窗格中，单击左侧设置菜单中的*常规* > *Workflow Automation*。
+. 在 *Workflow Automation* 页面中，单击 *Remove Setup*。
+

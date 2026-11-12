@@ -1,0 +1,258 @@
+---
+permalink: events/reference_metrocluster_connectivity_events.html 
+sidebar: sidebar 
+keywords: metrocluster, connectivity, events, impact area, availability 
+summary: 连接事件提供了有关一个集群内部的各个组件之间以及 MetroCluster 配置中的各个集群之间的连接信息，可用于监控潜在的问题。事件按影响区域进行分组，并可提供事件和陷阱名称、影响级别、源类型和严重性。 
+---
+= 了解 Active IQ Unified Manager 中的 MetroCluster 连接事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+连接事件为您提供有关群集组件之间以及基于 FC 的 MetroCluster 和基于 IP 的 MetroCluster 配置中群集之间连接的信息，以便您可以监控潜在问题。事件按影响区域分组，包括事件和陷阱名称、影响级别、源类型和严重程度。
+
+
+
+[[events-common-in-both-configurations]]
+== 两种配置中常见的事件
+
+这些连接事件在基于 FC 的 MetroCluster 和基于 IP 的 MetroCluster 配置中都很常见。
+
+
+
+[[impact-area-availability]]
+=== 影响区域：可用性
+
+|===
+| 事件名称（陷阱名称） | 影响级别 | 源类型 | 严重性 
+
+
+ a| 
+MetroCluster 伙伴之间的所有链路均已关闭（ocumEvtMetroClusterAllLinksBetweenPartnersDown）
+ a| 
+意外事件
+ a| 
+MetroCluster 关系
+ a| 
+关键
+
+
+
+ a| 
+MetroCluster 无法通过对等网络访问配对集群（ocumEvtMetroClusterPartnersNotReachableOverPeeringNetwork）
+ a| 
+意外事件
+ a| 
+MetroCluster 关系
+ a| 
+关键
+
+
+
+ a| 
+MetroCluster 灾难恢复功能受影响（ocumEvtMetroClusterDRStatusImpacted）
+ a| 
+风险
+ a| 
+MetroCluster 关系
+ a| 
+关键
+
+
+
+ a| 
+MetroCluster 配置已切换（ocumEvtMetroClusterDRStatusImpacted）
+ a| 
+风险
+ a| 
+MetroCluster 关系
+ a| 
+警告
+
+|===
+
+
+[[metrocluster-over-fc-configuration]]
+== MetroCluster 基于 FC 的配置
+
+这些事件与基于 FC 的 MetroCluster 配置有关。
+
+
+
+[[impact-area-availability]]
+=== 影响区域：可用性
+
+|===
+| 事件名称（陷阱名称） | 影响级别 | 源类型 | 严重性 
+
+
+ a| 
+所有交换机间链路已关闭（ocumEvtMetroClusterAllISLBetweenSwitchesDown）
+ a| 
+意外事件
+ a| 
+MetroCluster 交换机间连接
+ a| 
+关键
+
+
+
+ a| 
+FC-SAS 网桥到存储堆栈的链路已关闭（ocumEvtBridgeSasPortDown）
+ a| 
+意外事件
+ a| 
+MetroCluster 网桥堆栈连接
+ a| 
+关键
+
+
+
+ a| 
+MetroCluster 配置已部分切换（ocumEvtMetroClusterDRStatusPartiallyImpacted）
+ a| 
+风险
+ a| 
+MetroCluster 关系
+ a| 
+错误
+
+
+
+ a| 
+节点到 FC 交换机的所有 FC-VI 互连链路已关闭（ocumEvtMccNodeSwitchFcviLinksDown）
+ a| 
+意外事件
+ a| 
+MetroCluster 节点交换机连接
+ a| 
+关键
+
+
+
+ a| 
+节点到 FC 交换机的一个或多个 FC 启动器链路已关闭（ocumEvtMccNodeSwitchFcLinksOneOrMoreDown）
+ a| 
+风险
+ a| 
+MetroCluster 节点交换机连接
+ a| 
+警告
+
+
+
+ a| 
+节点到 FC 交换机所有 FC 启动程序链路断开（ocumEvtMccNodeSwitchFcLinksDown）
+ a| 
+意外事件
+ a| 
+MetroCluster 节点交换机连接
+ a| 
+关键
+
+
+
+ a| 
+交换机到 FC-SAS 网桥的 FC 链路已关闭（ocumEvtMccSwitchBridgeFcLinksDown）
+ a| 
+意外事件
+ a| 
+MetroCluster 交换机网桥连接
+ a| 
+关键
+
+
+
+ a| 
+Inter Node All FC VI InterConnect 链路全部断开 (ocumEvtMccInterNodeLinksDown)
+ a| 
+意外事件
+ a| 
+节点间连接
+ a| 
+关键
+
+
+
+ a| 
+节点间的一个或多个 FC VI InterConnect 链路已关闭（ocumEvtMccInterNodeLinksOneOrMoreDown）
+ a| 
+风险
+ a| 
+节点间连接
+ a| 
+警告
+
+
+
+ a| 
+节点到网桥的链路已关闭（ocumEvtMccNodeBridgeLinksDown）
+ a| 
+意外事件
+ a| 
+节点网桥连接
+ a| 
+关键
+
+
+
+ a| 
+节点到存储堆栈的所有 SAS 链路已关闭（ocumEvtMccNodeStackLinksDown）
+ a| 
+意外事件
+ a| 
+节点堆栈连接
+ a| 
+关键
+
+
+
+ a| 
+节点到存储堆栈的一个或多个 SAS 链路已关闭（ocumEvtMccNodeStackLinksOneOrMoreDown）
+ a| 
+风险
+ a| 
+节点堆栈连接
+ a| 
+警告
+
+|===
+
+
+[[metrocluster-over-ip-configuration]]
+== 基于 IP 的 MetroCluster 配置
+
+这些事件涉及基于 IP 的 MetroCluster 配置。
+
+
+
+[[impact-area-availability]]
+=== 影响区域：可用性
+
+|===
+| 事件名称（陷阱名称） | 影响级别 | 源类型 | 严重性 
+
+
+ a| 
+MetroCluster IP 站点间连接状态为已关闭（mccIntersiteconnectivityStatusDown）
+ a| 
+风险
+ a| 
+MetroCluster 关系
+ a| 
+关键
+
+
+
+ a| 
+MetroCluster-IP 节点到交换机连接离线（mccIpPortStatusOffline）
+ a| 
+风险
+ a| 
+节点
+ a| 
+错误
+
+|===

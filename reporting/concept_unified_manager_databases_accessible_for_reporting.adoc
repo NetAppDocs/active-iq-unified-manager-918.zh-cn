@@ -1,0 +1,99 @@
+---
+permalink: reporting/concept_unified_manager_databases_accessible_for_reporting.html 
+sidebar: sidebar 
+keywords: unified manager, databases, access, custom, reporting 
+summary: Unified Manager 使用 MySQL 数据库来存储来自其正在监视的集群的数据。数据持久化到 MySQL 数据库中的各种架构中。 
+---
+= 访问 Active IQ Unified Manager 中用于自定义报告的数据库
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 使用 MySQL 数据库来存储来自其正在监视的集群的数据。数据持久化到 MySQL 数据库中的各种架构中。
+
+支持访问以下数据库的所有数据表：
+
+[cols="2*"]
+|===
+| 数据库 | 问题描述 
+
+
+ a| 
+netapp_model
+ a| 
+ONTAP 控制器上的对象数据。
+
+
+
+ a| 
+netapp_model_view
+ a| 
+有关 ONTAP 控制器上的对象的数据，适合供报告工具使用。
+
+
+
+ a| 
+netapp_performance
+ a| 
+集群特定的性能计数器。
+
+
+
+ a| 
+ocum
+ a| 
+Unified Manager 应用程序数据和信息，以支持 UI 筛选、排序和一些派生字段的计算。
+
+
+
+ a| 
+ocum_report
+ a| 
+清单配置数据和容量相关信息。
+
+
+
+ a| 
+ocum_report_birt
+ a| 
+适合供报告工具使用的清单配置和容量相关数据的视图。
+
+
+
+ a| 
+opm
+ a| 
+性能配置设置和阈值信息。
+
+
+
+ a| 
+scalemonitor
+ a| 
+有关 Unified Manager 应用程序运行状况和性能问题的数据。
+
+
+
+ a| 
+vmware_model
+ a| 
+托管在 NetApp 存储上的数据存储的 VMware 对象数据。
+
+
+
+ a| 
+vmware_model_view
+ a| 
+托管在 NetApp 存储上的数据存储的 VMware 对象数据视图，适合供报告工具使用。
+
+
+
+ a| 
+vmware_performance
+ a| 
+NetApp 存储上托管的数据存储的 VMware 性能计数器数据。
+
+|===
+报告用户（具有“报告架构”角色的数据库用户）能够访问这些表中的数据。此用户可直接从 Unified Manager 数据库以只读方式访问报告和其他数据库视图。请注意，此用户没有权限访问任何包含用户数据或集群凭据信息的表。

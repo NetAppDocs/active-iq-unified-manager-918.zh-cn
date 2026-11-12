@@ -1,0 +1,36 @@
+---
+permalink: reporting/task_create_report_view_nodes_running_older_versions_of_ontap.html 
+sidebar: sidebar 
+keywords: create, report, view, nodes, running, older versions, ONTAP 
+summary: 您可以创建报告以显示所有集群节点上安装的 ONTAP 软件的版本，以便查看要升级的节点。 
+---
+= 创建报告以查看在 Active IQ Unified Manager 中运行旧版 ONTAP 的节点
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以创建报告以显示所有集群节点上安装的 ONTAP 软件的版本，以便查看要升级的节点。
+
+.开始之前
+* 您必须具有应用程序管理员或存储管理员角色。
+
+
+使用以下步骤创建一个自定义视图，以显示运行旧版本 ONTAP 的节点，然后计划为该视图生成报告。
+
+.步骤
+. 在左侧导航窗格中，单击*存储* > *节点*。
+. 选择*显示/隐藏*以删除报告中不希望出现的任何列。
+. 将 "`OS Version`" 列拖到 "`Node`" 列附近。
+. 单击“`OS Version`”列的顶部，以按最旧的 ONTAP 版本对结果进行排序。
+. 使用反映视图显示内容的特定名称保存视图，例如“`Nodes by ONTAP 版本`”。
+. 单击清单页面上的 *Scheduled Reports* 按钮。
+. 单击*添加计划*可将新行添加到“报告计划”页面，以便您可以定义新报告的计划特性。
+. 输入报告计划的名称并填写其他报告字段，然后单击该行末尾的复选标记（image:../media/blue_check.gif[""]）。
++
+此时将立即发送一个测试报告。之后，此报告将以指定频率生成并通过电子邮件发送给列出的收件人。
+
+
+
+根据报告中显示的结果，您可能需要升级运行较旧 ONTAP 版本的节点。

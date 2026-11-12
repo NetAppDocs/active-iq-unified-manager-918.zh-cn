@@ -1,0 +1,33 @@
+---
+permalink: performance-checker/task_respond_to_system_defined_performance_threshold_events.html 
+sidebar: sidebar 
+keywords: system-defined, performance, threshold, events 
+summary: 您可以使用 Unified Manager 调查性能计数器超出系统定义的警告阈值引起的性能事件。您还可以使用 Unified Manager 检查集群组件的运行状况，以查看在组件上检测到的最近事件是否导致了性能事件。 
+---
+= 响应 Active IQ Unified Manager 中系统定义的性能阈值事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 Unified Manager 调查性能计数器超出系统定义的警告阈值引起的性能事件。您还可以使用 Unified Manager 检查集群组件的运行状况，以查看在组件上检测到的最近事件是否导致了性能事件。
+
+.开始之前
+* 您必须具有操作员、应用程序管理员或存储管理员角色。
+* 必须有新的或过时的性能事件。
+
+
+.步骤
+. 显示*事件详细信息*页面以查看有关该事件的信息。
+. 查看*描述*，其中描述了导致此事件的阈值违规行为。
++
+例如，消息 "`Node utilization value of 90 % has triggered a WARNING event based on threshold setting of 85 %`" 表示集群对象发生了节点利用率警告事件。
+
+. 记下*事件触发时间*，以便调查是否有其他事件在同一时间发生，从而可能对此事件产生影响。
+. 在*系统诊断*下，查看系统定义策略对集群对象执行的分析类型的简要说明。
++
+对于某些事件，诊断旁边会显示绿色或红色图标，以指示在该特定诊断中是否发现了问题。对于其他类型的系统定义事件，计数器图表显示对象的性能。
+
+. 在*建议操作*下，单击*帮助我执行此操作*链接以查看您可以执行的建议操作，尝试自行解决性能事件。
+

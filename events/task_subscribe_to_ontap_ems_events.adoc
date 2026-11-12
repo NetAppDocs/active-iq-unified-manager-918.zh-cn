@@ -1,0 +1,54 @@
+---
+permalink: events/task_subscribe_to_ontap_ems_events.html 
+sidebar: sidebar 
+keywords: subscribe, ontap, ems events 
+summary: 您可以订阅接收由安装了 ONTAP 软件的系统生成的事件管理系统（EMS）事件。EMS 事件的一个子集会自动报告给 Unified Manager，但只有在您订阅了这些事件时，才会报告其他 EMS 事件。 
+---
+= 在 Active IQ Unified Manager 中订阅 ONTAP EMS 事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以订阅接收由安装了 ONTAP 软件的系统生成的事件管理系统（EMS）事件。EMS 事件的一个子集会自动报告给 Unified Manager，但只有在您订阅了这些事件时，才会报告其他 EMS 事件。
+
+.开始之前
+不要订阅已自动添加到 Unified Manager 的 EMS 事件，因为在接收同一问题的两个事件时，这可能会导致混淆。
+
+您可以订阅任意数量的 EMS 事件。系统将验证您订阅的所有事件，并且仅将已验证的事件应用于您在 Unified Manager 中监控的集群。_ONTAP 9 EMS 事件目录_ 提供指定版本的 ONTAP 9 软件的所有 EMS 消息的详细信息。从 ONTAP 9 产品文档页面中找到相应版本的 _EMS 事件目录_，以获取适用事件的列表。
+
+https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["ONTAP 9 产品库"]
+
+您既可以为订阅的 ONTAP EMS 事件配置警报，也可以为这些事件创建要执行的自定义脚本。
+
+[NOTE]
+====
+如果未收到已订阅的 ONTAP EMS 事件，则集群的 DNS 配置可能存在问题，导致集群无法访问 Unified Manager 服务器。要解决此问题，集群管理员必须更正集群的 DNS 配置，然后重新启动 Unified Manager。这样做会将挂起的 EMS 事件刷新到 Unified Manager 服务器。
+
+====
+.步骤
+. 在左侧导航窗格中，单击*存储管理* > *事件设置*。
+. 在事件设置页面中，单击*订阅 EMS 事件*按钮。
+. 在订阅 EMS 事件对话框中，输入要订阅的 ONTAP EMS 事件的名称。
++
+要从 ONTAP 集群 shell 查看您可以订阅的 EMS 事件的名称，您可以使用  `event route show` 命令（在 ONTAP 9 之前）或  `event catalog show` 命令（ONTAP 9 或更高版本）。
+
++
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/OnCommand_Suite/How_to_configure_and_receive_alerts_from_ONTAP_EMS_Event_Subscription_in_Active_IQ_Unified_Manager["如何在 Active IQ Unified Manager 中配置并接收来自 ONTAP EMS 事件订阅的警报"]
+
+. 单击 *Add*。
++
+EMS 事件已添加至已订阅 EMS 事件列表，但“适用于群集”列显示您添加的 EMS 事件的状态为 "`Unknown`"。
+
+. 单击*保存并关闭*以在集群中注册 EMS 事件订阅。
+. 再次点击 *订阅 EMS 事件*。
++
+状态 "`是`" 出现在您添加的 EMS 事件的“适用于集群”列中。
+
++
+如果状态不是 "`Yes`"，请检查 ONTAP EMS 事件名称的拼写。如果输入的名称不正确，则必须删除不正确的事件，然后再次添加该事件。
+
+
+
+当 ONTAP EMS 事件发生时，该事件将显示在“事件”页面上。您可以在“事件详细信息”页面中选择该事件，以查看有关 EMS 事件的详细信息。您还可以管理事件的处置或为该事件创建警报。

@@ -1,0 +1,41 @@
+---
+permalink: reporting/task_create_report_to_view_volumes_at_specific_time_intervals.html 
+sidebar: sidebar 
+keywords: create, report, view, volume, transfer, trends, specific, time intervals 
+summary: 您可以创建一个报告，以特定时间间隔显示卷传输趋势。 
+---
+= 创建报告以在 Active IQ Unified Manager 中按时间间隔查看卷传输趋势
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以创建一个报告，以特定时间间隔显示卷传输趋势。
+
+.开始之前
+* 您必须具有应用程序管理员或存储管理员角色。
+
+
+使用以下步骤以特定时间间隔创建卷的自定义视图，然后计划为该视图生成报告。
+
+.步骤
+. 在左侧导航窗格中，单击 *Storage* > *Volumes*。
+. 在视图菜单中，选择*关系* > *过去 1 个月的传输状态*。
+. 选择*显示/隐藏*以删除报告中不希望出现的任何列。
+. 将传输持续时间列拖到“`操作结果`”列附近。
+. 单击过滤器图标，添加以下过滤器，然后单击*应用过滤器*：
++
+** 过去 7 天内的传输结束时间
+
+
+. 单击 "`传输持续时间`" 列的顶部，按时间间隔对卷进行排序。
+. 使用反映视图显示内容的特定名称保存视图，例如“`按持续时间排列的卷`”。
+. 单击清单页面上的 *Scheduled Reports* 按钮。
+. 输入报告计划的名称，将频率设置为*每周*，并填写其他报告字段，然后单击行末尾的复选标记（image:../media/blue_check.gif[""]）。
++
+此时将立即发送一个测试报告。之后，此报告将以指定频率生成并通过电子邮件发送给列出的收件人。
+
+
+
+根据报告中显示的结果，您可以调查传输时间间隔。

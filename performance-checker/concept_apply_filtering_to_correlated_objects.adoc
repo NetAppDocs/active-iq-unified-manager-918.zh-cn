@@ -1,0 +1,14 @@
+---
+permalink: performance-checker/concept_apply_filtering_to_correlated_objects.html 
+sidebar: sidebar 
+keywords: apply, filter, reduce, list, correlated, objects, grid 
+summary: 过滤使您可以在网格中显示更小、定义更明确的对象子集。例如，如果您在网格中有 25 个卷，则过滤使您可以仅查看吞吐量低于 90 MBps 或延迟大于 1 ms/op 的卷。 
+---
+= 筛选 Active IQ Unified Manager 网格中的相关对象
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+过滤使您可以在网格中显示更小、定义更明确的对象子集。例如，如果您在网格中有 25 个卷，则过滤使您可以仅查看吞吐量低于 90 MBps 或延迟大于 1 ms/op 的卷。

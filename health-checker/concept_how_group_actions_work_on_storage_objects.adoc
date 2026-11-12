@@ -1,0 +1,29 @@
+---
+permalink: health-checker/concept_how_group_actions_work_on_storage_objects.html 
+sidebar: sidebar 
+keywords: group actions, work, storage, objects 
+summary: 组操作是对组中的所有存储对象执行的操作。例如，您可以配置卷阈值组操作来同时更改组中所有卷的卷阈值。 
+---
+= 了解组操作如何在 Active IQ Unified Manager 中的存储对象上运行
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+组操作是对组中的所有存储对象执行的操作。例如，您可以配置卷阈值组操作来同时更改组中所有卷的卷阈值。
+
+组支持唯一的组操作类型。一个组只能有一种卷运行状况阈值组操作类型。但是，您可以为同一组配置不同类型的组操作（如果可用）。组操作的等级决定了操作应用于存储对象的顺序。存储对象的详细信息页面提供了有关对存储对象应用了哪种组操作的信息。
+
+
+
+[[example-of-unique-group-actions]]
+== 唯一组操作示例
+
+假设卷 A 属于组 G1 和 G2，并且为这些组配置了以下卷健康阈值组操作：
+
+* `Change_capacity_threshold` group action with rank 1，用于配置卷的容量
+* `Change_snapshot_copies` 级别为 2 的 group 操作，用于配置卷的 Snapshot 副本
+
+
+ `Change_capacity_threshold`组操作始终优先于 `Change_snapshot_copies`组操作并应用于卷 A。当 Unified Manager 完成一个监控周期时，将根据 `Change_capacity_threshold`组操作重新评估卷 A 的健康阈值相关事件。您不能为 G1 或 G2 组配置其他卷阈值类型的组操作。

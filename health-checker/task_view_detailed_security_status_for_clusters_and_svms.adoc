@@ -1,0 +1,77 @@
+---
+permalink: health-checker/task_view_detailed_security_status_for_clusters_and_svms.html 
+sidebar: sidebar 
+keywords: view, cluster security status, svm security status, volume encryption status, compliance, security hardening, encryption, anti-ransomware, certificate expiry, clusters page, storage VMs page, System Manager 
+summary: “安全”页面显示所有集群和 storage VM 的高级安全状态。详细的集群状态包括集群合规性、SVM 合规性和卷加密合规性。 
+---
+= 在 Active IQ Unified Manager 中查看集群和 Storage VM 的安全状态
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Active IQ Unified Manager 允许您从界面中的不同点查看环境中存储对象的安全状态。您可以根据定义的参数收集和分析信息和报告，并检测受监控集群和存储虚拟机上的可疑行为或未经授权的系统更改。
+
+有关安全建议，请参见 https://www.netapp.com/pdf.html?item=/media/10674-tr4569pdf.pdf["适用于 ONTAP 9 的 NetApp 安全强化指南"^]
+
+
+
+[[view-object-level-security-status-on-security-page]]
+== 在安全页面上查看对象级安全状态
+
+作为系统管理员，您可以使用 *安全* 页面了解您的 ONTAP 集群和存储虚拟机在数据中心和站点级别的安全强度。支持的对象是集群、存储虚拟机和卷。请按照以下步骤操作：
+
+.步骤
+. 在左侧导航窗格中，单击*仪表板*。
+. 根据您是要查看所有受监控集群还是单个集群的安全状态，选择 *所有集群* 或从下拉菜单中选择单个集群。
+. 单击*安全*面板中的右箭头。此时将显示“安全”页面。
+
+
+单击条形图、计数和 `View Reports`链接将转到卷、群集或 Storage VM 页面，以便您根据需要查看相应的详细信息或生成报告。
+
+安全页面显示以下面板：
+
+* *集群合规性*：数据中心中所有集群的安全状态（合规或不合规的集群数量）
+* *存储虚拟机合规性*：数据中心中所有存储虚拟机的安全状态（合规或不合规的存储虚拟机数量）
+* *卷加密*：环境中所有卷的卷加密状态（已加密或未加密的卷数量）
+* *卷反勒索软件状态*：环境中所有卷的安全状态（启用或禁用反勒索软件的卷数）
+* *集群身份验证和证书*：使用每种身份验证方法（如 SAML、Active Directory 或通过证书和本地身份验证）的集群数量。该面板还显示证书已过期或将在 60 天内过期的集群数量。
+
+
+
+
+[[view-security-details-of-all-clusters-on-the-clusters-page]]
+== 在集群页面上查看所有集群的安全详细信息
+
+*集群/安全*详细信息页面使您能够查看集群级别的安全合规性状态。
+
+.步骤
+. 在左侧导航窗格中，单击*存储 > 群集*。
+. 选择 *查看 > 安全 > 所有集群*。
+
+
+将显示默认安全参数，例如全局 FIPS、Telnet、不安全的 SSH 设置、登录横幅、网络时间协议、AutoSupport HTTPS 传输以及集群证书过期状态。
+
+您可以单击image:icon_kabob.gif["kabob 图标"]更多选项按钮，并选择在 Unified Manager 的*安全*页面或 System Manager 上查看安全详细信息。您应该拥有有效的凭据才能在 System Manager 上查看详细信息。
+
+
+NOTE: 如果集群的证书已过期，您可以单击 *Cluster Certificate Validity* 下的 `expired`，然后从 System Manager（9.10.1 及更高版本）续订。如果 System Manager 实例的版本早于 9.10.1，则无法单击 `expired`。
+
+
+
+[[view-security-details-of-all-clusters-from-the-storage-vms-page]]
+== 从 Storage VMs 页面查看所有集群的安全详细信息
+
+可使用 *存储 VM / 安全* 详细信息页面查看存储 VM 级别的安全合规性状态。
+
+.步骤
+. 在左侧导航窗格中，单击 *Storage > Storage VMs*。
+. 选择 *查看 > 安全 > 所有 Storage VM*。此时将显示包含安全参数的集群列表。
+
+
+您可以通过检查安全参数（例如存储 VM、集群、登录横幅、审计日志和不安全的 SSH 设置）来默认查看存储 VM 的安全合规性。
+
+您可以单击image:icon_kabob.gif["kabob 图标"]更多选项按钮，并选择在 Unified Manager 的*安全*页面或 System Manager 上查看安全详细信息。您应该拥有有效的凭据才能在 System Manager 上查看详细信息。
+
+有关卷和存储 VM 的反勒索软件安全详细信息，请参见 link:../health-checker/task_view_antiransomware_status_of_all_volumes_storage_vms.html["查看所有卷和 Storage VM 的反勒索软件状态"]。

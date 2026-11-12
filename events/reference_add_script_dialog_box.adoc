@@ -1,0 +1,26 @@
+---
+permalink: events/reference_add_script_dialog_box.html 
+sidebar: sidebar 
+keywords: add, script, dialog, box 
+summary: “添加脚本”对话框使您可以将脚本添加到 Unified Manager。您可以使用脚本配置警报，以自动解决为存储对象生成的事件。 
+---
+= 在 Active IQ Unified Manager 中添加脚本对话框
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+“添加脚本”对话框使您可以将脚本添加到 Unified Manager。您可以使用脚本配置警报，以自动解决为存储对象生成的事件。
+
+您必须具有应用程序管理员或存储管理员角色。
+
+* *选择脚本文件*
++
+使您能够为警报选择脚本。
+
+* *说明*
++
+使您能够指定脚本的说明。
+
+

@@ -1,0 +1,16 @@
+---
+permalink: install-windows/concept_overview_of_installation_process_on_windows.html 
+sidebar: sidebar 
+keywords: overview, installation, process 
+summary: 安装工作流描述了在使用 Unified Manager 之前必须执行的任务。 
+---
+= 了解在 Windows 上安装 Active IQ Unified Manager 的过程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+安装工作流描述了在使用 Unified Manager 之前必须执行的任务。
+
+image::../media/install_flow_on_windows.gif[显示先决条件、Unified Manager 安装和初始配置工作流步骤的图表]

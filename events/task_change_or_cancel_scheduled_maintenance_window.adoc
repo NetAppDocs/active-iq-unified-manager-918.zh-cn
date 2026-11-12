@@ -1,0 +1,60 @@
+---
+permalink: events/task_change_or_cancel_scheduled_maintenance_window.html 
+sidebar: sidebar 
+keywords: change, cancel, scheduled, maintenance, window 
+summary: 如果已将 Unified Manager 维护窗口配置为在将来发生，则可以更改开始和结束时间或取消维护窗口。 
+---
+= 更改或取消 Active IQ Unified Manager 中已计划的维护窗口
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果已将 Unified Manager 维护窗口配置为在将来发生，则可以更改开始和结束时间或取消维护窗口。
+
+.开始之前
+您必须具有应用程序管理员或存储管理员角色。
+
+如果在计划的维护窗口结束时间之前完成了集群维护，并且希望再次开始接收来自集群的事件和警报，则取消当前运行的维护窗口非常有用。
+
+.步骤
+. 在左侧导航窗格中，单击*存储管理* > *集群设置*。
+. 在集群的*维护模式*列中：
++
+|===
+| 目的 | 执行此步骤…… 
+
+
+ a| 
+更改计划维护窗口的时间范围
+ a| 
+.. 单击滑块按钮旁边的文本“Scheduled”。
+.. 更改开始和/或结束日期和时间，然后单击*应用*。
+
+
+
+
+ a| 
+延长活动维护窗口的持续时间
+ a| 
+.. 单击滑块按钮旁边的文本“活动”。
+.. 更改结束日期和时间，然后单击*应用*。
+
+
+
+
+ a| 
+取消计划的维护时间段
+ a| 
+选择滑块按钮并将其向左移动。
+
+
+
+ a| 
+取消活动的维护时段
+ a| 
+选择滑块按钮并将其向左移动。
+
+|===
+

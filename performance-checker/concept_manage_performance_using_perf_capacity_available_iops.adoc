@@ -1,0 +1,25 @@
+---
+permalink: performance-checker/concept_manage_performance_using_perf_capacity_available_iops.html 
+sidebar: sidebar 
+keywords: managing, performance, performance, capacity, available, iops, information 
+summary: 性能容量表示在不超过该资源的有用性能的情况下，可以从资源中获得多少吞吐量。使用现有性能计数器查看时，性能容量是在延迟成为问题之前从节点或聚合中获得最大利用率的点。 
+---
+= 在 Active IQ Unified Manager 中管理性能容量和可用 IOPS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+_Performance capacity_ 表示在不超过该资源的有用性能的情况下，可以从资源中获得多少吞吐量。使用现有性能计数器查看时，性能容量是在延迟成为问题之前从节点或聚合中获得最大利用率的点。
+
+Unified Manager 从每个群集中的节点和聚合收集性能容量统计信息。_所用性能容量_是当前正在使用的性能容量的百分比，_空闲性能容量_是仍然可用的性能容量的百分比。
+
+虽然可用性能容量提供了仍然可用的资源的一定百分比，但 _可用 IOPS_ 会告诉您在达到最大性能容量之前可以添加到资源中的 IOPS 数量。通过使用此指标，您可以确保能够将具有预定 IOPS 数量的工作负载添加到资源中。
+
+监控性能容量信息具有以下优势：
+
+* 协助工作流调配和平衡。
+* 帮助您防止节点过载或其资源超出最佳点，从而减少故障排除的需要。
+* 帮助您更精确地确定可能需要额外存储设备的位置。
+

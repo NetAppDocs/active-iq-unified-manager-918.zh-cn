@@ -1,0 +1,24 @@
+---
+permalink: config/task_set_session_timeout_CLI.html 
+sidebar: sidebar 
+keywords: session timeout, CLI, maximum 
+summary: 您可以使用 CLI 为 Unified Manager 设置最大会话超时值，以便在一段时间后自动终止会话。 
+---
+= 使用 Active IQ Unified Manager 中的 CLI 设置会话超时
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 CLI 为 Unified Manager 设置最大会话超时值，以便在一段时间后自动终止会话。默认情况下，您的会话超时设置为最大值，即 4,320 分钟（72 小时）。这意味着您的会话将在 72 小时后自动结束，即使您已登录并正在积极使用 Unified Manager 也是如此。
+
+.关于此任务
+您必须具有应用程序管理员角色。
+
+会话超时设置会影响所有登录的用户会话。
+
+.步骤
+. 输入 `um cli login`命令登录到 Unified Manager CLI。使用有效的用户名和密码进行身份验证。
+. 输入 `um option set max.session.timeout.value=<in mins>`命令以修改会话超时值。
+

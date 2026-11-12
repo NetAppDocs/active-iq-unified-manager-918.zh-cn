@@ -1,0 +1,28 @@
+---
+permalink: health-checker/task_delete_groups.html 
+sidebar: sidebar 
+keywords: delete, groups 
+summary: 当组不再需要时，您可以从 Unified Manager 中删除该组。 
+---
+= 删除 Active IQ Unified Manager 中的组
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+当组不再需要时，您可以从 Unified Manager 中删除该组。
+
+.开始之前
+* 任何存储对象（群集、SVM 或卷）都不得与同您要删除的组相关联的任何组规则相关联。
+* 您必须具有应用程序管理员或存储管理员角色。
+
+
+.步骤
+. 在左侧导航窗格中，单击*存储管理* > *组*。
+. 在*组*选项卡中，选择要删除的组，然后单击*删除*。
+. 在*警告*对话框中，单击*是*确认删除。
++
+删除组不会删除与该组相关联的组操作。但是，在删除组后，这些组操作将被取消映射。
+
+

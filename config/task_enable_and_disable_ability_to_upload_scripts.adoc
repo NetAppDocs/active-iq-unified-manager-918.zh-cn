@@ -1,0 +1,41 @@
+---
+permalink: config/task_enable_and_disable_ability_to_upload_scripts.html 
+sidebar: sidebar 
+keywords: script upload, enable, disable 
+summary: 默认情况下，将脚本上传到 Unified Manager 并运行它们的功能处于启用状态。如果您的组织出于安全原因不希望允许此活动，您可以禁用此功能。 
+---
+= 在 Active IQ Unified Manager 中启用和禁用脚本上传
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+默认情况下，将脚本上传到 Unified Manager 并运行它们的功能处于启用状态。如果您的组织出于安全原因不希望允许此活动，您可以禁用此功能。
+
+.开始之前
+您必须具有应用程序管理员角色。
+
+.步骤
+. 在左侧导航窗格中，单击*常规* > *功能设置*。
+. 在*功能设置*页面中，通过选择以下选项之一禁用或启用脚本：
++
+[cols="2*"]
+|===
+| 目的 | 操作 
+
+
+ a| 
+禁用脚本
+ a| 
+在*脚本上传*面板中，将滑块按钮向左移动。
+
+
+
+ a| 
+启用脚本
+ a| 
+在*脚本上传*面板中，将滑块按钮向右移动。
+
+|===
+

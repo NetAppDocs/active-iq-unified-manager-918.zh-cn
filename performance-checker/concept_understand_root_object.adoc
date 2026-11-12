@@ -1,0 +1,24 @@
+---
+permalink: performance-checker/concept_understand_root_object.html 
+sidebar: sidebar 
+keywords: understand, root, object 
+summary: 根对象是进行其他对象比较的基线。这使您能够查看来自其他对象的数据并将其与根对象进行比较，从而提供性能数据分析，帮助您排除故障并提高对象性能。 
+---
+= 在 Active IQ Unified Manager 中使用根对象进行性能监控
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+根对象是进行其他对象比较的基线。这使您能够查看来自其他对象的数据并将其与根对象进行比较，从而提供性能数据分析，帮助您排除故障并提高对象性能。
+
+根对象名称显示在“比较”窗格的顶部。其他对象显示在根对象下方。虽然可以添加到“比较”窗格的其他对象的数量没有限制，但只允许使用一个根对象。根对象的数据会自动显示在“计数器图表”窗格的图形中。
+
+无法更改根对象；它始终设置为正在查看的对象页面。例如，如果打开 Volume1 的 Volume Performance Explorer 页面，则 Volume1 是根对象，无法更改。如果要与其他根对象进行比较，则必须单击对象的链接并打开其登录页面。
+
+[NOTE]
+====
+仅为根对象显示事件和阈值。
+
+====

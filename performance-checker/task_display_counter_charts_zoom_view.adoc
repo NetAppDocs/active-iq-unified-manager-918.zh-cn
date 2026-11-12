@@ -1,0 +1,21 @@
+---
+permalink: performance-checker/task_display_counter_charts_zoom_view.html 
+sidebar: sidebar 
+keywords: display, counter charts, zoom, view 
+summary: 计数器图表缩放视图为选定的计数器图表及其相关时间轴提供更精细的细节。这会放大计数器图表数据，使您能够更清晰地了解性能事件及其潜在原因。 
+---
+= 在 Active IQ Unified Manager 中显示计数器图表缩放视图
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+计数器图表缩放视图为选定的计数器图表及其相关时间轴提供更精细的细节。这会放大计数器图表数据，使您能够更清晰地了解性能事件及其潜在原因。
+
+您可以显示任何计数器图表的计数器图表缩放视图。
+
+.步骤
+. 单击 *缩放视图* 以在新的浏览器窗口中打开选定的图表。
+. 如果您正在查看细分图表，然后单击*缩放视图*，细分图表将显示在缩放视图中。如果您想更改视图选项，可以在缩放视图中选择*总计*。
+

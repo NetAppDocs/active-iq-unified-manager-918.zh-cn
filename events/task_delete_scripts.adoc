@@ -1,0 +1,25 @@
+---
+permalink: events/task_delete_scripts.html 
+sidebar: sidebar 
+keywords: delete, scripts 
+summary: 当脚本不再需要或有效时，您可以从 Unified Manager 中删除该脚本。 
+---
+= 删除 Active IQ Unified Manager 中的脚本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+当脚本不再需要或有效时，您可以从 Unified Manager 中删除该脚本。
+
+.开始之前
+* 您必须具有应用程序管理员或存储管理员角色。
+* 此脚本不得与警报相关联。
+
+
+.步骤
+. 在左侧导航窗格中，单击*存储管理* > *脚本*。
+. 在*脚本*页面中，选择要删除的脚本，然后单击*删除*。
+. 在*警告*对话框中，单击*是*确认删除。
+

@@ -1,0 +1,28 @@
+---
+permalink: performance-checker/concept_introduction_to_unified_manager_performance_monitoring.html 
+sidebar: sidebar 
+keywords: introduction, active iq, unified manager, performance, monitor 
+summary: Active IQ Unified Manager（以前称为 OnCommand Unified Manager）为运行 NetApp ONTAP 软件的系统提供性能监控功能和事件根本原因分析。 
+---
+= 了解 Active IQ Unified Manager 中的性能监控
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Active IQ Unified Manager（以前称为 OnCommand Unified Manager）为运行 NetApp ONTAP 软件的系统提供性能监控功能和事件根本原因分析。
+
+Unified Manager 可帮助您识别过度使用集群组件并降低集群上其他工作负载性能的工作负载。通过定义性能阈值策略，您还可以为某些性能计数器指定最大值，以便在超出阈值时生成事件。Unified Manager 会提醒您这些性能事件，以便您可以采取纠正措施，并将性能恢复到正常运行水平。您可以在 Unified Manager UI 中查看和分析事件。
+
+Unified Manager 可监控两种类型工作负载的性能：
+
+* 用户定义的工作负载
++
+这些工作负载由您在集群中创建的 FlexVol 卷和 FlexGroup 卷组成。
+
+* 系统定义的工作负载
++
+这些工作负载包括内部系统活动。
+
+

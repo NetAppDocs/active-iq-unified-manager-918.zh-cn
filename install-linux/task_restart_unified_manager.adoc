@@ -1,0 +1,47 @@
+---
+permalink: install-linux/task_restart_unified_manager.html 
+sidebar: sidebar 
+keywords: restart, unified manager 
+summary: 执行配置更改后，可能需要重新启动 Unified Manager。 
+---
+= 重新启动 Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+执行配置更改后，可能需要重新启动 Unified Manager。
+
+.开始之前
+您必须具有对安装了 Unified Manager 的 Red Hat Enterprise Linux 服务器的 root 用户访问权限。
+
+.步骤
+. 以 root 用户身份登录到要重新启动 Unified Manager 服务的服务器。
+. 按以下顺序停止 Unified Manager 服务和关联的 MySQL 服务：
++
+`systemctl stop ocieau`
+
++
+`systemctl stop ocie`
+
++
+`systemctl stop mysqld`
+
+. 按以下顺序启动 MySQL 和 Unified Manager 服务：
++
+`systemctl start mysqld`
+
++
+`systemctl start ocie`
+
++
+`systemctl start ocieau`
+
+
+
+[NOTE]
+====
+`mysqld` 是启动和停止 MySQL 服务器所需的守护程序。
+
+====

@@ -1,0 +1,33 @@
+---
+permalink: health-checker/task_view_health_and_capacity_status_of_all_san_array_clusters.html 
+sidebar: sidebar 
+keywords: view, all san array, health and capacity, clusters 
+summary: 您可以使用群集清单页面显示 All SAN Array 群集的运行状况和容量状态。 
+---
+= 在 Active IQ Unified Manager 中查看所有 SAN 阵列集群的运行状况和容量状态
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用群集清单页面显示 All SAN Array 群集的运行状况和容量状态。
+
+.开始之前
+您必须具有操作员、应用程序管理员或存储管理员角色。
+
+您可以在运行状况：所有集群视图和容量：所有集群视图中查看 All SAN Array 集群的概述信息。此外，您可以在集群/运行状况详细信息页面中查看详细信息。
+
+.步骤
+. 在左侧导航窗格中，单击 *存储* > *集群*。
+. 确保在 *运行状况：所有集群* 视图中显示 "`Personality`" 列，或使用 *显示 / 隐藏* 控件添加它。
++
+此列为您的 All SAN Array 集群显示 "`All SAN Array`"。
+
+. 查看信息。
+. 要查看有关这些群集中存储容量的信息，请选择“容量：所有群集”视图。
+. 要查看有关这些集群中的运行状况和存储容量的详细信息，请单击 All SAN Array 集群的名称。
++
+在“群集/运行状况详细信息”页面的“运行状况”、“容量”和“节点”选项卡中查看详细信息
+
+

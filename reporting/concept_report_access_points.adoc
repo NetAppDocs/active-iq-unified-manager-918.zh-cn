@@ -1,0 +1,25 @@
+---
+permalink: reporting/concept_report_access_points.html 
+sidebar: sidebar 
+keywords: access, points, generating, reports 
+summary: 您可以在 Unified Manager 中收集有关群集的信息，以便从 UI、MySQL 数据库查询和 REST API 创建报告。 
+---
+= 探索在 Active IQ Unified Manager 中访问报告功能的三种方式
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在 Unified Manager 中收集有关群集的信息，以便从 UI、MySQL 数据库查询和 REST API 创建报告。
+
+这些部分介绍了通过 UI 进行的 Unified Manager 报告和调度。
+
+您可以通过三种方式访问 Unified Manager 提供的报告功能：
+
+* 直接从 UI 中的清单页面提取数据。
+* 使用开放式数据库连接（ODBC）和 ODBC 工具访问所有可用对象。
+* 执行 Unified Manager REST API 以返回要查看的信息。
+
+
+这些部分介绍了通过 UI 进行的 Unified Manager 报告和调度。

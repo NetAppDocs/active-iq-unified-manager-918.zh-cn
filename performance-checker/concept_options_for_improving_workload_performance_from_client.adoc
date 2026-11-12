@@ -1,0 +1,20 @@
+---
+permalink: performance-checker/concept_options_for_improving_workload_performance_from_client.html 
+sidebar: sidebar 
+keywords: options, improving, workload, performance, client-side 
+summary: 您可以检查向性能事件中涉及的卷发送 I/O 的客户端工作负载（如应用程序或数据库），以确定客户端更改是否可能解决该事件。 
+---
+= 通过在 Active IQ Unified Manager 中调整客户端设置来提高工作负载性能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以检查向性能事件中涉及的卷发送 I/O 的客户端工作负载（如应用程序或数据库），以确定客户端更改是否可能解决该事件。
+
+当连接到集群上的卷的客户端增加其 I/O 请求时，集群必须增加工作负载以满足需求。如果您知道哪些客户端对集群上的特定卷有大量 I/O 请求，则可以通过调整访问卷的客户端数量或减少对卷的 I/O 量来提高集群性能。您还可以对卷所属的 QoS 策略组应用或增加限制。
+
+您可以调查客户端及其应用程序，以确定客户端发送的 I/O 是否比平时多，这可能会导致群集组件发生争用。在“事件详细信息”页面上，“系统诊断”部分显示使用争用组件的最高卷工作负载。如果您知道哪个客户端正在访问特定卷，则可以转到客户端以确定客户端硬件或应用程序是否未按预期运行或正在执行比平常更多的工作。
+
+在 MetroCluster 配置中，对本地集群上卷的写入请求会被镜像到远程集群上的卷。使本地集群上的源卷与远程集群上的目标卷保持同步，也会增加 MetroCluster 配置中两个集群的需求。通过减少对这些镜像卷的写入请求，集群可以执行更少的同步操作，从而降低对其他工作负载的性能影响。

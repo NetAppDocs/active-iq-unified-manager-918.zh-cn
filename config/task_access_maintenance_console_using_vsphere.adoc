@@ -1,0 +1,29 @@
+---
+permalink: config/task_access_maintenance_console_using_vsphere.html 
+sidebar: sidebar 
+keywords: access, maintenance, console, using, vsphere, vm console 
+summary: 如果 Unified Manager 用户界面未运行，或者需要执行用户界面中不可用的功能，则可以访问维护控制台以重新配置虚拟设备。 
+---
+= 使用 Active IQ Unified Manager 中的 vSphere VM 控制台访问维护控制台
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果 Unified Manager 用户界面未运行，或者需要执行用户界面中不可用的功能，则可以访问维护控制台以重新配置虚拟设备。
+
+.开始之前
+* 您必须是维护用户。
+* 必须打开虚拟设备电源才能访问维护控制台。
+
+
+.步骤
+. 在 vSphere 客户端中，找到 Unified Manager 虚拟设备。
+. 单击 *Console* 选项卡。
+. 在控制台窗口内单击以登录。
+. 使用您的用户名和密码登录到维护控制台。
++
+15 分钟不活动后，维护控制台会将您注销。
+
+

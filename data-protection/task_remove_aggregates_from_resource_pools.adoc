@@ -1,0 +1,39 @@
+---
+permalink: data-protection/task_remove_aggregates_from_resource_pools.html 
+sidebar: sidebar 
+keywords: remove, aggregates, resource pools 
+summary: 从现有资源池中删除聚合，例如，当您要将聚合用于其他目的时。 
+---
+= 从 Active IQ Unified Manager 的资源池中删除聚合
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以从现有资源池中删除聚合：例如，当要将聚合用于其他目的时。
+
+.开始之前
+您必须具有应用程序管理员或存储管理员角色。
+
+仅当选择资源池时才会显示资源池成员。
+
+.步骤
+. 在左侧导航窗格中，单击 *保护* > *资源池*。
+. 选择要从中删除成员聚合的资源池。
++
+成员聚合列表显示在成员窗格中。
+
+. 选择一个或多个聚合。
++
+*移除*按钮已启用。
+
+. 单击 *删除。*
++
+此时将显示警告对话框。
+
+. 单击 *Yes* 继续。
++
+选定的聚合将从“成员”窗格中删除。
+
+

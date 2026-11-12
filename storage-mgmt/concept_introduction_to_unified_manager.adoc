@@ -1,0 +1,26 @@
+---
+permalink: storage-mgmt/concept_introduction_to_unified_manager.html 
+sidebar: sidebar 
+keywords: introduction, active iq unified manager 
+summary: Active IQ Unified Manager（以前称为 OnCommand Unified Manager）使您能够从单个界面监控和管理 ONTAP 存储系统的运行状况和性能。 
+---
+= 了解Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Active IQ Unified Manager（以前称为 OnCommand Unified Manager）使您能够从单个界面监控和管理 ONTAP 存储系统的运行状况和性能。
+
+Unified Manager 具有以下功能：
+
+* 安装了 ONTAP 软件的系统的发现、监控和通知。
+* 用于显示环境容量、安全性和性能运行状况的仪表板。
+* 增强的警报、事件和阈值基础设施。
+* 显示绘制工作负载活动随时间变化的详细图表；包括 IOPS（操作）、MBps（吞吐量）、延迟（响应时间）、利用率、性能容量和缓存比率。
+* 识别过度使用集群组件的工作负载，以及性能受活动增加影响的工作负载。
+* 提供可执行的建议纠正措施以解决某些突发事件和事件，并为某些事件提供“修复”按钮，以便您可以立即解决问题。
+* 与 OnCommand Workflow Automation 集成以执行自动保护工作流程。
+* 能够直接从 Unified Manager 创建新的工作负载（如 LUN 或文件共享），并分配性能服务级别，以定义使用该工作负载访问应用程序的用户的性能和存储目标。
+

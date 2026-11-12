@@ -1,0 +1,28 @@
+---
+permalink: storage-mgmt/concept_how_discovery_process_works.html 
+sidebar: sidebar 
+keywords: cluster, discovery, process, works 
+summary: 将集群添加到 Unified Manager 后，服务器将发现集群对象并将其添加到其数据库中。了解发现过程的工作原理有助于管理组织的集群及其对象。 
+---
+= 了解 Active IQ Unified Manager 中的集群发现过程如何工作
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+将集群添加到 Unified Manager 后，服务器将发现集群对象并将其添加到其数据库中。了解发现过程的工作原理有助于管理组织的集群及其对象。
+
+收集集群配置信息的监控间隔为 15 分钟。例如，添加集群后，需要 15 分钟才能在 Unified Manager UI 中显示集群对象。对集群进行更改时，此时间范围同样适用。例如，如果向集群中的 SVM 添加两个新卷，则在下一个轮询间隔（可能长达 15 分钟）之后，您会在 UI 中看到这些新对象。
+
+下图显示了发现过程：
+
+image::../media/discovery_process_oc_6_0.gif[发现流程的运作方式]
+
+发现新集群的所有对象后，Unified Manager 将开始收集前 15 天的历史性能数据。这些统计数据通过数据连续性收集功能进行收集。此功能可在集群添加后立即为您提供超过两周的集群性能信息。数据连续性收集周期完成后，将默认每五分钟收集一次实时集群性能数据。
+
+[NOTE]
+====
+由于收集 15 天的性能数据会占用大量 CPU 资源，因此建议您错开添加新集群的时间，以便不会在过多的集群上同时运行数据连续性收集轮询。
+
+====

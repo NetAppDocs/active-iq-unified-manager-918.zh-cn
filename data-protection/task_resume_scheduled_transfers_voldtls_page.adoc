@@ -1,0 +1,35 @@
+---
+permalink: data-protection/task_resume_scheduled_transfers_voldtls_page.html 
+sidebar: sidebar 
+keywords: resume schedule, transfers, quiesce, relationship,  volume, health details page 
+summary: 暂停关系以停止发生计划传输后，您可以使用“卷/运行状况”详细信息页面上的“恢复”重新启用计划传输，以保护源卷或主卷上的数据。传输将在下一个计划传输间隔从检查点（如果存在）恢复。 
+---
+= 从 Active IQ Unified Manager 的"卷/运行状况详细信息"页面恢复已静默关系上的传输
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在停顿关系以停止发生计划传输后，您可以使用卷/运行状况详细信息页面上的*恢复*重新启用计划传输，以便保护源卷或主卷上的数据。在下一个计划传输间隔，传输将从检查点（如果存在）恢复。
+
+.开始之前
+* 您必须具有应用程序管理员或存储管理员角色。
+* 您必须已设置 Workflow Automation。
+
+
+.步骤
+. 在*卷/运行状况*详细信息页面的*保护*选项卡中，右键单击拓扑视图中要恢复的已停顿关系。
++
+或者，从*操作* > *关系*菜单中选择*恢复*。
+
+. 在 *Resume* 对话框中，单击 *Continue*。
++
+将返回到卷/运行状况详细信息页面。
+
+. 要查看相关作业任务并跟踪其进度，请单击显示在 *Volume / Health* 详细信息页面顶部的作业链接。
+. 在*作业*详细信息页面中，单击*刷新*以更新与保护配置作业关联的任务列表和任务详细信息，并确定作业何时完成。
++
+作业完成后，数据传输将在下一计划传输间隔恢复。
+
+

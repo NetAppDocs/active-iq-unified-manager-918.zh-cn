@@ -1,0 +1,59 @@
+---
+permalink: performance-checker/concept_understand_um_recommendations_to_tier_data_to_cloud.html 
+sidebar: sidebar 
+keywords: understand, unified manager, recommendations, tier, data, cloud 
+summary: '"性能"页面上的"所有卷"视图显示非活动（冷）数据大小，并标识将从分层到 FabricPool 云层中受益的卷。' 
+---
+= 查看 Active IQ Unified Manager 关于将数据分层到云的建议
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+“性能：所有卷”视图显示与存储在卷上的非活动（冷）用户数据大小相关的信息。在某些情况下，Unified Manager 会识别出通过将非活动数据分层到启用了 FabricPool 的聚合的云层（云提供商或 StorageGRID）而受益的某些卷。
+
+[NOTE]
+====
+FabricPool 在 ONTAP 9.2 中引入，因此，如果您使用的是 9.2 之前的 ONTAP 软件版本，则 Unified Manager 对数据分层的建议需要升级您的 ONTAP 软件。此外，ONTAP 9.4 中引入了 `*auto*` 分层策略，ONTAP 9.6 中引入了 `*all*` 分层策略，因此，如果建议使用自动分层策略，则必须升级到 ONTAP 9.4 或更高版本。
+
+====
+“性能：所有卷”视图上的以下三个字段提供了有关是否可以通过将非活动数据移动到云层来提高存储系统的磁盘利用率并节省性能层上的空间的信息。
+
+* *分层策略*
++
+分层策略确定卷上的数据是否仍保留在性能层上，或者某些数据是否从性能层移动到云层。
+
++
+此字段中的值指示在卷上设置的分层策略，即使卷当前不在 FabricPool 聚合上。分层策略仅在卷位于 FabricPool 聚合上时生效。
+
+* *冷数据*
++
+冷数据显示存储在卷上的非活动（冷）用户数据的大小。
+
++
+仅当使用 ONTAP 9.4 或更高版本的软件时，此处才会显示一个值，因为它要求部署该卷的聚合将 `*inactive data reporting parameter*`设置为 `*enabled*`，并且已达到最小冷却天数阈值（对于使用 `*snapshot-only*`或 `*auto*`分层策略的卷）。否则，该值将列为“`N/A`”。
+
+* *云推荐*
++
+在捕获了有关卷上的数据活动的足够信息后，Unified Manager 可能会确定不需要执行任何操作，或者可以通过将非活动数据分层到云层来节省性能层上的空间。
+
+
+
+[NOTE]
+====
+Cold Data 字段每 15 分钟更新一次，但在卷上执行冷数据分析时，Cloud Recommendation 字段每 7 天更新一次。因此，冷数据的确切数量可能因字段而异。Cloud Recommendation 字段显示运行分析的日期。
+
+====
+启用“非活动数据报告”时，“冷数据”字段将显示非活动数据的确切数量。如果没有非活动数据报告功能，Unified Manager 将使用性能统计信息来确定卷上的数据是否处于非活动状态。在这种情况下，非活动数据的数量不会显示在“冷数据”字段中，但当您将光标悬停在单词 *Tier* 上以查看云建议时，它会显示出来。
+
+您将看到的云推荐包括：
+
+* *学习*。未收集足够的数据以提供建议。
+* *层*。分析已确定该卷包含非活动（冷）数据，并且您应将该卷配置为将该数据移动到云层。在某些情况下，这可能需要您先将卷移动到启用了 FabricPool 的聚合。在其他情况下，如果卷已在 FabricPool 聚合中，则只需更改分层策略。
+* *无操作*。卷的非活动数据很少，卷已设置为 FabricPool 聚合上的 "`auto`" 分层策略，或者卷是数据保护卷。当卷处于脱机状态或正在 MetroCluster 配置中使用时，也会显示此值。
+
+
+要移动卷，或更改卷分层策略或聚合非活动数据报告设置，请使用 ONTAP System Manager、ONTAP CLI 命令或这些工具的组合。
+
+如果您使用应用程序管理员或存储管理员角色登录到 Unified Manager，当您将光标悬停在单词 *Tier* 上时，*Configure Volume* 链接在云建议中可用。单击此按钮可在 System Manager 中打开“卷”页面以进行建议的更改。

@@ -1,0 +1,30 @@
+---
+permalink: data-protection/reference_advanced_destination_settings_dialog_box.html 
+sidebar: sidebar 
+keywords: advanced, destination, settings, dialog box 
+summary: 您可以使用“高级目标设置”对话框在目标卷上启用空间保证设置。当源上禁用了空间保证，但您希望在目标上启用它时，您可以选择高级设置。SnapMirror 关系中的重复数据删除、压缩和自动增长设置继承自源卷，且无法更改。 
+---
+= 使用 Active IQ Unified Manager 中的 Advanced Destination Settings 对话框
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用“高级目标设置”对话框在目标卷上启用空间保证设置。当源上禁用了空间保证，但您希望在目标上启用它时，您可以选择高级设置。SnapMirror 关系中的重复数据删除、压缩和自动增长设置继承自源卷，且无法更改。
+
+
+
+[[space-guarantee]]
+== 空间保证
+
+确保在目标卷上分配足够的空间，以便数据传输始终成功。空间保障设置可为以下选项之一：
+
+* 文件
+* 卷
+* 无
+
+
+例如，您可能有一个 200 GB 的卷，其中包含总共 50 GB 的文件；但是，这些文件仅包含 10 GB 的数据。无论源上的内容如何，卷保证都会将 200 GB 分配给目标卷。文件保证分配 50 GB，以确保在目标上为源文件保留足够的空间；在这种情况下选择 *无* 意味着在目标上仅为源上的文件数据所使用的实际空间分配 10 GB。
+
+默认情况下，空间保证设置为 Volume。

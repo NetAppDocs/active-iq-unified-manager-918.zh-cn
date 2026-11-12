@@ -1,0 +1,47 @@
+---
+permalink: config/task_create_database_user.html 
+sidebar: sidebar 
+keywords: create, database, user 
+summary: 若要支持 Workflow Automation 和 Unified Manager 之间的连接或访问数据库视图，必须首先在 Unified Manager Web UI 中创建具有“集成架构”或“报告架构”角色的数据库用户。 
+---
+= 在 Active IQ Unified Manager 中创建数据库用户
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要支持 Workflow Automation 和 Unified Manager 之间的连接或访问数据库视图，必须首先在 Unified Manager Web UI 中创建具有“集成架构”或“报告架构”角色的数据库用户。
+
+.开始之前
+您必须具有应用程序管理员角色。
+
+数据库用户提供与 Workflow Automation 的集成以及对特定于报表的数据库视图的访问。数据库用户无权访问 Unified Manager Web UI 或维护控制台，并且无法执行 API 调用。
+
+.步骤
+. 在左侧导航窗格中，单击 *常规* > *用户*。
+. 在用户页面中，单击*添加*。
+. 在添加用户对话框中，在*类型*下拉列表中选择*数据库用户*。
+. 键入此数据库用户的名称和密码。
+. 在*角色*下拉列表中，选择相应的角色。
++
+[cols="2*"]
+|===
+| 如果您是…… | 选择此角色 
+
+
+ a| 
+将 Unified Manager 与 Workflow Automation 连接
+ a| 
+集成架构
+
+
+
+ a| 
+访问报告和其他数据库视图
+ a| 
+报告架构
+
+|===
+. 单击 *Add*。
+

@@ -1,0 +1,20 @@
+---
+permalink: performance-checker/concept_how_um_determines_performance_impact_for_incident.html 
+sidebar: sidebar 
+keywords: unified manager, determines, performance, impact, event 
+summary: Unified Manager 使用工作负载的活动、利用率、写入吞吐量、集群组件使用率或 I/O 延迟（响应时间）的偏差来确定对工作负载性能的影响程度。这些信息决定了每个工作负载在事件中的角色以及它们在事件详细信息页面上的排名方式。 
+---
+= 了解 Active IQ Unified Manager 如何确定事件的性能影响
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 使用工作负载的活动、利用率、写入吞吐量、集群组件使用率或 I/O 延迟（响应时间）的偏差来确定对工作负载性能的影响程度。这些信息决定了每个工作负载在事件中的角色以及它们在事件详细信息页面上的排名方式。
+
+Unified Manager 将工作负载的最后分析值与值的预期范围（延迟预测）进行比较。上次分析的值与预期值范围之间的差异标识了性能受事件影响最大的工作负载。
+
+例如，假设集群包含两个工作负载：工作负载 A 和工作负载 B。工作负载 A 的延迟预测为每次操作 5-10 毫秒（ms/op），其实际延迟通常约为 7 ms/op。工作负载 B 的延迟预测为 10-20 ms/op，其实际延迟通常约为 15 ms/op。这两个工作负载都在其延迟预测范围内。由于集群上的竞争，两个工作负载的延迟都增加到 40 ms/op，跨越了动态性能阈值（即延迟预测的上限），并触发了事件。工作负载 A 的延迟偏差（从预期值到高于性能阈值的值）约为 33 ms/op，工作负载 B 的偏差约为 25 ms/op。两个工作负载的延迟均飙升至 40 ms/op，但工作负载 A 对性能的影响更大，因为它的延迟偏差更高，达到了 33 ms/op。
+
+在“事件详细信息”页面的“系统诊断”部分，您可以按集群组件的活动、利用率或吞吐量偏差对工作负载进行排序。您还可以按延迟对工作负载进行排序。当您选择排序选项时，Unified Manager 会分析自检测到事件以来活动、利用率、吞吐量或延迟与预期值的偏差，以确定工作负载的排序顺序。对于延迟，红点（image:../media/opm_incident_icon_png.gif["Performance Manager 警告图标"]）表示受害工作负载超出了性能阈值，以及随后对延迟产生的影响。每个红点表示更高水平的延迟偏差，这有助于您识别延迟受事件影响最大的受害工作负载。

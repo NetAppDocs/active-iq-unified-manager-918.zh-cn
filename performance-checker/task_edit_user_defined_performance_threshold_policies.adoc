@@ -1,0 +1,38 @@
+---
+permalink: performance-checker/task_edit_user_defined_performance_threshold_policies.html 
+sidebar: sidebar 
+keywords: edit, user-defined, performance, threshold, policies 
+summary: 您可以编辑现有性能阈值策略的阈值设置。如果您发现在某些阈值条件下收到的警报太多或太少，这可能会很有用。 
+---
+= 在 Active IQ Unified Manager 中编辑用户定义的性能阈值策略
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以编辑现有性能阈值策略的阈值设置。如果您发现在某些阈值条件下收到的警报太多或太少，这可能会很有用。
+
+.开始之前
+您必须具有应用程序管理员角色。
+
+对于现有的阈值策略，无法更改策略名称或受监控的存储对象类型。
+
+.步骤
+. 在左侧导航窗格中，选择*事件阈值* > *性能*。
++
+将显示性能阈值页面。
+
+. 选择要更改的阈值策略，然后单击*编辑*。
++
+此时将显示编辑性能阈值策略页面。
+
+. 对阈值策略进行更改，然后单击*保存*。
++
+此时将返回“性能阈值”页面。
+
+
+
+保存后，更改将立即更新到使用该策略的所有存储对象。
+
+根据您对策略所做更改的类型，您可能需要在"警报设置"页面中查看使用该策略的对象所配置的警报设置。

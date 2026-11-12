@@ -1,0 +1,60 @@
+---
+permalink: install-linux/task_create_custom_user_home_directory_and_umadmin.html 
+sidebar: sidebar 
+keywords: create, custom, user, home, directory, umadmin, password, prior, installation 
+summary: 在安装 Unified Manager 之前，您可以创建自定义主目录并定义自己的 umadmin 用户密码。此任务是可选的，但某些站点可能需要这种灵活性来覆盖 Unified Manager 安装默认设置。 
+---
+= 在安装 Active IQ Unified Manager 之前，创建自定义用户主目录和 umadmin 密码
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在安装 Unified Manager 之前，您可以创建自定义主目录并定义自己的 umadmin 用户密码。此任务是可选的，但某些站点可能需要这种灵活性来覆盖 Unified Manager 安装默认设置。
+
+.开始之前
+* 系统必须满足 link:concept_virtual_infrastructure_or_hardware_system_requirements.html["硬件系统要求"] 中所述的要求。
+* 您必须能够以 root 用户身份登录到 Red Hat Enterprise Linux 系统。
+
+
+默认的 Unified Manager 安装执行以下任务：
+
+* 创建 umadmin 用户，并将 `/home/umadmin`作为主目录。
+* 为 umadmin 用户分配默认密码“`admin`”。
+
+
+由于某些安装环境会限制对 `/home`的访问，因此安装失败。您必须在其他位置创建主目录。此外，某些站点可能具有有关密码复杂性的规则，或者要求密码由本地管理员设置，而不是由安装程序设置。
+
+如果您的安装环境要求覆盖这些安装默认设置，请按照以下步骤创建自定义主目录并定义 umadmin 用户的密码。
+
+在安装之前定义此信息时，安装脚本将发现这些设置并使用定义的值，而不是使用安装默认设置。
+
+此外，默认的 Unified Manager 安装会将 umadmin 用户包含在 sudoers 文件（(`ocum_sudoers` 和 `ocie_sudoers`）的 `/etc/sudoers.d/` 目录中。如果由于安全策略或某些安全监控工具而从环境中删除此内容，则必须将其重新添加回来。您需要保留 sudoers 配置，因为某些 Unified Manager 操作需要这些 sudo 权限。
+
+环境中的安全策略不得限制 Unified Manager 维护用户的 sudo 权限。如果权限受限，某些 Unified Manager 操作可能会失败。验证成功安装后以 umadmin 用户身份登录时是否能够运行以下 sudo 命令。
+
+`sudo systemctl  status ocie`
+
+此命令应返回 ocie 服务的适当状态，没有任何错误。
+
+.步骤
+. 以 root 用户身份登录到服务器。
+. 创建名为 "`maintenance`" 的 umadmin 组帐户：
++
+`groupadd maintenance`
+
+. 在您选择的主目录下的维护组中创建用户帐户“`umadmin`”：
++
+`adduser --home <home_directory\> -g maintenance umadmin`
+
+. 定义 umadmin 密码：
++
+`passwd umadmin`
+
++
+系统提示您输入 umadmin 用户的新密码字符串。
+
+
+
+安装 Unified Manager 后，您必须指定 umadmin 用户登录 shell。

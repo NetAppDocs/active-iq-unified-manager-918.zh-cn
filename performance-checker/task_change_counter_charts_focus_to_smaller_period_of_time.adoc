@@ -1,0 +1,33 @@
+---
+permalink: performance-checker/task_change_counter_charts_focus_to_smaller_period_of_time.html 
+sidebar: sidebar 
+keywords: change, counter, charts, focus, shorter, period, time 
+summary: 您可以使用鼠标缩小时间范围，以便在“计数器图表”窗格或“计数器图表缩放视图”窗口中专注于特定时间段。这使您能够看到性能数据、事件和阈值时间轴的任何部分的更精细和微观视图。 
+---
+= 在 Active IQ Unified Manager 中将计数器图表焦点更改为较短时间段
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用鼠标缩小时间范围，以便在“计数器图表”窗格或“计数器图表缩放视图”窗口中专注于特定时间段。这使您能够看到性能数据、事件和阈值时间轴的任何部分的更精细和微观视图。
+
+.开始之前
+光标必须已更改为放大镜，以指示此功能处于活动状态。
+
+[NOTE]
+====
+使用此功能时，这会更改时间轴以显示与更精细的显示相对应的值，*时间范围* 选择器上的时间和日期范围不会从图表的原始值发生更改。
+
+====
+.步骤
+. 要放大到特定的时间段，请使用放大镜单击并拖动鼠标，以突出显示要详细查看的区域。
++
+所选时间段的计数器值填充计数器图表。
+
+. 要返回到*时间范围*选择器中设置的原始时间段，请单击*重置图表缩放*按钮。
++
+计数器图表以其原始状态显示。
+
+

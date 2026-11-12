@@ -1,0 +1,28 @@
+---
+permalink: performance-checker/concept_monitor_cluster_performance_navigation.html 
+sidebar: sidebar 
+keywords: monitor, cluster, performance, navigation 
+summary: 您可以监控由 Unified Manager 管理的所有集群的性能。监控您的集群可为您提供集群和对象性能的概述，并包括性能事件监控。您可以在高级别查看性能和事件，也可以进一步调查集群和对象性能以及性能事件的任何详细信息。 
+---
+= 监控 Active IQ Unified Manager 中的集群性能导航
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以监控由 Unified Manager 管理的所有集群的性能。监控您的集群可为您提供集群和对象性能的概述，并包括性能事件监控。您可以在高级别查看性能和事件，也可以进一步调查集群和对象性能以及性能事件的任何详细信息。
+
+这是许多可能的集群性能导航路径的一个示例：
+
+. 在左侧导航窗格中，单击*存储* > *聚合*。
+. 要查看这些聚合中的性能信息，请选择“性能：所有聚合”视图。
+. 确定要调查的聚合，然后单击该聚合名称以导航到“聚合/性能资源管理器”页面。
+. （可选）在“查看和比较”菜单中选择要与此聚合进行比较的其他对象，然后将其中一个对象添加到比较窗格。
++
+两个对象的统计数据将显示在计数器图表中进行比较。
+
+. 在资源管理器页面右侧的“比较”窗格中，单击其中一个计数器图表中的*缩放视图*可查看该聚合的性能历史记录的详细信息。
+
+
+image::../media/monitor_cluster_performance.png[显示如何调查特定聚合的 UI 屏幕截图。]

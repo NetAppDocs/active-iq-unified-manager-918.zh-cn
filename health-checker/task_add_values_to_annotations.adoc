@@ -1,0 +1,29 @@
+---
+permalink: health-checker/task_add_values_to_annotations.html 
+sidebar: sidebar 
+keywords: add, values, annotations 
+summary: 您可以向批注添加值，然后将存储对象与特定的批注名称-值对关联起来。向批注添加值可帮助您更有效地管理存储对象。 
+---
+= 在 Active IQ Unified Manager 中向注释添加值
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以向批注添加值，然后将存储对象与特定的批注名称-值对关联起来。向批注添加值可帮助您更有效地管理存储对象。
+
+.开始之前
+您必须具有应用程序管理员或存储管理员角色。
+
+您不能将值添加到预定义的注释。
+
+.步骤
+. 在左侧导航窗格中，单击 *存储管理* > *注释*。
+. 在*注释*页面中，选择要向其添加值的注释，然后在*值*部分中单击*添加*。
+. 在*添加批注值*对话框中，指定批注值。
++
+指定的值对于选定的标注必须是唯一的。
+
+. 单击 *Add*。
+

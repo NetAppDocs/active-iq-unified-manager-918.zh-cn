@@ -1,0 +1,27 @@
+---
+permalink: health-checker/task_configure_global_qtree_health_threshold_values.html 
+sidebar: sidebar 
+keywords: configure, global, qtree, health, threshold values 
+summary: 您可以为所有 qtree 配置全局运行状况阈值，以跟踪任何阈值违规情况。系统会针对运行状况阈值违规生成相应事件，您可以根据这些事件采取预防措施。您可以根据适用于所有受监控 qtree 的阈值最佳实践设置来配置全局值。 
+---
+= 在 Active IQ Unified Manager 中配置全局 qtree 运行状况阈值
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以为所有 qtree 配置全局运行状况阈值，以跟踪任何阈值违规情况。系统会针对运行状况阈值违规生成相应事件，您可以根据这些事件采取预防措施。您可以根据适用于所有受监控 qtree 的阈值最佳实践设置来配置全局值。
+
+.开始之前
+您必须具有应用程序管理员或存储管理员角色。
+
+阈值选项具有用于更好地监控的默认值，但是，您可以更改这些值以满足您的环境要求。
+
+仅当在 qtree 上设置了 Qtree 配额或默认配额时，才会为 qtree 生成事件。如果在用户配额或组配额中定义的空间超过阈值，则不会生成事件。
+
+.步骤
+. 在左侧导航窗格中，单击*事件阈值* > *Qtree*。
+. 配置适当的容量阈值。
+. 单击 *Save*。
+

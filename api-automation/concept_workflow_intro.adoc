@@ -1,0 +1,30 @@
+---
+permalink: api-automation/concept_workflow_intro.html 
+sidebar: sidebar 
+keywords: common, workflows, storage, management 
+summary: 常见工作流为客户端应用程序开发人员提供了客户端应用程序如何调用 Active IQ Unified Manager API 以执行常见存储管理功能的示例。本节包含其中一些示例工作流。 
+---
+= 了解 Active IQ Unified Manager 中用于存储管理的常见 API 工作流
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+常见工作流为客户端应用程序开发人员提供了客户端应用程序如何调用 Active IQ Unified Manager API 以执行常见存储管理功能的示例。本节包含其中一些示例工作流。
+
+工作流描述了一些常用的存储管理用例以及供您使用的示例代码。每个任务都使用由一个或多个 API 调用组成的工作流流程进行描述。
+
+
+
+[[understand-the-api-calls-used-in-the-workflows]]
+== 了解工作流程中使用的 API 调用
+
+您可以从 Unified Manager 实例查看在线文档页面，其中包含每个 REST API 调用的详细信息。本文档不重复在线文档的详细信息。本文档中工作流示例中使用的每个 API 调用仅包含在文档页面上查找该调用所需的信息。找到特定 API 调用后，您可以查看该调用的完整详细信息，包括输入参数、输出格式、HTTP 状态代码和请求处理类型。
+
+工作流程中每个 API 调用都包含以下信息，以帮助在文档页面上查找该调用：
+
+* 类别：API 调用在文档页面上按功能相关的区域或类别进行组织。要查找特定的 API 调用，请滚动到页面底部，然后单击适用的 API 类别。
+* HTTP 谓词（调用）：HTTP 谓词标识对资源执行的操作。每个 API 调用都通过单个 HTTP 谓词执行。
+* 路径：路径确定在执行调用时应用操作的特定资源。路径字符串附加到核心 URL 以形成标识资源的完整 URL。
+

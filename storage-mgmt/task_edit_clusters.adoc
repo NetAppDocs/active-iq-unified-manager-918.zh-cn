@@ -1,0 +1,37 @@
+---
+permalink: storage-mgmt/task_edit_clusters.html 
+sidebar: sidebar 
+keywords: edit, clusters 
+summary: 您可以使用“编辑集群”对话框修改现有集群的设置，例如主机名或 IP 地址、用户名、密码和端口。 
+---
+= 在 Active IQ Unified Manager 中编辑集群设置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用“编辑集群”对话框修改现有集群的设置，例如主机名或 IP 地址、用户名、密码和端口。
+
+.开始之前
+您必须具有应用程序管理员角色或存储管理员角色。
+
+[NOTE]
+====
+从 Unified Manager 9.7 开始，只能使用 HTTPS 添加群集。
+
+====
+.步骤
+. 在左侧导航窗格中，单击*存储管理* > *集群设置*。
+. 在*集群设置*页面上，选择要编辑的集群，然后单击*编辑*。
+. 在 *编辑集群* 对话框中，根据需要修改值。+ 如果您已修改添加到 Unified Manager 的集群的详细信息，则可以根据 ONTAP 版本查看双向 TLS 通信的证书详细信息。有关 ONTAP 版本的详细信息，请参阅 link:../storage-mgmt/task_add_clusters.html["用于相互 TLS 通信的证书"]。+ 您可以通过单击 *证书详细信息* 查看证书详细信息。如果证书已过期，请单击 *重新生成* 按钮以整合新证书。
+. 单击*提交*。
+. 在 Authorize Host 对话框中，单击 *View Certificate* 可查看集群的证书信息。
+. 单击 *Yes*。
+
+
+*相关信息*
+
+link:../config/task_add_users.html["添加用户"]
+
+link:../health-checker/task_view_cluster_list_and_details.html["查看集群列表和详细信息"]

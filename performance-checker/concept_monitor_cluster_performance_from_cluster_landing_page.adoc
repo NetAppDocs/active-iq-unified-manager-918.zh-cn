@@ -1,0 +1,14 @@
+---
+permalink: performance-checker/concept_monitor_cluster_performance_from_cluster_landing_page.html 
+sidebar: sidebar 
+keywords: monitor, cluster, performance, performance, cluster, landing, page 
+summary: “性能群集登录”页面显示由 Unified Manager 实例监控的选定群集的高级性能状态。此页面使您能够评估特定群集的整体性能，并快速记录、定位或分配以解决所发现的任何特定于群集的事件。 
+---
+= 从 Active IQ Unified Manager 的 Performance Cluster Landing 页面监控集群性能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+“性能群集登录”页面显示由 Unified Manager 实例监控的选定群集的高级性能状态。此页面使您能够评估特定群集的整体性能，并快速记录、定位或分配以解决所发现的任何特定于群集的事件。

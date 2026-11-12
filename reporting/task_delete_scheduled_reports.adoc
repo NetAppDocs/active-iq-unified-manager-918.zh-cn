@@ -1,0 +1,43 @@
+---
+permalink: reporting/task_delete_scheduled_reports.html 
+sidebar: sidebar 
+keywords: delete, reports 
+summary: 计划报告后，您可以从“报告计划”页面中将其删除。 
+---
+= 删除 Active IQ Unified Manager 中的计划报告
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+计划报告后，您可以从“报告计划”页面中将其删除。
+
+.开始之前
+* 您必须具有应用程序管理员或存储管理员角色。
+
+
+.步骤
+. 在左侧导航窗格中，单击*存储管理* > *报告计划*。
++
+image::../media/scheduled_reports_2.gif[显示计划报告的 UI 屏幕截图。]
+
++
+[NOTE]
+====
+如果您拥有适当的权限，则可以删除系统中的任何报告及其计划。
+
+====
+. 单击要删除的计划的“更多”图标 image:../media/more_icon.gif[""]。
+. 单击 *Delete*。
+. 请确认您的决定。
++
+计划报告将从列表中删除，并且将不再按照设置的计划生成和分发。
+
++
+[NOTE]
+====
+如果从清单页面删除自定义视图，则使用该视图的任何自定义 Excel 文件或计划报表也将被删除。
+
+====
+

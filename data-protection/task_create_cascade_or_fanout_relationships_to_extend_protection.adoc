@@ -1,0 +1,39 @@
+---
+permalink: data-protection/task_create_cascade_or_fanout_relationships_to_extend_protection.html 
+sidebar: sidebar 
+keywords: create, cascade fanout, relationships, extend protection, existing protection relationship 
+summary: 您可以通过从源卷创建扇出或从现有关系的目标卷创建级联来扩展现有关系的保护。当您需要将数据从一个站点复制到多个站点或通过创建更多备份来提供额外保护时，可以执行此操作。 
+---
+= 使用 Active IQ Unified Manager 中的级联或扇出关系扩展保护
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以通过从源卷创建扇出或从现有关系的目标卷创建级联来扩展现有关系的保护。当您需要将数据从一个站点复制到多个站点或通过创建更多备份来提供额外保护时，可以执行此操作。
+
+您可以使用一致性组将保护扩展到卷，一致性组是容纳多个卷的容器，因此您可以将所有卷作为一个实体进行管理。您可以在 Unified Manager 的“关系”页面中查看 SnapMirror 活动同步一致性组和同步一致性组关系。
+
+.开始之前
+* 您必须具有应用程序管理员或存储管理员角色。
+* 您必须已设置 Workflow Automation。
+
+
+.步骤
+. 单击*保护* > *关系*。或者，您可以从卷详细信息页面查看关系。
+. 从*卷关系*页面中，选择要从中扩展保护的 SnapMirror 关系。
+. 在操作栏上，单击*扩展保护*。
+. 在菜单中，选择*从源*或*从目标*，具体取决于您是从源创建扇出关系还是从目标创建级联关系。
+. 根据您要创建的保护关系类型，选择 *With SnapMirror* 或 *With SnapVault*。
++
+此时将显示*配置保护*对话框。
+
++
+[NOTE]
+====
+这可以从统一关系 / 卷关系和卷 / 运行状况详细信息页面实现。
+
+====
+. 按照*配置保护*对话框中的指示填写信息。
+

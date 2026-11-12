@@ -1,0 +1,38 @@
+---
+permalink: reporting/task_create_report_to_identify_space_with_thin_provisioning_disabled.html 
+sidebar: sidebar 
+keywords: volume, provision, disk, volume, thin-provisioning 
+summary: 当卷未精简配置时，它会占用创建卷时定义的磁盘上的全部空间量。识别已禁用精简配置的卷有助于确定是否要在某些卷上启用精简配置。 
+---
+= 识别 Active IQ Unified Manager 中已禁用精简配置的卷
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+当卷未精简配置时，它会占用创建卷时定义的磁盘上的全部空间量。识别已禁用精简配置的卷有助于确定是否要在某些卷上启用精简配置。
+
+.开始之前
+* 您必须具有应用程序管理员或存储管理员角色。
+
+
+按照以下步骤创建以正确顺序显示所需列的自定义视图，然后计划为该视图生成报告。
+
+.步骤
+. 在左侧导航窗格中，单击 *Storage* > *Volumes*。
+. 在 View 菜单中，选择 *Capacity* > *All Volumes*。
+. 选择*显示/隐藏*以删除报告中不希望出现的任何列。
+. 将 "`已用数据 %`" 和 "`已精简配置`" 列拖放到 "`可用数据容量`" 列附近。
+. 单击筛选器图标，添加以下筛选器，*精简配置*为*否*，然后单击*应用筛选器*。
+. 单击 "\`已用数据 %\`" 列顶端对结果进行排序，使百分比最高的卷显示在列表顶端。
+. 使用能够反映视图显示内容的名称保存视图，例如“`Vols no thin provisioning`”。
+. 单击清单页面上的 *Scheduled Reports* 按钮。
+. 单击*添加计划*以将新行添加到*报告计划*页面，以便您可以定义新报告的计划特性。
+. 输入报告计划的名称并填写其他报告字段，然后单击该行末尾的复选标记（image:../media/blue_check.gif[""]）。
++
+此时将立即发送一个测试报告。之后，此报告将以指定频率生成并通过电子邮件发送给列出的收件人。
+
+
+
+根据报告中显示的结果，您可能需要在某些卷上启用精简配置。

@@ -1,0 +1,42 @@
+---
+permalink: storage-mgmt/reference_data_mirroring_status_definitions.html 
+sidebar: sidebar 
+keywords: data mirror, status, definitions 
+summary: MetroCluster 配置提供了数据镜像功能，以及在整个站点不可用时启动故障转移的额外功能。MetroCluster 配置中集群之间的数据镜像状态可以是 Normal（正常）或 Mirroring Unavailable（镜像不可用）。了解该状态使您能够有效地管理 MetroCluster 配置。 
+---
+= 了解 Active IQ Unified Manager 中基于 FC 的 MetroCluster 数据镜像
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster over FC 配置提供数据镜像，以及在整个站点不可用时启动故障转移的额外功能。在 MetroCluster over FC 配置中，集群之间的数据镜像状态可以是 Normal（正常）或 Mirroring Unavailable（镜像不可用）。了解这些状态有助于您有效地管理 MetroCluster 配置。
+
+|===
+| 数据镜像状态 | 问题描述 | 显示的图标 
+
+
+ a| 
+正常
+ a| 
+MetroCluster 配置中的群集之间的数据镜像正常。
+ a| 
+image:../media/metrocluster_connectivity_optimal.gif["metrocluster connectivity optimal 图标"]
+
+
+
+ a| 
+镜像不可用
+ a| 
+由于切换，MetroCluster 配置中的集群之间的数据镜像不可用。例如，当配对集群因灾难而停机时，或者出于测试目的进行计划内切换时。
+ a| 
+切换时出错：
+
+image::../media/metrocluster_connectivity_down.gif[metrocluster connectivity down 图标]
+
+切换成功：
+
+image::../media/metrocluster_connectivity_failover.gif[MetroCluster 连接故障转移图标]
+
+|===

@@ -1,0 +1,151 @@
+---
+permalink: health-checker/reference_svm_compliance_categories.html 
+sidebar: sidebar 
+keywords: storage vm, compliance, svm compliance, categories 
+summary: '此表描述了 Unified Manager 评估的 Storage Virtual Machine (SVM) 安全合规性标准、NetApp 建议，以及该参数是否影响对 SVM 合规或不合规的整体判定。' 
+---
+= 了解 Active IQ Unified Manager 中的 Storage VM 合规性类别
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此表描述了 Unified Manager 评估的 Storage Virtual Machine (SVM) 安全合规性标准、NetApp 建议，以及该参数是否影响对 SVM 合规或不合规的整体判定。
+
+[cols="4*"]
+|===
+| 参数 | 问题描述 | 建议 | 影响 SVM 合规性 
+
+
+ a| 
+审核日志
+ a| 
+指示是否启用或禁用审核日志记录。
+ a| 
+已启用
+ a| 
+是
+
+
+
+ a| 
+不安全 SSH 设置
+ a| 
+指示 SSH 是否使用不安全的密码，例如以 `cbc*`开头的密码。
+ a| 
+否
+ a| 
+是
+
+
+
+ a| 
+登录横幅
+ a| 
+指示用户访问系统上的 SVM 时，登录横幅是否已启用或禁用。
+ a| 
+已启用
+ a| 
+是
+
+
+
+ a| 
+LDAP 加密
+ a| 
+指示 LDAP 加密是否已启用或禁用。
+ a| 
+已启用
+ a| 
+否
+
+
+
+ a| 
+NTLM 身份验证
+ a| 
+指示 NTLM 身份验证是否已启用或禁用。
+ a| 
+已启用
+ a| 
+否
+
+
+
+ a| 
+LDAP 负载签名
+ a| 
+指示是启用还是禁用 LDAP 负载签名。
+ a| 
+已启用
+ a| 
+否
+
+
+
+ a| 
+CHAP 设置
+ a| 
+指示 CHAP 是启用还是禁用。
+ a| 
+已启用
+ a| 
+否
+
+
+
+ a| 
+Kerberos V5
+ a| 
+指示是启用还是禁用 Kerberos V5 身份验证。
+ a| 
+已启用
+ a| 
+否
+
+
+
+ a| 
+NIS 身份验证
+ a| 
+指示是否配置了使用 NIS 身份验证。
+ a| 
+已禁用
+ a| 
+否
+
+
+
+ a| 
+FPolicy 状态活动
+ a| 
+指示是否已创建 FPolicy。
+ a| 
+是
+ a| 
+否
+
+
+
+ a| 
+已启用 SMB 加密
+ a| 
+指示是否未启用 SMB - 签名和密封。
+ a| 
+是
+ a| 
+否
+
+
+
+ a| 
+已启用 SMB 签名
+ a| 
+指示是否未启用 SMB - 签名。
+ a| 
+是
+ a| 
+否
+
+|===

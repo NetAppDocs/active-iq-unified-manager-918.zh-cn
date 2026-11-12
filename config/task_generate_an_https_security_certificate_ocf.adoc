@@ -1,0 +1,65 @@
+---
+permalink: config/task_generate_an_https_security_certificate_ocf.html 
+sidebar: sidebar 
+keywords: generate, https, security, certificate 
+summary: 首次安装 Active IQ Unified Manager 时，将安装默认 HTTPS 证书。您可能会生成一个新的 HTTPS 安全证书来替换现有证书。 
+---
+= 在 Active IQ Unified Manager 中生成 HTTPS 安全证书
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+首次安装 Active IQ Unified Manager 时，将安装默认 HTTPS 证书。您可能会生成一个新的 HTTPS 安全证书来替换现有证书。
+
+.开始之前
+您必须具有应用程序管理员角色。
+
+重新生成证书的原因可能有多种，例如希望为可分辨名称 （DN） 设置更好的值、希望使用更大的密钥大小、更长的有效期，或者当前证书已过期。
+
+如果无权访问 Unified Manager Web UI，则可以使用维护控制台使用相同的值重新生成 HTTPS 证书。在重新生成证书时，您可以定义密钥大小和密钥的有效期。如果使用维护控制台中的 `Reset Server Certificate`选项，则会创建一个有效期为 397 天的新 HTTPS 证书。此证书将具有大小为 2048 位的 RSA 密钥。
+
+.步骤
+. 在左侧导航窗格中，单击 *常规* > *HTTPS 证书*。
+. 单击 *重新生成 HTTPS 证书*。
++
+此时将显示重新生成 HTTPS 证书对话框。
+
+. 根据您要生成证书的方式选择以下选项之一：
++
+[cols="2*"]
+|===
+| 目的 | 操作 
+
+
+ a| 
+使用当前值重新生成证书
+ a| 
+单击*使用当前证书属性重新生成*选项。
+
+
+
+ a| 
+使用其他值生成证书
+ a| 
+单击*更新当前证书属性*选项。
+
+如果不输入新值，Common Name 和 Alternative Names 字段将使用现有证书中的值。“`Common Name`”应设置为主机的 FQDN。其他字段不需要值，但如果希望在证书中填充这些值，则可以输入值，例如 EMAIL、COMPANY、DEPARTMENT、City、State 和 Country 的值。您还可以从可用的 KEY SIZE（密钥算法为“`RSA`”。）和 VALIDITY PERIOD 中进行选择。
+
+[NOTE]
+====
+** 密钥大小的允许值为 `2048`、 `3072`和 `4096`。
+** 有效期为最少 1 天至最多 36500 天。
++
+即使允许 36500 天的有效期，也建议您使用不超过 397 天或 13 个月的有效期。因为如果您选择了超过 397 天的有效期，并计划导出此证书的 CSR 并由知名的 CA 签名，则 CA 退还给您的签名证书的有效期将缩短至 397 天。
+
+** 如果要从证书的 Alternative Names 字段中删除本地标识信息，可以选中“排除本地标识信息（例如 localhost）”复选框。选中此复选框时，Alternative Names 字段中将仅使用您在该字段中输入的内容。如果留空，生成的证书将完全没有 Alternative Names 字段。
+
+
+====
+|===
+. 单击*是*以重新生成证书。
+. 重新启动 Unified Manager 服务器以使新证书生效。
+. 通过查看 HTTPS 证书，可验证新证书的信息。
+

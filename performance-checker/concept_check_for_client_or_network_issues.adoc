@@ -1,0 +1,18 @@
+---
+permalink: performance-checker/concept_check_for_client_or_network_issues.html 
+sidebar: sidebar 
+keywords: check, client, network, issues 
+summary: 当连接到集群上的卷的客户端增加其 I/O 请求时，集群必须更加努力地满足需求。对集群需求的增加可能会使组件处于竞争状态，增加使用它的工作负载的延迟，并触发 Unified Manager 中的事件。 
+---
+= 了解客户端或网络问题如何影响 Active IQ Unified Manager 中的性能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+当连接到集群上的卷的客户端增加其 I/O 请求时，集群必须更加努力地满足需求。对集群需求的增加可能会使组件处于竞争状态，增加使用它的工作负载的延迟，并触发 Unified Manager 中的事件。
+
+在“事件详细信息”页面上，“系统诊断”部分显示使用争用组件的最高卷工作负载。如果您知道哪个客户端正在访问特定卷，则可以转到客户端以确定客户端硬件或应用程序是否未按预期运行或正在执行比平常更多的工作。您可能需要联系您的客户端管理员或应用程序供应商寻求帮助。
+
+您可以检查网络基础架构，以确定是否存在硬件问题、瓶颈或竞争性工作负载，这可能会导致集群与连接的客户端之间的 I/O 请求执行速度低于预期。您可能需要联系网络管理员以获取帮助。

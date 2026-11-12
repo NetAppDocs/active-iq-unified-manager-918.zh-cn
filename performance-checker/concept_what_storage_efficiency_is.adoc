@@ -1,0 +1,24 @@
+---
+permalink: performance-checker/concept_what_storage_efficiency_is.html 
+sidebar: sidebar 
+keywords: storage, efficiency 
+summary: 存储效率使您能够以最低的成本存储最大数量的数据，并在消耗更少空间的同时适应快速的数据增长。NetApp 存储效率策略基于其核心 ONTAP 操作系统和 Write Anywhere File Layout（WAFL）文件系统提供的存储虚拟化和统一存储的内置基础。 
+---
+= 了解 Active IQ Unified Manager 中的存储效率
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+存储效率使您能够以最低的成本存储最大数量的数据，并在消耗更少空间的同时适应快速的数据增长。NetApp 存储效率策略基于其核心 ONTAP 操作系统和 Write Anywhere File Layout（WAFL）文件系统提供的存储虚拟化和统一存储的内置基础。
+
+存储效率包括使用精简配置、Snapshot 副本、重复数据删除、数据压缩、FlexClone、使用 SnapVault 和卷 SnapMirror 的精简复制、RAID-DP、Flash Cache、Flash Pool 聚合以及支持 FabricPool 的聚合等技术，这些技术有助于提高存储利用率并降低存储成本。
+
+统一存储架构允许您在单个平台上高效地整合存储区域网络（SAN）、网络连接存储（NAS）和辅助存储。
+
+高密度磁盘驱动器，例如配置在 Flash Pool 聚合中或结合 Flash Cache 和 RAID-DP 技术使用的串行高级技术附件（SATA）驱动器，可在不影响性能和弹性的情况下提高效率。
+
+启用 FabricPool 的聚合包括作为本地性能层的全 SSD 聚合或 HDD 聚合（从 ONTAP 9.8 开始）以及您指定为云层的对象存储。配置 FabricPool 可帮助您根据数据是否被频繁访问来管理数据应存储在哪个存储层（本地层或云层）。
+
+精简配置、快照副本、重复数据删除、数据压缩、使用 SnapVault 和卷 SnapMirror 的精简复制以及 FlexClone 等技术可提供更好的节省效果。您可以单独或结合使用这些技术，以实现最大的存储效率。

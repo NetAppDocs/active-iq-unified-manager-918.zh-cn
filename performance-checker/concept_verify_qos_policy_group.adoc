@@ -1,0 +1,26 @@
+---
+permalink: performance-checker/concept_verify_qos_policy_group.html 
+sidebar: sidebar 
+keywords: verify, volumes, qos, policy, group, unusually, high, activity 
+summary: '查看活动更改最多的服务质量 (QoS) 策略组中的工作负载，以确定哪个工作负载导致了事件。' 
+---
+= 分析 Active IQ Unified Manager 中 QoS 策略组内的高活动量卷
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以查看活动变化最大的服务质量（QoS）策略组中的工作负载，以确定是否有多个工作负载导致了该事件。您还可以查看其他工作负载是否仍然超出设置的吞吐量限制，或者它们是否已回到其预期的活动范围内。
+
+在事件详细信息页面的系统诊断部分，您可以按活动的峰值偏差对工作负载进行排序，以便在表格顶端显示活动变化最大的工作负载。这些工作负载可能是活动超过设置限制并可能导致事件的“`bullies`”。
+
+您可以导航到每个卷工作负载的工作负载分析页面，以查看其 IOPS 活动。如果工作负载具有非常高的操作活动周期，则可能是导致该事件的原因。您可以更改工作负载的策略组设置，也可以将工作负载移至另一个策略组。
+
+可以使用 ONTAP System Manager 或 ONTAP CLI 命令来管理策略组，如下所示：
+
+* 创建策略组。
+* 在策略组中添加或删除工作负载。
+* 在策略组之间移动工作负载。
+* 更改策略组的吞吐量限制。
+

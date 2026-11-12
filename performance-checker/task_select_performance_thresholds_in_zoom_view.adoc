@@ -1,0 +1,25 @@
+---
+permalink: performance-checker/task_select_performance_thresholds_in_zoom_view.html 
+sidebar: sidebar 
+keywords: select, performance, thresholds, counter, charts, zoom, view 
+summary: 在计数器图表缩放视图中应用阈值可提供性能阈值事件发生的详细视图。这使您能够应用或删除阈值，并立即查看结果，这在决定下一步是否应该进行故障排除时会有所帮助。 
+---
+= 在 Active IQ Unified Manager 的计数器图表缩放视图中选择性能阈值
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在计数器图表缩放视图中应用阈值可提供性能阈值事件发生的详细视图。这使您能够应用或删除阈值，并立即查看结果，这在决定下一步是否应该进行故障排除时会有所帮助。
+
+在计数器图表缩放视图中选择阈值可以查看有关性能阈值事件的精确数据。您可以应用计数器图表缩放视图 *策略* 区域下显示的任何阈值。
+
+一次只能对计数器图表缩放视图中的对象应用一个策略。
+
+.步骤
+. 选择或取消选择与策略关联的image:../media/eye_icon.gif["眼睛图标"]。
++
+所选阈值应用于计数器图表缩放视图。关键阈值显示为红线；警告阈值显示为黄线。
+
+

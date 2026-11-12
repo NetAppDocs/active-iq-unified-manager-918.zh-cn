@@ -1,0 +1,259 @@
+---
+permalink: api-automation/concept_data_center_apis.html 
+sidebar: sidebar 
+keywords: manage, storage, objects, data center 
+summary: 数据中心类别下的 REST API 使您能够管理数据中心中的存储对象，例如集群、节点、聚合、存储 VM、卷、LUN、文件共享和命名空间。这些 API 可用于查询对象的配置，而其中一些 API 可让您执行添加、删除或修改这些对象的操作。 
+---
+= 使用 Active IQ Unified Manager 中的 API 管理数据中心中的存储对象
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ `datacenter` 类别下的 REST API 使您能够管理数据中心中的存储对象，例如集群、节点、聚合、存储 VM、卷、LUN、文件共享和命名空间。这些 API 可用于查询对象的配置，而其中一些 API 可让您执行添加、删除或修改这些对象的操作。
+
+这些 API 大多数是 GET 调用，可通过过滤、排序和分页支持提供跨集群聚合。在运行这些 API 时，它们会从数据库中返回数据。因此，新创建的对象需要在下一个采集周期中被发现才能出现在响应中。
+
+如果要查询特定对象的详细信息，则需要输入该对象的唯一 ID 才能查看其详细信息。例如，有关存储对象的指标和分析信息，请参阅 link:concept_metrics_apis.html["查看性能指标"]。
+
+[listing]
+----
+curl -X GET "https://<hostname>/api/datacenter/cluster/clusters/4c6bf721-2e3f-11e9-a3e2-00a0985badbb" -H "accept: application/json" -H "Authorization: Basic <Base64EncodedCredentials>"
+----
+[NOTE]
+====
+CURL 命令、示例、请求和对 API 的响应可在您的 Swagger API 界面上找到。您可以按照 Swagger 上指示的特定参数对结果进行筛选和排序。这些 API 使您能够筛选特定存储对象（如集群、卷或存储 VM）的结果。
+
+====
+
+
+[[apis-for-storage-objects-in-your-data-center]]
+== 数据中心存储对象的 API
+
+[cols="3*"]
+|===
+| HTTP 谓词 | 路径 | 问题描述 
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/cluster/clusters`
+
+`/datacenter/cluster/clusters/\{key}`
+ a| 
+您可以使用此方法查看整个数据中心的 ONTAP 集群详细信息。该 API 返回信息，例如集群的 IPv4 或 IPv6 地址、有关节点的信息，例如节点健康状况、性能容量和高可用性（HA）对，并指示集群是否为 All SAN Array。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/cluster/licensing/licenses /datacenter/cluster/licensing/licenses/\{key}`
+ a| 
+返回安装在数据中心集群上的许可证的详细信息。您可以根据所需条件筛选结果。将返回许可证密钥、集群密钥、到期日期和许可证范围等信息。您可以输入许可证密钥以检索特定许可证的详细信息。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/cluster/nodes`
+
+`/datacenter/cluster/nodes/\{key}`
+ a| 
+您可以使用此方法查看数据中心中节点的详细信息。您可以查看有关该节点的集群、节点运行状况、性能容量和高可用性（HA）对的信息。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/protocols/cifs/shares`
+
+`/datacenter/protocols/cifs/shares/\{key}`
+ a| 
+您可以使用此方法查看数据中心中 CIFS 共享的详细信息。除了集群、SVM 和卷详细信息外，还会返回有关访问控制列表（ACL）的信息。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/protocols/nfs/export-policies`
+
+`/datacenter/protocols/nfs/export-policies/\{key}`
+ a| 
+您可以使用此方法查看受支持的 NFS 服务的导出策略详细信息。
+
+您可以查询集群或存储虚拟机的导出策略，并重用导出策略密钥来配置 NFS 文件共享。有关在工作负载上分配和重用导出策略的详细信息，请参见“`配置 CIFS 和 NFS 文件共享`”。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/storage/aggregates`
+
+`/datacenter/storage/aggregates/\{key}`
+ a| 
+您可以使用此方法查看数据中心内的聚合集合或特定聚合，以便在其上调配工作负载或进行监控。将返回集群和节点详细信息、已用性能容量、可用和已用空间以及存储效率等信息。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/storage/luns`
+
+`/datacenter/storage/luns/\{key}`
+ a| 
+您可以使用此方法查看整个数据中心中的 LUN 集合。您可以查看有关 LUN 的信息，例如群集和 SVM 详细信息、QoS 策略和 igroup。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/storage/qos/policies`
+
+`/datacenter/storage/qos/policies/\{key}`
+ a| 
+您可以使用此方法查看适用于数据中心内存储对象的所有 QoS 策略的详细信息。将返回集群和 SVM 详细信息、固定或自适应策略详细信息以及适用于该策略的对象数量等信息。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/storage/qtrees`
+
+`/datacenter/storage/qtrees/\{key}`
+ a| 
+您可以使用此方法查看整个数据中心内所有 FlexVol 卷或 FlexGroup 卷的 qtree 详细信息。将返回集群和 SVM 详细信息、FlexVol 卷以及导出策略等信息。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/storage/volumes`
+
+`/datacenter/storage/volumes/{key}`
+ a| 
+您可以使用此方法查看数据中心中的卷集合。返回有关卷的信息，例如 SVM 和集群详细信息、QoS 和导出策略，以及卷是读写类型、数据保护类型还是负载共享类型。
+
+对于 FlexVol 和 FlexClone 卷，您可以查看有关相应聚合的信息。对于 FlexGroup 卷，查询将返回组成聚合的列表。
+
+
+
+ a| 
+`GET`
+
+`POST`
+
+`DELETE`
+
+`PATCH`
+ a| 
+`/datacenter/protocols/san/igroups`
+
+`/datacenter/protocols/san/igroups/{key}`
+ a| 
+您可以分配授权访问特定 LUN 目标的启动程序组（igroup）。如果存在现有的 igroup，您可以分配它。您还可以创建 igroup 并将其分配给 LUN。
+
+您可以使用这些方法分别查询、创建、删除和修改 igroup。
+
+注意事项：
+
+* `POST:` 创建 igroup 时，您可以指定要分配访问权限的存储虚拟机。
+* `DELETE:` 要删除特定的 igroup，需要提供 igroup 键作为输入参数。如果已将 igroup 分配给 LUN，则无法删除该 igroup。
+* `PATCH:` 您需要提供 igroup 键作为输入参数来修改特定的 igroup。您还必须输入要更新的属性及其值。
+
+
+
+
+ a| 
+`GET`
+
+`POST`
+
+`DELETE`
+
+`PATCH`
+ a| 
+`/datacenter/svm/svms`
+
+`/datacenter/svm/svms/\{key}`
+ a| 
+您可以使用这些方法来查看、创建、删除和修改 Storage Virtual Machines（存储 VM）。
+
+* `POST:` 您必须输入要创建的存储 VM 对象作为输入参数。您可以创建自定义存储 VM，然后为其分配所需的属性。
+* `DELETE:` 您需要提供存储 VM 密钥才能删除特定存储 VM。
+* `PATCH:` 您需要提供 storage VM 密钥才能修改特定的 storage VM。您还需要输入要更新的属性及其值。
+
+
+|===
+
+NOTE: 注意事项：
+
+如果在环境中启用了基于 SLO 的工作负载配置，在创建存储 VM 时，请确保它支持在其上配置 LUN 和文件共享所需的所有协议，例如 CIFS 或 SMB、NFS、FCP 和 iSCSI。如果存储 VM 不支持所需的服务，则配置工作流可能会失败。建议在存储 VM 上也启用相应类型工作负载的服务。
+
+如果您在环境中启用了基于 SLO 的工作负载调配，则无法删除在其上调配了存储工作负载的存储虚拟机。当您删除配置了 CIFS 或 SMB 服务器的存储虚拟机时，此 API 还会删除 CIFS 或 SMB 服务器以及本地 Active Directory 配置。但是，CIFS 或 SMB 服务器名称仍然位于 Active Directory 配置中，您必须从 Active Directory 服务器手动将其删除。
+
+
+
+[[apis-for-network-elements-in-your-data-center]]
+== 数据中心网络元素的 API
+
+数据中心类别中的以下 API 检索有关环境中端口和网络接口的信息，特别是 FC 端口、FC 接口、以太网端口和 IP 接口。
+
+[cols="3*"]
+|===
+| HTTP 谓词 | 路径 | 问题描述 
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/network/ethernet/ports`
+
+`/datacenter/network/ethernet/ports/{key}`
+ a| 
+检索数据中心环境中所有以太网端口的相关信息。以端口密钥作为输入参数，您可以查看该特定端口的信息。系统将检索相关信息，例如集群详细信息、广播域、端口详细信息（如状态、速度和类型），以及端口是否已启用。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/network/fc/interfaces`
+
+`/datacenter/network/fc/interfaces/{key}`
+ a| 
+您可以使用此方法查看数据中心环境中 FC 接口的详细信息。使用接口键作为输入参数，您可以查看该特定接口的信息。将检索集群详细信息、主节点详细信息和主端口详细信息等信息。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/network/fc/ports`
+
+`/datacenter/network/fc/ports/{key}`
+ a| 
+检索有关数据中心环境中节点所使用的所有 FC 端口的信息。使用端口键作为输入参数，您可以查看该特定端口的信息。将检索集群详细信息、端口描述、支持的协议和端口状态等信息。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/network/ip/interfaces`
+
+`/datacenter/network/ip/interfaces/{key}`
+ a| 
+您可以使用此方法查看数据中心环境中 IP 接口的详细信息。将接口键作为输入参数，您可以查看该特定接口的信息。将检索集群详细信息、IPspace 详细信息、主节点详细信息以及是否启用故障转移等信息。
+
+|===

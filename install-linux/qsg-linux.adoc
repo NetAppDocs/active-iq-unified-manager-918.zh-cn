@@ -1,0 +1,80 @@
+---
+permalink: install-linux/qsg-linux.html 
+sidebar: sidebar 
+keywords: quick start guide, getting started, QSG, Linux QSG, RHEL QSG, quick installation 
+summary: Linux 平台上的 Unified Manager 快速入门指南。 
+---
+= 在 Linux 上开始使用 Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以下载安装包并在物理或虚拟 Red Hat Enterprise Linux 平台上安装 Unified Manager。
+
+
+
+[[system-requirements]]
+== 系统要求
+
+* 操作系统：Red Hat Enterprise Linux 8.x 和 9.4 版，基于 x86_64 架构，使用操作系统安装程序的 *软件选择* 选项中的“带 GUI 的服务器”基本环境安装
+* 内存：12 GB，CPU：总共 9572 MHz
+* 可用磁盘空间： `/opt/netapp/data` 目录中有 100 GB 的磁盘空间，根分区中有 50 GB 的磁盘空间。对于单独挂载的  `/opt` 和  `/var/log` 目录，请确保  `/opt` 有 15 GB、 `/var/log` 有 16 GB，以及  `/tmp` 有 10 GB 的可用空间。
+
+
+有关详细系统要求以及在安全站点中安装产品的信息，请参见 link:../install-linux/concept_requirements_for_install_unified_manager.html["安装 Unified Manager 的要求"] 和 link:http://mysupport.netapp.com/matrix["互操作性表"]。
+
+
+
+[[install-active-iq-unified-manager]]
+== 安装 Active IQ Unified Manager
+
+
+
+[[download-the-installer]]
+=== 下载安装程序
+
+. 下载 `ActiveIQUnifiedManager-<version>.zip`安装包以及代码签名证书(`.pem`）和数字签名(`.sig`）。
+. 在已下载安装文件的目录中，运行：
++
+`# unzip ActiveIQUnifiedManager-<version>.zip`
+
+
+
+
+
+[[verify-integrity]]
+=== 验证完整性
+
+运行以下命令以验证安装程序包的完整性：
+
+* 运行  `openssl x509 -pubkey -noout -in AIQUM-RHEL-CLIENT-INTER-ROOT.pem > <public_key_file_name>` 以从代码签名证书创建包含公钥的文件。
+* 运行 `openssl dgst -sha256 -verify <public_key_file_name> -signature <signature_file_name> ActiveIQUnifiedManager-<version>.zip`以验证安装程序包上的签名。
+
+
+
+
+[[verify-repository-configuration]]
+=== 验证存储库配置
+
+配置 Red Hat Enterprise Linux 存储库的过程因站点而异。您可以使用安装包中包含的  `pre_install_check.sh` 脚本来验证操作系统的配置。如果您的系统已连接到 Internet，您将自动收到设置 Red Hat Enterprise Linux 存储库的说明。
+
+`# sudo ./pre_install_check.sh`
+
+
+
+[[install-unified-manager]]
+=== 安装 Unified Manager
+
+Unified Manager 使用  `yum` 实用程序安装软件和任何相关软件。由于 Red Hat Enterprise Linux 的映像各不相同，因此安装的程序包取决于映像中存在的软件。该  `yum` 实用程序确定要安装的依赖软件包。如果需要有关依赖软件包的更多信息，请参见 link:../install-linux/reference_red_hat_software_and_installation_requirements.html["Linux 软件和安装要求"]。
+
+要安装 Unified Manager，请以 root 用户身份或使用 `sudo`，从解压安装文件的目录中运行以下命令：
+
+`# yum install netapp-um<version>.x86_64.rpm`
+
+或
+
+`% sudo yum install netapp-um<version>.x86_64.rpm`
+
+在安装结束时，将显示连接到 Unified Manager Web UI 的信息。如果您无法连接到 Web UI，请参阅随软件提供的 `README`文件，了解有关端口 443 限制的更多信息。

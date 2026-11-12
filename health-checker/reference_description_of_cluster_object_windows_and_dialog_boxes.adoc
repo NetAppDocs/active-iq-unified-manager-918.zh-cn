@@ -1,0 +1,22 @@
+---
+permalink: health-checker/reference_description_of_cluster_object_windows_and_dialog_boxes.html 
+sidebar: sidebar 
+keywords: description, cluster, object, windows, dialog boxes 
+summary: 您可以从相应的存储对象页面查看所有群集和群集对象。您还可以从相应的存储对象详细信息页面查看详细信息。您现在可以从清单的以下存储和保护部分启动 System Manager 用户界面。 
+---
+= 了解 Active IQ Unified Manager 中的集群对象窗口和对话框
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以从相应的存储对象页面查看所有群集和群集对象。您还可以从相应的存储对象详细信息页面查看详细信息。您现在可以从清单的以下存储和保护部分启动 System Manager 用户界面。
+
+* 群集清单、群集运行状况和群集性能页面
+* 聚合清单、聚合运行状况和聚合性能页面
+* Volume Inventory、Volume Health 和 Volume Performance 页面
+* 节点清单和节点性能页面
+* StorageVM 清单、StorageVM 运行状况和 StorageVM 性能页面
+* 保护关系页面
+

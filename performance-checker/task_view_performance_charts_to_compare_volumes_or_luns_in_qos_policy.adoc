@@ -1,0 +1,36 @@
+---
+permalink: performance-checker/task_view_performance_charts_to_compare_volumes_or_luns_in_qos_policy.html 
+sidebar: sidebar 
+keywords: view, performance, charts, compare, volumes, luns, same, qos, policy, group 
+summary: 您可以查看相同 QoS 策略组中的卷和 LUN，然后在单个 IOPS、MB/s 或 IOPS/TB 图表上比较性能，以识别任何问题。 
+---
+= 比较 Active IQ Unified Manager 中同一 QoS 策略组内的卷或 LUN
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以查看相同 QoS 策略组中的卷和 LUN，然后在单个 IOPS、MB/s 或 IOPS/TB 图表上比较性能，以识别任何问题。
+
+比较同一个 QoS 策略组中卷的性能的步骤如下所示。查看 LUN 此信息的步骤类似。
+
+.步骤
+. 在左侧导航窗格中，单击 *Storage* > *Volumes*。
++
+默认情况下会显示运行状况：所有卷视图。
+
+. 在视图菜单中，选择*性能：QoS 策略组中的卷*。
+. 单击要查看的卷的名称。
++
+此时将显示该卷的“性能资源管理器”页面。
+
+. 在 View and Compare 菜单中，选择 *Volumes in same QoS Policy Group*。
++
+下表列出了共享相同 QoS 策略的其他卷。
+
+. 单击 *添加* 按钮将这些卷添加到图表中，以便您可以比较图表中所有选定卷的 IOPS、MB/s、IOPS/TB 和其他性能计数器。
++
+您可以更改时间范围，以查看不同时间间隔（而非默认的 72 小时）内的性能。
+
+

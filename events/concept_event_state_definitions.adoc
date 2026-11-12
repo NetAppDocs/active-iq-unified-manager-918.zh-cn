@@ -1,0 +1,53 @@
+---
+permalink: events/concept_event_state_definitions.html 
+sidebar: sidebar 
+keywords: event, state, definitions 
+summary: 事件的状态可帮助您确定是否需要采取适当的纠正措施。事件可以是“新建”、“已确认”、“已解决”或“已过时”。请注意，“新建”和“已确认”事件均被视为活动事件。 
+---
+= Active IQ Unified Manager 中的事件状态
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+事件的状态可帮助您确定是否需要采取适当的纠正措施。事件可以是“新建”、“已确认”、“已解决”或“已过时”。请注意，“新建”和“已确认”事件均被视为活动事件。
+
+事件状态如下：
+
+* *新增*
++
+新事件的状态。
+
+* *已确认*
++
+已确认事件时的状态。
+
+* *已解决*
++
+事件被标记为已解决时的状态。
+
+* *已废弃*
++
+事件自动更正或事件原因不再有效时的状态。
+
++
+[NOTE]
+====
+您无法确认或解决废弃的事件。
+
+====
+
+
+
+
+[[example-of-different-states-of-an-event]]
+== 事件不同状态的示例
+
+以下示例说明了手动和自动事件状态更改。
+
+当触发 Cluster Not Reachable 事件时，事件状态为 New。当您确认该事件时，事件状态将变为 Acknowledged。在采取适当的纠正措施后，您必须将该事件标记为已解决。然后，事件状态将变为 Resolved。
+
+如果由于停电而生成了 Cluster Not Reachable 事件，则在恢复供电后，群集将在没有任何管理员干预的情况下开始运行。因此，Cluster Not Reachable 事件不再有效，并且事件状态将在下一监控周期更改为 Obsolete。
+
+当事件处于“已过时”或“已解决”状态时，Unified Manager 会发送警报。警报的电子邮件主题行和电子邮件内容提供了有关事件状态的信息。SNMP 陷阱还包含有关事件状态的信息。

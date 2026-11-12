@@ -1,0 +1,40 @@
+---
+permalink: storage-mgmt/task_create_rules_to_generate_email_addresses.html 
+sidebar: sidebar 
+keywords: create, rules, generate, email, addresses 
+summary: 您可以创建规则，以根据与集群、存储虚拟机（SVM）、卷、qtree、用户或用户组相关联的用户配额指定电子邮件地址。当发生配额违规时，会向指定的电子邮件地址发送通知。 
+---
+= 创建规则以在 Active IQ Unified Manager 中生成电子邮件地址
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以创建规则，以根据与集群、存储虚拟机（SVM）、卷、qtree、用户或用户组相关联的用户配额指定电子邮件地址。当发生配额违规时，会向指定的电子邮件地址发送通知。
+
+.开始之前
+* 您必须具有应用程序管理员或存储管理员角色。
+* 您必须已阅读“生成用户和组配额电子邮件地址规则”页面上的指南。
+
+
+您必须定义配额电子邮件地址的规则，并按要执行的顺序输入它们。例如，如果要使用电子邮件地址 abc@xyz.com 接收有关 abc 配额违规的通知，并为所有其他组使用电子邮件地址 dl-$GROUP@$DOMAIN，则必须按以下顺序列出规则：
+
+* if ( $USER == 'abc' ) then abc@xyz.com
+* if ( $GROUP == * ) then dl-$GROUP@$DOMAIN
+
+
+如果未满足指定规则的任何条件，则使用默认规则：
+
+if ( $USER_OR_GROUP == * ) then $USER_OR_GROUP@$DOMAIN
+
+.步骤
+. 在左侧导航窗格中，单击 *常规* > *配额电子邮件规则*。
+. 根据您的条件输入规则。
+. 单击*验证*以验证规则的语法。
++
+如果规则的语法不正确，则显示错误消息。您必须更正语法并再次单击*验证*。
+
+. 单击 *Save*。
+. 确认您创建的电子邮件地址显示在 Storage *VM / Health* 详细信息页面的 *User and Group Quotas*（用户和组配额）选项卡中。
+

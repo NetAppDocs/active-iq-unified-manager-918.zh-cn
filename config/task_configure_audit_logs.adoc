@@ -1,0 +1,24 @@
+---
+permalink: config/task_configure_audit_logs.html 
+sidebar: sidebar 
+keywords: configure, audit logs 
+summary: 您可以使用“审核日志”部分中的“配置”按钮为审核日志文件配置滚动策略，并为审核日志启用远程日志记录。 
+---
+= 配置 Active IQ Unified Manager 审核日志
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用审核日志部分中的*配置*按钮来配置审核日志文件的滚动策略，并启用审核日志的远程日志记录。
+
+您可以根据要在系统中存储的数据量和频率，设置 *MAX FILE SIZE* 和 *AUDIT LOG RETENTION DAYS* 的值。*TOTAL AUDIT LOG SIZE* 字段中的值是系统中存在的审核日志数据的总大小。滚动策略由 *AUDIT LOG RETENTION DAYS*、*MAX FILE SIZE* 和 *TOTAL AUDIT LOG SIZE* 字段中的值决定。当审核日志备份的大小达到 *TOTAL AUDIT LOG SIZE* 中配置的值时，将删除最先归档的文件。这意味着最旧的文件将被删除。但该文件条目在数据库中仍然可用，并被标记为“`Rollover Delete`”。*AUDIT LOG RETENTION DAYS* 值用于指定保留审核日志文件的天数。任何早于此字段中设置值的文件都将被滚动。
+
+.步骤
+. 单击*审核日志* > > *配置*。
+. 在*最大文件大小*、*总审计日志大小*和*审计日志保留天数*中输入值。
++
+要启用远程日志记录，请选择*启用远程日志记录*。
+
+

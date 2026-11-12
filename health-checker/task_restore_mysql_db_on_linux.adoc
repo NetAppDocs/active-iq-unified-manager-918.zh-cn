@@ -1,0 +1,55 @@
+---
+permalink: health-checker/task_restore_mysql_db_on_linux.html 
+sidebar: sidebar 
+keywords: restore, linux system, mysql, database, backup 
+summary: 如果发生数据丢失或数据损坏，您可以将 Unified Manager 恢复到以前的稳定状态，并将数据丢失降到最低。您可以使用 Unified Manager 维护控制台将 Unified Manager 数据库恢复到本地或远程 Red Hat Enterprise Linux 系统。 
+---
+= 在 Linux 系统上的 Active IQ Unified Manager 中还原 MySQL 数据库备份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果发生数据丢失或数据损坏，您可以将 Unified Manager 恢复到以前的稳定状态，并将数据丢失降到最低。您可以使用 Unified Manager 维护控制台将 Unified Manager 数据库恢复到本地或远程 Red Hat Enterprise Linux 系统。
+
+.开始之前
+* 您必须具有安装了 Unified Manager 的 Linux 主机的 root 用户凭据。
+* 您必须拥有已授权登录到 Unified Manager 服务器维护控制台的用户 ID 和密码。
+* 必须已将 Unified Manager 备份文件和数据库存储库目录的内容复制到要执行还原操作的系统上。
++
+建议将备份文件复制到默认目录 /`data/ocum`-backup。数据库存储库文件必须复制到 /`database-dumps-repo` 目录下的 /`ocum-backup` 子目录中。
+
+* 备份文件必须为 `.7z`类型。
+
+
+还原功能特定于平台和版本。您只能在相同版本的 Unified Manager 上还原 Unified Manager 备份。您可以将 Linux 备份文件或虚拟设备备份文件还原到 Red Hat Enterprise Linux 系统。
+
+[TIP]
+====
+如果备份文件夹名称包含空格，则必须将绝对路径或相对路径包含在双引号中。
+
+====
+.步骤
+. 如果要对新服务器执行还原，在安装 Unified Manager 后，请不要在安装完成后启动 UI 或配置任何集群、用户或身份验证设置。在还原过程中，备份文件会填充这些信息。
+. 使用 Secure Shell，连接到 Unified Manager 系统的 IP 地址或完全限定域名。
+. 使用维护用户 (umadmin) 名称和密码登录到此系统。
+. 输入命令 `maintenance_console`并按 Enter 键。
+. 在维护控制台*主菜单*中，输入*备份还原*选项的编号。
+. 输入 *Restore MySQL Backup* 的编号。
+. 出现提示时，输入备份文件的绝对路径。
++
+[listing]
+----
+Bundle to restore from: /data/ocum-backup/UM_9.8.N151113.1348_backup_rhel_02-20-2020-04-45.7z
+----
++
+还原操作完成后，您可以登录到 Unified Manager。
+
+
+
+恢复备份后，如果 OnCommand Workflow Automation 服务器无法正常工作，请执行以下步骤：
+
+. 在 Workflow Automation 服务器上，更改 Unified Manager 服务器的 IP 地址以指向最新的计算机。
+. 如果在步骤 1 中采集失败，请在 Unified Manager 服务器上重置数据库密码。
+

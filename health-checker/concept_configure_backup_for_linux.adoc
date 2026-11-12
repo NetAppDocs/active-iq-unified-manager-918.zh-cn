@@ -1,0 +1,109 @@
+---
+permalink: health-checker/concept_configure_backup_for_linux.html 
+sidebar: sidebar 
+keywords: netapp, snapshot copy, copies, linux, operate, system, configure, backup 
+summary: 如果您的 Active IQ Unified Manager 安装在 Linux 计算机上，则可以决定使用 NetApp 快照配置备份和还原。 
+---
+= 在 Active IQ Unified Manager 中配置 Linux 备份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您的 Active IQ Unified Manager 安装在 Linux 计算机上，则可以决定使用 NetApp 快照配置备份和还原。
+
+快照副本只需很少的时间，通常只需几分钟，而 Unified Manager 数据库的锁定时间也很短，因此您的安装几乎不会中断。映像占用的存储空间极小，性能开销可以忽略不计，因为它仅记录自上次创建快照副本以来对文件的更改。由于快照是在 ONTAP 集群上创建的，因此如果需要，您可以利用其他 NetApp 功能（例如 SnapMirror）来创建二级保护。
+
+在开始备份操作之前，Unified Manager 会执行完整性检查以验证目标系统是否可用。
+
+[NOTE]
+====
+* 您只能在相同版本的 Active IQ Unified Manager 上还原 Snapshot 副本。
++
+例如，如果在 Unified Manager 9.18 上创建了备份，则只能在 Unified Manager 9.18 系统上恢复备份。
+
+* 如果快照配置有任何更改，可能会导致快照无效。
+
+
+====
+
+
+[[configure-snapshot-copy-location-in-active-iq-unified-manager]]
+== 在 Active IQ Unified Manager 中配置 Snapshot 副本位置
+
+您可以使用 ONTAP System Manager 或使用 ONTAP CLI 在您的一个 ONTAP 集群上配置用于存储 Snapshot 副本的卷。
+
+.开始之前
+集群、存储 VM 和卷必须满足以下要求：
+
+* 集群要求：
++
+** 必须安装 ONTAP 9.3 或更高版本
+** 它应在地理位置上靠近 Unified Manager 服务器
+** 它可以由 Unified Manager 监控，但不是必需的
+
+
+* Storage VM 要求：
++
+** 必须将名称开关和名称映射设置为使用 "`files`"
+** 为与客户端用户对应而创建的本地用户
+** 确保已选择所有读/写访问权限
+** 确保在导出策略中将超级用户访问权限设置为 "`any`"
+** Linux 版 NetApp Snapshot 的 NFS
+** 必须在 NFS 服务器上启用 NFSv4，并在客户端和存储 VM 上指定 NFSv4 ID 域
+** 卷大小应至少为 Unified Manager/opt/netapp/data 目录大小的两倍
++
+使用命令 du -sh /opt/netapp/data/ 检查当前大小。
+
+
+
+* 卷要求：
++
+** 卷大小应至少为 Unified Manager /opt/netapp/data 目录大小的两倍
+** 必须将安全模式设置为 UNIX
+** 必须禁用本地快照策略
+** 应启用卷自动调整大小
+** 应将性能服务级别设置为具有高 IOPS 和低延迟的策略，例如 "`Extreme`"
+
+
+
+
+有关创建 NFS 卷的详细步骤，请参见 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_configure_NFSv4_in_Cluster-Mode["如何在 ONTAP 9 中配置 NFSv4"]和 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-nfsv3-cg/home.html["ONTAP 9 NFS 配置快速指南"]。
+
+
+
+[[specify-the-destination-location-for-snapshot-copies-in-active-iq-unified-manager]]
+== 在 Active IQ Unified Manager 中指定 Snapshot 副本的目标位置
+
+您应该在一个 ONTAP 集群中已配置的卷上配置 Active IQ Unified Manager 快照副本的目标位置。您应该使用维护控制台来定义位置。
+
+* 您必须具有安装了 Active IQ Unified Manager 的 Linux 主机的 root 用户凭据。
+* 您必须拥有已授权登录到 Unified Manager 服务器维护控制台的用户 ID 和密码。
+* 您必须具有群集管理 IP 地址、存储 VM 的名称、卷的名称以及存储系统用户名和密码。
+* 您必须已将卷装载到 Active IQ Unified Manager 主机，并且必须具有装载路径。
+
+
+.步骤
+. 请使用 Secure Shell 连接到 Active IQ Unified Manager 系统的 IP 地址或 FQDN。
+. 使用维护用户 (umadmin) 名称和密码登录到此系统。
+. 输入命令 `maintenance_console`并按 Enter 键。
+. 在维护控制台*主菜单*中，输入*备份还原*选项的编号。
+. 输入 *Configure NetApp Snapshot Backup* 的编号。
+. 输入要配置 NFS 的编号。
+. 查看您需要提供的信息，然后输入*输入备份配置详细信息*的编号。
+. 要标识要写入快照的卷，请输入集群管理接口的 IP 地址、存储 VM 的名称、卷的名称、LUN 名称、存储系统用户名和密码以及挂载路径。
+. 请验证此信息并输入 `y`。
++
+系统执行以下任务：
+
++
+** 建立与集群的连接
+** 停止所有服务
+** 在卷中创建新目录并复制 Active IQ Unified Manager 数据库配置文件
+** 从 Active IQ Unified Manager 中删除文件，并创建指向新数据库目录的符号链接
+** 重新启动所有服务
+
+
+. 请退出维护控制台并启动 Active IQ Unified Manager 界面，以创建快照副本的计划（如果尚未执行此操作）。
+

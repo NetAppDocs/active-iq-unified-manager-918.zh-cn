@@ -1,0 +1,29 @@
+---
+permalink: reporting/concept_understand_view_and_reports_relationship.html 
+sidebar: sidebar 
+keywords: understand, view, report, relationship 
+summary: 下载或计划时，视图和清单页面将成为报告。 
+---
+= 了解 Active IQ Unified Manager 中的视图和报告关系
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+下载或计划时，视图和清单页面将成为报告。
+
+您可以自定义并保存视图和清单页面以供重复使用。您可以在 Unified Manager 中查看的几乎所有内容都可以保存、重复使用、自定义、计划并作为报告共享。
+
+在视图下拉列表中，带有删除图标的项目是您或其他用户创建的现有自定义视图。没有图标的项目是 Unified Manager 提供的默认视图。默认视图无法修改或删除。
+
+[NOTE]
+====
+* 如果从列表中删除自定义视图，它还会删除使用该视图的所有 Excel 文件或计划报表。
+* 如果您更改自定义视图，则使用该视图的报告将在下次根据报告计划生成并通过电子邮件发送报告时反映该更改。更改视图时，请确保您的更改适用于报告所使用的任何关联 Excel 自定义项。如果需要，您可以通过下载 Excel 文件、进行所需的更改，并将其作为该视图的新 Excel 自定义项上传来更新该文件。
+
+
+====
+image::../media/view_drop_down_3.png[“查看”下拉菜单的 UI 屏幕截图。]
+
+只有具有应用程序管理员或存储管理员角色的用户才能看到删除图标，更改或删除视图，或者更改或删除计划报告。

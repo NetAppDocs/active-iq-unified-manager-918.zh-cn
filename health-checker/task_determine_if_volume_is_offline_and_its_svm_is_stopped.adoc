@@ -1,0 +1,46 @@
+---
+permalink: health-checker/task_determine_if_volume_is_offline_and_its_svm_is_stopped.html 
+sidebar: sidebar 
+keywords: determine, volume, offline, svm, node 
+summary: 您可以使用 Unified Manager Web UI 确认或排除这样一种可能性：卷脱机是因为其主机存储虚拟机（SVM）因托管该 SVM 根卷的节点停机而停止。 
+---
+= 确定卷是否处于脱机状态，因为其 SVM 已在 Active IQ Unified Manager 中停止
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 Unified Manager Web UI 确认或排除这样一种可能性：卷脱机是因为其主机存储虚拟机（SVM）因托管该 SVM 根卷的节点停机而停止。
+
+.开始之前
+您必须具有操作员、应用程序管理员或存储管理员角色。
+
+要确定卷脱机状态是否是由于托管该 SVM 根卷的节点停机而导致其主机 SVM 停止所引起的，请执行以下操作：
+
+.步骤
+. 在离线卷的 *Volume / Health* 详细信息页面的 *Related Devices* 窗格中找到并单击 SVM 下显示的超文本链接。
++
+Storage VM / 运行状况详细信息页面显示托管 SVM 的 "`running`" 或 "`stopped`" 状态。如果 SVM 状态为运行，则卷离线状态不是由托管该 SVM 根卷的节点关闭引起的。
+
+. 如果 SVM 状态为已停止，则单击 *查看 SVM* 以进一步确定托管 SVM 停止的原因。
+. 在 *Health: All Storage VMs* 视图的 SVM 列标题上，单击筛选器符号 image:../media/filtericon_um60.png["列筛选器图标"]，然后键入已停止的 SVM 的名称。
++
+该 SVM 的信息显示在表中。
+
+. 在 *Health: All Storage VMs* 视图中，单击 image:../media/gridviewicon.gif["网格视图图标"]，然后选择 *Root Volume* 选项。
++
+根卷列将添加到 SVM 清单中，并显示已停止 SVM 的根卷的名称。
+
+. 在根卷列中，单击根卷的名称以显示该卷的 *Storage VM / 运行状况* 详细信息页面。
++
+如果 SVM 根卷的状态为（在线），则原始卷离线的原因不是托管该 SVM 根卷的节点已停机。
+
+. 如果 SVM 根卷的状态为（离线），则在 SVM 根卷的卷/运行状况详细信息页面的“相关设备”窗格中找到并单击显示在“聚合”下的超文本链接。
+. 在聚合的*聚合/健康*详细信息页面的*相关设备*窗格中找到并单击节点下显示的超文本链接。
++
+群集/运行状况详细信息页面上的节点选项卡显示 SVM 根卷托管节点所属的 HA 节点对的状态。显示屏上显示了节点的状态。
+
+
+
+在确认卷脱机状态是由该卷的主机 SVM 脱机状态引起的（这本身是由托管该 SVM 根卷的节点停机引起的）后，请联系相应的管理员或操作员手动重新启动停机的节点。

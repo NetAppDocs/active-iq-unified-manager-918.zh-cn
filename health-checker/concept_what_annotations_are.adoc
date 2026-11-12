@@ -1,0 +1,18 @@
+---
+permalink: health-checker/concept_what_annotations_are.html 
+sidebar: sidebar 
+keywords: annotations 
+summary: 注释是分配给另一个文本字符串（值）的文本字符串（名称）。每个注释名称-值对可以使用注释规则与存储对象动态关联。将存储对象与预定义的注释相关联时，您可以筛选和查看与其相关的事件。您可以将注释应用于集群、卷和存储虚拟机（SVM）。 
+---
+= 了解 Active IQ Unified Manager 中的注释
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+注释是分配给另一个文本字符串（值）的文本字符串（名称）。每个注释名称-值对可以使用注释规则与存储对象动态关联。将存储对象与预定义的注释相关联时，您可以筛选和查看与其相关的事件。您可以将注释应用于集群、卷和存储虚拟机（SVM）。
+
+每个批注名称可以有多个值；每个名称-值对可以通过规则与存储对象相关联。
+
+例如，您可以使用值“`Boston`”和“`Canada`”创建名为“`data-center`”的批注。然后，您可以将值为“`Boston`”的批注“`data-center`”应用于卷 v1。当为带有“`data-center`”批注的卷 v1 上的任何事件生成警报时，生成的电子邮件会指示卷的位置“`Boston`”，这使您能够确定问题的优先级并解决问题。

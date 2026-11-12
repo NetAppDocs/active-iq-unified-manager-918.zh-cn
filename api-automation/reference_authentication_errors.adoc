@@ -1,0 +1,111 @@
+---
+permalink: api-automation/reference_authentication_errors.html 
+sidebar: sidebar 
+keywords: http, status, code, active iq, unified manager 
+summary: 在运行 API 或排除问题时，应注意 Active IQ Unified Manager API 使用的各种 HTTP 状态代码和错误代码。 
+---
+= 了解 Active IQ Unified Manager HTTP 状态代码
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在运行 API 或排除问题时，应注意 Active IQ Unified Manager API 使用的各种 HTTP 状态代码和错误代码。
+
+下表列出了与身份验证相关的错误代码：
+
+[cols="3*"]
+|===
+| HTTP 状态代码 | 状态代码标题 | 问题描述 
+
+
+ a| 
+200
+ a| 
+确定
+ a| 
+成功执行同步 API 调用时返回。
+
+
+
+ a| 
+201
+ a| 
+已创建
+ a| 
+通过同步调用创建新资源，例如配置 Active Directory。
+
+
+
+ a| 
+202
+ a| 
+已接受
+ a| 
+成功执行配置功能的异步调用时返回，例如创建 LUN 和文件共享。
+
+
+
+ a| 
+400
+ a| 
+无效请求
+ a| 
+表示输入验证失败。用户必须更正输入，例如请求正文中的有效键。
+
+
+
+ a| 
+401
+ a| 
+未经授权的请求
+ a| 
+您无权查看资源/未授权。
+
+
+
+ a| 
+403
+ a| 
+禁止的请求
+ a| 
+禁止访问您尝试访问的资源。
+
+
+
+ a| 
+404
+ a| 
+未找到资源
+ a| 
+未找到您尝试访问的资源。
+
+
+
+ a| 
+405
+ a| 
+方法不允许
+ a| 
+方法不允许。
+
+
+
+ a| 
+429
+ a| 
+请求过多
+ a| 
+当用户在特定时间内发送太多请求时返回。
+
+
+
+ a| 
+500
+ a| 
+内部服务器错误
+ a| 
+内部服务器错误。无法从服务器获取响应。此内部服务器错误可能是也可能不是永久性的。例如，如果您运行 `GET`或 `GET ALL`操作并收到此错误，建议您至少重试此操作五次。如果是永久性错误，则返回的状态代码仍为 500。如果操作成功，则返回的状态代码为 200。
+
+|===

@@ -1,0 +1,31 @@
+---
+permalink: health-checker/task_edit_individual_qtree_health_threshold_settings.html 
+sidebar: sidebar 
+keywords: edit, individual, qtree, health, threshold, settings 
+summary: 您可以编辑一个或多个 qtree 的 qtree 容量的运行状况阈值设置。当超过阈值时，将生成警报，您将收到通知。这些通知可帮助您根据生成的事件采取预防措施。 
+---
+= 在 Active IQ Unified Manager 中编辑单个 qtree 运行状况阈值设置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以编辑一个或多个 qtree 的 qtree 容量的运行状况阈值设置。当超过阈值时，将生成警报，您将收到通知。这些通知可帮助您根据生成的事件采取预防措施。
+
+.开始之前
+您必须具有应用程序管理员或存储管理员角色。
+
+根据阈值更改，下一监控周期将生成或废弃事件。
+
+.步骤
+. 在左侧导航窗格中，单击 *存储* > *Qtrees*。
+. 在*容量：所有 Qtree*视图中，选择一个或多个 qtree，然后单击*编辑阈值*。
+. 在*编辑 Qtree 阈值*对话框中，更改所选 qtree 的容量阈值，然后单击*保存*。
++
+[NOTE]
+====
+您还可以从 Storage VM / Health 详细信息页面的 Qtrees 选项卡中设置单个 qtree 阈值。
+
+====
+

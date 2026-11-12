@@ -1,0 +1,72 @@
+---
+permalink: install-vapp/qsg-vapp.html 
+sidebar: sidebar 
+keywords: quick start guide, getting started, QSG, VMWare QSG, vApp QSG, quick installation 
+summary: VMWare vSphere 平台上的 Unified Manager 快速入门指南。 
+---
+= 在 VMware vSphere 上开始使用 Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以下载包含根证书、 `README` 文件和  `OVA` 文件的 `.tar` 文件，并将 Unified Manager 部署为虚拟设备。
+
+
+
+[[system-requirements]]
+== 系统要求
+
+* 操作系统：VMware ESXi 8.0
+* 内存：12 GB
+* CPU：总计 9572 MHz
+* 可用磁盘空间：5 GB（精简配置），152 GB（厚配置）
+
+
+有关详细的系统要求，请参见link:../install-vapp/concept_requirements_for_installing_unified_manager.html["安装 Unified Manager 的要求"]和link:http://mysupport.netapp.com/matrix["互操作性表"]。
+
+
+
+[[install-active-iq-unified-manager]]
+== 安装 Active IQ Unified Manager
+
+
+
+[[download-the-installer]]
+=== 下载安装程序
+
+. 下载包含根证书、 `README` 文件和  `OVA` 文件的  `.tar` 文件。
+. 将文件保存到 vSphere 客户端可访问的本地目录或网络目录。
+. 在下载 `.tar`文件的目录中，输入 `tar -xvzf ActiveIQUnifiedManager-<version>.tar.gz`命令。+ 所需的 `OVA`文件、根证书和 `README`文件将解压到目标目录。
+
+
+
+
+[[verify-integrity]]
+=== 验证完整性
+
+您可以按照 `README`文件中提供的步骤，验证 `OVA`文件的完整性。
+
+
+
+[[install-unified-manager]]
+=== 安装 Unified Manager
+
+. 在 vSphere 客户端中，单击 *文件 > 部署 OVF 模板*。
+. 找到 OVA 文件，然后使用向导在 ESXi 服务器上部署虚拟设备。
+. 在“审阅详细信息”页面的“发布者”部分，消息  `Entrust Code Signing - OVCS2 (Trusted certificate)` 确认了下载的 `OVA`文件的完整性。对于消息 `Entrust Code Signing - OVCS2 (Invalid certificate)`，请将 VMware vCenter Server 升级到 7.0U3E 或更高版本。
+. 在“自定义模板”页面的“属性”选项卡中，根据所执行安装类型的需要填充字段：
++
+** 对于静态配置，请在所有字段中输入所需信息。无需为 *辅助 DNS* 字段添加信息。
+** 对于使用 IPv4 的 DHCP，请不要在任何字段中添加任何信息。
+** 对于使用 IPv6 的 DHCP，请选中“启用自动 IPv6 寻址”框。请勿在任何其他字段中添加任何信息。
+
+
+. 启动此虚拟机。
+. 单击控制台选项卡以查看初始引导过程。
+. 配置时区。
+. 输入 Unified Manager 维护用户名和密码。
+
+
+安装结束时，将显示连接到 Unified Manager Web UI 的信息。

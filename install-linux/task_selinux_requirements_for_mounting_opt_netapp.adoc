@@ -1,0 +1,175 @@
+---
+permalink: install-linux/task_selinux_requirements_for_mounting_opt_netapp.html 
+sidebar: sidebar 
+keywords: unified manager, selinux requirements, mounting, nfs, cifs, share 
+summary: 如果您计划在 NAS 或 SAN 设备上挂载 /opt/netapp 或 /opt/netapp/data，并且启用了 SELinux，则需要注意以下注意事项。 
+---
+= 在 Active IQ Unified Manager 中为 NFS 和 CIFS 共享配置 SELinux
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您计划在 NAS 或 SAN 设备上挂载 `/opt/netapp`或 `/opt/netapp/data`，并且启用了 SELinux，则需要注意一些注意事项。
+
+如果您计划从根文件系统以外的任何位置挂载 `/opt/netapp`或 `/opt/netapp/data`，并且您的环境中已启用 SELinux，则应为挂载的目录设置正确的上下文。对于环境中适用的场景，请按照以下步骤设置和确认正确的 SELinux 上下文。
+
+
+
+[[configure-the-selinux-context-when-optnetappdata-is-mounted]]
+== 挂载 `/opt/netapp/data`时配置 SELinux 上下文
+
+如果您已在系统中挂载了 `/opt/netapp/data`且 SELinux 设置为 `Enforcing`，请确保将 `/opt/netapp/data`的 SELinux 上下文类型设置为 `mysqld_db_t`，这是数据库文件位置的默认上下文元素。
+
+. 运行此命令来检查上下文：
++
+`ls -dZ /opt/netapp/data`
+
++
+输出示例：
+
++
+[listing]
+----
+drwxr-xr-x. mysql root unconfined_u:object_r:default_t:s0 /opt/netapp/data
+----
++
+
+NOTE: 在此输出中，上下文是 `default_t`。应将此上下文更改为 `mysqld_db_t`。
+
+. 执行这些步骤，根据您的挂载方式设置上下文 `/opt/netapp/data`。
++
+.. 运行以下命令以将上下文设置为 `mysqld_db_t`：
+`semanage fcontext -a -t mysqld_db_t "/opt/netapp/data"
+`restorecon -R -v /opt/netapp/data`
+.. 如果您已在 `/etc/fstab`中配置了 `/opt/netapp/data`，则应编辑 `/etc/fstab`文件。对于 `/opt/netapp/data/`挂载选项，请按如下所示添加 MySQL 标签：
++
+`context=system_u:object_r:mysqld_db_t:s0`
+
+.. 卸载并重新挂载 `/opt/netapp/data/`以启用上下文。
+.. 如果您有直接 NFS 装载，请运行以下命令将上下文设置为 `mysqld_db_t`：
++
+`mount <nfsshare>:/<mountpoint> /opt/netapp/data -o context=system_u:object_r:mysqld_db_t:s0`
+
+
+
+. 验证上下文设置是否正确：
+
+
+`ls -dZ /opt/netapp/data/`
+
+输出示例：
+
+[listing]
+----
+drwxr-xr-x. mysql root unconfined_u:object_r:mysqld_db_t:s0 /opt/netapp/data/
+----
+
+
+[[configure-the-selinux-context-when-optnetapp-is-mounted-and-optnetappdata-is-also-mounted-separately]]
+== 在挂载 `/opt/netapp`并且也单独挂载 `/opt/netapp/data/`时配置 SELinux 上下文
+
+在此方案中，首先，您应该按照上一节所述为 `/opt/netapp/data/`设置上下文。在为 `/opt/netapp/data/`设置正确的上下文之后，请确保父目录 `/opt/netapp`未将 SELinux 上下文设置为 `file_t`。
+
+.步骤
+. 运行此命令来检查上下文：
++
+`ls -dZ /opt/netapp`
+
++
+输出示例：
+
++
+[listing]
+----
+drwxr-xr-x. mysql root unconfined_u:object_r:file_t:s0 /opt/netapp
+----
++
+在此输出中，上下文为 `file_t`，应予以更改。以下命令将上下文设置为 `usr_t`。您可以根据安全要求将上下文设置为 `file_t`以外的任何值。
+
+. 根据您挂载 `/opt/netapp`的方式，执行以下步骤来设置上下文。
++
+.. 运行以下命令以设置上下文：
+
+
+
+
+[listing]
+----
+semanage fcontext -a -t usr_t "/opt/netapp"
+restorecon -v /opt/netapp
+----
+. 如果您已在 `/etc/fstab`中配置了 `/opt/netapp`，则应编辑 `/etc/fstab`文件。对于 `/opt/netapp`挂载选项，请按如下方式添加 MySQL 标签：
++
+`context=system_u:object_r:usr_t:s0`
+
+. 卸载，然后再次挂载 `/opt/netapp`以启用上下文。
+. 如果您有直接 NFS 挂载，请运行以下命令来设置上下文：
++
+`mount <nfsshare>:/<mountpoint> /opt/netapp -o context=system_u:object_r:usr_t:s0`
+
++
+.. 验证上下文设置是否正确：
++
+`ls -dZ /opt/netapp`
+
++
+示例输出
+
+
+
+
+
+[listing]
+----
+drwxr-xr-x. mysql root unconfined_u:object_r:usr_t:s0 /opt/netapp
+----
+
+
+[[configure-the-selinux-context-when-optnetapp-is-mounted-and-optnetappdata-is-not-mounted-separately]]
+== 在挂载 `/opt/netapp`且未单独挂载 `/opt/netapp/data/`时配置 SELinux 上下文
+
+如果您已在系统中装载了 `/opt/netapp`并且 SELinux 设置为 `Enforcing`，请确保将 `/opt/netapp`的 SELinux 上下文类型设置为 `mysqld_db_t`，这是数据库文件位置的默认上下文元素。
+
+.步骤
+. 运行此命令来检查上下文：
++
+`ls -dZ /opt/netapp`
+
++
+输出示例：
+
++
+[listing]
+----
+drwxr-xr-x. mysql root unconfined_u:object_r:default_t:s0 /opt/netapp
+----
++
+
+NOTE: 在此输出中，上下文是 `default_t`。应将此上下文更改为 `mysqld_db_t`。
+
+. 请执行以下步骤，根据您装载 `/opt/netapp`的方式设置上下文。
++
+.. 运行以下命令以将上下文设置为 `mysqld_db_t`：
+`semanage fcontext -a -t mysqld_db_t "/opt/netapp"
+`restorecon -R -v /opt/netapp`
+.. 如果您已在 `/etc/fstab`中配置了 `/opt/netapp`，请编辑 `/etc/fstab`文件。对于 `/opt/netapp/`挂载选项，请按如下方式添加 MySQL 标签：
+`context=system_u:object_r:mysqld_db_t:s0`
+.. 卸载，然后再次挂载 `/opt/netapp/`以启用上下文。
+.. 如果具有直接 NFS 装载，请运行以下命令将上下文设置为 `mysqld_db_t`：
+`mount <nfsshare>:/<mountpoint> /opt/netapp -o context=system_u:object_r:mysqld_db_t:s0`
+
+
+. 验证上下文设置是否正确：
+
+
+`ls -dZ /opt/netapp/`
+
+输出示例：
+
+[listing]
+----
+drwxr-xr-x. mysql root unconfined_u:object_r:mysqld_db_t:s0 /opt/netapp/
+----
+'''

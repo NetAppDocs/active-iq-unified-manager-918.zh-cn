@@ -1,0 +1,75 @@
+---
+permalink: data-protection/task_restore_data_use_health_volume_details_page.html 
+sidebar: sidebar 
+keywords: restore, data, volume, health details page, console 
+summary: 您可以使用“卷/运行状况详细信息”页面上的还原功能从 Snapshot 副本还原被覆盖或删除的文件、目录或整个卷。 
+---
+= 使用 Active IQ Unified Manager 中的卷和卷/运行状况详细信息页面还原数据
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用卷和卷/运行状况详细信息页面上的还原功能从 Snapshot 副本还原覆盖或删除的文件、目录或整个卷。
+
+.开始之前
+您必须具有应用程序管理员或存储管理员角色。
+
+
+NOTE: 请注意以下几点：
+
+* 在以下任何情况下，您都不能从快照还原目录或卷：
++
+** 已选择 *Yes, preserve all snapshot copies* 选项。
+** 您正在使用 LDAP 帐户来监控集群。
+** 您已以域用户身份登录。
+** 您的帐户已配置为进行 SAML 身份验证。
+** 您正在使用 NDMP 协议。
++
+有关详细信息，请参见 Knowledge Base 文章 https://kb.netapp.com/on-prem/ontap/DP/NDMP/NDMP-KBs/How_to_configure_NDMP_authentication_in_the_SVM-scope_previously_known_as_Vserver-scope_mode["如何在 "SVM-scope" 模式下配置 NDMP 身份验证"^]。
+
+
+
+* 您无法还原 NTFS 文件流。
+* 在以下情况下，还原选项不可用：
++
+** 卷 ID 未知：例如，您有一个集群间关系，但尚未发现目标集群。
+** 已为此卷配置 SnapMirror 同步复制。
+
+
+
+
+.步骤
+. 在左侧导航窗格中，转到 *存储 > 卷*。
+. 选择卷，然后单击*还原*按钮。或者，单击该卷以转到*Volume / Health details > Actions > Restore*。此时将显示还原对话框。有关此页面的信息，请参阅 link:../data-protection/reference_restore_dialog_box.html["还原对话框"]。
+. 选择要从中还原数据的卷和 Snapshot 副本（如果它们与默认值不同）。
+. 选择要还原的项目，例如源 LUN。
++
+您可以还原整个卷，也可以指定要还原的文件夹和文件。
+
+. 选择要将所选项目还原到的位置：*原始位置*或*备用现有位置*。
+. 如果选择其他现有位置，请执行以下操作之一：
++
+** 在“还原路径”文本字段中，键入要还原数据的位置的路径，然后单击*选择目录*。
+** 单击*浏览*以启动“浏览目录”对话框并完成以下步骤：
++
+... 选择要还原的目标群集、存储 VM（SVM）和卷。
+... 在名称表中，选择必须还原的目录名称。
+... 点击*选择目录*。
+
+
+
+
+. 单击 *还原*。
++
+还原过程开始。后端将创建一个作业以完成还原过程。
+
+. 如果要查看作业进度，请从左侧导航窗格导航到*保护 > 作业*，以从作业列表中查看还原作业的状态。
++
+[NOTE]
+====
+如果在 Cloud Volumes ONTAP HA 群集之间还原操作失败并出现 NDMP 错误，则可能需要在目标群集中添加显式 AWS 路由，以便目标可以与源系统的群集管理 LIF 进行通信。您可以使用 NetApp Console 执行此配置步骤。
+
+====
+

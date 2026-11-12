@@ -1,0 +1,14 @@
+---
+permalink: performance-checker/concept_graphical_interface_and_navigational_paths.html 
+sidebar: sidebar 
+keywords: graphical, interface, navigational, paths 
+summary: Unified Manager 具有极大的灵活性，使您能够以各种方式完成多项任务。在 Unified Manager 中工作时，您会发现许多导航路径。虽然无法显示所有可能的导航组合，但您应该熟悉一些更常见的场景。 
+---
+= 探索 Active IQ Unified Manager 中的图形界面和导航路径
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 具有极大的灵活性，使您能够以各种方式完成多项任务。在 Unified Manager 中工作时，您会发现许多导航路径。虽然无法显示所有可能的导航组合，但您应该熟悉一些更常见的场景。

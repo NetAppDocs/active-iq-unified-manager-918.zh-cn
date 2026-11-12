@@ -1,0 +1,45 @@
+---
+permalink: events/reference_inodes_events.html 
+sidebar: sidebar 
+keywords: inodes, events, impact area, capacity 
+summary: 当 inode 已满或接近已满时，inode 事件会提供相关信息，以便您监控潜在问题。事件按影响区域分组，包括事件和陷阱名称、影响级别、源类型以及严重性。 
+---
+= 了解 Active IQ Unified Manager 中的 inode 事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+当 inode 已满或接近已满时，inode 事件会提供相关信息，以便您监控潜在问题。事件按影响区域分组，包括事件和陷阱名称、影响级别、源类型以及严重性。
+
+
+
+[[impact-area-capacity]]
+== 影响区域：容量
+
+|===
+| 事件名称（陷阱名称） | 影响级别 | 源类型 | 严重性 
+
+
+ a| 
+索引节点接近全满（ocumEvtInodesAlmostFull）
+ a| 
+风险
+ a| 
+卷
+ a| 
+警告
+
+
+
+ a| 
+Inodes Full（ocumEvtInodesFull）
+ a| 
+风险
+ a| 
+卷
+ a| 
+错误
+
+|===

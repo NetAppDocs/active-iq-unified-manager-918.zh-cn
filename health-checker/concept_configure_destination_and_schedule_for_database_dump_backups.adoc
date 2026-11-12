@@ -1,0 +1,49 @@
+---
+permalink: health-checker/concept_configure_destination_and_schedule_for_database_dump_backups.html 
+sidebar: sidebar 
+keywords: configure, destination, schedule, database dump, backups, snapshot copy, copies 
+summary: 您可以配置 Unified Manager 数据库转储备份设置，以设置数据库备份路径、保留计数和备份计划。您可以启用每日或每周计划备份。默认情况下，计划备份已禁用，但您应设置备份计划。 
+---
+= 在 Active IQ Unified Manager 中配置数据库转储备份设置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以配置 Unified Manager 数据库转储备份设置，以设置数据库备份路径、保留计数和备份计划。您可以启用每日或每周计划备份。默认情况下，计划备份已禁用，但您应设置备份计划。
+
+.开始之前
+* 您必须具有操作员、应用程序管理员或存储管理员角色。
+* 在定义为备份路径的位置中，必须至少有 150 GB 的可用空间。
++
+建议您使用 Unified Manager 主机系统外部的远程位置。
+
+* 在 Linux 系统上安装 Unified Manager 并使用 MySQL 备份时，请确保在备份目录上设置了以下权限和所有权。
++
+权限：0750，所有权：jboss:maintenance
+
+* 在 Windows 系统上安装 Unified Manager 并使用 MySQL 备份时，请确保只有管理员可以访问备份目录。
+
+
+首次执行备份所需的时间比后续备份所需的时间更长，因为第一次备份是完整备份。完整备份可能超过 1 GB，可能需要花费三到四个小时。后续备份是增量备份，需要的时间较少。
+
+[NOTE]
+====
+* 如果您发现增量备份文件的数量对于为备份分配的空间来说太大，则可以定期进行完整备份以替换旧备份及其增量文件。作为另一个选项，您可以使用 Snapshot 副本进行备份。
+* 在新集群添加的最初 15 天内进行的备份可能不够准确，无法获取历史性能数据。
+
+
+====
+.步骤
+. 在左侧导航窗格中，单击 *常规* > *数据库备份*。
+. 在*数据库备份*页面中，单击*备份设置*。
+. 为备份路径、保留计数和计划配置适当的值。
++
+保留数量的默认值为 10；您可以使用 0 来创建无限备份。
+
+. 选择*每日计划*或*每周计划*按钮，然后指定计划详细信息。
+. 单击*应用*。
+
+
+将根据计划创建数据库转储备份文件。您可以在“数据库备份”页面中查看可用的备份文件。

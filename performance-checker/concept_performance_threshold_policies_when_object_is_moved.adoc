@@ -1,0 +1,53 @@
+---
+permalink: performance-checker/concept_performance_threshold_policies_when_object_is_moved.html 
+sidebar: sidebar 
+keywords: happens, performance, threshold, policies, object, moved 
+summary: 由于性能阈值策略已分配给存储对象，因此如果移动对象，则所有分配的阈值策略在移动完成后仍会附加到对象。例如，如果将卷或 LUN 移动到其他聚合，则新聚合上的卷或 LUN 的阈值策略仍处于活动状态。 
+---
+= 在 Active IQ Unified Manager 中移动对象时管理阈值策略
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+由于性能阈值策略已分配给存储对象，因此如果移动对象，则所有分配的阈值策略在移动完成后仍会附加到对象。例如，如果将卷或 LUN 移动到其他聚合，则新聚合上的卷或 LUN 的阈值策略仍处于活动状态。
+
+如果阈值策略（组合策略）存在辅助计数器条件（例如，如果其他条件分配给聚合或节点），则辅助计数器条件将应用于卷或 LUN 已移动到的新聚合或节点。
+
+如果使用更改的阈值策略的对象存在任何新的活动事件，则这些事件将被标记为已过时，并且阈值策略将作为新定义的阈值策略开始监视计数器。
+
+卷移动操作导致 ONTAP 发送信息更改事件。更改事件图标显示在“性能资源管理器”页面和“工作负载分析”页面上的“事件时间表”中，以指示移动操作完成的时间。
+
+[NOTE]
+====
+如果将对象移动到其他群集，则会从对象中删除用户定义的阈值策略。如果需要，必须在移动操作完成后为对象分配阈值策略。但是，动态和系统定义的阈值策略会在对象移动到新群集后自动应用于该对象。
+
+====
+
+
+[[threshold-policy-functionality-during-ha-takeover-and-giveback]]
+== HA 接管和交还期间的阈值策略功能
+
+当在高可用性（HA）配置中发生接管或交回操作时，从一个节点移动到另一个节点的对象将以与手动移动操作相同的方式保留其阈值策略。由于 Unified Manager 每 15 分钟检查一次集群配置的更改，因此在下次轮询集群配置之前，不会确定切换到新节点的影响。
+
+[NOTE]
+====
+如果接管和交还操作都在 15 分钟的配置更改收集期内发生，您可能看不到性能统计数据从一个节点移动到另一个节点。
+
+====
+
+
+[[threshold-policy-functionality-during-aggregate-relocation]]
+== 聚合重新定位期间的阈值策略功能
+
+如果使用  `aggregate relocation start` 命令将聚合从一个节点移动到另一个节点，则所有对象都将保留单个阈值策略和组合阈值策略，并将阈值策略的节点部分应用于新节点。
+
+
+
+[[threshold-policy-functionality-during-metrocluster-switchover]]
+== MetroCluster 切换期间的阈值策略功能
+
+在 MetroCluster 配置中从一个集群移动到另一个集群的对象不会保留其用户定义的阈值策略设置。如果需要，您可以在已移动到配对集群的卷和 LUN 上应用阈值策略。在对象移回其原始集群后，将自动重新应用用户定义的阈值策略。
+
+有关信息，请参见 link:../storage-mgmt/concept_volume_behavior_during_switchover_and_switchback.html["切换和切回期间的卷行为"]。

@@ -1,0 +1,36 @@
+---
+permalink: reporting/task_create_report_to_view_svms_reaching_maximum_volume_limit.html 
+sidebar: sidebar 
+keywords: create, report, view, storage VMs, volume, limit 
+summary: 您可以创建报告以查找达到最大卷限制的 SVM。 
+---
+= 创建报告以查看在 Active IQ Unified Manager 中达到最大卷限制的存储 VM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以创建报告以查找达到最大卷限制的 SVM。
+
+.开始之前
+* 您必须具有应用程序管理员或存储管理员角色。
+
+
+使用以下步骤创建显示达到最大卷限制的存储 VM 的自定义视图，然后计划为该视图生成报告。
+
+.步骤
+. 在左侧导航窗格中，单击 *存储* > *存储 VM*。
+. 选择*显示/隐藏*以删除报告中不希望出现的任何列。
+. 将“`Volume Count`”和“`Maximum Allowed Volumes`”列拖到“`Storage VM`”列附近。
+. 单击 "`Maximum Allowed Volumes`" 列的顶部，按最高卷数对结果进行排序。
+. 使用反映视图显示内容的特定名称保存视图，例如“`SVM 达到最大卷`”，然后单击复选标记（image:../media/blue_check.gif[""]）。
+. 单击清单页面上的 *Scheduled Reports* 按钮。
+. 单击*添加计划*可将新行添加到*报告计划*页面，以便您可以定义新报告的计划特性。
+. 输入报告计划的名称并填写其他报告字段，然后单击该行末尾的复选标记（image:../media/blue_check.gif[""]）。
++
+此时将立即发送一个测试报告。之后，此报告将以指定频率生成并通过电子邮件发送给列出的收件人。
+
+
+
+根据报告中显示的结果，您可能需要平衡分配给存储 VM 的卷，或者在可能的情况下，使用 ONTAP System Manager 更改允许的最大卷数。

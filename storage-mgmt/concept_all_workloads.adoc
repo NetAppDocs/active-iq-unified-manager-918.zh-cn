@@ -1,0 +1,81 @@
+---
+permalink: storage-mgmt/concept_all_workloads.html 
+sidebar: sidebar 
+keywords: view, workloads, add, provision, storage, filter, analyze, performance, capacity, criteria 
+summary: “所有工作负载”视图显示了数据中心群集上可用的所有工作负载的列表。 
+---
+= 在 Active IQ Unified Manager 中查看工作负载
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+将群集添加到 Unified Manager 时，每个群集上的存储工作负载将被自动发现并显示在“工作负载”页面上。
+
+只有在存储工作负载上开始 I/O 操作后，Unified Manager 才会开始分析工作负载以提供建议（建议的 PSL）。
+
+FlexGroup 卷及其成分不包括在内。
+
+
+
+[[workloads-overview]]
+== 工作负载概述
+
+“工作负载概述”页面显示数据中心中的工作负载概述以及数据中心的空间和性能概述。
+
+* *Workloads Overview* 面板：显示工作负载的总数以及已分配或未分配 PSL 的工作负载数。此外还会显示每个 PSL 的工作负载计数细分。单击这些计数可转至包含已筛选工作负载的 *All Workloads* 视图。您还可以查看不符合系统建议的工作负载数量，并通过单击 *Assign System-Recommended PSLs* 按钮为其分配系统建议的 PSL。
+* *数据中心概述*面板：显示数据中心的可用和已用空间 (TiB) 和性能 (IOPS)。还会显示每个 PSL 下所有工作负载的可用和已用空间 (TiB) 和性能 (IOPS) 的细分。
+
+
+
+
+[[all-workloads-view]]
+== 所有工作负载视图
+
+*存储 > 工作负载 > 所有工作负载* 页面列出了与 Unified Manager 管理的 ONTAP 群集关联的存储工作负载。
+
+对于新发现的没有 I/O 操作的存储工作负载，状态为 "`正在等待 I/O`"。在存储工作负载上开始 I/O 操作后，Unified Manager 将开始分析，并且工作负载状态将更改为 "`正在学习……`"。完成分析后（在 I/O 操作开始后的 24 小时内），将显示针对存储工作负载的推荐 PSL。
+
+该页面还使您能够将存储效率策略（SEP）和性能服务级别（PSL）分配给存储工作负载。您可以执行多项任务：
+
+* 添加或配置存储工作负载
+* 查看和筛选工作负载列表
+* 将 PSL 分配给存储工作负载
+* 评估系统推荐的 PSL 并将其分配给工作负载
+* 将 SEP 分配给存储工作负载
+
+
+
+
+[[adding-or-provisioning-storage-workloads]]
+=== 添加或调配存储工作负载
+
+您可以将存储工作负载添加或置备到支持的 LUN（同时支持 iSCSI 和 FCP 协议）、NFS 文件共享和 SMB 共享。
+
+.步骤
+. 单击*存储 > 工作负载 > 所有工作负载 > 创建*。
+. 创建工作负载。有关信息，请参见 link:../storage-mgmt/concept_provision_and_manage_workloads.html["配置和管理工作负载"]。
+
+
+
+
+[[viewing-and-filtering-workloads]]
+=== 查看和筛选工作负载
+
+在“所有工作负载”屏幕上，您可以查看数据中心中的所有工作负载，或根据其 PSL 或名称搜索特定存储工作负载。您可以使用过滤器图标为搜索输入特定条件。您可以按不同的筛选条件进行搜索，例如按主机集群或存储 VM 进行搜索。*总容量*选项允许按工作负载的总容量（按 MB）进行筛选。但是，在这种情况下，返回的工作负载数量可能会有所不同，因为总容量是在字节级别进行比较的。
+
+对于每个工作负载，将显示主机集群和存储 VM 等信息，以及分配的 PSL 和 SEP。
+
+此页面还允许您查看工作负载的性能详细信息。您可以通过单击*选择/排序列*按钮并选择要查看的特定列来查看有关工作负载的 IOPS、容量和延迟的详细信息。“性能视图”列显示工作负载的平均 IOPS 和峰值 IOPS，您可以单击工作负载分析器图标以查看详细的 IOPS 分析。
+
+
+
+[[analyzing-performance-and-capacity-criteria-for-a-workload]]
+=== 分析工作负载的性能和容量标准
+
+*IOPS 分析*弹出窗口中的*分析工作负载*按钮将带您进入工作负载分析页面，您可以在其中选择时间范围并查看所选工作负载的延迟、吞吐量和容量趋势。有关工作负载分析器的详细信息，请参见 link:..//performance-checker/concept_troubleshooting_workloads_using_workload_analyzer.html["使用工作负载分析器排除工作负载故障"]。
+
+您可以通过单击 *性能视图* 列中的条形图图标来查看有关工作负载的性能信息，以帮助进行故障排除。要在“工作负载分析”页面上查看性能和容量图表以分析对象，请单击 *分析工作负载* 按钮。
+
+有关详细信息，请参见link:../performance-checker/reference_what_data_does_workload_analyzer_display.html["工作负载分析器显示哪些数据"]。

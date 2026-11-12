@@ -1,0 +1,31 @@
+---
+permalink: data-protection/task_break_snapmirror_relationship.html 
+sidebar: sidebar 
+keywords: break, snapmirror, relationship, volume, relationship page 
+summary: 您可以中断保护关系，以停止 SnapMirror 关系中的源卷和目标卷之间的数据传输。当您想要迁移数据、进行灾难恢复或进行应用程序测试时，您可能会中断关系。目标卷将更改为读/写卷。您无法中断 SnapVault 关系。 
+---
+= 从 Active IQ Unified Manager Volume Relationships 页面中断 SnapMirror 关系
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以中断保护关系，以停止 SnapMirror 关系中的源卷和目标卷之间的数据传输。当您想要迁移数据、进行灾难恢复或进行应用程序测试时，您可能会中断关系。目标卷将更改为读/写卷。您无法中断 SnapVault 关系。
+
+.开始之前
+* 您必须具有应用程序管理员或存储管理员角色。
+* 您必须已设置 Workflow Automation。
+
+
+.步骤
+. 从*卷关系*页面中，选择一个或多个具有要停止数据传输的保护关系的卷，然后在工具栏上单击*中断*。
++
+此时将显示断开关系对话框。
+
+. 单击*继续*以中断此关系。
+. 在 *Volume Relationships* 页面的 *Relationship State* 列中，确认关系已断开。
++
+默认情况下，关系状态列是隐藏的，因此您可能需要在显示/隐藏列列表中选择它 image:../media/icon_columnshowhide_sm_onc.gif[""]。
+
+

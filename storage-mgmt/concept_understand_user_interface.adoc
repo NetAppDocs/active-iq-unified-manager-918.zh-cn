@@ -1,0 +1,16 @@
+---
+permalink: storage-mgmt/concept_understand_user_interface.html 
+sidebar: sidebar 
+keywords: understand, user, interface 
+summary: Unified Manager 用户界面主要由一个仪表板组成，该仪表板提供被监控对象的概览视图。用户界面还提供查看所有集群对象的访问权限。 
+---
+= 了解 Active IQ Unified Manager 用户界面
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 用户界面主要由一个仪表板组成，该仪表板提供被监控对象的概览视图。用户界面还提供查看所有集群对象的访问权限。
+
+您可以选择首选视图，并根据需要使用操作按钮。您的屏幕配置将保存在工作区中，以便在启动 Unified Manager 时提供所需的所有功能。但是，当您从一个视图导航到另一个视图，然后返回时，视图可能不同。

@@ -1,0 +1,85 @@
+---
+permalink: storage-mgmt/reference_rules_to_generate_user_and_group_quota.html 
+sidebar: sidebar 
+keywords: rules, generate, user, group, quota, email, address, page, area, define, add comments, syntax, command buttons 
+summary: “生成用户和组配额电子邮件地址的规则”页面允许您创建规则，以根据与集群、SVM、卷、qtree、用户或用户组关联的用户配额指定电子邮件地址。当超出配额时，系统将向指定的电子邮件地址发送通知。 
+---
+= 了解 Active IQ Unified Manager 中的配额电子邮件地址规则
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+“生成用户和组配额电子邮件地址的规则”页面允许您创建规则，以根据与集群、SVM、卷、qtree、用户或用户组关联的用户配额指定电子邮件地址。当超出配额时，系统将向指定的电子邮件地址发送通知。
+
+
+
+[[rules-area]]
+== 规则区域
+
+您必须定义配额电子邮件地址的规则。您也可以添加注释来解释这些规则。
+
+
+
+[[how-you-define-rules]]
+== 如何定义规则
+
+必须按照要执行的顺序输入规则。如果满足第一个规则的条件，则根据此规则生成电子邮件地址。如果不满足条件，则考虑下一个规则的条件，依此类推。每行列出一个单独的规则。默认规则为列表中的最后一个规则。您可以更改规则的优先级顺序。但是，您无法更改默认规则的顺序。
+
+例如，如果要使用电子邮件地址 qtree1@xyz.com 接收有关 qtree1 配额违规的通知，并对所有其他 qtree 使用电子邮件地址 admin@xyz.com，则规则必须按以下顺序列出：
+
+* if ( $QTREE == 'qtree1' ) then qtree1@xyz.com
+* if ( $QTREE == * ) then admin@xyz.com
+
+
+如果未满足指定规则的任何条件，则使用默认规则：
+
+if ( $USER_OR_GROUP == * ) then $USER_OR_GROUP@$DOMAIN
+
+如果多个用户具有相同的配额，则用户的名称将以逗号分隔的值显示，并且规则不适用于配额。
+
+
+
+[[how-you-add-comments]]
+== 如何添加评论
+
+您可以添加注释以解释规则。您应该在每个注释的开头使用 #，每行列出一个单独的注释。
+
+
+
+[[rules-syntax]]
+== 规则语法
+
+规则的语法必须是以下内容之一：
+
+* if ( `valid variableoperator *`) then `email ID@domain name`
++
+if 是关键字，且为小写。运算符为 ==。电子邮件 ID 可以包含任何字符、有效变量 $USER_OR_GROUP、$USER 或 $GROUP，或者任何字符与有效变量 $USER_OR_GROUP、$USER 或 $GROUP 的组合。域名可以包含任何字符、有效变量 $DOMAIN，或者任何字符与有效变量 $DOMAIN 的组合。有效变量可以是大写或小写，但不能是两者的组合。例如，$domain 和 $DOMAIN 是有效的，但 $Domain 不是有效变量。
+
+* if ( `valid variableoperator `string``) then `email ID@domain name`
++
+if 是关键字且为小写。运算符可以是 contains 或 ==。电子邮件 ID 可以包含任何字符、有效变量 $USER_OR_GROUP、$USER 或 $GROUP，或者任何字符与有效变量 $USER_OR_GROUP、$USER 或 $GROUP 的组合。域名可以包含任何字符、有效变量 $DOMAIN，或者任何字符与有效变量 $DOMAIN 的组合。有效变量可以是大写或小写，但不能是两者的组合。例如，$domain 和 $DOMAIN 是有效的，但 $Domain 不是有效的变量。
+
+
+
+
+
+[[command-buttons]]
+== 命令按钮
+
+使用命令按钮可以保存、验证或取消创建的规则：
+
+* *验证*
++
+验证创建的规则的语法。如果在验证过程中出现错误，则会显示生成错误的规则以及错误消息。
+
+* *还原为出厂默认值*
++
+使您能够将地址规则还原为出厂默认值。
+
+* *保存*
++
+验证规则的语法，如果没有错误，则保存规则。如果在验证过程中出现错误，则会显示生成错误的规则以及错误消息。
+
+

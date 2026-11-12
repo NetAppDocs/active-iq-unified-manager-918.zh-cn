@@ -1,0 +1,29 @@
+---
+permalink: config/reference_support_and_diagnostics_menu.html 
+sidebar: sidebar 
+keywords: support and diagnostics, menu 
+summary: 通过“支持和诊断”菜单，您可以生成可发送给技术支持以获得故障排除帮助的支持包。 
+---
+= 使用 Active IQ Unified Manager 中的支持和诊断菜单
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过“支持和诊断”菜单，您可以生成可发送给技术支持以获得故障排除帮助的支持包。
+
+提供以下菜单选项：
+
+* *生成轻量级支持捆绑包*
++
+使您能够生成仅包含 30 天日志和配置数据库记录的轻量级支持包——它不包括性能数据、采集记录文件和服务器堆转储。
+
+* *生成支持包*
++
+允许您在诊断用户的主目录中创建包含诊断信息的完整支持包（7-Zip 文件）。如果您的系统已连接到互联网，您也可以将支持包上传到 NetApp。
+
++
+该文件包括由 AutoSupport 消息生成的信息、Unified Manager 数据库的内容、有关 Unified Manager 服务器内部的详细信息以及通常不包含在 AutoSupport 消息或轻量级支持捆绑包中的详细级别日志。
+
+

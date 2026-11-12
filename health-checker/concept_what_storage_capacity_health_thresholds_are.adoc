@@ -1,0 +1,16 @@
+---
+permalink: health-checker/concept_what_storage_capacity_health_thresholds_are.html 
+sidebar: sidebar 
+keywords: storage, capacity, health, thresholds 
+summary: 存储容量运行状况阈值是指 Unified Manager 服务器生成事件以报告存储对象任何容量问题的临界点。您可以配置警报，以便在发生此类事件时发送通知。 
+---
+= 了解 Active IQ Unified Manager 中的存储容量运行状况阈值
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+存储容量运行状况阈值是指 Unified Manager 服务器生成事件以报告存储对象任何容量问题的临界点。您可以配置警报，以便在发生此类事件时发送通知。
+
+所有聚合、卷和 qtree 的存储容量运行状况阈值都设置为默认值。您可以根据需要更改对象或一组对象的设置。

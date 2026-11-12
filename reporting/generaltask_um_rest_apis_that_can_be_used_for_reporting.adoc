@@ -1,0 +1,18 @@
+---
+permalink: reporting/generaltask_um_rest_apis_that_can_be_used_for_reporting.html 
+sidebar: sidebar 
+keywords: unified manager ,rest api, reporting 
+summary: 您可以使用 REST API 来帮助管理集群，方法是查看 Unified Manager 捕获的运行状况、容量、性能和安全信息。 
+---
+= 使用 Active IQ Unified Manager REST API 进行报告
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 REST API 来帮助管理集群，方法是查看 Unified Manager 捕获的运行状况、容量、性能和安全信息。
+
+REST API 通过 Swagger 网页公开。您可以访问 Swagger 网页以查看 Unified Manager REST API 文档，以及手动发出 API 调用。在 Unified Manager Web UI 的菜单栏中，单击 *Help* 按钮，然后选择 *API Documentation*。有关 Unified Manager REST API 的信息，请参见 link:../api-automation/concept_get_started_with_um_apis.html["Active IQ Unified Manager REST API 入门"]。
+
+要访问 REST API，您必须具有操作员、存储管理员或应用程序管理员角色。

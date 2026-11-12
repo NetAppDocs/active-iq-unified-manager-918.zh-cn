@@ -1,0 +1,30 @@
+---
+permalink: storage-mgmt/task_rediscover_clusters.html 
+sidebar: sidebar 
+keywords: rediscover clusters, 
+summary: 您可以从“集群设置”页面手动重新发现集群，以获取有关集群运行状况、监视状态和性能状态的最新信息。 
+---
+= 在 Active IQ Unified Manager 中重新发现集群
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以从“集群设置”页面手动重新发现集群，以获取有关集群运行状况、监视状态和性能状态的最新信息。
+
+当您想要更新集群（例如在空间不足时增加聚合的大小）并且希望 Unified Manager 发现您所做的更改时，您可以手动重新发现集群。
+
+当 Unified Manager 与 OnCommand Workflow Automation (WFA) 配对时，该配对会触发 WFA 所缓存数据的重新获取。
+
+.步骤
+. 在左侧导航窗格中，单击*存储管理* > *集群设置*。
+. 在*集群设置*页面上，单击*重新发现*。
++
+Unified Manager 重新发现选定集群并显示最新的运行状况和性能状态。
+
+
+
+*相关信息*
+
+link:../health-checker/task_view_cluster_list_and_details.html["查看集群列表和详细信息"]

@@ -1,0 +1,27 @@
+---
+permalink: performance-checker/concept_what_happens_when_performance_threshold_policy_is_breached.html 
+sidebar: sidebar 
+keywords: happens, performance, threshold, policy, breached 
+summary: 当计数器值超过其定义的性能阈值的时间达到持续时间中指定的时间量时，将违反该阈值并报告事件。 
+---
+= 响应 Active IQ Unified Manager 中违反性能阈值策略的问题
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+当计数器值超过其定义的性能阈值的时间达到持续时间中指定的时间量时，将违反该阈值并报告事件。
+
+事件会导致启动以下操作：
+
+* 此事件显示在“仪表板”、“性能群集摘要”页、“事件”页和特定于对象的“性能清单”页中。
+* （可选）有关事件的电子邮件警报可以发送到一个或多个电子邮件收件人，SNMP 陷阱可以发送到陷阱接收器。
+* （可选）可以执行脚本来自动修改或更新存储对象。
+
+
+始终执行第一个操作。您可以在警报设置页面中配置是否执行可选操作。您可以根据是否违反警告或严重阈值策略来定义唯一操作。
+
+在存储对象上发生性能阈值策略违规后，不会为该策略生成进一步的事件，直到计数器值低于阈值，此时为该限制重置持续时间。在继续超出阈值的同时，会不断更新事件的结束时间，以反映此事件正在进行中。
+
+阈值事件捕获或冻结与严重性和策略定义相关的信息，以便即使将来修改了阈值策略，也会随事件显示唯一的阈值信息。

@@ -1,0 +1,16 @@
+---
+permalink: events/concept_what_alerts_are.html 
+sidebar: sidebar 
+keywords: alerts 
+summary: 当事件连续发生时，Unified Manager 仅在事件满足指定的过滤条件时才会生成警报。您可以选择应为其生成警报的事件，例如，当超过空间阈值或对象脱机时。您还可以将警报与触发警报时执行的脚本相关联。 
+---
+= 了解 Active IQ Unified Manager 中的警报
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+虽然事件不断发生，但 Unified Manager 仅在事件满足指定的过滤条件时才会生成警报。您可以选择应为其生成警报的事件，例如，当超过空间阈值或对象脱机时。您还可以将警报与触发警报时执行的脚本相关联。
+
+筛选条件包括对象类、名称或事件严重性。

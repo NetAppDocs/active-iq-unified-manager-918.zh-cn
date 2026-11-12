@@ -1,0 +1,37 @@
+---
+permalink: api-automation/concept_provision_workflow.html 
+sidebar: sidebar 
+keywords: workflow, workload, management 
+summary: 使用 Active IQ Unified Manager，您可以调配和修改存储工作负载（LUN、NFS 文件共享和 CIFS 共享）。调配包括多个步骤，从创建存储虚拟机（SVM）到对存储工作负载应用性能服务级别和存储效率策略。修改工作负载包括修改特定参数并在其上启用其他功能的步骤。 
+---
+= 在 Active IQ Unified Manager 中配置和修改存储工作负载
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用 Active IQ Unified Manager，您可以调配和修改存储工作负载（LUN、NFS 文件共享和 CIFS 共享）。调配包括多个步骤，从创建存储虚拟机（SVM）到对存储工作负载应用性能服务级别和存储效率策略。修改工作负载包括修改特定参数并在其上启用其他功能的步骤。
+
+描述了以下工作流程：
+
+* 用于在 Unified Manager 上配置 Storage Virtual Machines（SVM）的工作流。
++
+[NOTE]
+====
+在 Unified Manager 上配置 LUN 或文件共享之前，需要执行此工作流。
+
+====
+* 配置文件共享。
+* 配置 LUN。
+* 修改 LUN 和文件共享（通过使用更新存储工作负载的性能服务级别参数的示例）。
+* 修改 NFS 文件共享以支持 CIFS 协议
+* 修改工作负载以将 QoS 升级为 AQoS
+
+
+[NOTE]
+====
+对于每个配置工作流（LUN 和文件共享），请确保您已完成验证集群上 SVM 的工作流。
+
+====
+在工作流程中使用每个 API 之前，您还必须阅读建议和限制。有关 API 的相关详细信息，请参阅相关概念和参考资料中列出的各个部分。

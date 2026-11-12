@@ -1,0 +1,42 @@
+---
+permalink: reporting/task_create_report_to_identify_volumes_nearing_full_capacity.html 
+sidebar: sidebar 
+keywords: create, report, identify, volumes, full capacity, snapshot, autodelete, turned off 
+summary: 您可以创建一个报告，其中包含已禁用 Snapshot 自动删除功能且接近满容量的卷列表。这些结果有助于确定可能需要配置 Snapshot 自动删除的卷。 
+---
+= 在 Active IQ Unified Manager 中识别已禁用 Snapshot 自动删除且接近容量上限的卷
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以创建一个报告，其中包含已禁用 Snapshot 自动删除功能且接近满容量的卷列表。这些结果有助于确定可能需要配置 Snapshot 自动删除的卷。
+
+.开始之前
+* 您必须具有应用程序管理员或存储管理员角色。
+
+
+按照以下步骤创建以正确顺序显示所需列的自定义视图，然后计划为该视图生成报告。
+
+.步骤
+. 在左侧导航窗格中，单击 *Storage* > *Volumes*。
+. 在 View 菜单中，选择 *Capacity* > *All Volumes*。
+. 选择*显示/隐藏*以删除报告中不希望出现的任何列。
+. 将 "`Snapshot 自动删除`" 和 "`Days To Full`" 列拖放到 "`Available Data Capacity`" 列附近。
+. 单击过滤器图标，添加以下两个过滤器，然后单击*应用过滤器*：
++
+** 距离全满天数少于 30 天
+** Snapshot 自动删除已禁用
+
+
+. 单击 *距离全满天数* 列顶端，以便剩余天数最少的卷显示在列表顶端。
+. 使用反映视图显示内容的特定名称保存视图，例如 "`Vols near capacity`"。
+. 单击清单页面上的 *Scheduled Reports* 按钮。
+. 输入报告计划的名称并填写其他报告字段，然后单击该行末尾的复选标记（image:../media/blue_check.gif[""]）。
++
+此时将立即发送一个测试报告。之后，此报告将以指定频率生成并通过电子邮件发送给列出的收件人。
+
+
+
+根据报告中显示的结果，您可能需要在卷上启用 Snapshot 自动删除，或者想办法增加可用空间。

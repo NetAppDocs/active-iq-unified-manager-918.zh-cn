@@ -1,0 +1,26 @@
+---
+permalink: install-vapp/task_restart_unified_manager_virtual_machine.html 
+sidebar: sidebar 
+keywords: restart, unified manager, virtual, machine 
+summary: 您可以从维护控制台重新启动 Unified Manager 虚拟机（VM）。在生成新的安全证书后，或者虚拟机出现问题时，您应重新启动虚拟机。 
+---
+= 重新启动 Active IQ Unified Manager 虚拟机
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以从维护控制台重新启动 Unified Manager 虚拟机（VM）。在生成新的安全证书后，或者虚拟机出现问题时，您应重新启动虚拟机。
+
+.开始之前
+* 应打开虚拟设备的电源。
+* 您应以维护用户身份登录到 Unified Manager 维护控制台。
+
+
+您还可以使用 VMware *Restart Guest* 选项从 vSphere 重新启动虚拟机。请参阅 https://developer.broadcom.com/powercli/latest/vmware.vimautomation.core/commands/restart-vmguest/["Broadcom 的 VMware vSphere PowerCLI CMDLET 参考中的 Restart-VMGuest cmdlet。"^]
+
+.步骤
+. 在维护控制台中，选择*系统配置* > *重新启动虚拟机*。
+. 从浏览器启动 Unified Manager Web UI，然后登录。
+

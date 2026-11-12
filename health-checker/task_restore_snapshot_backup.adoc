@@ -1,0 +1,46 @@
+---
+permalink: health-checker/task_restore_snapshot_backup.html 
+sidebar: sidebar 
+keywords: restore, unified manager, snapshot copy, copies, 
+summary: 如果发生数据丢失或数据损坏，您可以将 Unified Manager 恢复到以前的稳定状态，并将数据丢失降到最低。您可以使用 Unified Manager 维护控制台将 Unified Manager 快照数据库还原到本地或远程操作系统。 
+---
+= 使用 Snapshot 副本还原 Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果发生数据丢失或数据损坏，您可以将 Unified Manager 恢复到以前的稳定状态，并将数据丢失降到最低。您可以使用 Unified Manager 维护控制台将 Unified Manager 快照数据库还原到本地或远程操作系统。
+
+.开始之前
+* 您必须具有 Linux 主机的 root 用户凭据和安装了 Unified Manager 的 Windows 主机的管理权限。
+* 您必须拥有已授权登录到 Unified Manager 服务器维护控制台的用户 ID 和密码。
+
+
+还原功能是特定于平台和版本的。您只能在相同版本的 Unified Manager 上还原 Unified Manager 备份。
+
+.步骤
+. 连接到 Unified Manager 系统的 IP 地址或完全限定的域名。
++
+** Linux：安全 Shell
+** Windows：Power Shell
+
+
+. 使用 root 用户凭据登录到系统。
+. 输入命令 `maintenance_console`并按 Enter 键。
+. 在维护控制台*主菜单*中，为*备份还原*选项输入 4。
+. 输入 2 以选择*使用 NetApp 快照备份和还原*。
++
+如果要对新服务器执行还原，安装 Unified Manager 后，请不要启动 UI，也不要在安装完成后配置任何集群、用户或身份验证设置。输入 1 以选择 *配置 NetApp Snapshot 备份*，并按照原始系统上的设置配置 Snapshot 副本。
+
+. 输入 3 以选择*使用 NetApp 快照还原*。
+. 选择要从中还原 Unified Manager 的快照副本。按 *Enter* 键。
+. 还原过程完成后，登录到 Unified Manager 用户界面。
+
+
+恢复备份后，如果 Workflow Automation 服务器无法正常工作，请执行以下步骤：
+
+. 在 Workflow Automation 服务器上，更改 Unified Manager 服务器的 IP 地址以指向最新的计算机。
+. 如果在步骤 1 中采集失败，请在 Unified Manager 服务器上重置数据库密码。
+

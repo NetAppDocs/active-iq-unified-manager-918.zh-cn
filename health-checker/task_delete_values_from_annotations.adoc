@@ -1,0 +1,31 @@
+---
+permalink: health-checker/task_delete_values_from_annotations.html 
+sidebar: sidebar 
+keywords: delete, values, annotations 
+summary: 当与自定义批注关联的值不再应用于批注时，您可以删除该值。 
+---
+= 从 Active IQ Unified Manager 中删除注释中的值
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+当与自定义批注关联的值不再应用于批注时，您可以删除该值。
+
+.开始之前
+* 您必须具有应用程序管理员或存储管理员角色。
+* 标注值不得与任何标注规则或组规则关联。
+
+
+您不能从预定义的注释中删除值。
+
+.步骤
+. 在左侧导航窗格中，单击 *存储管理* > *注释*。
+. 在*批注*选项卡的批注列表中，选择要从中删除值的批注。
+. 在*注释*选项卡的*值*区域中，选择要删除的值，然后单击*删除*。
+. 在*警告*对话框中，单击*是*。
++
+该值将被删除，不再显示在所选标注的值列表中。
+
+

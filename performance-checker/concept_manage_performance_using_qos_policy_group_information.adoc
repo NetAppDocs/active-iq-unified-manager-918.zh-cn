@@ -1,0 +1,16 @@
+---
+permalink: performance-checker/concept_manage_performance_using_qos_policy_group_information.html 
+sidebar: sidebar 
+keywords: managing, performance, qos, policy, group, information 
+summary: Unified Manager 使您能够查看正在监视的所有集群上可用的服务质量（QoS）策略组。这些策略可能已使用 ONTAP 软件（System Manager 或 ONTAP CLI）或由 Unified Manager 性能服务级别策略定义。Unified Manager 还显示已分配 QoS 策略组的卷和 LUN。 
+---
+= 使用 Active IQ Unified Manager 中的 QoS 策略组信息管理性能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 使您能够查看正在监视的所有集群上可用的服务质量（QoS）策略组。这些策略可能已使用 ONTAP 软件（System Manager 或 ONTAP CLI）或由 Unified Manager 性能服务级别策略定义。Unified Manager 还显示已分配 QoS 策略组的卷和 LUN。
+
+有关调整 QoS 设置的详细信息，请参见 https://docs.netapp.com/us-en/ontap/performance-admin/index.html["性能管理概述"]

@@ -1,0 +1,16 @@
+---
+permalink: performance-checker/task_specify_correlated_objects_time_range.html 
+sidebar: sidebar 
+keywords: specify, time range, correlated objects 
+summary: “性能资源管理器”页面上的时间范围选择器使您能够指定对象数据比较的时间范围。指定时间范围可细化“性能资源管理器”页面的内容，以仅显示您指定的时间范围内的对象数据。 
+---
+= 在 Active IQ Unified Manager 中指定相关对象的时间范围
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+“性能资源管理器”页面上的时间范围选择器使您能够指定对象数据比较的时间范围。指定时间范围可细化“性能资源管理器”页面的内容，以仅显示您指定的时间范围内的对象数据。
+
+细化时间范围提供了一种仅显示您感兴趣的性能数据的有效方法。您可以选择预定义的时间范围或指定自定义时间范围。默认时间范围为前 72 小时。

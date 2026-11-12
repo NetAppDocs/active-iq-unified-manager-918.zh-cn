@@ -1,0 +1,42 @@
+---
+permalink: config/task_configure_unified_manager_to_send_alert_notifications.html 
+sidebar: sidebar 
+keywords: configure, unified manager, send, alert, notifications 
+summary: 您可以将 Unified Manager 配置为发送通知，提醒您环境中的事件。在发送通知之前，必须配置多个其他 Unified Manager 选项。 
+---
+= 配置 Active IQ Unified Manager 以发送警报通知
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以将 Unified Manager 配置为发送通知，提醒您环境中的事件。在发送通知之前，必须配置多个其他 Unified Manager 选项。
+
+.开始之前
+您必须具有应用程序管理员角色。
+
+部署 Unified Manager 并完成初始配置后，应考虑配置环境以触发警报，并根据接收到的事件生成通知电子邮件或 SNMP 陷阱。
+
+.步骤
+. link:task_configure_event_notification_settings.html["配置事件通知设置"]。
++
+如果要在环境中发生某些事件时发送警报通知，则必须配置 SMTP 服务器并提供用于发送警报通知的电子邮件地址。如果要使用 SNMP 陷阱，可以选择该选项并提供必要的信息。
+
+. link:task_enable_remote_authentication.html["启用远程身份验证"]。
++
+如果希望远程 LDAP 或 Active Directory 用户访问 Unified Manager 实例并接收警报通知，则必须启用远程身份验证。
+
+. link:task_add_authentication_servers.html["添加身份验证服务器"]。
++
+您可以添加身份验证服务器，以便身份验证服务器中的远程用户可以访问 Unified Manager。
+
+. link:task_add_users.html["添加用户"]。
++
+您可以添加几种不同类型的本地或远程用户并分配特定角色。在您创建警报时，您需要指定一个用户来接收警报通知。
+
+. link:task_add_alerts.html["添加警报"]。
++
+添加发送通知的电子邮件地址，添加接收通知的用户，配置网络设置，以及配置环境所需的 SMTP 和 SNMP 选项后，即可分配警报。
+
+

@@ -1,0 +1,29 @@
+---
+permalink: api-automation/reference_recommendations_to_use_um_apis.html 
+sidebar: sidebar 
+keywords: recommendations, apis, active iq, unified, manager 
+summary: 在 Active IQ Unified Manager 中使用 API 时，应遵循某些推荐做法。 
+---
+= 请遵循使用 Active IQ Unified Manager API 的推荐做法
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在 Active IQ Unified Manager 中使用 API 时，应遵循某些推荐做法。
+
+* 所有响应内容类型必须采用以下格式才能有效执行：
++
+[listing]
+----
+application/json
+----
+* API 版本号与产品版本号无关。您应使用适用于您的 Unified Manager 实例的最新可用 API 版本。有关 Unified Manager API 版本的详细信息，请参见“`REST API versioning in Active IQ Unified Manager`”部分。
+* 在使用 Unified Manager API 更新数组值时，您必须更新整个值字符串。您不能向数组附加值。您只能替换现有的数组。
+* 您可以对所有查询参数使用筛选器运算符，例如管道（|）和通配符（+*+），但双精度值（例如指标 API 中的 IOPS 和性能）除外。
+* 避免使用过滤器运算符通配符（+*+）和管道（|）的组合来查询对象。这可能会检索到数量不正确的对象。
+* 使用筛选器值时，请确保此值不包含任何 `?`字符。这是为了降低 SQL 注入的风险。
+* 请注意，任何 API 的 `GET` （all）请求最多返回 1000 条记录。即使通过将 `max_records` 参数设置为大于 1000 的值来运行查询，也只会返回 1000 条记录。
+* 要执行管理功能，建议使用 Unified Manager UI。
+

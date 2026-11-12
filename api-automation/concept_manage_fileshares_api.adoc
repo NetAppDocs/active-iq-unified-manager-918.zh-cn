@@ -1,0 +1,113 @@
+---
+permalink: api-automation/concept_manage_fileshares_api.html 
+sidebar: sidebar 
+keywords: manage, file, share 
+summary: 您可以使用 /storage-provider/file-shares API 查看、添加、修改和删除数据中心环境中的 CIFS 和 NFS 文件共享卷。 
+---
+= 使用 Active IQ Unified Manager 中的 API 管理文件共享
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用  `/storage-provider/file-shares` API 查看、添加、修改和删除数据中心环境中的 CIFS 和 NFS 文件共享卷。
+
+在配置文件共享卷之前，请确保已使用支持的协议创建和配置 SVM。如果在配置时分配性能服务级别（PSL）或存储效率策略（SEP），则应在创建文件共享之前创建 PSL 或 SEP。
+
+
+
+[[view-file-shares]]
+== 查看文件共享
+
+您可以使用以下方法查看 Unified Manager 环境中可用的文件共享卷。当您在 Active IQ Unified Manager 上将 ONTAP 集群添加为数据源时，这些集群的存储工作负载将自动添加到您的 Unified Manager 实例中。此 API 检索自动和手动添加到 Unified Manager 实例的文件共享。您可以通过使用文件共享密钥运行此 API 来查看特定文件共享的详细信息。
+
+[cols="3*"]
+|===
+| 类别 | HTTP 谓词 | 路径 
+
+
+ a| 
+storage-provider
+ a| 
+GET
+ a| 
+`/storage-provider/file-shares`
+
+`/storage-provider/file-shares/\{key}`
+
+|===
+
+
+[[add-file-shares]]
+== 添加文件共享
+
+您可以使用以下方法在 SVM 中添加 CIFS 和 NFS 文件共享。必须输入要创建的文件共享的详细信息作为输入参数。您不能使用此 API 添加 FlexGroup 卷。
+
+[cols="3*"]
+|===
+| 类别 | HTTP 谓词 | 路径 
+
+
+ a| 
+storage-provider
+ a| 
+POST
+ a| 
+`/storage-provider/file-shares`
+
+|===
+[NOTE]
+====
+根据是否提供访问控制列表（ACL）参数或导出策略参数，将创建 CIFS 共享或 NFS 文件共享。如果不提供 ACL 参数的值，则不会创建 CIFS 共享，并且默认情况下会创建 NFS 共享，从而提供对所有人的访问权限。
+
+====
+*创建数据保护卷*：将文件共享添加到 SVM 时，默认装载的卷类型为 `rw`（读写）。要创建数据保护（DP）卷，请将 `dp`指定为 `type`参数的值。
+
+
+
+[[delete-file-shares]]
+== 删除文件共享
+
+您可以使用以下方法删除特定文件共享。您需要输入文件共享密钥作为输入参数来删除特定的文件共享。
+
+[cols="3*"]
+|===
+| 类别 | HTTP 谓词 | 路径 
+
+
+ a| 
+storage-provider
+ a| 
+DELETE
+ a| 
+`/storage-provider/file-shares/\{key}`
+
+|===
+
+
+[[modify-file-shares]]
+== 修改文件共享
+
+可以使用以下方法修改文件共享并更新其属性。
+
+需要提供文件共享密钥才能修改特定的文件共享。此外，需要输入要更新的属性及其值。
+
+[NOTE]
+====
+请注意，一次调用此 API 时只能更新一个属性。对于多个更新，需要多次运行此 API。
+
+====
+[cols="3*"]
+|===
+| 类别 | HTTP 谓词 | 路径 
+
+
+ a| 
+storage-provider
+ a| 
+PATCH
+ a| 
+`/storage-provider/file-shares/\{key}`
+
+|===

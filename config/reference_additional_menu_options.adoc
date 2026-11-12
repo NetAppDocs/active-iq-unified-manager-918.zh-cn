@@ -1,0 +1,66 @@
+---
+permalink: config/reference_additional_menu_options.html 
+sidebar: sidebar 
+keywords: additional menu, options 
+summary: 以下菜单选项可用于在 Unified Manager 服务器上执行各种管理任务。 
+---
+= 了解有关 Active IQ Unified Manager 中其他维护控制台菜单选项的信息
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+以下菜单选项可用于在 Unified Manager 服务器上执行各种管理任务。
+
+提供以下菜单选项：
+
+* *重置服务器证书*
++
+重新生成 HTTPS 服务器证书。
+
++
+您可以通过单击 *常规* > *HTTPS 证书* > *重新生成 HTTPS 证书*，在 Unified Manager GUI 中重新生成服务器证书。
+
+* *禁用 SAML 身份验证*
++
+禁用 SAML 身份验证，以便身份提供程序（IdP）不再为访问 Unified Manager GUI 的用户提供登录身份验证。当 IdP 服务器或 SAML 配置出现问题，导致用户无法访问 Unified Manager GUI 时，通常会使用此控制台选项。
+
+* *外部数据提供商*
++
+提供用于将 Unified Manager 连接到外部数据提供程序的选项。建立连接后，性能数据将发送到外部服务器，以便存储性能专家可以使用第三方软件绘制性能指标图表。此时将显示以下选项：
+
++
+** *显示服务器配置*--显示外部数据提供程序的当前连接和配置设置。
+** *添加/修改服务器连接*--允许您为外部数据提供程序输入新的连接设置，或更改现有设置。
+** *修改服务器配置*--允许您为外部数据提供程序输入新的配置设置，或更改现有设置。
+** *删除服务器连接*--删除与外部数据提供程序的连接。
++
+删除连接后，Unified Manager 将失去与外部服务器的连接。
+
+
+
+* *备份还原*
++
+有关信息，请参见 link:../health-checker/concept_manage_backup_and_restore_operations.html["管理备份和还原操作"] 下的主题。
+
+* *性能轮询间隔配置*
++
+提供配置 Unified Manager 从群集收集性能统计数据的频率的选项。默认收集间隔为 5 分钟。
+
++
+如果发现来自大型集群的收集未按时完成，则可以将此时间间隔更改为 10 或 15 分钟。
+
+* *查看/更改应用程序端口*
++
+如果出于安全需要，提供更改 Unified Manager 用于 HTTP 和 HTTPS 协议的默认端口的选项。HTTP 的默认端口为 80，HTTPS 的默认端口为 443。
+
+* *控制对 MySQL 端口 3306 的访问*
++
+控制主机对默认 MySQL 端口 3306 的访问。出于安全原因，在 Linux、Windows 和 VMware vSphere 系统上全新安装 Unified Manager 期间，通过此端口的访问仅限于本地主机。此选项使您能够在本地主机和远程主机之间切换此端口的可见性，也就是说，如果仅在您的环境中为本地主机启用此端口，您也可以将此端口提供给远程主机。或者，当对所有主机启用时，您可以将此端口的访问限制为仅本地主机。如果以前在远程主机上启用了访问，则在升级场景中保留配置。切换端口可见性后，应检查 Windows 系统上的防火墙设置，如果设置配置为限制对 MySQL 端口 3306 的访问，则应禁用防火墙设置。
+
+* *退出*
++
+退出维护控制台菜单。
+
+

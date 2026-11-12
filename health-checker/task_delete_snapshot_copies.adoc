@@ -1,0 +1,45 @@
+---
+permalink: health-checker/task_delete_snapshot_copies.html 
+sidebar: sidebar 
+keywords: delete, snapshot copies 
+summary: 您可以删除 Snapshot 副本以节省空间或释放磁盘空间，也可以删除不再需要的 Snapshot 副本。 
+---
+= 在 Active IQ Unified Manager 中删除 Snapshot 副本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以删除 Snapshot 副本以节省空间或释放磁盘空间，也可以删除不再需要的 Snapshot 副本。
+
+.开始之前
+您必须具有应用程序管理员或存储管理员角色。
+
+卷必须联机。
+
+要删除忙碌或锁定的 Snapshot 副本，必须从使用该副本的应用程序中释放该 Snapshot 副本。
+
+* 如果 FlexClone 卷正在使用该 Snapshot 副本，则无法删除父卷中的基本 Snapshot 副本。
++
+基本 Snapshot 副本是用于创建 FlexClone 卷的 Snapshot 副本，并在父卷中显示状态 `Busy`和应用程序依赖关系为 `Busy, Vclone`。
+
+* 无法删除 SnapMirror 关系中使用的锁定 Snapshot 副本。
++
+Snapshot 副本已锁定，需要在下次更新时使用。
+
+
+
+.步骤
+. 在左侧导航窗格中，单击 *Storage* > *Volumes*。
+. 在 *运行状况：所有卷* 视图中，选择包含要查看的 Snapshot 副本的卷。
++
+此时将显示 Snapshot 副本列表。
+
+. 在*卷 / 健康*详细信息页面中，单击*容量*选项卡。
+. 在*容量*选项卡的*详细信息*窗格中，在其他详细信息部分中，单击*快照副本*旁边的链接。
++
+Snapshot 副本数是一个显示 Snapshot 副本列表的链接。
+
+. 在*Snapshot 副本*视图中，选择要删除的 Snapshot 副本，然后单击*删除选定*。
+

@@ -1,0 +1,48 @@
+---
+permalink: reporting/task_create_report_volumes_that_should_move_data_to_cloud_tier.html 
+sidebar: sidebar 
+keywords: create, report, identify, volumes, FabricPool, aggregates, data, cloud tier 
+summary: 您可以创建一个报告，其中包含当前驻留在 FabricPool 聚合上、云建议为 Tier 且具有大量冷数据的卷列表。此报告可帮助您决定是否应将某些卷的分层策略更改为“auto”或“all”，以将更多冷（非活动）数据卸载到云层。 
+---
+= 确定应在 Active IQ Unified Manager 中将数据移至云层的卷
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以创建一个报告，其中包含当前驻留在 FabricPool 聚合上、云建议为 Tier 且具有大量冷数据的卷列表。此报告可帮助您决定是否应将某些卷的分层策略更改为 "`auto`" 或 "`all`"，以将更多冷（非活动）数据卸载到云层。
+
+.开始之前
+* 您必须具有应用程序管理员或存储管理员角色。
+* 您必须事先已配置 FabricPool 聚合，并且这些聚合包含一些卷。
+
+
+按照以下步骤创建以正确顺序显示所需列的自定义视图，然后计划为该视图生成报告。
+
+.步骤
+. 在左侧导航窗格中，单击 *Storage* > *Volumes*。
+. 在“View”菜单中，选择 *Performance* > *All Volumes*。
+. 在列选择器中，确保在视图中显示 "`磁盘类型`" 列。
++
+添加或删除其他列以创建对您的报告很重要的视图。
+
+. 将 "`Disk Type`" 列拖放到 "`Cloud Recommendation`" 列附近。
+. 单击过滤器图标，添加以下三个过滤器，然后单击*应用过滤器*：
++
+** 磁盘类型包含 FabricPool
+** “云建议”包含 tier
+** 冷数据大于 10 GB image:../media/filter_cold_data.gif["显示如何添加和应用筛选器的 UI 屏幕截图。"]
+
+
+. 单击冷数据列的顶部，使包含最多冷数据的卷显示在视图的顶部。
+. 使用反映视图显示内容的名称保存视图，例如 "`Vols change tiering policy`"。image:../media/report_vol_cold_data.gif["显示 Vols 更改分层策略页面的 UI 屏幕截图，所需列按正确的顺序排列。"]
+. 单击清单页面上的 *Scheduled Reports* 按钮。
+. 单击*添加计划*可将新行添加到“报告计划”页面，以便您可以定义新报告的计划特性。
+. 输入报告计划的名称并填写其他报告字段，然后单击该行末尾的复选标记（image:../media/blue_check.gif[""]）。
++
+此时将立即发送一个测试报告。之后，此报告将以指定频率生成并通过电子邮件发送给列出的收件人。
+
+
+
+根据报告中显示的结果，您可能需要使用 System Manager 或 ONTAP CLI 将某些卷的分层策略更改为 "`auto`" 或 "`all`"，以便将更多冷数据卸载到云层。

@@ -1,0 +1,73 @@
+---
+permalink: data-protection/reference_edit_relationship_dialog_box.html 
+sidebar: sidebar 
+keywords: edit, relationship, dialog box 
+summary: 您可以编辑现有的保护关系，以更改最大传输速率、保护策略或保护计划。 
+---
+= 在 Active IQ Unified Manager 中编辑保护关系
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以编辑现有的保护关系，以更改最大传输速率、保护策略或保护计划。
+
+
+
+[[destination-information]]
+== 目标卷信息
+
+* *目标集群*
++
+所选目标集群的名称。
+
+* *目标 SVM*
++
+所选 SVM 的名称
+
+* *关系设置*
++
+使您能够指定保护关系使用的最大传输速率、SnapMirror 策略和计划：
+
++
+** 最大传输速率
++
+指定通过网络在群集之间传输基线数据的最大速率。选中后，网络带宽将限制为您指定的值。您可以输入一个数值，然后选择千字节/秒（KBps）、兆字节/秒（MBps）、吉字节/秒（GBps）或太字节/秒（TBps）。指定的最大传输速率必须大于 1 KBps 且小于 4 TBps。如果选择不使用最大传输速率，则关系之间的基线传输是无限的。如果主群集和辅助群集相同，则禁用此设置。
+
+** SnapMirror 策略
++
+为关系指定 ONTAP SnapMirror 策略。默认值为 DPDefault。
+
+** 创建策略
++
+启动“创建 SnapMirror 策略”对话框，可使用此对话框创建和使用新 SnapMirror 策略。
+
+** SnapMirror 计划
++
+指定关系的 ONTAP SnapMirror 策略。可用的计划包括 None、5min、8hour、daily、hourly 和 weekly。默认值为 None，表示没有计划与此关系关联。没有计划的关系没有滞后状态值，除非它们属于存储服务。
+
+** 创建计划
++
+启动“创建计划”对话框，可使用此对话框创建新 SnapMirror 计划。
+
+
+
+
+
+
+
+[[command-buttons]]
+== 命令按钮
+
+这些命令按钮可用来执行下列任务：
+
+* *取消*
++
+放弃选择并关闭“配置保护”对话框。
+
+* *提交*
++
+应用您的选择并关闭“编辑关系”对话框。
+
+

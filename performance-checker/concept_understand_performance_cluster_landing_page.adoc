@@ -1,0 +1,26 @@
+---
+permalink: performance-checker/concept_understand_performance_cluster_landing_page.html 
+sidebar: sidebar 
+keywords: understand, performance, cluster, landing page 
+summary: 性能集群登录页面提供所选集群的高级性能概述，重点介绍集群中前 10 个对象的性能状态。性能问题显示在页面顶部的“此集群上的所有事件”面板中。 
+---
+= 了解 Active IQ Unified Manager 中的性能集群登录页面
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+性能集群登录页面提供所选集群的高级性能概述，重点介绍集群中前 10 个对象的性能状态。性能问题显示在页面顶部的“此集群上的所有事件”面板中。
+
+性能集群登录页面提供了由 Unified Manager 实例管理的每个集群的高级概述。此页面为您提供有关事件和性能的信息，并使您能够监控集群并对其进行故障排除。下图显示了名为 opm-mobility 的集群的性能集群登录页面示例：
+
+image::../media/opm_cluster_landing_page_draft.gif[显示名为 opm-mobility 的集群的性能集群登录页面示例的 UI 屏幕截图。]
+
+集群摘要页面上的事件计数可能与性能事件清单页面上的事件计数不匹配。这是因为当违反组合阈值策略时，集群摘要页面可以在延迟和利用率条中各显示一个事件，而性能事件清单页面在违反组合策略时仅显示一个事件。
+
+[NOTE]
+====
+如果群集已从 Unified Manager 管理中移除，则状态*已移除*将显示在页面顶端的群集名称的右侧。
+
+====

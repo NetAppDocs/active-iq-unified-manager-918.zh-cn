@@ -1,0 +1,55 @@
+---
+permalink: health-checker/task_add_annotations_manually_to_individual_storage_objects.html 
+sidebar: sidebar 
+keywords: add, annotations, manually, individual, storage objects 
+summary: 您可以手动标注选定的卷、集群和 SVM，而无需使用标注规则。您可以标注单个存储对象或多个存储对象，并为标注指定所需的名称-值对组合。 
+---
+= 在 Active IQ Unified Manager 中手动向单个存储对象添加注释
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以手动标注选定的卷、集群和 SVM，而无需使用标注规则。您可以标注单个存储对象或多个存储对象，并为标注指定所需的名称-值对组合。
+
+.开始之前
+您必须具有应用程序管理员或存储管理员角色。
+
+.步骤
+. 导航到要注释的存储对象：
++
+[cols="2*"]
+|===
+| 要将注释添加到…… | 操作 
+
+
+ a| 
+集群
+ a| 
+.. 单击 *Storage* > *Clusters*。
+.. 选择一个或多个群集。
+
+
+
+
+ a| 
+卷
+ a| 
+.. 单击 *Storage （存储）* > *Volumes （卷）*。
+.. 选择一个或多个卷。
+
+
+
+
+ a| 
+SVM
+ a| 
+.. 单击 *存储* > *SVMs*。
+.. 选择一个或多个 SVM。
+
+
+|===
+. 单击*注释*并选择一个名称-值对。
+. 单击*应用*。
+

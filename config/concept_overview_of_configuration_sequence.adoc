@@ -1,0 +1,16 @@
+---
+permalink: config/concept_overview_of_configuration_sequence.html 
+sidebar: sidebar 
+keywords: overview, configuration, sequence 
+summary: 配置工作流描述了在使用 Unified Manager 之前必须执行的任务。 
+---
+= 了解 Active IQ Unified Manager 中的配置顺序
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+配置工作流描述了在使用 Unified Manager 之前必须执行的任务。
+
+image::../media/post_install_flow.png[显示 Unified Manager 初始配置工作流程和管理设置任务的图表]

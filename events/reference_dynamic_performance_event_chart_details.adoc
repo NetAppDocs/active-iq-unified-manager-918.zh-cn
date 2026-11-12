@@ -1,0 +1,68 @@
+---
+permalink: events/reference_dynamic_performance_event_chart_details.html 
+sidebar: sidebar 
+keywords: dynamic, performance, event, chart, details 
+summary: 对于动态性能事件，事件详细信息页面的系统诊断部分列出了延迟最高或对争用集群组件使用率最高的主要工作负载。性能统计数据基于从检测到性能事件的时间到上次分析该事件的时间。图表还显示了争用集群组件的历史性能统计信息。 
+---
+= 了解 Active IQ Unified Manager 中的动态性能事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+对于动态性能事件，“事件详细信息”页面的“系统诊断”部分列出了存在争用的集群组件延迟或使用率最高的顶级工作负载。
+
+性能统计数据基于检测到性能事件的时间，直至上次分析事件的时间。图表还显示处于争用状态的集群组件的历史性能统计信息。
+
+例如，您可以识别组件利用率高的工作负载，以确定将哪些工作负载转移到利用率较低的组件。移动工作负载将减少当前组件的工作量，可能使组件脱离争用状态。本节顶部是检测到事件并进行上次分析的时间和日期范围。对于活动事件（新事件或已确认事件），上次分析的时间将被更新。
+
+将光标悬停在图表上时，延迟和活动图表会显示顶级工作负载的名称。单击图表右侧的工作负载类型菜单，您可以根据工作负载在事件中的角色（包括 _sharks_ 、 _bullies_ 或 _victims_ ）对工作负载进行排序，并显示有关其延迟及其在争用集群组件中的使用情况的详细信息。您可以将实际值与预期值进行比较，以查看工作负载何时超出其预期的延迟或使用范围。有关信息，请参阅 link:..//performance-checker/concept_types_of_workloads_monitored_by_unified_manager.html["由 Unified Manager 监控的工作负载类型"]。
+
+[NOTE]
+====
+当您按延迟的峰值偏差排序时，系统定义的工作负载不会显示在表中，因为延迟仅适用于用户定义的工作负载。具有极低延迟值的工作负载不会显示在表中。
+
+====
+有关动态性能阈值的详细信息，请参见 link:../performance-checker/concept_analyze_events_from_dynamic_performance_thresholds.html["分析动态性能阈值生成的事件"]。
+
+有关 Unified Manager 如何对工作负载进行排序和确定排序顺序的信息，请参见 link:../performance-checker/concept_how_um_determines_performance_impact_for_incident.html["Unified Manager 如何确定事件对性能的影响"]。
+
+图表中的数据显示了上次分析事件之前的 24 小时性能统计数据。每个工作负载的实际值和预期值基于工作负载参与事件的时间。例如，工作负载可能会在检测到事件后参与事件，因此其性能统计信息可能与事件检测时的值不匹配。默认情况下，工作负载按延迟的峰值（最高）偏差进行排序。
+
+[NOTE]
+====
+由于 Unified Manager 最多保留 30 天的 5 分钟历史性能和事件数据，因此如果此事件是 30 多天前的，则不会显示任何性能数据。
+
+====
+* *Workload Sort 列*
++
+** *延迟图表*
++
+显示上次分析过程中事件对工作负载延迟的影响。
+
+** *Component Usage 列*
++
+显示有关发生争用的集群组件的工作负载使用情况的详细信息。在图表中，实际使用情况显示为一条蓝线。红色条突出显示从检测时间到上次分析时间的事件持续时间。有关详细信息，请参见 link:../performance-checker/reference_workload_performance_measurement_values.html["工作负载性能测量值"]。
+
++
+[NOTE]
+====
+对于网络组件，由于网络性能统计信息来自集群外的活动，因此不会显示此列。
+
+====
+** *组件使用*
++
+以百分比显示网络处理、数据处理和聚合组件的利用率历史记录，或以百分比显示 QoS 策略组组件的活动历史记录。不显示网络或互连组件的图表。您可以指向统计数据以查看特定时间点的使用统计数据。
+
+** *总写入 MB/s 历史记录*
++
+仅对于 MetroCluster Resources 组件，显示在 MetroCluster 配置中镜像到配对集群的所有卷工作负载的总写入吞吐量，以兆字节每秒（MBps）为单位。
+
+** *事件历史记录*
++
+显示红色阴影线条以指示争用组件的历史事件。对于过时的事件，图表显示在检测到所选事件之前和解决该事件之后发生的事件。
+
+
+
+

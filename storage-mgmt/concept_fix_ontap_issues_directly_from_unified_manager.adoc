@@ -1,0 +1,24 @@
+---
+permalink: storage-mgmt/concept_fix_ontap_issues_directly_from_unified_manager.html 
+sidebar: sidebar 
+keywords: fix, ontap, issues, directly, unified manager, fix it, fix-it, remediation 
+summary: 您可以直接从 Unified Manager 用户界面修复某些 ONTAP 问题，而不必使用 ONTAP System Manager 或 ONTAP CLI。“管理操作”选项可修复触发 Unified Manager 事件的许多 ONTAP 问题。 
+---
+= 直接从 Active IQ Unified Manager 管理 ONTAP 问题或功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以直接从 Unified Manager 用户界面修复某些 ONTAP 问题或管理某些 ONTAP 功能，而不必使用 ONTAP System Manager 或 ONTAP CLI。“`管理操作`”选项可修复触发 Unified Manager 事件的许多 ONTAP 问题。
+
+您可以通过选择左侧导航窗格中的*管理操作*选项，直接从管理操作页面解决问题。管理操作也可以从仪表板上的管理操作面板、事件详细信息页面和左侧导航菜单上的工作负载分析选择中获得。
+
+Unified Manager 可以彻底诊断某些问题并提供单一解决方案。对于某些 ONTAP 功能，例如反勒索软件监控，Unified Manager 会执行内部检查并建议具体操作。如果可用，这些解决方案将通过*修复*按钮显示在管理操作中。单击*修复*按钮以解决此问题。您必须具有应用程序管理员或存储管理员角色。
+
+Unified Manager 将 ONTAP 命令发送到集群以进行请求的修复。修复完成后，事件将被废弃。
+
+某些管理操作使您能够使用 *全部修复* 按钮修复多个存储对象上的相同问题。例如，可能有 5 个卷具有“卷空间已满”事件，可以通过单击“启用卷自动增长”的 *全部修复* 管理操作来解决。只需单击一下，即可在 5 个卷上修复此问题。
+
+有关可通过使用自动修正进行管理的 ONTAP 问题和功能的信息，请参见 link:../storage-mgmt/reference_what_ontap_issues_can_unified_manager_fix.html["Unified Manager 可以解决哪些问题"]。

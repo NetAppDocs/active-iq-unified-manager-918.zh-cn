@@ -1,0 +1,36 @@
+---
+permalink: data-protection/task_resolve_protection_job_failure.html 
+sidebar: sidebar 
+keywords: resolve, protection, job failure 
+summary: 此工作流程提供了如何从 Unified Manager 仪表板识别和解决保护作业失败的示例。 
+---
+= 解决 Active IQ Unified Manager 中的保护作业故障
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此工作流程提供了如何从 Unified Manager 仪表板识别和解决保护作业失败的示例。
+
+.开始之前
+由于此工作流中的某些任务要求您使用管理员角色登录，因此您必须熟悉使用各种功能所需的角色。
+
+在这种情况下，您可以访问仪表板页面，查看保护作业是否存在任何问题。在“保护事件”区域，您注意到卷上出现“作业终止”事件，显示“保护作业失败”错误。您调查此错误以确定可能的原因和潜在的解决方案。
+
+.步骤
+. 在“仪表板未解决的事件和风险”区域的“保护事件”面板中，单击 *保护作业失败* 事件。
++
+[TIP]
+====
+事件的链接文本以 `object_name:/object_name - Error Name`的形式编写，例如 `cluster2_src_svm:/cluster2_src_vol2 - Protection Job Failed`。
+
+====
++
+将显示失败的保护作业的事件详细信息页面。
+
+. 查看*摘要*区域的“原因”字段中的错误消息，以确定问题并评估潜在的纠正措施。
++
+请参阅 link:task_identify_problem_for_failed_protection_job.html["识别问题并对失败的保护作业执行纠正措施"]。
+
+

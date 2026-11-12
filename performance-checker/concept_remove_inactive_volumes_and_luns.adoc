@@ -1,0 +1,34 @@
+---
+permalink: performance-checker/concept_remove_inactive_volumes_and_luns.html 
+sidebar: sidebar 
+keywords: remove, inactive, volumes, luns 
+summary: 当聚合可用空间被识别为问题时，您可以搜索未使用的卷和 LUN 并将其从聚合中删除。这有助于缓解磁盘空间不足的问题。 
+---
+= 删除 Active IQ Unified Manager 中的非活动卷和 LUN
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+当聚合可用空间被识别为问题时，您可以搜索未使用的卷和 LUN 并将其从聚合中删除。这有助于缓解磁盘空间不足的问题。
+
+如果聚合中的性能事件是由磁盘空间不足引起的，则有几种方法可以确定哪些卷和 LUN 不再被使用。
+
+识别未使用的卷：
+
+* 在事件详细信息页面上，*受影响的对象计数*字段提供了一个显示受影响卷列表的链接。
++
+单击此链接在“性能：所有卷”视图上显示卷。在此处，您可以按 *IOPS* 对受影响的卷进行排序，以查看哪些卷未处于活动状态。
+
+
+
+要识别未使用的 LUN：
+
+. 在事件详细信息页面中，记下发生事件的聚合的名称。
+. 在左侧导航窗格中，单击*存储* > *LUN*，然后从视图菜单中选择*性能* > *所有 LUN*。
+. 单击*过滤*，从左侧下拉菜单中选择*聚合*，在文本字段中键入聚合的名称，然后单击*应用过滤器*。
+. 按 *IOPS* 对受影响 LUN 的结果列表进行排序以查看未处于活动状态的 LUN。
+
+
+确定未使用的卷和 LUN 后，您可以使用 ONTAP System Manager 或 ONTAP 命令删除这些对象。

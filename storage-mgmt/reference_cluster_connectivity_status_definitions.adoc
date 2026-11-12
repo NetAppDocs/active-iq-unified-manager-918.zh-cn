@@ -1,0 +1,51 @@
+---
+permalink: storage-mgmt/reference_cluster_connectivity_status_definitions.html 
+sidebar: sidebar 
+keywords: cluster, connectivity, status, definitions 
+summary: '了解 MetroCluster 配置中集群之间的连接状态，例如"最佳"、"受影响"或"关闭"。' 
+---
+= 了解 Active IQ Unified Manager 中基于 FC 的 MetroCluster 配置中的集群连接性
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+基于 FC 的 MetroCluster 配置中集群之间的连接可以为以下状态之一：最佳、受影响或关闭。了解连接状态使您能够有效地管理 MetroCluster 配置。
+
+|===
+| 连接状态 | 问题描述 | 显示的图标 
+
+
+ a| 
+最佳
+ a| 
+MetroCluster 配置中集群之间的连接正常。
+ a| 
+image:../media/metrocluster_connectivity_optimal.gif["metrocluster connectivity optimal 图标"]
+
+
+
+ a| 
+受影响
+ a| 
+一个或多个错误会影响故障转移可用性状态；但是，MetroCluster 配置中的两个集群仍处于正常运行状态。例如，当 ISL 链路关闭、集群间 IP 链路关闭或无法访问伙伴集群时。
+ a| 
+image:../media/metrocluster_connectivity_impacted.gif["MetroCluster 连接受影响图标"]
+
+
+
+ a| 
+已关闭
+ a| 
+MetroCluster 配置中的集群之间的连接已断开，因为其中一个或两个集群已关闭，或者集群处于故障转移模式。例如，当配对集群因灾难而关闭时，或者出于测试目的进行计划内切换时。
+ a| 
+切换时出错：
+
+image::../media/metrocluster_connectivity_down.gif[metrocluster connectivity down 图标]
+
+切换成功：
+
+image::../media/metrocluster_connectivity_failover.gif[MetroCluster 连接故障转移图标]
+
+|===

@@ -1,0 +1,270 @@
+---
+permalink: storage-mgmt/concept_manage_performance_service_levels.html 
+sidebar: sidebar 
+keywords: manage, performance service level, PSL, User-defined, system-defined PSL, bursty, Database PSL, extreme PSL, beyond extreme PSL 
+summary: 性能服务级别的计算和管理。 
+---
+= 在 Active IQ Unified Manager 中管理性能服务级别
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+性能服务级别（PSL）使您能够定义工作负载的性能和存储目标。您可以在最初创建工作负载时或之后通过编辑工作负载，为工作负载分配 PSL。
+
+存储资源的管理和监控基于服务级别目标（SLO）。SLO 由基于所需性能和容量的服务级别协议定义。在 Unified Manager 中，SLO 是指在 NetApp 存储上运行的应用程序的 PSL 定义。存储服务根据底层资源的性能和利用率进行区分。PSL 是存储服务目标的描述。PSL 使存储提供商能够为工作负载指定性能和容量目标。当您在工作负载上分配 PSL 时，ONTAP 上的相应工作负载将由其性能和容量目标进行管理。每个 PSL 都由峰值、预期和绝对最小 IOPs 以及预期延迟控制。
+
+Unified Manager 具有以下类型的 PSL：
+
+* *系统定义*：Unified Manager 提供了一些无法更改的预设策略。这些预定义的 PSL 是：
++
+** 至高性能
+** 性能
+** 值
++
+Extreme Performance、Performance 和 Value PSL 适用于数据中心的大多数常见存储工作负载。
+
++
+Unified Manager 还为数据库应用程序提供三个性能服务级别。这些是支持突发 IOPS 的极高性能 PSL，适用于具有最高吞吐量需求的数据库应用程序。
+
+** 数据库日志的 Extreme
+** Extreme for Database Shared Data
+** 数据库数据的 Extreme
+
+
+* *用户自定义*：如果预定义的性能服务级别不满足您的需求，您可以创建新的 PSL 来满足您的需求。有关信息，请参见 link:../storage-mgmt/task_create_and_edit_psls.html["创建和编辑性能服务级别"]。
+* *Beyond Extreme*：Beyond Extreme PSL 是系统推荐的 PSL，建议用于要求 IOPs 高于 Extreme 的工作负载。系统会根据这些工作负载的 IOPS、容量和延迟对其进行内部分析，并在 *存储 > 工作负载 > 所有工作负载* 屏幕上为每个工作负载推荐 Beyond Extreme PSL。您可以将 PSL 应用于工作负载，以确保获得最佳性能。
++
+工作负载的 IOPs 参数是动态生成的，具体取决于工作负载行为，并以 `Beyond Extreme <number-(peak IOPS/TB)> <number(expected IOPS/TB)>`的格式附加到 Beyond Extreme PSL 的名称后。例如，如果系统确定工作负载的峰值和预期 IOPs 分别为 `106345`和 `37929`，则为该工作负载生成的 Beyond Extreme PSL 将命名为 `Beyond Extreme 106345 37929`。虽然这些 PSL 是系统推荐的，但当您将它们分配给工作负载时，这些 PSL 的类型会被标记为 `User-defined`。
+
+
+
+
+
+[[manage-workloads-by-assigning-psls]]
+== 通过分配 PSL 管理工作负载
+
+您可以从 *策略* > *性能服务级别* 页面并使用存储提供商 API 访问 PSL。通过向存储工作负载分配 PSL 来管理存储工作负载非常方便，因为您不必单独管理存储工作负载。任何修改也可以通过重新分配另一个 PSL 来管理，而不是单独管理它们。Unified Manager 可帮助您根据内部评估和建议为工作负载分配 PSL。
+
+有关将系统推荐的 PSL 分配给工作负载的信息，请参见 link:..//storage-mgmt/concept_assign_policies_on_workloads.html#assign-system-recommended-psls-to-workloads["将系统建议的 PSL 分配给工作负载"]
+
+性能服务级别页面列出了可用的 PSL 策略，并允许您添加、编辑和删除它们。
+
+
+NOTE: 您无法修改系统定义的或当前分配给工作负载的 PSL。无法删除分配给工作负载的 PSL，如果它是唯一可用的 PSL，也无法删除。
+
+此页面显示以下信息：
+
+|===
+| 字段 | 问题描述 
+
+
+ a| 
+名称
+ a| 
+PSL 的名称。
+
+
+
+ a| 
+类型
+ a| 
+此策略是系统定义的还是用户定义的。
+
+
+
+ a| 
+预期 IOPS/TB
+ a| 
+应用程序预期在 LUN 或文件共享上执行的最小 IOPS 数。预期 IOPS 根据已分配的存储对象大小指定已分配的最低预期 IOPS。
+
+
+
+ a| 
+峰值 IOPS/TB
+ a| 
+应用程序可在 LUN 或文件共享上执行的最大 IOPS 数。Peak IOPS 根据已分配的存储对象大小或已使用的存储对象大小指定已分配的最大可能 IOPS。
+
+Peak IOPS 基于分配策略。分配策略为 allocated-space 或 used-space。当分配策略设置为 allocated-space 时，系统将根据存储对象的大小计算峰值 IOPS。当分配策略设置为 used-space 时，系统将根据存储对象中存储的数据量并考虑存储效率来计算峰值 IOPS。默认情况下，分配策略设置为 used-space。
+
+
+
+ a| 
+绝对最小 IOPS
+ a| 
+当预期 IOPS 小于此值时，绝对最小 IOPS 将用作覆盖。系统定义的 PSL 的默认值如下：
+
+* 极致性能：如果预期 IOPS >= 6144/TB，则绝对最小 IOPS = 1000
+* 性能：如果预期 IOPS >= 2048/TB 且 < 6144/TB，则绝对最小 IOPS = 500
+* 值：如果预期 IOPS >= 128/TB 且 < 2048/TB，则绝对最小 IOPS = 75
+
+
+系统定义的数据库 PSL 的默认值如下：
+
+* 数据库日志的 Extreme：如果预期 IOPS >= 22528，则绝对最小 IOPS = 4000
+* 数据库共享数据的 Extreme：如果预期 IOPS >= 16384，则绝对最小 IOPS = 2000
+* 数据库数据的 Extreme：如果预期 IOPS >= 12288，则绝对最小 IOPS = 2000
+
+
+自定义 PSL 的绝对最小 IOPS 的较高值最多可为 75000。较低的值按以下方式计算：
+
+1000/预期延迟
+
+
+
+ a| 
+预期延迟
+ a| 
+存储 IOPS 的预期延迟，以毫秒/操作（ms/op）为单位。
+
+
+
+ a| 
+容量
+ a| 
+集群中的可用和已用容量总计。
+
+
+
+ a| 
+工作负载
+ a| 
+已分配 PSL 的存储工作负载数。
+
+|===
+有关峰值 IOPS 和预期 IOPS 如何帮助在 ONTAP 集群上实现一致的差异化性能的信息，请参见以下知识库文章： https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/Active_IQ_Unified_Manager/What_is_Performance_Budgeting%3F["什么是性能预算？"]
+
+
+
+[[events-generated-for-workloads-breaching-the-threshold-defined-by-psls]]
+=== 为违反 PSL 定义的阈值的工作负载生成的事件
+
+请注意，如果工作负载在过去一小时内有 30% 的时间超过预期延迟值，Unified Manager 将生成以下事件之一，以通知您潜在的性能问题：
+
+* 已违反性能服务级别策略定义的工作负载卷延迟阈值
+* 已违反性能服务级别策略定义的工作负载 LUN 延迟阈值。
+
+
+您可能需要分析工作负载，以了解可能导致更高延迟值的原因。
+
+有关详细信息，请参见以下链接：
+
+* link:../events/reference_volume_events.html#impact-area-performance["卷事件"]
+* link:../performance-checker/concept_what_happens_when_performance_threshold_policy_is_breached.html["违反性能阈值策略时会发生什么"]
+* link:..//performance-checker/concept_how_unified_manager_uses_workload_response_time.html["Unified Manager 如何使用工作负载延迟来识别性能问题"]
+* link:../performance-checker/concept_what_performance_events_are.html["什么是性能事件"]
+
+
+
+
+[[system-defined-psls]]
+=== 系统定义的 PSL
+
+下表提供了有关系统定义的 PSL 的信息：
+
+|===
+| 性能服务级别 | 说明和用例 | 预期延迟（毫秒/操作） | IOPS 峰值 | 预期 IOPS | 绝对最小 IOPS 
+
+
+ a| 
+至高性能
+ a| 
+提供至高吞吐量和至低延迟
+
+最适合延迟敏感型应用程序
+ a| 
+1
+ a| 
+12288
+ a| 
+6144
+ a| 
+1000
+
+
+
+ a| 
+性能
+ a| 
+提供高吞吐量和低延迟
+
+非常适合数据库和虚拟化应用程序
+ a| 
+2
+ a| 
+4096
+ a| 
+2048
+ a| 
+500
+
+
+
+ a| 
+值
+ a| 
+提供高存储容量和中等延迟
+
+非常适合高容量应用，如电子邮件、Web 内容、文件共享和备份目标
+ a| 
+17
+ a| 
+512
+ a| 
+128
+ a| 
+75
+
+
+
+ a| 
+数据库日志的 Extreme
+ a| 
+以最低延迟提供最大吞吐量。
+
+非常适合支持数据库日志的数据库应用程序。此 PSL 提供最高的吞吐量，因为数据库日志具有极强的突发性，并且不断需要日志记录。
+ a| 
+1
+ a| 
+45056
+ a| 
+22528
+ a| 
+4000
+
+
+
+ a| 
+Extreme for Database Shared Data
+ a| 
+提供非常高的吞吐量和最低延迟。
+
+非常适合存储在通用数据存储中但跨数据库共享的数据库应用程序数据。
+ a| 
+1
+ a| 
+32768
+ a| 
+16384
+ a| 
+2000
+
+
+
+ a| 
+数据库数据的 Extreme
+ a| 
+以最低延迟提供高吞吐量。
+
+非常适合数据库应用程序数据，例如数据库表信息和元数据。
+ a| 
+1
+ a| 
+24576
+ a| 
+12288
+ a| 
+2000
+
+|===

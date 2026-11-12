@@ -1,0 +1,14 @@
+---
+permalink: performance-checker/concept_analyze_performance_events.html 
+sidebar: sidebar 
+keywords: analyze, performance, events 
+summary: 您可以分析性能事件以确定它们何时被检测到，它们是活动的（新的还是已确认的）还是过时的，涉及的工作负载和集群组件，以及用于自行解决事件的选项。 
+---
+= 分析 Active IQ Unified Manager 中的性能事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以分析性能事件以确定它们何时被检测到，它们是活动的（新的还是已确认的）还是过时的，涉及的工作负载和集群组件，以及用于自行解决事件的选项。

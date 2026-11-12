@@ -1,0 +1,37 @@
+---
+permalink: config/reference_https_dialog_box_ocf.html 
+sidebar: sidebar 
+keywords: https certificate page 
+summary: 可使用 HTTPS 证书页面查看当前安全证书、下载证书签名请求、生成新的 HTTPS 证书或安装新的 HTTPS 证书。 
+---
+= 了解 Active IQ Unified Manager 中的 HTTPS 证书页面
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+可使用 HTTPS 证书页面查看当前安全证书、下载证书签名请求、生成新的自签名 HTTPS 证书或安装新的 HTTPS 证书。
+
+如果您尚未生成新的自签名 HTTPS 证书，则此页面上显示的证书就是在安装过程中生成的证书。
+
+
+
+[[command-buttons]]
+== 命令按钮
+
+命令按钮可用于执行以下操作：
+
+* *下载 HTTPS 证书签名请求*
++
+下载当前安装的 HTTPS 证书的证书请求。您的浏览器会提示您保存 <hostname>.csr 文件，以便您可以将该文件提供给证书颁发机构进行签名。
+
+* *安装 HTTPS 证书*
++
+使您能够在证书颁发机构签名并返回后上传和安装安全证书。重新启动管理服务器后，新证书即生效。
+
+* *重新生成 HTTPS 证书*
++
+使您能够生成新的自签名 HTTPS 证书，以替换当前的安全证书。重新启动 Unified Manager 后，新证书即生效。
+
+

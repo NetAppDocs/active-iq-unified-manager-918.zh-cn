@@ -1,0 +1,409 @@
+---
+permalink: events/reference_node_events.html 
+sidebar: sidebar 
+keywords: node, events, impact area, availability, capacity, configuration, performance, security 
+summary: 节点事件提供了有关节点状态的信息，可用于监控潜在的问题。事件按影响区域进行分组，并可提供事件和陷阱名称、影响级别、源类型和严重性。 
+---
+= 了解 Active IQ Unified Manager 中的节点事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+节点事件提供了有关节点状态的信息，可用于监控潜在的问题。事件按影响区域进行分组，并可提供事件和陷阱名称、影响级别、源类型和严重性。
+
+星号（*）用于标识已转换为 Unified Manager 事件的 EMS 事件。
+
+
+
+[[impact-area-availability]]
+== 影响区域：可用性
+
+|===
+| 事件名称（陷阱名称） | 影响级别 | 源类型 | 严重性 
+
+
+ a| 
+节点根卷空间即将满（ocumEvtClusterNodeRootVolumeSpaceNearlyFull）
+ a| 
+风险
+ a| 
+节点
+ a| 
+警告
+
+
+
+ a| 
+Cloud AWS MetaDataConnFail *（ocumCloudAwsMetadataConnFail）
+ a| 
+风险
+ a| 
+节点
+ a| 
+错误
+
+
+
+ a| 
+云 AWS IAMCredsExpired *(ocumCloudAwsIamCredsExpired)
+ a| 
+风险
+ a| 
+节点
+ a| 
+错误
+
+
+
+ a| 
+云 AWS IAMCredsInvalid *（ocumCloudAwsIamCredsInvalid）
+ a| 
+风险
+ a| 
+节点
+ a| 
+错误
+
+
+
+ a| 
+云 AWS IAMCredsNotFound *（ocumCloudAwsIamCredsNotFound）
+ a| 
+风险
+ a| 
+节点
+ a| 
+错误
+
+
+
+ a| 
+云 AWS IAMCredsNotInitialized *（ocumCloudAwsIamCredsNotInitialized）
+ a| 
+事件
+ a| 
+节点
+ a| 
+信息
+
+
+
+ a| 
+云 AWS IAMRoleInvalid *(ocumCloudAwsIamRoleInvalid)
+ a| 
+风险
+ a| 
+节点
+ a| 
+错误
+
+
+
+ a| 
+云 AWS IAMRoleNotFound *（ocumCloudAwsIamRoleNotFound）
+ a| 
+风险
+ a| 
+节点
+ a| 
+错误
+
+
+
+ a| 
+云层主机无法解析 *（ocumObjstoreHostUnresolvable）
+ a| 
+风险
+ a| 
+节点
+ a| 
+错误
+
+
+
+ a| 
+云层集群间网络接口已关闭 *（ocumObjstoreInterClusterLifDown）
+ a| 
+风险
+ a| 
+节点
+ a| 
+错误
+
+
+
+ a| 
+其中一个 NFSv4 池已耗尽 *（nbladeNfsv4PoolEXhaust）
+ a| 
+意外事件
+ a| 
+节点
+ a| 
+关键
+
+
+
+ a| 
+请求与云分层签名不匹配 *(oscSignatureMismatch)
+ a| 
+风险
+ a| 
+节点
+ a| 
+错误
+
+|===
+
+
+[[impact-area-capacity]]
+== 影响区域：容量
+
+|===
+| 事件名称（陷阱名称） | 影响级别 | 源类型 | 严重性 
+
+
+ a| 
+QoS Monitor 内存已达上限 *（ocumQosMonitorMemoryMaxed）
+ a| 
+风险
+ a| 
+节点
+ a| 
+错误
+
+
+
+ a| 
+QoS 监控内存已缩减 *（ocumQosMonitorMemoryAbated）
+ a| 
+事件
+ a| 
+节点
+ a| 
+信息
+
+|===
+
+
+[[impact-area-configuration]]
+== 影响区域：配置
+
+|===
+| 事件名称（陷阱名称） | 影响级别 | 源类型 | 严重性 
+
+
+ a| 
+节点已重命名（不适用）
+ a| 
+事件
+ a| 
+节点
+ a| 
+信息
+
+|===
+
+
+[[impact-area-performance]]
+== 影响区域：性能
+
+|===
+| 事件名称（陷阱名称） | 影响级别 | 源类型 | 严重性 
+
+
+ a| 
+已违反节点 IOPS 严重阈值（ocumNodeIopsIncident）
+ a| 
+意外事件
+ a| 
+节点
+ a| 
+关键
+
+
+
+ a| 
+已违反节点 IOPS 警告阈值（ocumNodeIopsWarning）
+ a| 
+风险
+ a| 
+节点
+ a| 
+警告
+
+
+
+ a| 
+节点 MB/s 严重阈值已违反（ocumNodeMbpsIncident）
+ a| 
+意外事件
+ a| 
+节点
+ a| 
+关键
+
+
+
+ a| 
+已违反节点 MB/s 警告阈值（ocumNodeMbpsWarning）
+ a| 
+风险
+ a| 
+节点
+ a| 
+警告
+
+
+
+ a| 
+已违反节点延迟毫秒/操作严重阈值（ocumNodeLatencyIncident）
+ a| 
+意外事件
+ a| 
+节点
+ a| 
+关键
+
+
+
+ a| 
+已违反节点延迟毫秒/操作警告阈值（ocumNodeLatencyWarning）
+ a| 
+风险
+ a| 
+节点
+ a| 
+警告
+
+
+
+ a| 
+违反节点已用性能容量严重阈值（ocumNodePerfCapacityUsedIncident）
+ a| 
+意外事件
+ a| 
+节点
+ a| 
+关键
+
+
+
+ a| 
+已违反节点已用性能容量警告阈值（ocumNodePerfCapacityUsedWarning）
+ a| 
+风险
+ a| 
+节点
+ a| 
+警告
+
+
+
+ a| 
+已用节点性能容量 - 已违反接管严重阈值（ocumNodePerfCapacityUsedTakeoverIncident）
+ a| 
+意外事件
+ a| 
+节点
+ a| 
+关键
+
+
+
+ a| 
+已用节点性能容量 - 已违反接管警告阈值（ocumNodePerfCapacityUsedTakeoverWarning）
+ a| 
+风险
+ a| 
+节点
+ a| 
+警告
+
+
+
+ a| 
+已违反节点利用率严重阈值（ocumNodeUtilizationIncident）
+ a| 
+意外事件
+ a| 
+节点
+ a| 
+关键
+
+
+
+ a| 
+已违反节点利用率警告阈值（ocumNodeUtilizationWarning）
+ a| 
+风险
+ a| 
+节点
+ a| 
+警告
+
+
+
+ a| 
+已违反节点 HA 对过度利用阈值（ocumNodeHaPairOverUtilizedInformation）
+ a| 
+事件
+ a| 
+节点
+ a| 
+信息
+
+
+
+ a| 
+已违反节点磁盘碎片化阈值（ocumNodeDiskFragmentationWarning）
+ a| 
+风险
+ a| 
+节点
+ a| 
+警告
+
+
+
+ a| 
+已违反已用性能容量阈值（ocumNodeOverUtilizedWarning）
+ a| 
+风险
+ a| 
+节点
+ a| 
+警告
+
+
+
+ a| 
+已违反节点动态阈值（ocumNodeDynamicEventWarning）
+ a| 
+风险
+ a| 
+节点
+ a| 
+警告
+
+|===
+
+
+[[impact-area-security]]
+== 影响区域：安全性
+
+|===
+| 事件名称（陷阱名称） | 影响级别 | 源类型 | 严重性 
+
+
+ a| 
+咨询 ID：NTAP-<__advisory ID__>（ocumx）
+ a| 
+风险
+ a| 
+节点
+ a| 
+关键
+
+|===

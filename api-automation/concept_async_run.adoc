@@ -1,0 +1,56 @@
+---
+permalink: api-automation/concept_async_run.html 
+sidebar: sidebar 
+keywords: job, objects, asynchronous, processes 
+summary: Active IQ Unified Manager 提供作业 API，用于检索有关在运行其他 API 时执行的作业的信息。您必须知道如何使用 Job 对象进行异步处理。 
+---
+= 了解 Active IQ Unified Manager 如何使用作业对象进行异步处理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Active IQ Unified Manager 提供了 `jobs` API，用于检索有关在运行其他 API 时执行的作业的信息。您必须了解如何使用作业对象进行异步处理。
+
+某些 API 调用，特别是用于添加或修改资源的 API 调用，可能需要比其他调用更长的时间才能完成。Unified Manager 异步处理这些长期运行的请求。
+
+
+
+[[asynchronous-requests-described-using-job-object]]
+== 使用 Job 对象描述的异步请求
+
+在进行异步运行的 API 调用后，HTTP 响应代码 202 表示请求已成功验证和接受，但尚未完成。此请求作为后台任务处理，此后台任务在对客户端的初始 HTTP 响应后继续运行。响应包括锚定请求的 Job 对象，包括其唯一标识符。
+
+
+
+[[query-the-job-object-associated-with-an-api-request]]
+== 查询与 API 请求关联的作业对象
+
+HTTP 响应中返回的 Job 对象包含多个属性。您可以查询 state 属性以确定请求是否成功完成。Job 对象可以处于以下状态之一：
+
+* `NORMAL`
+* `WARNING`
+* `PARTIAL_FAILURES`
+* `ERROR`
+
+
+在轮询 Job 对象以检测任务的终端状态时，您可以使用两种技术，无论是成功还是失败：
+
+* 标准轮询请求：立即返回当前作业状态。
+* 长轮询请求：当作业状态变为 `NORMAL, ERROR,`或 `PARTIAL_FAILURES.`
+
+
+
+
+[[steps-in-an-asynchronous-request]]
+== 异步请求中的步骤
+
+您可以使用以下高级过程完成异步 API 调用：
+
+. 发出异步 API 调用。
+. 接收 HTTP 响应 202，指示成功接受请求。
+. 从响应正文中提取 Job 对象的标识符。
+. 在循环中，等待 Job 对象到达终止状态 `NORMAL, ERROR,`或 `PARTIAL_FAILURES.`
+. 验证作业的最终状态并获取作业结果。
+

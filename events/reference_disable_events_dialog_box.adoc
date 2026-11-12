@@ -1,0 +1,61 @@
+---
+permalink: events/reference_disable_events_dialog_box.html 
+sidebar: sidebar 
+keywords: disable, events, dialog box, properties, area, command buttons 
+summary: “禁用事件”对话框显示可以禁用事件的事件类型列表。您可以根据特定严重程度或针对一组事件禁用事件类型的事件。 
+---
+= 禁用 Active IQ Unified Manager 中的"事件"对话框
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+“禁用事件”对话框显示可以禁用事件的事件类型列表。您可以根据特定严重程度或针对一组事件禁用事件类型的事件。
+
+您必须具有应用程序管理员或存储管理员角色。
+
+
+
+[[event-properties-area]]
+== 事件属性区域
+
+事件属性区域指定以下事件属性：
+
+* *事件严重程度*
++
+使您能够根据严重程度类型选择事件，严重程度类型可以是“严重”、“错误”、“警告”或“信息”。
+
+* *事件名称包含*
++
+使您能够筛选名称包含指定字符的事件。
+
+* *匹配事件*
++
+显示与事件严重性类型和您指定的文本字符串匹配的事件列表。
+
+* *禁用事件*
++
+显示选定要禁用的事件列表。
+
++
+还会显示事件的严重性以及事件名称。
+
+
+
+
+
+[[command-buttons]]
+== 命令按钮
+
+通过命令按钮，可以为选定事件执行以下任务：
+
+* *保存并关闭*
++
+禁用此事件类型并关闭此对话框。
+
+* *取消*
++
+放弃更改并关闭对话框。
+
+

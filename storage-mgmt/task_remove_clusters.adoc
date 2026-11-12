@@ -1,0 +1,38 @@
+---
+permalink: storage-mgmt/task_remove_clusters.html 
+sidebar: sidebar 
+keywords: remove, cluster 
+summary: 您可以使用“群集设置”页面从 Unified Manager 中删除群集。例如，如果群集发现失败或要停用存储系统，则可以删除群集。 
+---
+= 从 Active IQ Unified Manager 中删除集群
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用“群集设置”页面从 Unified Manager 中删除群集。例如，如果群集发现失败或要停用存储系统，则可以删除群集。
+
+.开始之前
+您必须具有应用程序管理员角色或存储管理员角色。
+
+此任务从 Unified Manager 中删除选定的集群。删除集群后，不再对其进行监控。在已删除的集群中注册的 Unified Manager 实例也将从集群中注销。
+
+删除集群还会从 Unified Manager 中删除其所有存储对象、历史数据、存储服务以及所有关联事件。这些更改会在下一个数据收集周期后反映在清单页面和详细信息页面上。
+
+[NOTE]
+====
+您必须先从 Unified Manager 中删除集群，然后才能将其停用。如果尝试删除集群时该集群已处于脱机状态或无法访问，则 Unified Manager 无法与该集群通信以删除应用程序记录和已配置的事件管理系统 (EMS) 订阅。这将导致删除过程失败或在完成前无响应。
+
+====
+.步骤
+. 在左侧导航窗格中，单击*存储管理* > *集群设置*。
+. 在“集群设置”页面上，选择要删除的集群，然后单击*删除*。
+. 在*移除数据源*消息对话框中，单击*移除*以确认移除请求。
+
+
+*相关信息*
+
+link:../config/task_add_users.html["添加用户"]
+
+link:../health-checker/task_view_cluster_list_and_details.html["查看集群列表和详细信息"]

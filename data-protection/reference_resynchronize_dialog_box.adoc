@@ -1,0 +1,71 @@
+---
+permalink: data-protection/reference_resynchronize_dialog_box.html 
+sidebar: sidebar 
+keywords: resynchronize, dialog box 
+summary: 通过“重新同步”对话框，您可以重新同步先前已中断且目标已变为读/写卷的 SnapMirror 或 SnapVault 关系上的数据。当源卷上所需的通用 Snapshot 副本被删除，导致 SnapMirror 或 SnapVault 更新失败时，您也可以执行重新同步。 
+---
+= 使用 Active IQ Unified Manager 中的重新同步对话框
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过“重新同步”对话框，您可以重新同步先前已中断且目标已变为读/写卷的 SnapMirror 或 SnapVault 关系上的数据。当源卷上所需的通用 Snapshot 副本被删除，导致 SnapMirror 或 SnapVault 更新失败时，您也可以执行重新同步。
+
+
+
+[[resynchronization-options-tab]]
+== 重新同步选项选项卡
+
+“重新同步选项”选项卡用于设置要重新同步的保护关系的传输优先级和最大传输速率。
+
+* *传输优先级*
++
+运行传输的优先级。您可以选择“正常”或“低”。具有指定正常传输优先级的策略的关系会在具有指定低传输优先级的策略的关系之前运行。
+
+* *最大传输速率*
++
+指定通过网络在集群之间传输数据的最大速率。选中后，网络带宽将限制为您指定的值。您可以输入一个数值，然后选择千字节/秒（KBps）、兆字节/秒（MBps）、千兆字节/秒（GBps）或 TBps。如果选择不使用最大传输速率，则关系之间的基线传输不受限制。
+
+
+
+
+
+[[source-snapshot-copies-tab]]
+== 源 Snapshot 副本选项卡
+
+“源 Snapshot 副本”选项卡将显示有关用于基线传输的源 Snapshot 副本的以下信息：
+
+* *源卷*
++
+显示相应源卷的名称。
+
+* *目标卷*
++
+显示选定目标卷的名称。
+
+* *源类型*
++
+显示卷类型：读/写或数据保护。
+
+* *Snapshot 副本*
++
+显示用于数据传输的快照副本。单击“快照副本”值将显示“选择源快照副本”对话框，其中可以选择传输的特定快照副本，具体取决于您拥有的保护关系类型和正在执行的操作。
+
+
+
+
+
+[[command-buttons]]
+== 命令按钮
+
+* *提交*
++
+开始重新同步过程并关闭“重新同步”对话框。
+
+* *取消*
++
+取消选择并关闭“重新同步”对话框。
+
+

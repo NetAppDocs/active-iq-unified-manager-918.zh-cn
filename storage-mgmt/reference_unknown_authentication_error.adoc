@@ -1,0 +1,30 @@
+---
+permalink: storage-mgmt/reference_unknown_authentication_error.html 
+sidebar: sidebar 
+keywords: unknown, authentication, error 
+summary: 对未知身份验证错误进行故障排除。 
+---
+= 解决 Active IQ Unified Manager 中的未知身份验证错误
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+执行与身份验证相关的操作（如添加、编辑、删除或测试远程用户或组）时，可能会显示以下错误消息： `Unknown authentication error.`
+
+*原因*
+
+如果您为下列选项设置了不正确的值，则可能会出现此问题：
+
+* Active Directory 身份验证服务的管理员名称
+* OpenLDAP 身份验证服务的绑定可分辨名称
+
+
+*更正操作*
+
+. 在左侧导航窗格中，单击*常规* > *远程身份验证*。
+. 根据选定的身份验证服务，输入管理员名称或绑定可分辨名称的相应信息。
+. 单击*测试身份验证*，使用您指定的详细信息测试身份验证。
+. 单击 *Save*。
+

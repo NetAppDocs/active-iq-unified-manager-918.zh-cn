@@ -1,0 +1,74 @@
+---
+permalink: health-checker/task_retrieve_support_bundle_using_unix_or_linux_client.html 
+sidebar: sidebar 
+keywords: retrieve, support bundle, unix, linux, client 
+summary: '如果您是 UNIX 或 Linux 用户，则可以使用 Linux 客户端服务器上的命令行界面 (CLI) 从您的 vApp 中检索支持包。您可以使用 SCP 或 SFTP 来检索支持包。' 
+---
+= 使用 UNIX 或 Linux 客户端在 Active IQ Unified Manager 中检索支持包
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您是 UNIX 或 Linux 用户，则可以使用 Linux 客户端服务器上的命令行界面 (CLI) 从您的 vApp 中检索支持包。您可以使用 SCP 或 SFTP 来检索支持包。
+
+.开始之前
+您必须是维护用户才能执行此任务。
+
+您必须已使用维护控制台生成支持包，并且支持包名称可用。
+
+.步骤
+. 使用 Linux 客户端服务器，通过 Telnet 或控制台访问 CLI。
+. 访问 /`support` 目录。
+. 检索支持包并使用以下命令将其复制到本地目录：
++
+[cols="2*"]
+|===
+| 条件 | 命令 
+
+
+ a| 
+SCP
+ a| 
+`scp <maintenance-user>@<vApp-name-or-ip>:/support/support_bundle_file_name.7z <destination-directory>`
+
+
+
+ a| 
+SFTP
+ a| 
+`sftp <maintenance-user>@<vApp-name-or-ip>:/support/support_bundle_file_name.7z <destination-directory>`
+
+|===
++
+使用维护控制台生成支持捆绑包时，会向您提供该支持捆绑包的名称。
+
+. 输入维护用户密码。
+
+
+
+
+[[examples]]
+== 示例
+
+以下示例使用 SCP 检索支持包：
+
+[listing]
+----
+
+        `$ scp admin@10.10.12.69:/support/support_bundle_20160216_145359.7z .`
+Password: `<maintenance_user_password>`
+support_bundle_20160216_145359.7z   100%  119MB  11.9MB/s   00:10
+----
+以下示例使用 SFTP 检索支持包：
+
+[listing]
+----
+
+        `$ sftp admin@10.10.12.69:/support/support_bundle_20160216_145359.7z .`
+Password: `<maintenance_user_password>`
+Connected to 10.228.212.69.
+Fetching /support/support_bundle_20130216_145359.7z to ./support_bundle_20130216_145359.7z
+/support/support_bundle_20160216_145359.7z
+----

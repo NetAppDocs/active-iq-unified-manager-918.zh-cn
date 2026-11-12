@@ -1,0 +1,39 @@
+---
+permalink: config/task_disable_saml_authentication_from_maintenance_console_um.html 
+sidebar: sidebar 
+keywords: disable, saml authentication, maintenance, console 
+summary: 当无法访问 Unified Manager GUI 时，您可能需要从维护控制台禁用 SAML 身份验证。这可能发生在配置错误或 IdP 不可访问的情况下。 
+---
+= 从 Active IQ Unified Manager 维护控制台禁用 SAML 身份验证
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+当无法访问 Unified Manager GUI 时，您可能需要从维护控制台禁用 SAML 身份验证。这可能发生在配置错误或 IdP 不可访问的情况下。
+
+.开始之前
+您必须能够以维护用户的身份访问维护控制台。
+
+禁用 SAML 身份验证时，已配置的目录服务提供程序（如 Active Directory 或 LDAP）将执行登录身份验证。除了已配置的远程用户外，本地用户和维护用户也将能够访问图形用户界面。
+
+您还可以从 UI 中的“设置/身份验证”页面禁用 SAML 身份验证。
+
+[NOTE]
+====
+禁用 SAML 身份验证后，将自动重新启动 Unified Manager。
+
+====
+.步骤
+. 登录维护控制台。
+. 在*主菜单*中，输入*禁用 SAML 身份验证*选项的数字。
++
+系统将显示一条消息，以确认您要禁用 SAML 身份验证并重新启动 Unified Manager。
+
+. 键入 *y*，然后按 Enter，Unified Manager 将重新启动。
+
+
+下次远程用户尝试访问 Unified Manager 图形界面时，他们将在 Unified Manager 登录页面而不是 IdP 登录页面中输入其凭据。
+
+如果需要，请访问您的 IdP 并删除 Unified Manager 服务器 URL 和元数据。

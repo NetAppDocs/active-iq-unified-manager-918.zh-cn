@@ -1,0 +1,22 @@
+---
+permalink: performance-checker/concept_what_information_is_contained_in_an_alert_email.html 
+sidebar: sidebar 
+keywords: information, contained, alert, email 
+summary: Unified Manager 警报电子邮件提供事件的类型、事件的严重性、被违反并导致事件的策略或阈值的名称以及事件的描述。电子邮件消息还为每个事件提供了一个超链接，使您能够在 UI 中查看该事件的详细信息页面。 
+---
+= 查看 Active IQ Unified Manager 中警报电子邮件中的信息
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 警报电子邮件提供事件的类型、事件的严重性、被违反并导致事件的策略或阈值的名称以及事件的描述。电子邮件消息还为每个事件提供了一个超链接，使您能够在 UI 中查看该事件的详细信息页面。
+
+警报电子邮件将发送给已订阅接收警报的所有用户。
+
+如果性能计数器或容量值在收集期间发生较大变化，则可能会导致同一阈值策略同时触发严重事件和警告事件。在这种情况下，您可能会收到一封关于警告事件的电子邮件和一封关于严重事件的电子邮件。这是因为 Unified Manager 允许您单独订阅以接收警告和严重阈值违规的警报。
+
+警报电子邮件示例如下所示：
+
+image::../media/um_email_alert.gif[显示警报电子邮件示例的 UI 屏幕截图。]

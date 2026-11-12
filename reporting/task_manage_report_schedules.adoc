@@ -1,0 +1,61 @@
+---
+permalink: reporting/task_manage_report_schedules.html 
+sidebar: sidebar 
+keywords:  
+summary: 您可以从报告计划页面管理报告计划。您可以查看、修改或删除现有计划。 
+---
+= 在 Active IQ Unified Manager 中管理报告计划
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以从报告计划页面管理报告计划。您可以查看、修改或删除现有计划。
+
+[NOTE]
+.开始之前
+====
+您无法从“报告计划”页面安排新报告。您只能从对象清单页面添加计划报告。
+
+====
+* 您必须具有应用程序管理员或存储管理员角色。
+
+
+.步骤
+. 在左侧导航窗格中，单击*存储管理* > *报告计划*。
+. 在“报告计划”页面上：
++
+[cols="2*"]
+|===
+| 目的 | 操作 
+
+
+ a| 
+查看现有计划
+ a| 
+使用滚动条和页面控件滚动浏览现有报告列表。
+
+
+
+ a| 
+编辑现有计划
+ a| 
+.. 单击要使用的时间表的更多图标 image:../media/more_icon.gif[""]。
+.. 单击 *Edit*。
+.. 进行必要的更改。
+.. 单击复选标记以保存所做更改。
+
+
+
+
+ a| 
+删除现有计划
+ a| 
+.. 单击要使用的时间表的更多图标 image:../media/more_icon.gif[""]。
+.. 单击 *Delete*。
+.. 请确认您的决定。
+
+
+|===
+

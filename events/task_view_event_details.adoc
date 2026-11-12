@@ -1,0 +1,31 @@
+---
+permalink: events/task_view_event_details.html 
+sidebar: sidebar 
+keywords: view, events, details 
+summary: 您可以查看由 Unified Manager 触发以采取纠正措施的事件的详细信息。例如，如果存在运行状况事件 Volume Offline，则可以单击该事件以查看详细信息并执行纠正措施。 
+---
+= 在 Active IQ Unified Manager 中查看事件详细信息
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以查看由 Unified Manager 触发以采取纠正措施的事件的详细信息。例如，如果存在运行状况事件 Volume Offline，则可以单击该事件以查看详细信息并执行纠正措施。
+
+.开始之前
+您必须具有操作员、应用程序管理员或存储管理员角色。
+
+事件详细信息包括事件的来源、事件的原因以及与事件相关的任何注释等信息。
+
+.步骤
+. 在左侧导航窗格中，单击*事件管理*。
++
+默认情况下，“所有活动事件”视图将显示过去 7 天内生成的具有事件或风险影响级别的新事件和已确认（活动）事件。
+
+. 如果要查看特定类别的事件（例如容量事件或性能事件），请单击 *View* ，然后从事件类型菜单中进行选择。
+. 单击要查看其详细信息的事件名称。
++
+事件详细信息显示在事件详细信息页面中。
+
+

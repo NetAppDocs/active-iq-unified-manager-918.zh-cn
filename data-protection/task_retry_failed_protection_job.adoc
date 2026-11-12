@@ -1,0 +1,31 @@
+---
+permalink: data-protection/task_retry_failed_protection_job.html 
+sidebar: sidebar 
+keywords: retry, failed, protection job 
+summary: 采取措施修复失败的保护作业后，您可以使用“重试”再次运行该作业。重试作业可使用原始作业 ID 创建新作业。 
+---
+= 在 Active IQ Unified Manager 中重试失败的保护作业
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+采取措施修复失败的保护作业后，您可以使用 *重试* 再次运行该作业。重试作业将使用原始作业 ID 创建一个新作业。
+
+.开始之前
+您必须具有应用程序管理员或存储管理员角色。
+
+一次只能重试一个失败的作业。选择多个作业将禁用*重试*按钮。只能重试保护配置和保护关系操作类型的作业。
+
+.步骤
+. 在左侧导航窗格中，单击*保护* > *作业*。
+. 从作业列表中，选择一个失败的保护配置或保护关系操作类型作业。
++
+*重试*按钮已启用。
+
+. 单击*重试*。
++
+作业已重新启动。
+
+

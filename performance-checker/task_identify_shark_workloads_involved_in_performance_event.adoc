@@ -1,0 +1,27 @@
+---
+permalink: performance-checker/task_identify_shark_workloads_involved_in_performance_event.html 
+sidebar: sidebar 
+keywords: identify, shark workloads, involved, dynamic, performance, event 
+summary: 在 Unified Manager 中，您可以识别哪些工作负载在争用中的存储组件的使用率偏差最大。识别这些工作负载可帮助您确定是否应将这些工作负载迁移到利用率较低的集群。 
+---
+= 在 Active IQ Unified Manager 中识别动态性能事件中的鲨鱼工作负载
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在 Unified Manager 中，您可以识别哪些工作负载在争用中的存储组件的使用率偏差最大。识别这些工作负载可帮助您确定是否应将这些工作负载迁移到利用率较低的集群。
+
+.开始之前
+* 您必须具有操作员、应用程序管理员或存储管理员角色。
+* 有新的、已确认的或过时的性能动态事件。
+
+
+“事件详细信息”页面显示用户定义和系统定义的工作负载列表，这些工作负载按组件的最高使用率或受事件影响最大的程度进行排序。这些值基于 Unified Manager 在检测到并上次分析事件时识别的峰值。
+
+.步骤
+. 显示*事件详细信息*页面以查看有关该事件的信息。
+. 在 Workload Latency 和 Workload Activity 图表中，选择 *Shark Workloads*。
+. 将光标悬停在图表上，以查看影响组件的顶级用户定义的工作负载以及 shark 工作负载的名称。
+

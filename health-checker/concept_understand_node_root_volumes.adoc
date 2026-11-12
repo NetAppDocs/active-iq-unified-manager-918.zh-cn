@@ -1,0 +1,19 @@
+---
+permalink: health-checker/concept_understand_node_root_volumes.html 
+sidebar: sidebar 
+keywords: understand, node, root, volumes 
+summary: 您可以使用 Unified Manager 监视节点根卷。最佳做法是，节点根卷应具有足够的容量，以防止节点发生故障。 
+---
+= 了解 Active IQ Unified Manager 中的节点根卷
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 Unified Manager 监视节点根卷。最佳做法是，节点根卷应具有足够的容量，以防止节点发生故障。
+
+当节点根卷的已用容量超过节点根卷总容量的 80% 时，会生成“节点根卷空间接近满”事件。您可以为事件配置警报以获取通知。您可以使用 ONTAP System Manager 或 ONTAP CLI 采取适当的操作来防止节点关闭。
+
+
+NOTE: 如果集群运行 ONTAP 9.14.1 或更高版本，则监控节点根卷的功能不可用。

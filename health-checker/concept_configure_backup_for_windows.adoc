@@ -1,0 +1,157 @@
+---
+permalink: health-checker/concept_configure_backup_for_windows.html 
+sidebar: sidebar 
+keywords: backup, restore, windows, netapp, snapshot copy, copies, configure, backup 
+summary: Active IQ Unified Manager 支持在 Windows 操作系统上借助使用 iSCSI 协议的 LUN，使用 NetApp 快照进行备份和恢复。 
+---
+= 在 Active IQ Unified Manager 中配置 Windows 备份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Active IQ Unified Manager 支持在 Windows 操作系统上借助使用 iSCSI 协议的 LUN，使用 NetApp 快照进行备份和恢复。
+
+可以在所有 Unified Manager 服务运行时进行基于快照的备份。由于备份会对整个数据库施加全局读取锁定以防止任何并发写入，因此作为快照的一部分，将捕获数据库的一致状态。要使 Windows 操作系统上安装的 Unified Manager 系统使用 NetApp 快照执行备份和还原，应首先使用维护控制台将 Unified Manager 备份配置为基于快照的备份。
+
+在配置 Unified Manager 以创建 Snapshot 副本之前，您应执行以下配置任务。
+
+* 配置 ONTAP 集群
+* 配置 Windows 主机
+
+
+
+
+[[configure-a-backup-location-for-active-iq-unified-manager-on-windows]]
+== 在 Windows 上配置 Active IQ Unified Manager 的备份位置
+
+在 Windows 上备份 Unified Manager 后，应配置用于存储 Snapshot 副本的卷。
+
+.开始之前
+集群、存储 VM 和卷必须满足以下要求：
+
+* 集群要求：
++
+** 必须安装 ONTAP 9.3 或更高版本
+** 它应在地理位置上靠近 Unified Manager 服务器
+** 由 Unified Manager 监控
+
+
+* Storage VM 要求：
++
+** ONTAP 集群上的 iSCSI 连接
+** 必须为配置的计算机启用 iSCSI 协议
+** 您应该为备份配置提供专用的卷和 LUN。选定的卷应仅包含一个 LUN，不能包含其他任何内容。
+** LUN 的大小应至少是预计在 9.9 Active IQ Unified Manager 中处理的数据大小的两倍。
++
+这也对卷设置了相同的大小要求。
+
+** 确保已选择所有读/写访问权限
+** 确保在导出策略中将超级用户访问权限设置为 "`any`"
+
+
+* 卷和 LUN 要求：
++
+** 卷大小应至少为 Unified Manager MySQL 数据目录大小的两倍。
+** 必须将安全样式设置为 Windows
+** 必须禁用本地快照策略
+** 应启用卷自动调整大小
+** 应将性能服务级别设置为具有高 IOPS 和低延迟的策略，例如 "`Extreme`"
+
+
+
+
+
+
+[[configure-an-ontap-cluster-for-backup-and-restore-in-active-iq-unified-manager]]
+== 在 Active IQ Unified Manager 中配置 ONTAP 集群以进行备份和还原
+
+在 Windows 系统上使用 Snapshot 副本备份和还原 Active IQ Unified Manager 之前，您需要在 ONTAP 集群上执行一些预配置步骤。
+
+您可以使用命令提示符或 System Manager 用户界面配置 ONTAP 集群。ONTAP 集群的配置包括将数据 LIF 配置为可作为 iSCSI LIF 分配给存储 VM。下一步是使用 System Manager 用户界面配置启用 iSCSI 的存储 VM。您需要为此存储 VM 配置静态网络路由，以控制 LIF 如何使用网络进行出站流量传输。
+
+[NOTE]
+====
+您应该有一个专用卷和一个用于备份配置的 LUN。所选卷应仅包含一个 LUN。LUN 的大小应至少是 Active IQ Unified Manager 预期处理的数据大小的两倍。
+
+====
+您需要执行以下配置：
+
+.步骤
+. 配置启用 iSCSI 的存储 VM 或使用具有相同配置的现有存储 VM。
+. 为已配置的 storage VM 配置网络路由。
+. 配置具有适当容量的卷及其内部的单个 LUN，确保该卷仅专用于此 LUN。
++
+
+NOTE: 在 System Manager 上创建 LUN 的情况下，取消 LUN 的映射可能会删除 igroup，并且还原可能会失败。要避免这种情况，请确保在创建 LUN 时，LUN 是显式创建的，并且在取消映射时不会被删除。
+
+. 在 storage VM 中配置启动程序组。
+. 配置端口集。
+. 将 igroup 与 portset 集成。
+. 将 LUN 映射到 igroup。
+
+
+
+
+[[configure-a-windows-host-machine-in-active-iq-unified-manager]]
+== 在 Active IQ Unified Manager 中配置 Windows 主机
+
+您需要先配置 Windows 主机，然后才能使用 NetApp 快照备份和还原 Active IQ Unified Manager。要在 Windows 主机上启动 Microsoft iSCSI 启动程序，请在搜索栏中键入 "`iscsi`" 并单击 *iSCSI Initiator*。
+
+.开始之前
+您应该清理主机上的所有以前的配置。
+
+如果您尝试在新安装的 Windows 上启动 iSCSI 启动程序，系统会提示您进行确认，确认后，将显示 iSCSI 属性对话框。如果是现有的 Windows 安装，则会显示 iSCSI 属性对话框，其中的目标处于非活动状态或正在尝试连接。因此，您需要确保删除 Windows 主机上所有以前的配置。
+
+.步骤
+. 清理主机上的所有先前配置。
+. 发现目标门户。
+. 连接到目标门户。
+. 使用多路径连接到目标门户。
+. 发现这两个 LIF。
+. 发现 Windows 计算机中配置为设备的 LUN。
+. 在 Windows 中将发现的 LUN 配置为新的卷驱动器。
+
+
+
+
+[[specify-the-destination-location-for-snapshot-copies-on-windows-in-active-iq-unified-manager]]
+== 在 Active IQ Unified Manager 中指定 Windows 上 Snapshot 副本的目标位置
+
+您应该在一个 ONTAP 集群中已配置的卷上配置 Active IQ Unified Manager 快照副本的目标位置。您应该使用维护控制台来定义位置。
+
+* 您必须拥有安装了 Active IQ Unified Manager 的 Windows 主机的管理员权限。
+* 您必须拥有已授权登录到 Unified Manager 服务器维护控制台的用户 ID 和密码。
+* 必须具有群集管理 IP 地址、存储 VM 的名称、卷的名称、LUN 名称以及存储系统用户名和密码。
+* 您必须已将卷作为网络驱动器装载到 Active IQ Unified Manager 主机，并且必须具有装载驱动器。
+
+
+.步骤
+. 请使用 Power Shell 连接到 Active IQ Unified Manager 系统的 IP 地址或完全限定域名。
+. 使用维护用户 (umadmin) 名称和密码登录到此系统。
+. 输入命令 `maintenance_console`并按 Enter 键。
+. 在维护控制台*主菜单*中，输入*备份还原*选项的编号。
+. 输入 *Configure NetApp Snapshot Backup* 的编号。
+. 输入编号以配置 iSCSI。
+. 查看您需要提供的信息，然后输入*输入备份配置详细信息*的编号。
+. 要标识将写入快照的卷，请输入集群管理接口的 IP 地址、存储 VM 的名称、卷的名称、LUN 名称、存储系统用户名和密码以及挂载驱动器。
+. 请验证此信息并输入 `y`。
++
+系统执行以下任务：
+
++
+** Storage VM 已验证
+** 卷已验证
+** 挂载驱动器和状态已验证
+** LUN 存在性和状态
+** 网络驱动器存在
+** 已验证挂载卷上存在推荐空间（超过 mysql 数据目录的两倍）
+** 与卷中的专用 LUN 对应的 LUN 路径
+** igroup 名称
+** 装载网络驱动器的卷的 GUID
+** 用于与 ONTAP 通信的 iSCSI 启动程序
+
+
+. 退出维护控制台并启动 Active IQ Unified Manager 界面以创建快照副本计划。
+

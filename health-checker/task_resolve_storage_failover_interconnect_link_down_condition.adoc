@@ -1,0 +1,55 @@
+---
+permalink: health-checker/task_resolve_storage_failover_interconnect_link_down_condition.html 
+sidebar: sidebar 
+keywords: scan, resolve, storage, failover, interconnect link, conditions 
+summary: 此工作流程提供了如何扫描、评估和解决已关闭的存储故障转移互连链路条件的示例。在这种情况下，在节点上开始 ONTAP 版本升级之前，您是使用 Unified Manager 扫描存储故障转移风险的管理员。 
+---
+= 扫描并解决 Active IQ Unified Manager 中的存储故障转移互连链路中断情况
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此工作流程提供了如何扫描、评估和解决已关闭的存储故障转移互连链路条件的示例。在这种情况下，在节点上开始 ONTAP 版本升级之前，您是使用 Unified Manager 扫描存储故障转移风险的管理员。
+
+.开始之前
+您必须具有操作员、应用程序管理员或存储管理员角色。
+
+如果 HA 对节点之间的存储故障转移互连在无中断升级尝试期间失败，则升级将失败。因此，通常的做法是管理员在开始升级之前监控并确认计划进行升级的集群节点上的存储故障转移可靠性。
+
+.步骤
+. 在左侧导航窗格中，单击*事件管理*。
+. 在*事件管理*清单页面中，选择*活动可用性事件*。
+. 在 *事件管理* 清单页面 *名称* 列顶端，单击 image:../media/filtericon_um60.png["列筛选器图标"] 并在文本框中输入 `*failover`，以将要显示的事件限制为与存储故障转移相关的事件。
++
+显示与存储故障转移条件相关的所有过去事件。
+
++
+在这种情况下，Unified Manager 会在其可用性事件部分显示事件“`Storage Failover Interconnect One or More Links Down`”。
+
+. 如果一个或多个与存储故障转移相关的事件显示在 *事件管理* 清单页面上，请执行以下步骤：
++
+.. 单击事件标题链接以显示该事件的事件详细信息。
++
+在此示例中，单击事件标题“`Storage Failover Interconnect One or More Links Down`”。
+
++
+此时将显示此事件的“事件详细信息”页面。
+
+.. 在“事件详细信息”页面上，您可以执行以下一个或多个任务：
++
+*** 查看“原因”字段中的错误消息并评估问题。
+*** 将此事件分配给管理员。
+*** 请确认此事件。
+
+
+
+
+
+
+*相关信息*
+
+link:../events/reference_event_details_page.html["事件详细信息页面"]
+
+link:../config/reference_unified_manager_roles_and_capabilities.html["Unified Manager 用户角色和功能"]

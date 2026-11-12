@@ -1,0 +1,39 @@
+---
+permalink: install-vapp/task_download_unified_manager_ova_file.html 
+sidebar: sidebar 
+keywords: download, unified manager, installation, file 
+summary: 从 NetApp 支持站点下载 Unified Manager 安装文件，以将 Unified Manager 部署为虚拟设备。 
+---
+= 下载 Active IQ Unified Manager 安装文件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+从 NetApp 支持站点下载 Unified Manager 安装文件，以将 Unified Manager 部署为虚拟设备。
+
+.开始之前
+您应该拥有 NetApp 支持站点的登录凭据。
+
+安装文件是一个 `.tar`文件，其中包含根证书、一个 `README`文件以及一个包含为虚拟设备配置的 Unified Manager 软件的 `OVA`文件。
+
+.步骤
+. 登录到 NetApp 支持站点，然后导航到 Unified Manager 的下载页面：
++
+https://mysupport.netapp.com/site/products/all/details/activeiq-unified-manager/downloads-tab["NetApp 支持站点"]
+
+. 选择所需的 Unified Manager 版本并接受最终用户许可协议（EULA）。
+. 下载 VMware vSphere 安装 `.tar`文件并将其保存到 vSphere Client 可访问的本地目录或网络目录。
+. 验证校验和，以确保软件正确下载。
+. 导航到下载  `.tar` 文件的目录，并在终端窗口中输入以下命令以展开 Unified Manager 捆绑包：
++
+[listing]
+----
+tar -xvzf ActiveIQUnifiedManager-<version>.tar.gz
+----
++
+将 Unified Manager 的所需 `OVA`文件、根证书和一个 `README`文件解压缩到目标目录。
+
+. 按照 `README`文件中提供的步骤，验证 `OVA`文件的完整性。
+

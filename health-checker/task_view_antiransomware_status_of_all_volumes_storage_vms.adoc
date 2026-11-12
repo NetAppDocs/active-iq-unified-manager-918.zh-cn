@@ -1,0 +1,46 @@
+---
+permalink: health-checker/task_view_antiransomware_status_of_all_volumes_storage_vms.html 
+sidebar: sidebar 
+keywords: view, anti-ransomware status, volumes, storage VMs, SVMs 
+summary: 您可以查看所有卷和存储虚拟机的列表及其当前反勒索软件状态，以便确定卷上的数据是否受到充分保护，免受勒索软件攻击。 
+---
+= 查看 Active IQ Unified Manager 中所有卷和存储 VM 的反勒索软件状态
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以查看所有卷和存储虚拟机（SVM）的列表及其当前反勒索软件状态，以便确定卷和 SVM 上的数据是否受到充分保护，免受勒索软件攻击。
+
+.开始之前
+您必须具有操作员、应用程序管理员或存储管理员角色。
+
+有关不同反勒索软件状态的更多信息，请参见 link:https://docs.netapp.com/us-en/ontap/anti-ransomware/enable-task.html#system-manager-procedure["ONTAP：启用反勒索软件"]。
+
+
+
+[[view-security-details-of-all-volumes-with-anti-ransomware-detection]]
+== 查看具有反勒索软件检测功能的所有卷的安全详细信息
+
+.步骤
+. 在左侧导航窗格中，单击 *Storage* > *Volumes*。
+. 在“视图”菜单中，选择 *运行状况* > *安全* > *防勒索软件*
+. 在*安全：反勒索软件*视图中，您可以按各个字段排序或使用筛选器。
+
+
+
+NOTE: 离线卷、受限卷、SnapLock 卷、FlexGroup 卷、FlexCache 卷、仅 SAN 卷、已停止存储虚拟机的卷、存储虚拟机的根卷或数据保护卷不支持反勒索软件。
+
+
+
+[[view-security-details-of-all-storage-vms-with-anti-ransomware-detection]]
+== 查看具有反勒索软件检测功能的所有 Storage VM 的安全详细信息
+
+.步骤
+. 在左侧导航窗格中，单击 *Storage > Storage VMs*。
+. 选择 *查看 > 安全 > 反勒索软件*。此时将显示具有反勒索软件状态的 SVM 列表。
+
+
+
+NOTE: 未启用 NAS 协议的存储 VM 不支持防勒索软件监控。

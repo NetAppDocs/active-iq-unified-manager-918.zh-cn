@@ -1,0 +1,43 @@
+---
+permalink: events/reference_description_of_event_impact_areas.html 
+sidebar: sidebar 
+keywords: description, event, impact, areas 
+summary: 事件分为六个影响领域（可用性、容量、配置、性能、保护和安全性），使您能够专注于自己负责的事件类型。 
+---
+= 了解 Active IQ Unified Manager 中的事件影响区域
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+事件分为六个影响领域（可用性、容量、配置、性能、保护和安全性），使您能够专注于自己负责的事件类型。
+
+* *可用性*
++
+如果存储对象脱机、协议服务关闭、发生存储故障转移问题或发生硬件问题，可用性事件会通知您。
+
+* *容量*
++
+容量事件会通知您聚合、卷、LUN 或命名空间是否接近或已达到大小阈值，或者您的环境的增长率是否异常。
+
+* *配置*
++
+配置事件会通知您存储对象的发现、删除、添加、移除或重命名。配置事件的影响级别为事件，严重性类型为信息。
+
+* *性能*
++
+性能事件会通知您群集上的资源、配置或活动条件，这些条件可能会对受监视存储对象上的数据存储输入或检索速度产生不利影响。
+
+* *保护*
++
+保护事件会通知您涉及 SnapMirror 关系的事件或风险、目标容量问题、SnapVault 关系问题或保护作业问题。托管辅助卷和保护关系的任何 ONTAP 对象（特别是聚合、卷和 SVM）都归类在保护影响区域中。
+
+* *安全*
++
+安全事件根据 https://www.netapp.com/pdf.html?item=/media/10674-tr4569pdf.pdf["适用于 ONTAP 9 的 NetApp 安全强化指南"^]中定义的参数，通知您 ONTAP 集群、存储虚拟机（SVM）和卷的安全程度。
+
++
+此外，此区域还包括 Active IQ 平台报告的升级事件。
+
+

@@ -1,0 +1,75 @@
+---
+permalink: api-automation/concept_api_url_and_categories.html 
+sidebar: sidebar 
+keywords: active iq, unified manager, api, access, categories 
+summary: Active IQ Unified Manager API 允许您管理和配置环境中的存储对象。您还可以访问 Unified Manager web UI 以执行其中一些功能。 
+---
+= 管理 Active IQ Unified Manager API 访问权限和类别
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+:pp: &#43;&#43;
+
+
+[role="lead"]
+Active IQ Unified Manager API 允许您管理和配置环境中的存储对象。您还可以访问 Unified Manager web UI 以执行其中一些功能。
+
+
+
+[[construct-a-url-to-directly-access-rest-apis]]
+== 构造 URL 以直接访问 REST API
+
+您可以直接通过编程语言（例如 Python、C#、C{pp}、JavaScript 等）访问 REST API。按以下格式输入主机名或 IP 地址和 URL 以访问 REST API
+
++https://<hostname>/api+
+
+[NOTE]
+====
+默认端口为 443。您可以根据环境的要求配置此端口。
+
+====
+
+
+[[access-the-online-api-documentation-page]]
+== 访问在线 API 文档页面
+
+您可以访问与产品一起打包的_API 文档_参考内容页面，以显示 API 文档，以及手动发出 API 调用（在界面上，例如 Swagger）。您可以点击*菜单栏* > *帮助按钮* > *API 文档*访问此文档
+
+或者，输入主机名或 IP 地址以及访问 REST API 页面的 URL，格式为
+
++https://<hostname>/docs/api/+
+
+
+
+[[categories]]
+== 类别
+
+API 调用根据区域或类别按功能进行组织。要查找特定 API，请单击适用的 API 类别。
+
+Unified Manager 提供的 REST API 可帮助您执行管理、监控和配置功能。API 分为以下几类。
+
+* *数据中心*
++
+此类别包含帮助您使用 Work Flow Automation 和 Ansible 等工具进行数据中心存储管理和分析的 API。此类别下的 REST API 提供有关数据中心中的集群、节点、聚合、卷、LUN、文件共享、命名空间和其他元素的信息。
+
+* *management-server*
++
+*management-server* 类别下的 API 包含 `jobs, system,`和 `events` API。作业是计划用于异步执行的操作，与管理 Unified Manager 上的存储对象或工作负载相关。 `events` API 返回数据中心中的事件， `system` API 返回 Unified Manager 实例详细信息。
+
+* *storage-provider*
++
+此类别包含管理和调配文件共享、LUN、性能服务级别和存储效率策略所需的所有调配 API。这些 API 还使您能够配置访问端点、Active Directory，以及为存储工作负载分配性能服务级别和存储效率策略。
+
+* *管理*
++
+此类别包含用于运行管理任务的 API，例如维护备份设置、查看 Unified Manager 数据源的信任存储证书以及将 ONTAP 集群作为 Unified Manager 的数据源进行管理。
+
+* *网关*
++
+Unified Manager 使您能够通过网关类别下的 API 调用 ONTAP REST API，并管理数据中心内的存储对象。
+
+* *安全*
++
+此类别包含用于管理 Unified Manager 用户的 API。
+
+

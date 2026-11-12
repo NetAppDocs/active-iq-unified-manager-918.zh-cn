@@ -1,0 +1,22 @@
+---
+permalink: performance-checker/concept_manage_performance_thresholds.html 
+sidebar: sidebar 
+keywords: manage, performance, thresholds 
+summary: 性能阈值策略使您能够确定 Unified Manager 生成事件的时间点，以告知系统管理员可能影响工作负载性能的问题。这些阈值策略称为用户定义的性能阈值。 
+---
+= 在 Active IQ Unified Manager 中管理性能阈值
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+性能阈值策略使您能够确定 Unified Manager 生成事件的时间点，以告知系统管理员可能影响工作负载性能的问题。这些阈值策略称为 _用户定义_ 性能阈值。
+
+此版本支持用户定义、系统定义和动态性能阈值。使用动态和系统定义的性能阈值，Unified Manager 分析工作负载活动以确定适当的阈值。使用用户定义的阈值，您可以为许多性能计数器和许多存储对象定义性能上限。
+
+[NOTE]
+====
+系统定义的性能阈值和动态性能阈值由 Unified Manager 设置，不可配置。如果从任何系统定义的性能阈值策略接收到不必要的事件，则可以从“事件设置”页面禁用单个策略。
+
+====

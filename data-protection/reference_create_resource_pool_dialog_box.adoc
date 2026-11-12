@@ -1,0 +1,62 @@
+---
+permalink: data-protection/reference_create_resource_pool_dialog_box.html 
+sidebar: sidebar 
+keywords: create, resource pool, dialog box 
+summary: 您可以使用“创建资源池”对话框来命名和描述新资源池，以及向该资源池添加聚合和从该资源池删除聚合。 
+---
+= 使用 Active IQ Unified Manager 中的 Create Resource Pool 对话框
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用“创建资源池”对话框来命名和描述新资源池，以及向该资源池添加聚合和从该资源池删除聚合。
+
+
+
+[[resource-pool-name]]
+== 资源池名称
+
+文本框使您可以添加以下信息以创建资源池：
+
+使您能够指定资源池名称。
+
+
+
+[[description]]
+== 问题描述
+
+用于描述资源池。
+
+
+
+[[members]]
+== 成员
+
+显示资源池的成员。您还可以添加和删除成员。
+
+
+
+[[command-buttons]]
+== 命令按钮
+
+这些命令按钮可用来执行下列任务：
+
+* *添加*
++
+打开“聚合”对话框，以便您可以将特定群集中的聚合添加到资源池。您可以添加来自不同群集的聚合，但不能将相同的聚合添加到多个资源池。
+
+* *删除*
++
+使您能够从资源池中移除选定的聚合。
+
+* *创建*
++
+创建资源池。在“资源池名称”或“描述”字段中输入信息之前，此按钮不会启用。
+
+* *取消*
++
+放弃更改并关闭“创建资源池”对话框。
+
+

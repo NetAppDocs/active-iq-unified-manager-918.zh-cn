@@ -1,0 +1,27 @@
+---
+permalink: performance-checker/task_identify_victim_workloads_involved_in_performance_event.html 
+sidebar: sidebar 
+keywords: identify, victim workloads, dynamic, performance, event 
+summary: 在 Unified Manager 中，您可以识别哪些卷工作负载的响应时间（延迟）偏差最大，这是由争用中的存储组件引起的。识别这些工作负载有助于您了解为什么访问它们的客户端应用程序的执行速度比平时慢。 
+---
+= 在 Active IQ Unified Manager 中识别动态性能事件中的受害工作负载
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在 Unified Manager 中，您可以识别哪些卷工作负载的响应时间（延迟）偏差最大，这是由争用中的存储组件引起的。识别这些工作负载有助于您了解为什么访问它们的客户端应用程序的执行速度比平时慢。
+
+.开始之前
+* 您必须具有操作员、应用程序管理员或存储管理员角色。
+* 必须有新的、已确认的或过时的动态性能事件。
+
+
+“事件详细信息”页面显示用户定义和系统定义工作负载的列表，按组件上活动或使用情况的最大偏差或受事件影响最大进行排名。这些值基于 Unified Manager 在检测到并上次分析事件时识别的峰值。
+
+.步骤
+. 显示*事件详细信息*页面以查看有关该事件的信息。
+. 在 Workload Latency 和 Workload Activity 图表中，选择 *Victim Workloads*。
+. 将光标悬停在图表上，以查看影响组件的主要用户定义工作负载以及受害者工作负载的名称。
+

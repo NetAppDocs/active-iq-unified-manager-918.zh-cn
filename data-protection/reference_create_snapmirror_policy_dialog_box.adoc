@@ -1,0 +1,68 @@
+---
+permalink: data-protection/reference_create_snapmirror_policy_dialog_box.html 
+sidebar: sidebar 
+keywords: create, snapmirror, policy, dialog box 
+summary: “创建 SnapMirror 策略”对话框使您能够创建策略，以设置 SnapMirror 传输的优先级。您可以使用策略来最大限度地提高从源到目的地的传输效率。 
+---
+= 在 Active IQ Unified Manager 中使用“创建 SnapMirror 策略”对话框
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+“创建 SnapMirror 策略”对话框使您能够创建策略，以设置 SnapMirror 传输的优先级。您可以使用策略来最大限度地提高从源到目的地的传输效率。
+
+* *目标集群*
++
+您在“配置保护”对话框的 SnapMirror 选项卡中选择的集群名称。
+
+* *目标 SVM*
++
+在“配置保护”对话框 SnapMirror 选项卡中选择的 SVM 名称。
+
+* *Policy Name*
++
+您为新策略提供的名称。策略名称可以由字符 A 到 Z、a 到 z、0 到 9、句点（.）、连字符（-）和下划线（_）组成。
+
+* *传输优先级*
++
+异步操作的传输运行优先级。您可以选择“正常”或“低”。具有指定正常传输优先级的策略的传输关系，会在具有指定低传输优先级的策略的传输关系之前运行。
+
+* *Comment*
++
+您可以在其中添加有关策略的注释的可选字段。
+
+* *传输重新启动*
++
+指示在传输被中止操作或任何类型的故障（如网络中断）中断时应采取的重新启动操作。您可以从以下选项中选择一项：
+
++
+** 始终
++
+指定在重新启动传输之前创建新 Snapshot 副本，然后（如果存在）从检查点重新启动传输，然后从新创建的 Snapshot 副本进行增量传输。
+
+** 从不
++
+指定从不重新启动中断的传输。
+
+
+
+
+
+
+
+[[command-buttons]]
+== 命令按钮
+
+这些命令按钮可用来执行下列任务：
+
+* *取消*
++
+放弃选择并关闭“配置保护”对话框。
+
+* *应用*
++
+应用您的选择并开始保护过程。
+
+

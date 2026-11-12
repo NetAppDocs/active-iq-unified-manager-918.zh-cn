@@ -1,0 +1,26 @@
+---
+permalink: reporting/concept_customize_reports.html 
+sidebar: sidebar 
+keywords: customize, reports 
+summary: 您可以通过多种方式自定义视图，以便创建包含管理 ONTAP 集群所需的所有信息的报告。 
+---
+= 在 Active IQ Unified Manager 中自定义报告
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以通过多种方式自定义视图，以便创建包含管理 ONTAP 集群所需的所有信息的报告。
+
+从默认清单页面或自定义视图开始，然后通过添加或删除列、更改列顺序、筛选数据或按升序或降序对特定列进行排序来对其进行自定义。
+
+从 Unified Manager 9.8 开始，您还可以下载 Excel 格式的视图，以使用高级功能对其进行自定义。完成后，上传自定义的 Excel 文件。如果您使用该视图计划报告，它将使用自定义的 Excel 文件来创建您可以共享的强大报告。
+
+有关使用 Excel 自定义报告的详细信息，请参见 _Microsoft Excel 报告示例_。
+
+[NOTE]
+====
+要管理报告，您必须具有应用程序管理员或存储管理员角色。
+
+====

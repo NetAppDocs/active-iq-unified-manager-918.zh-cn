@@ -1,0 +1,38 @@
+---
+permalink: storage-mgmt/reference_issue_with_ldap_using_other_authentication_services.html 
+sidebar: sidebar 
+keywords: issue, addi, ldap, use, other, authentication, services 
+summary: 对使用其他身份验证服务添加 LDAP 时出现的问题进行故障排除。 
+---
+= 解决在 Active IQ Unified Manager 中使用其他身份验证服务添加 LDAP 时引起的问题
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+当您选择“其他”作为身份验证服务时，用户和组“对象类”将保留先前选定模板中的值。如果 LDAP 服务器不使用相同的值，则操作可能会失败。
+
+*原因*
+
+用户在 OpenLDAP 中配置有误。
+
+*更正操作*
+
+可以使用以下解决方法之一手动解决此问题。
+
+如果您的 LDAP 用户对象类和组对象类分别是 user 和 group，请执行以下步骤：
+
+. 在左侧导航窗格中，单击**常规** > *远程身份验证*。
+. 在*身份验证服务*下拉菜单中，选择 *Active Directory*，然后选择*其他*。
+. 填写文本字段。
+
+
+如果您的 LDAP 用户对象类和组对象类分别为 posixAccount 和 posixGroup，请执行以下步骤：
+
+. 在左侧导航窗格中，单击 **常规** > *远程身份验证*。
+. 在*身份验证服务*下拉菜单中，选择*OpenLDAP*，然后选择*其他*。
+. 填写文本字段。
+
+
+如果前两个解决方法不适用，请调用 `option-set` API，并将 `auth.ldap.userObjectClass`和 `auth.ldap.groupObjectClass`选项设置为正确的值。

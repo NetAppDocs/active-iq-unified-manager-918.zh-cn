@@ -1,0 +1,48 @@
+---
+permalink: data-protection/task_create_snapvault_protection_relationship_from_health_volume_details.html 
+sidebar: sidebar 
+keywords: create, snapvault, protection, relationship, volume, health details page 
+summary: 您可以使用“卷/运行状况详细信息”页面创建 SnapVault 关系，以便在卷上启用数据备份以进行保护。 
+---
+= 在 Active IQ Unified Manager 的 Volume/Health 详细信息页面中创建 SnapVault 保护关系
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用“卷/运行状况详细信息”页面创建 SnapVault 关系，以便在卷上启用数据备份以进行保护。
+
+.开始之前
+* 您必须具有应用程序管理员或存储管理员角色。
+* 您必须已设置 Workflow Automation 才能执行此任务。
+
+
+在以下情况下，*保护*菜单不会显示：
+
+* 如果 RBAC 设置不允许此操作：例如，如果您只有操作员权限
+* 当卷 ID 未知时：例如，当您具有集群间关系并且尚未发现目标集群时
+
+
+.步骤
+. 在*卷/运行状况*详细信息页面的*保护*选项卡中，右键单击拓扑视图中要保护的卷。
+. 从菜单中选择 *保护* > *SnapVault*。
++
+此时将启动“配置保护”对话框。
+
+. 单击 *SnapVault* 可查看 *SnapVault* 选项卡并配置辅助资源信息。
+. 单击*高级*根据需要设置重复数据删除、压缩、自动增长和空间保证，然后单击*应用*。
+. 在*配置保护*对话框中填写*目标信息*区域和*关系设置*区域。
+. 单击*应用*。
++
+将返回到卷/运行状况详细信息页面。
+
+. 单击 *Volume / Health* 详细信息页面顶部的保护配置作业链接。
++
+此时将显示作业详细信息页面。
+
+. 单击*刷新*以更新与保护配置作业关联的任务列表和任务详细信息，并确定作业何时完成。
++
+作业任务完成后，新的关系将显示在卷/运行状况详细信息页面拓扑视图中。
+
+

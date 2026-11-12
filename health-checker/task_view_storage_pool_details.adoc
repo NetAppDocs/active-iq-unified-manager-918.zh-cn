@@ -1,0 +1,39 @@
+---
+permalink: health-checker/task_view_storage_pool_details.html 
+sidebar: sidebar 
+keywords: view, storage pool, details 
+summary: 您可以查看存储池的详细信息，以监控存储池的运行状况、总缓存和可用缓存，以及已使用和可用分配。 
+---
+= 在 Active IQ Unified Manager 中查看存储池详细信息
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以查看存储池的详细信息，以监控存储池的运行状况、总缓存和可用缓存，以及已使用和可用分配。
+
+.开始之前
+您必须具有操作员、应用程序管理员或存储管理员角色。
+
+.步骤
+. 在左侧导航窗格中，单击*存储* > *聚合*。
+. 单击聚合名称。
++
+将显示所选聚合的详细信息。
+
+. 单击*磁盘信息*选项卡。
++
+此时将显示详细的磁盘信息。
+
++
+[NOTE]
+====
+仅当所选聚合使用存储池时，才会显示缓存表。
+
+====
+. 在缓存表中，将指针移到所需存储池的名称上。
++
+将显示存储池的详细信息。
+
+

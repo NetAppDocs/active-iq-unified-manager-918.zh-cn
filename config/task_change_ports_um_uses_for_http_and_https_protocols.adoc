@@ -1,0 +1,43 @@
+---
+permalink: config/task_change_ports_um_uses_for_http_and_https_protocols.html 
+sidebar: sidebar 
+keywords: change, ports, unified manager, uses, http, https, protocols 
+summary: 如果出于安全原因需要，可以在安装后更改 Unified Manager 用于 HTTP 和 HTTPS 协议的默认端口。HTTP 的默认端口为 80，HTTPS 的默认端口为 443。 
+---
+= 更改 Active IQ Unified Manager 用于 HTTP 和 HTTPS 协议的端口
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果出于安全原因需要，可以在安装后更改 Unified Manager 用于 HTTP 和 HTTPS 协议的默认端口。HTTP 的默认端口为 80，HTTPS 的默认端口为 443。
+
+.开始之前
+您必须拥有已授权登录到 Unified Manager 服务器维护控制台的用户 ID 和密码。
+
+[NOTE]
+====
+在使用 Mozilla Firefox 或 Google Chrome 浏览器时，有些端口被认为是不安全的。在为 HTTP 和 HTTPS 流量分配新的端口号之前，请检查您的浏览器。选择不安全的端口可能会导致系统无法访问，这需要您联系客户支持以获得解决方案。
+
+====
+更改端口后，Unified Manager 的实例会自动重新启动，因此请确保这是让系统在短时间内停止运行的好时机。
+
+. 使用 SSH 作为维护用户登录到 Unified Manager 主机。
++
+此时将显示 Unified Managermaintenance 控制台提示。
+
+. 键入标有 *View/Change Application Ports* 的菜单选项编号，然后按 Enter 键。
+. 如果出现提示，请再次输入维护用户密码。
+. 键入 HTTP 和 HTTPS 端口的新端口号，然后按 Enter 键。
++
+将端口号留空将为协议分配默认端口。
+
++
+此时会提示您是否要更改端口并立即重新启动 Unified Manager。
+
+. 键入 *y* 以更改端口并重新启动 Unified Manager。
+. 退出维护控制台。
+
+
+此更改后，用户必须在 URL 中包含新端口号才能访问 Unified Manager Web UI，例如 +https://host.company.com:1234+、+https://12.13.14.15:1122+ 或 +https://[2001:db8:0:1]:2123+。

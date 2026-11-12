@@ -1,0 +1,24 @@
+---
+permalink: api-automation/reference_intended_audience_for_this_guide.html 
+sidebar: sidebar 
+keywords: audience, api, rest 
+summary: 本部分适用于创建通过 REST API 与 Active IQ Unified Manager 软件进行交互的应用程序的开发人员。 
+---
+= 确定Active IQ Unified Manager REST API的目标用户
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此处的主题适用于创建通过 REST API 与 Active IQ Unified Manager 软件进行交互的应用程序的开发人员。
+
+存储管理员和架构师可以参考此信息，基本了解如何使用 Unified Manager REST API 构建客户端应用程序以管理和监控 NetApp 存储系统。
+
+如果您想使用存储提供程序、ONTAP 集群和管理 API 来管理存储，则应使用此信息。
+
+[NOTE]
+====
+您必须具有以下角色之一：操作员、存储管理员或应用程序管理员。您必须知道要在其上执行 REST API 的 Unified Manager 服务器的 IP 地址或完全限定域名。
+
+====

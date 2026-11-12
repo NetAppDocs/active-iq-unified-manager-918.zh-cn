@@ -1,0 +1,30 @@
+---
+permalink: health-checker/task_configure_volume_health_thresholds_for_groups.html 
+sidebar: sidebar 
+keywords: configure, volume, health, thresholds, groups 
+summary: 您可以为容量、Snapshot 副本、qtree 配额、增长和 inode 配置组级卷运行状况阈值。 
+---
+= 在 Active IQ Unified Manager 中为组配置卷运行状况阈值
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以为容量、Snapshot 副本、qtree 配额、增长和 inode 配置组级卷运行状况阈值。
+
+.开始之前
+您必须具有应用程序管理员或存储管理员角色。
+
+组操作的卷运行状况阈值类型仅应用于组的卷。
+
+.步骤
+. 在左侧导航窗格中，单击*存储管理* > *组*。
+. 在*组操作*选项卡中，单击*添加*。
+. 输入组操作的名称和描述。
+. 从*组*下拉框中，选择要为其配置组操作的组。
+. 选择*操作类型*作为卷运行状况阈值。
+. 选择要设置阈值的类别。
+. 输入运行状况阈值的所需值。
+. 单击 *Add*。
+

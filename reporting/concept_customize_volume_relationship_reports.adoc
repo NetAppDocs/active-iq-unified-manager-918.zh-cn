@@ -1,0 +1,14 @@
+---
+permalink: reporting/concept_customize_volume_relationship_reports.html 
+sidebar: sidebar 
+keywords: customize, volume, relationship, reports 
+summary: “卷关系清单”报告使您可以分析集群中的存储清单详细信息，了解卷所需的保护级别，并根据故障源、模式和计划来筛选卷详细信息。 
+---
+= 在 Active IQ Unified Manager 中自定义卷关系报告
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+“卷关系清单”报告使您可以分析集群中的存储清单详细信息，了解卷所需的保护级别，并根据故障源、模式和计划来筛选卷详细信息。

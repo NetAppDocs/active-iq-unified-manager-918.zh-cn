@@ -1,0 +1,16 @@
+---
+permalink: performance-checker/concept_what_performance_events_are.html 
+sidebar: sidebar 
+keywords: performance, events 
+summary: 性能事件是与集群上的工作负载性能相关的事件。它们可帮助您识别响应时间较慢的工作负载。结合同时发生的运行状况事件，您可以确定可能导致或促成响应时间缓慢的问题。 
+---
+= 了解 Active IQ Unified Manager 中的性能事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+性能事件是与集群上的工作负载性能相关的事件。它们可帮助您识别响应时间较慢的工作负载。结合同时发生的运行状况事件，您可以确定可能导致或促成响应时间缓慢的问题。
+
+当 Unified Manager 检测到同一集群组件出现多次相同事件条件时，它会将所有事件视为单个事件，而不是单独的事件。

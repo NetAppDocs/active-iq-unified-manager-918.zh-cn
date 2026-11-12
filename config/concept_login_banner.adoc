@@ -1,0 +1,16 @@
+---
+permalink: config/concept_login_banner.html 
+sidebar: sidebar 
+keywords: login banner, feature settings 
+summary: 此功能使您的组织能够显示任何信息，例如登录和注销期间允许访问系统的人员以及使用条款和条件。 
+---
+= 在 Active IQ Unified Manager 中添加登录横幅
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+添加登录横幅使您的组织能够显示任何信息，例如登录和注销期间允许访问系统的人员以及使用条款和条件。
+
+任何用户（例如存储操作员或管理员）都可以在登录、注销和会话超时期间查看此登录横幅弹出窗口。

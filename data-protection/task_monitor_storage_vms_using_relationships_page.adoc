@@ -1,0 +1,37 @@
+---
+permalink: data-protection/task_monitor_storage_vms_using_relationships_page.html 
+sidebar: sidebar 
+keywords: relationships page, monitor, storage, vm 
+summary: 您可以从“清单”的“保护”部分中的“关系”页面监控您的 storage VM 灾难恢复关系。默认情况下，“关系”页面仅列出顶级关系，因为应用了组成关系筛选器。 
+---
+= 使用 Active IQ Unified Manager 中的关系页面监控存储 VM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以从“清单”的“保护”部分中的“关系”页面监控您的 storage VM 灾难恢复关系。默认情况下，“关系”页面仅列出顶级关系，因为应用了组成关系筛选器。
+
+.开始之前
+您必须具有应用程序管理员或存储管理员角色。
+
+您可以使用筛选器来查看 storage VM 灾难恢复关系。
+
+.步骤
+. 在左侧导航窗格中，单击*保护* > *关系*。
++
+该页面显示所有类型的关系：卷、一致性组和存储 VM 关系。
+
+. 单击 *筛选器*，然后选择 *关系对象类型* 和 *存储 VM* 以仅查看存储 VM 灾难恢复关系。
+. 单击*应用过滤器*。
++
+[NOTE]
+====
+您应该清除组成关系筛选器以查看所有保护关系。
+
+====
++
+此页面仅显示 storage VM 灾难恢复关系。
+
+

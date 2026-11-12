@@ -1,0 +1,23 @@
+---
+permalink: performance-checker/task_sort_on_object_inventory_performance_pages.html 
+sidebar: sidebar 
+keywords: sort, object, inventory, performance, pages 
+summary: 您可以按任意列以升序或降序对对象清单性能页面上的所有数据进行排序。这使您能够快速找到对象清单数据，这在检查性能或开始故障排除过程时很有帮助。 
+---
+= 对 Active IQ Unified Manager 中"对象清单性能"页面上的数据进行排序
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以按任意列以升序或降序对对象清单性能页面上的所有数据进行排序。这使您能够快速找到对象清单数据，这在检查性能或开始故障排除过程时很有帮助。
+
+所选用于排序的列由突出显示的列标题名称和名称右侧指示排序方向的箭头图标来表示。向上箭头表示升序；向下箭头表示降序。默认排序顺序是按*状态*（事件关键度）降序排列，最关键的性能事件列在前面。
+
+.步骤
+. 您可以单击列名称以按升序或降序切换列的排序顺序。
++
+对象清单性能页面内容将根据所选列按升序或降序排列。
+
+

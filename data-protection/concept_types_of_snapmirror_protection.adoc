@@ -1,0 +1,92 @@
+---
+permalink: data-protection/concept_types_of_snapmirror_protection.html 
+sidebar: sidebar 
+keywords: types, snapmirror, protection, consistency group, SnapMirror active sync 
+summary: 根据数据存储拓扑的部署，Unified Manager 允许您配置多种类型的 SnapMirror 保护关系。所有 SnapMirror 保护变体都提供故障转移灾难恢复保护，但在性能、版本灵活性和多备份副本保护方面提供不同的功能。 
+---
+= Active IQ Unified Manager 中的 SnapMirror 保护类型
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+根据数据存储拓扑的部署，Unified Manager 允许您配置多种类型的 SnapMirror 保护关系。所有 SnapMirror 保护变体都提供故障转移灾难恢复保护，但在性能、版本灵活性和多备份副本保护方面提供不同的功能。
+
+
+
+[[traditional-snapmirror-asynchronous-protection-relationships]]
+== 传统 SnapMirror 异步保护关系
+
+传统的 SnapMirror 异步保护在源卷和目标卷之间提供块复制镜像保护。
+
+在传统 SnapMirror 关系中，镜像操作比在替代 SnapMirror 关系中执行得更快，因为镜像操作基于块复制。但是，传统 SnapMirror 保护要求目标卷运行的 ONTAP 软件次要版本与源卷相同或更高（在同一主要版本内，例如，版本 8.x 到 8.x，或 9.x 到 9.x）。不支持从 9.1 源复制到 9.0 目标，因为目标运行的是较早的主要版本。
+
+
+
+[[snapmirror-asynchronous-protection-with-version-flexible-replication]]
+== 利用版本灵活的复制实现 SnapMirror 异步保护
+
+具有版本灵活复制功能的 SnapMirror 异步保护可在源卷和目标卷之间提供逻辑复制镜像保护，即使这些卷运行在不同版本的 ONTAP 8.3 或更高版本软件下（例如，版本 8.3 到 8.3.1，或 8.3 到 9.1，或 9.2.2 到 9.2）。
+
+在采用版本灵活复制的 SnapMirror 关系中，镜像操作不会像在传统 SnapMirror 关系中那样快速执行。
+
+由于执行速度较慢，SnapMirror 具有版本灵活性的复制保护不适合在以下任一情况下实施：
+
+* 源对象包含超过 1000 万个要保护的文件。
+* 受保护数据的恢复点目标为两个小时或更短时间。（也就是说，目标必须始终包含比源数据早不超过两个小时的镜像可恢复数据。）
+
+
+在列出的任一情况下，都需要执行速度更快的、基于块复制的默认 SnapMirror 保护。
+
+
+
+[[snapmirror-asynchronous-protection-with-version-flexible-replication-and-backup-option]]
+== SnapMirror 异步保护，具有版本灵活的复制和备份选项
+
+SnapMirror 具有版本灵活的复制和备份选项的异步保护可在源卷和目标卷之间提供镜像保护，并能够在目标位置存储镜像数据的多个副本。
+
+存储管理员可以指定将哪些 Snapshot 副本从源镜像到目标，还可以指定在目标处保留这些副本的时间，即使这些副本在源处被删除。
+
+在具有版本灵活的复制和备份选项的 SnapMirror 关系中，镜像操作不会像在传统 SnapMirror 关系中那样快速执行。
+
+
+
+[[snapmirror-unified-replication-mirror-and-vault]]
+== SnapMirror 统一复制（镜像和保管库）
+
+SnapMirror 统一复制允许您在同一目标卷上配置灾难恢复和归档。与 SnapMirror 一样，统一数据保护会在首次调用时执行基线传输。在默认统一数据保护策略 "`MirrorAndVault`" 下进行的基线传输会创建源卷的 Snapshot 副本，然后将该副本及其引用的数据块传输到目标卷。与 SnapVault 一样，统一数据保护不会在基线中包含较旧的 Snapshot 副本。
+
+
+
+[[snapmirror-synchronous-protection-with-strict-synchronization]]
+== 具有严格同步的 SnapMirror 同步保护
+
+采用 "`strict`" 同步的 SnapMirror 同步保护可确保主卷和辅助卷始终是彼此的真实副本。如果在尝试将数据写入辅助卷时发生复制故障，则主卷的客户端 I/O 会中断。
+
+
+
+[[snapmirror-synchronous-protection-with-regular-synchronization]]
+== 具有常规同步的 SnapMirror 同步保护
+
+SnapMirror 同步保护（采用 "`regular`" 同步）不需要主卷和辅助卷始终是彼此的真实副本；从而确保主卷的可用性。如果在尝试将数据写入辅助卷时发生复制失败，则主卷和辅助卷将不同步，并且客户端 I/O 将继续写入主卷。
+
+[NOTE]
+====
+从运行状况：所有卷视图或卷/运行状况详细信息页面监视同步保护关系时，还原按钮和关系操作按钮不可用。
+
+====
+
+
+[[snapmirror-active-sync]]
+== SnapMirror 活动同步
+
+SnapMirror 主动同步功能适用于 ONTAP 9.8 及更高版本，您可以使用它来保护具有 LUN 的应用程序，使应用程序能够透明地进行故障切换，从而在发生灾难时确保业务连续性。
+
+它允许您从 Unified Manager 发现和监控群集和存储虚拟机上可用的一致性组（CG）的同步 SnapMirror 关系。SnapMirror 活动同步在 AFF 群集或全 SAN 阵列（ASA）群集上受支持，其中主群集和辅助群集可以是 AFF 或 ASA。SnapMirror 活动同步可保护具有 iSCSI 或 FCP LUN 的应用程序。
+
+当您查看受 SnapMirror 活动同步关系保护的卷和 LUN 时，您可以获得保护关系的统一视图、卷清单中的一致性组、查看一致性组关系的保护拓扑、查看最多一年的一致性组关系的历史数据。您也可以下载报告。您还可以查看一致性组关系的摘要，支持搜索一致性组关系，并获取有关受一致性组保护的卷的信息。
+
+在“关系”页面上，您还可以对受一致性组保护的源和目标存储对象及其关系进行排序、筛选和扩展保护。
+
+要了解有关 SnapMirror 活动同步的更多信息，请参阅 link:https://docs.netapp.com/us-en/ontap/smbc/index.html["ONTAP 9 Snapmirror 活动同步文档（以前称为 SM-BC）"]。

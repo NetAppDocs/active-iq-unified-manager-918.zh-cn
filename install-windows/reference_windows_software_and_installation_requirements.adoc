@@ -1,0 +1,96 @@
+---
+permalink: install-windows/reference_windows_software_and_installation_requirements.html 
+sidebar: sidebar 
+keywords: windows, software, installation, requirements, system, active iq unified manager 
+summary: 若要在 Windows 上成功安装 Unified Manager，应确保安装 Unified Manager 的系统满足软件要求。 
+---
+= 了解 Active IQ Unified Manager 的 Windows 软件和安装要求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+:pp: &#43;&#43;
+
+
+[role="lead"]
+若要在 Windows 上成功安装 Unified Manager，应确保安装 Unified Manager 的系统满足软件要求。
+
+
+
+[[operating-system-software]]
+== 操作系统软件
+
+可以在以下 Windows 版本上安装 Unified Manager：
+
+* Microsoft Windows Server 2019 标准版和数据中心版
+* Microsoft Windows Server 2022 标准版和数据中心版
+
+
+Unified Manager 在 64 位 Windows 操作系统上支持以下语言：
+
+* 英语
+* 日语
+* 简体中文
+
+
+有关受支持的 Windows 版本的完整和最新列表，请参见互操作性矩阵。
+
+http://mysupport.netapp.com/matrix["mysupport.netapp.com/cn/matrix"^]
+
+
+NOTE: NetApp 不支持使用第三方工具（例如 Microsoft System Center Configuration Manager (SCCM)）安装 Unified Manager。
+
+服务器应专用于运行 Unified Manager。不应在服务器上安装其他应用程序。由于公司规定，您的 Windows 系统上可能安装了处于活动状态的防病毒软件。您应在安装 Unified Manager 之前禁用防病毒软件，以防止安装失败。
+
+
+
+[[third-party-software]]
+== 第三方软件
+
+以下第三方软件包与 Unified Manager 捆绑在一起。如果这些第三方软件包未安装在您的系统上，则 Unified Manager 会将它们作为安装的一部分进行安装。
+
+* 适用于 Visual Studio 2015 的 Microsoft Visual C&#43;&#43; 可再发行组件包版本 14.29.30133.0
+* MySQL Community Edition 8.4.10 版
+* Python 3.13.3
+* OpenJDK 版本 17.0.15+6
+* 7-zip 版本 25.01 或更高版本
+
+
+[NOTE]
+====
+从 Unified Manager 9.5 开始，OpenJDK 在 Unified Manager 安装包中提供并自动安装。从 Unified Manager 9.5 开始，不支持 Oracle Java。
+
+====
+如果 MySQL 已预安装，您应确保：
+
+* 它正在使用默认端口。
+* 未安装示例数据库。
+* 服务名称为“`MYSQL84`”。
+
+
+Unified Manager 部署在 WildFly Web 服务器上。WildFly 27.0.1.Final 与 Unified Manager 捆绑并配置。
+
+[NOTE]
+====
+在升级任何第三方软件之前，应关闭正在运行的 Unified Manager 实例。第三方软件安装完成后，您可以重新启动 Unified Manager。
+
+====
+
+
+[[installation-requirements]]
+== 安装要求
+
+* 应安装 Microsoft .NET 4.5.2 或更高版本。
+* 该 `temp`目录应配置 2 GB 的磁盘空间用于提取安装文件。要验证目录是否已创建，请在命令行界面上运行以下命令： `echo %temp%`
+* 您应该在 Windows 驱动器中保留 2 GB 的磁盘空间来缓存 Unified Manager MSI 文件。
+* 要安装 Unified Manager 的 Microsoft Windows Server 应配置完全限定域名（FQDN），以便 `ping`对主机名和 FQDN 的响应成功。
+* 您应禁用 Microsoft IIS 万维网发布服务，并确保端口 80 和 443 空闲。
+* 应确保在安装过程中禁用“`Windows Installer RDS Compatibility`”的远程桌面会话主机设置。
+* UDP 端口 514 应该是空闲的，不应被任何其他服务使用。
+* 在安装 Unified Manager 之前，应禁用系统上的所有防病毒软件。安装完成后，请确保从防病毒扫描中手动排除以下路径：
++
+** Unified Manager 数据目录，例如， `C:\ProgramData\NetApp\OnCommandAppData\`
+** Unified Manager 安装目录，例如， `\C:\Program Files\NetApp\`
+** MySQL 数据目录，例如， `C:\ProgramData\MySQL\MySQLServerData`
+
+
+

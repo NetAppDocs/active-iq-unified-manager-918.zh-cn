@@ -1,0 +1,56 @@
+---
+permalink: events/reference_snapshot_events.html 
+sidebar: sidebar 
+keywords: snapshot, events, impact area, availability 
+summary: 快照事件提供有关快照状态的信息，使您能够监控快照以发现潜在问题。事件按影响区域分组，包括事件名称、陷阱名称、影响级别、源类型和严重程度。 
+---
+= 了解 Active IQ Unified Manager 中的 Snapshot 事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+快照事件提供有关快照状态的信息，使您能够监控快照以发现潜在问题。事件按影响区域分组，包括事件名称、陷阱名称、影响级别、源类型和严重程度。
+
+
+
+[[impact-area-availability]]
+== 影响区域：可用性
+
+|===
+| 事件名称（陷阱名称） | 影响级别 | 源类型 | 严重性 
+
+
+ a| 
+快照自动删除已禁用（不适用）
+ a| 
+事件
+ a| 
+卷
+ a| 
+信息
+
+
+
+ a| 
+已启用快照自动删除（不适用）
+ a| 
+事件
+ a| 
+卷
+ a| 
+信息
+
+
+
+ a| 
+快照自动删除配置已修改（不适用）
+ a| 
+事件
+ a| 
+卷
+ a| 
+信息
+
+|===

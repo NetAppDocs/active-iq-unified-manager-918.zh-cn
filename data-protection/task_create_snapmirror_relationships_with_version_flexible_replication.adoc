@@ -1,0 +1,51 @@
+---
+permalink: data-protection/task_create_snapmirror_relationships_with_version_flexible_replication.html 
+sidebar: sidebar 
+keywords: create, snapmirror, relationships, version-flexible, replication, backup, option 
+summary: 您可以使用版本灵活的复制和备份选项功能创建 SnapMirror 关系。备份选项功能使您能够实施 SnapMirror 保护，并在目标位置保留多个版本的备份副本。 
+---
+= 在 Active IQ Unified Manager 中创建具有版本灵活复制和回退选项功能的 SnapMirror 关系
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用版本灵活的复制和备份选项功能创建 SnapMirror 关系。备份选项功能使您能够实施 SnapMirror 保护，并在目标位置保留多个版本的备份副本。
+
+.开始之前
+* 您必须具有应用程序管理员或存储管理员角色。
+* 您必须已设置 Workflow Automation。
+* 源和目标 SVM 都必须启用 SnapMirror 许可证。
+* 源和目标 SVM 都必须启用 SnapVault 许可证。
+* 源和目标 SVM 必须各自在支持版本灵活复制的 ONTAP 软件版本下运行。
+
+
+通过配置 SnapMirror 备份选项功能，您可以使用 SnapMirror 灾难恢复功能（如卷故障切换功能）来保护数据，同时提供多个备份副本保护等 SnapVault 功能。
+
+.步骤
+. 显示要保护的卷的*配置保护*对话框。
++
+** 如果正在查看“卷/运行状况详细信息”页面的“保护”选项卡，请在拓扑视图中右键单击要保护的卷的名称，然后从菜单中选择 *保护* > *SnapMirror*。
+** 如果您正在查看“运行状况：所有卷”视图，请找到要保护的卷并右键单击它；然后从菜单中选择 *保护* > *SnapMirror*。此时将显示“配置保护”对话框。
+
+
+. 单击 *SnapMirror* 以查看 *SnapMirror* 选项卡。
+. 在*配置保护*对话框中填写*目标信息*区域和*关系设置*区域。
+. 单击*高级*以显示*高级目标设置*对话框。
+. 如果尚未选中*版本灵活复制*复选框，请立即选中它。
+. 选中 *With backup option* 复选框以启用备份选项功能；然后单击 *Apply*。
+. 单击*应用*。
++
+将返回到卷/运行状况详细信息页面。
+
+. 单击 *Volume / Health* 详细信息页面顶部的保护配置作业链接。
++
+作业任务和详细信息显示在作业详细信息页面中。
+
+. 在*作业*详细信息页面中，单击*刷新*以更新与保护配置作业关联的任务列表和任务详细信息，并确定作业何时完成。
+. 作业任务完成后，单击浏览器上的 *返回* 以返回 *卷 / 运行状况* 详细信息页面。
++
+新关系将显示在卷/运行状况详细信息页面拓扑视图中。
+
+

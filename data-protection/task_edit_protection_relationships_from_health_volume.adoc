@@ -1,0 +1,37 @@
+---
+permalink: data-protection/task_edit_protection_relationships_from_health_volume.html 
+sidebar: sidebar 
+keywords: edit, protection, relationships, volume, health details page 
+summary: 您可以编辑现有的保护关系，以更改当前的最大传输速率、保护策略或保护计划。您可能需要编辑关系以减少用于传输的带宽，或者因为数据经常更改而增加计划传输的频率。 
+---
+= 从 Active IQ Unified Manager 中的卷/运行状况详细信息页面编辑保护关系
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以编辑现有的保护关系，以更改当前的最大传输速率、保护策略或保护计划。您可能需要编辑关系以减少用于传输的带宽，或者因为数据经常更改而增加计划传输的频率。
+
+.开始之前
+* 您必须具有应用程序管理员或存储管理员角色。
+* 您必须已安装并配置 Workflow Automation。
+
+
+所选卷必须是保护关系目标。如果选择了源卷、负载分担卷或非 SnapMirror 或 SnapVault 关系目标的卷，则无法编辑关系。
+
+.步骤
+. 从*卷/运行状况*详细信息页面的*保护*选项卡中，在拓扑中找到要编辑的保护关系，然后右键单击它。
+. 从菜单中选择*编辑*。
++
+或者，从*操作*菜单中，选择*关系* > *编辑*以编辑您当前查看详细信息的关系。
+
++
+此时将显示*编辑关系*对话框。
+
+. 在编辑关系对话框中，根据需要编辑最大传输速率、保护策略或保护计划。
+. 单击*应用*。
++
+更改将应用于所选关系。
+
+

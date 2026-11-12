@@ -1,0 +1,24 @@
+---
+permalink: performance-checker/concept_what_happens_when_performance_threshold_policy_is_changed.html 
+sidebar: sidebar 
+keywords: happens, performance, threshold, policy, changed 
+summary: 如果调整现有性能阈值策略的计数器值或持续时间，策略更改将应用于使用该策略的所有存储对象。新设置将立即生效，Unified Manager 将开始将性能计数器值与所有新收集的性能数据的新阈值设置进行比较。 
+---
+= 了解 Active IQ Unified Manager 中的性能阈值策略更改
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果调整现有性能阈值策略的计数器值或持续时间，策略更改将应用于使用该策略的所有存储对象。新设置将立即生效，Unified Manager 将开始将性能计数器值与所有新收集的性能数据的新阈值设置进行比较。
+
+如果使用更改的阈值策略的对象存在任何活动事件，则这些事件将被标记为已过时，并且阈值策略将作为新定义的阈值策略开始监控计数器。
+
+在计数器图表详细视图中查看已应用阈值的计数器时，临界和警告阈值线反映当前阈值设置。即使在旧阈值设置生效时查看历史数据，原始阈值设置也不会显示在此页面上。
+
+[NOTE]
+====
+由于旧的阈值设置不会显示在计数器图表详细视图中，因此您可能会看到显示在当前阈值线下方的历史事件。
+
+====

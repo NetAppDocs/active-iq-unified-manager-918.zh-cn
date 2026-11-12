@@ -1,0 +1,22 @@
+---
+permalink: performance-checker/concept_analyze_events_from_system_defined_performance_thresholds.html 
+sidebar: sidebar 
+keywords: analyze, events, system-defined, performance, thresholds 
+summary: 系统定义的性能阈值生成的事件指示特定存储对象的性能计数器或性能计数器集已超过系统定义策略的阈值。这表示存储对象（例如聚合或节点）遇到性能问题。 
+---
+= 分析 Active IQ Unified Manager 中系统定义的性能阈值事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+系统定义的性能阈值生成的事件指示特定存储对象的性能计数器或性能计数器集已超过系统定义策略的阈值。这表示存储对象（例如聚合或节点）遇到性能问题。
+
+您可以使用“事件详细信息”页面分析性能事件，并在必要时采取纠正措施，使性能恢复正常。
+
+[NOTE]
+====
+Cloud Volumes ONTAP、ONTAP Edge 或 ONTAP Select 系统上未启用系统定义的阈值策略。
+
+====

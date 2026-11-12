@@ -1,0 +1,19 @@
+---
+permalink: health-checker/task_view_annotation_list_and_details.html 
+sidebar: sidebar 
+keywords: view, annotation list, details 
+summary: 您可以查看与集群、卷和存储虚拟机（SVM）动态关联的批注列表。您还可以查看详细信息，例如描述、创建者、创建日期、值、规则以及与批注关联的对象。 
+---
+= 在 Active IQ Unified Manager 中查看注释列表和详细信息
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以查看与集群、卷和存储虚拟机（SVM）动态关联的批注列表。您还可以查看详细信息，例如描述、创建者、创建日期、值、规则以及与批注关联的对象。
+
+.步骤
+. 在左侧导航窗格中，单击 *存储管理* > *注释*。
+. 在*注释*选项卡中，单击注释名称以查看相关详细信息。
+

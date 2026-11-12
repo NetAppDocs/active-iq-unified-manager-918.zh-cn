@@ -1,0 +1,39 @@
+---
+permalink: health-checker/task_perform_diagnotstic_actions_for_volume_offline_conditions.html 
+sidebar: sidebar 
+keywords: perform, diagnostic actions, volume, offline, conditions 
+summary: 导航到报告为离线的卷的卷/运行状况详细信息页面后，您可以搜索有助于诊断卷离线状况的其他信息。 
+---
+= 在 Active IQ Unified Manager 中对卷脱机情况执行诊断操作
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+导航到报告为离线的卷的卷/运行状况详细信息页面后，您可以搜索有助于诊断卷离线状况的其他信息。
+
+.开始之前
+您必须具有操作员、应用程序管理员或存储管理员角色。
+
+如果报告为脱机的卷不是有意脱机的，则该卷可能由于多种原因而处于脱机状态。
+
+从离线卷的“卷/运行状况”详细信息页面开始，您可以导航到其他页面和窗格以确认或排除可能的原因：
+
+* 单击 *卷/运行状况* 详细信息页面链接，以确定卷是否处于脱机状态，因为其主机节点已停机，并且向其 HA 对配对节点进行的存储故障转移也已失败。
++
+请参阅 link:task_determine_if_volume_offline_condition_is_by_down_cluster_node.html["确定卷离线状态是否由停机节点引起"]。
+
+* 单击 *卷/运行状况* 详细信息页面链接，以确定卷是否处于脱机状态，以及其主机存储虚拟机 (SVM) 是否因托管该 SVM 根卷的节点已停机而停止。
++
+请参阅 link:task_determine_if_volume_is_offline_and_its_svm_is_stopped.html["确定卷是否脱机以及 SVM 是否因节点关闭而停止"]。
+
+* 单击 *卷 / 运行状况* 详细信息页面链接，以确定卷是否由于其主机聚合中的磁盘损坏而处于脱机状态。
++
+请参阅 link:task_determine_if_volume_is_offline_because_of_broken_disks.html["确定卷是否由于聚合中的磁盘损坏而处于脱机状态"]。
+
+
+
+*相关信息*
+
+link:../config/reference_unified_manager_roles_and_capabilities.html["Unified Manager 用户角色和功能"]

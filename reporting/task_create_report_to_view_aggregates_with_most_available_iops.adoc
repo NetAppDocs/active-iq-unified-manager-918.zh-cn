@@ -1,0 +1,80 @@
+---
+permalink: reporting/task_create_report_to_view_aggregates_with_most_available_iops.html 
+sidebar: sidebar 
+keywords: create, report, view, aggregates, available, IOPS 
+summary: 此报表显示每个聚合类型中哪些聚合具有最多的可用 IOPS，您可以在其上配置新工作负载。 
+---
+= 创建报告以查看 Active IQ Unified Manager 中可用 IOPS 最多的聚合
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此报表显示每个聚合类型中哪些聚合具有最多的可用 IOPS，您可以在其上配置新工作负载。
+
+.开始之前
+* 您必须具有应用程序管理员或存储管理员角色。
+
+
+使用以下步骤打开运行状况：所有卷视图，在 Excel 中下载视图，创建可用容量图表，上传自定义的 Excel 文件，并计划最终报告。
+
+.步骤
+. 在左侧导航窗格中，单击*存储* > *聚合*。
+. 从*视图*下拉列表中选择*性能：所有聚合*。
+. 选择*显示/隐藏*以显示 `Available IOPS`列并隐藏 `Cluster FQDN, Inactive Data Reporting,`和 `Threshold Policy`列。
+. 将 `Available IOPS`和 `Free Capacity`列拖放到 `Type`列旁边。
+. 命名并保存自定义视图 `Available IOPS Per Aggr.`
+. 选择 *报告* > *下载 Excel*。
++
+image::../media/download_excel_menu.png[显示如何从报告中下载 Excel 的 UI 屏幕截图。]
+
++
+根据您的浏览器，您可能需要单击*确定*以保存文件。
+
+. 如果需要，请单击*启用编辑*。
+. 在 Excel 中，打开下载的文件。
+. 在数据表上，单击工作表左上角的小三角形以选择整个工作表。
+. 在 *数据* 功能区上，从 `Sort & Filter area.`选择 *排序*
+. 设置以下排序级别：
++
+.. 指定 *排序方式* 为 `Available IOPS`（IOPS），*排序依据* 为 `Cell Values,`，*顺序* 为 `Largest to Smallest.`
+.. 单击*添加级别*。
+.. 指定*排序方式*为 `Type`，*排序依据*为 `Cell Values,`，*顺序*为 `Z to A.`
+.. 单击*添加级别*。
+.. 将*排序方式*指定为 `Free Capacity (GB),`，将*排序依据*指定为 `Cell Values,`，并将*顺序*指定为 `Largest to Smallest.`
+.. 单击 *OK*。
+
+
+. 保存并关闭此 Excel 文件。
+. 在 Unified Manager 中，选择 *报告* > *上传 Excel*。
++
+[NOTE]
+====
+确保您位于下载 Excel 文件的相同视图下。
+
+====
+. 选择您已修改的 Excel 文件，在本例中 `performance-aggregates-<date>.xlsx.`
+. 单击*打开*。
+. 单击*提交*。
++
+*报告* > *上传 Excel* 菜单项旁边会出现一个复选标记。
+
++
+image::../media/upload_excel.png[显示如何将 excel 上传到报表的 UI 屏幕截图。]
+
+. 单击*已计划报告*。
+. 单击*添加计划*可将新行添加到“报告计划”页面，以便您可以定义新报告的计划特性。
+. 输入报告计划的名称并填写其他报告字段，然后单击该行末尾的复选标记（image:../media/blue_check.gif[""]）。
++
+[NOTE]
+====
+为报告选择 *XLSX* 格式。
+
+====
++
+此时将立即发送一个测试报告。之后，此报告将以指定频率生成并通过电子邮件发送给列出的收件人。
+
+
+
+根据报告中显示的结果，您可能希望在可用 IOPS 最高的聚合上调配新的工作负载。

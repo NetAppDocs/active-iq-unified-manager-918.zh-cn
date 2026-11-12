@@ -1,0 +1,25 @@
+---
+permalink: health-checker/task_delete_annotation_rules.html 
+sidebar: sidebar 
+keywords: delete, annotation rules 
+summary: 当不再需要这些规则时，您可以从 Active IQ Unified Manager 中删除批注规则。 
+---
+= 删除 Active IQ Unified Manager 中的注释规则
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+当不再需要这些规则时，您可以从 Active IQ Unified Manager 中删除批注规则。
+
+.开始之前
+您必须具有应用程序管理员或存储管理员角色。
+
+删除注释规则后，注释将与存储对象解除关联并从中移除。
+
+.步骤
+. 在左侧导航窗格中，单击 *存储管理* > *注释*。
+. 在*注释规则*选项卡中，选择要删除的注释规则，然后单击*删除*。
+. 在*警告*对话框中，单击*是*确认删除。
+

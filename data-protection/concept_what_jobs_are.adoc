@@ -1,0 +1,18 @@
+---
+permalink: data-protection/concept_what_jobs_are.html 
+sidebar: sidebar 
+keywords: jobs 
+summary: 作业是可以使用 Unified Manager 监视的一系列任务。通过查看作业及其相关任务，您可以确定它们是否已成功完成。 
+---
+= 了解 Active IQ Unified Manager 中的作业
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+作业是可以使用 Unified Manager 监视的一系列任务。通过查看作业及其相关任务，您可以确定它们是否已成功完成。
+
+当您创建 SnapMirror 和 SnapVault 关系时，当您执行任何关系操作（中断、编辑、静默、删除、恢复、重新同步和反向重新同步）时，当您执行数据还原任务时，当您登录到集群时等等，都会启动作业。
+
+启动作业时，您可以使用“作业”页面和“作业详细信息”页面来监控作业以及相关作业任务的进度。

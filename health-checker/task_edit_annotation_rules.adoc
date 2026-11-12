@@ -1,0 +1,29 @@
+---
+permalink: health-checker/task_edit_annotation_rules.html 
+sidebar: sidebar 
+keywords: edit, annotation rules 
+summary: 您可以编辑批注规则以修改条件组以及条件组内的条件，以便向存储对象添加批注或从中删除批注。 
+---
+= 在 Active IQ Unified Manager 中编辑注释规则
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以编辑批注规则以修改条件组以及条件组内的条件，以便向存储对象添加批注或从中删除批注。
+
+.开始之前
+您必须具有应用程序管理员或存储管理员角色。
+
+编辑关联的标注规则时，标注将与存储对象分离。
+
+.步骤
+. 在左侧导航窗格中，单击 *存储管理* > *注释*。
+. 在*注释规则*选项卡中，选择要编辑的注释规则，然后单击*操作* > *编辑*。
+. 在*编辑注释规则*对话框中，根据需要更改规则名称、注释名称和值、条件组和条件。
++
+您不能更改注释规则的目标对象类型。
+
+. 单击 *Save*。
+

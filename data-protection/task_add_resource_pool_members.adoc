@@ -1,0 +1,36 @@
+---
+permalink: data-protection/task_add_resource_pool_members.html 
+sidebar: sidebar 
+keywords: add, resource, pool, members 
+summary: 资源池由多个成员聚合组成。您可以向现有资源池添加聚合，以增加可用于辅助卷配置的空间量。 
+---
+= 在 Active IQ Unified Manager 中添加资源池成员
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+资源池由多个成员聚合组成。您可以向现有资源池添加聚合，以增加可用于辅助卷配置的空间量。
+
+.开始之前
+您必须具有应用程序管理员或存储管理员角色。
+
+一次最多可向资源池添加 200 个聚合。“聚合”对话框中显示的聚合不属于任何其他资源池。
+
+.步骤
+. 在左侧导航窗格中，单击 *保护* > *资源池*。
+. 从*资源池*列表中选择一个资源池。
++
+资源池成员显示在资源池列表下方的区域中。
+
+. 在资源池成员区域，单击*添加*。
++
+此时将显示聚合对话框。
+
+. 选择一个或多个聚合。
+. 单击 *Add*。
++
+对话框已关闭，聚合显示在选定资源池的成员列表中。
+
+

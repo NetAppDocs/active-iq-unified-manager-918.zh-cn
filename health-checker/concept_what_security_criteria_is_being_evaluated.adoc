@@ -1,0 +1,31 @@
+---
+permalink: health-checker/concept_what_security_criteria_is_being_evaluated.html 
+sidebar: sidebar 
+keywords: security criteria, evaluated 
+summary: 一般来说，您的 ONTAP 集群、存储虚拟机（SVM）和卷的安全标准正在根据《NetApp ONTAP 9 安全加固指南》中定义的建议进行评估。 
+---
+= 了解 Active IQ Unified Manager 如何评估安全标准
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+一般来说，将根据 _NetApp Security Hardening Guide for ONTAP 9_ 中定义的建议评估您的 ONTAP 集群、存储虚拟机（SVM）和卷的安全标准。
+
+其中一些安全检查包括：
+
+* 集群是否正在使用安全身份验证方法，例如 SAML
+* 对等集群的通信是否已加密
+* storage VM 是否已启用其审核日志
+* 您的卷是否启用了软件或硬件加密
+
+
+有关详细信息，请参见有关合规类别和 https://www.netapp.com/pdf.html?item=/media/10674-tr4569pdf.pdf["适用于 ONTAP 9 的 NetApp 安全强化指南"^]的主题。
+
+[NOTE]
+====
+从 Active IQ 平台报告的升级事件也被视为安全事件。这些事件指出了需要升级 ONTAP 软件、节点固件或操作系统软件（针对安全公告）才能解决的问题。这些事件不会显示在安全面板中，但可以从事件管理清单页面中获取。
+
+====
+有关详细信息，请参见link:../health-checker/concept_manage_cluster_security_objectives.html["管理集群安全目标"]。

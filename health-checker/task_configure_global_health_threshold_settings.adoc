@@ -1,0 +1,36 @@
+---
+permalink: health-checker/task_configure_global_health_threshold_settings.html 
+sidebar: sidebar 
+keywords: configure, global health, threshold settings 
+summary: 您可以为容量、增长、Snapshot 预留、配额和 inode 配置全局运行状况阈值条件，以有效监控您的聚合、卷和 qtree 大小。您还可以编辑用于生成超出延迟阈值的事件的设置。 
+---
+= 在 Active IQ Unified Manager 中配置全局运行状况阈值设置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以为容量、增长、Snapshot 预留、配额和 inode 配置全局运行状况阈值条件，以有效监控您的聚合、卷和 qtree 大小。您还可以编辑用于生成超出延迟阈值的事件的设置。
+
+全局运行状况阈值设置适用于与其关联的所有对象，例如聚合、卷等。当超过阈值时，将生成一个事件，如果配置了警报，将发送警报通知。阈值默认值设置为推荐值，但您可以修改它们以按一定时间间隔生成事件，从而满足您的特定需求。更改阈值时，将在下一个监控周期中生成或废弃事件。
+
+可从左侧导航菜单的“事件阈值”部分访问全局运行状况阈值设置。您还可以从清单页面或该对象的详细信息页面修改单个对象的阈值设置。
+
+* 有关信息，请参见 link:task_configure_global_aggregate_health_threshold_values.html["配置全局聚合运行状况阈值"]。
++
+您可以为所有聚合配置容量、增长和 Snapshot 副本的运行状况阈值设置，以跟踪任何阈值违规。
+
+* 有关信息，请参见 link:task_configure_global_volume_health_threshold_values.html["配置全局卷运行状况阈值"]。
++
+您可以编辑所有卷的容量、Snapshot 副本、qtree 配额、卷增长、覆盖预留空间和 inode 的健康阈值设置，以跟踪任何阈值违规。
+
+* 有关信息，请参见 link:task_configure_global_qtree_health_threshold_values.html["配置全局 qtree 运行状况阈值"]。
++
+您可以编辑所有 qtree 容量的运行状况阈值设置，以跟踪任何阈值违规。
+
+* 有关信息，请参见 link:task_configure_lag_threshold_settings_for_unmanaged_protection.html["编辑非受管保护关系的滞后运行状况阈值设置"]。
++
+您可以增加或减少警告或错误延迟时间百分比，以便以更适合您需求的时间间隔生成事件。
+
+

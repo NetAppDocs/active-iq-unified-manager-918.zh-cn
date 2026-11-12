@@ -1,0 +1,92 @@
+---
+permalink: health-checker/concept_introduction_to_unified_manager_health_monitoring.html 
+sidebar: sidebar 
+keywords: introduction, active iq, unified manager, health, monitor 
+summary: Active IQ Unified Manager（以前称为 OnCommand Unified Manager）可帮助您通过集中式用户界面监控大量运行 ONTAP 软件的系统。Unified Manager 服务器基础架构提供可扩展性、可支持性以及增强的监控和通知功能。 
+---
+= 了解 Active IQ Unified Manager 运行状况监控
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Active IQ Unified Manager（以前称为 OnCommand Unified Manager）可帮助您通过集中式用户界面监控大量运行 ONTAP 软件的系统。Unified Manager 服务器基础架构提供可扩展性、可支持性以及增强的监控和通知功能。
+
+Unified Manager 的主要功能包括监控、警报、管理集群的可用性和容量、管理保护功能以及将诊断数据捆绑并发送给技术支持。
+
+您可以使用 Unified Manager 监控您的群集。当群集中出现问题时，Unified Manager 会通过事件通知您有关此类问题的详细信息。某些事件还为您提供了补救措施，您可以采取这些措施来纠正问题。您可以配置事件警报，以便在出现问题时通过电子邮件和 SNMP 陷阱通知您。
+
+您可以使用 Unified Manager 将环境中的存储对象与标注关联起来以管理这些存储对象。您可以创建自定义标注，并通过规则将集群、存储虚拟机（SVM）和卷与标注动态关联起来。
+
+您还可以使用容量和运行状况图表中提供的相应集群对象的信息来规划集群对象的存储要求。
+
+
+
+[[physical-and-logical-capacity]]
+== 物理和逻辑容量
+
+Unified Manager 使用用于 ONTAP 存储对象的物理和逻辑空间的概念。
+
+* 物理容量：物理空间是指卷中使用的物理存储块。由于存储效率功能（如重复数据删除和压缩）减少了数据，“物理已用容量”通常小于逻辑已用容量。
+* 逻辑容量：逻辑空间是指卷中的可用空间（逻辑块）。逻辑空间是指如何使用理论空间，而不考虑重复数据删除或压缩的结果。“已用逻辑空间”是指已用物理空间加上已配置的存储效率功能（例如重复数据删除和压缩）所节省的空间。此测量值通常看起来大于已用物理容量，因为它未反映数据压缩和其他物理空间缩减。因此，总逻辑容量可能高于调配的空间。
+
+
+
+
+[[capacity-measurement-units]]
+== 容量测量单位
+
+Unified Manager 基于 1024（2^10^）字节的二进制单位计算存储容量。在 ONTAP 9.10.0 及更早版本中，这些单位显示为 KB、MB、GB、TB 和 PB。从 ONTAP 9.10.1 开始，它们在 Unified Manager 中显示为 KiB、MiB、GiB、TiB 和 PiB。
+
+
+NOTE: 对于所有版本的 ONTAP，吞吐量使用的单位仍然是千字节/秒（Kbps）、兆字节/秒（Mbps）、千兆字节/秒（Gbps）或太字节/秒（Tbps）等等。
+
+[cols="4*"]
+|===
+| ONTAP 9.10.0 及更早版本的 Unified Manager 中显示的容量单位 | ONTAP 9.10.1 的 Unified Manager 中显示的容量单位 | 计算方式 | 值（字节） 
+
+
+ a| 
+KB
+ a| 
+KiB
+ a| 
+1024
+ a| 
+1024 字节
+
+
+
+ a| 
+MB
+ a| 
+MiB
+ a| 
+1024 * 1024
+ a| 
+1,048,576 字节
+
+
+
+ a| 
+GB
+ a| 
+GiB
+ a| 
+1024 * 1024 * 1024
+ a| 
+1,073,741,824 字节
+
+
+
+ a| 
+TB
+ a| 
+TiB
+ a| 
+1024 * 1024 * 1024 * 1024
+ a| 
+1,099,511,627,776 字节
+
+|===

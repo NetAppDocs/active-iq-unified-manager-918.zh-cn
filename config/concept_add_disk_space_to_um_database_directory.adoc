@@ -1,0 +1,23 @@
+---
+permalink: config/concept_add_disk_space_to_um_database_directory.html 
+sidebar: sidebar 
+keywords: add, disk, space, unified manager, database, directory 
+summary: Unified Manager 数据库目录包含从 ONTAP 系统收集的所有运行状况和性能数据。在某些情况下，可能需要增加数据库目录的大小。 
+---
+= 向 Active IQ Unified Manager 数据库目录添加磁盘空间
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 数据库目录包含从 ONTAP 系统收集的所有运行状况和性能数据。在某些情况下，可能需要增加数据库目录的大小。
+
+例如，如果 Unified Manager 从每个群集都有多个节点的大量群集收集数据，则数据库目录可能会变满。当数据库目录已满 90% 时，您将收到警告事件，当目录已满 95% 时，您将收到严重事件。
+
+[NOTE]
+====
+目录满 95% 后，不会再从集群中收集其他数据。
+
+====
+向数据目录添加容量所需的步骤不同，具体取决于 Unified Manager 是在 VMware ESXi 服务器上运行、在 Red Hat 服务器上运行还是在 Microsoft Windows 服务器上运行。

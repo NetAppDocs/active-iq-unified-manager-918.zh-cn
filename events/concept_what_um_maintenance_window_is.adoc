@@ -1,0 +1,20 @@
+---
+permalink: events/concept_what_um_maintenance_window_is.html 
+sidebar: sidebar 
+keywords: unified manager, maintenance, window 
+summary: 您可以定义 Unified Manager 维护窗口，以便在已安排群集维护且不希望收到大量不需要的通知时，在特定时间范围内抑制事件和警报。 
+---
+= 了解 Active IQ Unified Manager 维护窗口
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以定义 Unified Manager 维护窗口，以便在已安排群集维护且不希望收到大量不需要的通知时，在特定时间范围内抑制事件和警报。
+
+维护窗口启动时，“Object Maintenance Window Started”事件将发布到 Event Management 清单页面。此事件在维护窗口结束时会自动失效。
+
+在维护窗口期间，仍会生成与该集群上所有对象相关的事件，但它们不会出现在任何 UI 页面中，并且不会为这些事件发送警报或其他类型的通知。但是，您可以通过选择“事件管理”清单页面上的“查看”选项之一，来查看在维护窗口期间为所有存储对象生成的事件。
+
+您可以安排将来启动的维护窗口，可以更改计划维护窗口的开始和结束时间，也可以取消计划维护窗口。

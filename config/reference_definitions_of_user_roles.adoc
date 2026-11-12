@@ -1,0 +1,54 @@
+---
+permalink: config/reference_definitions_of_user_roles.html 
+sidebar: sidebar 
+keywords: definitions, user roles 
+summary: 维护用户或应用程序管理员为每个用户分配一个角色。每个角色都包含某些特权。您可以在 Unified Manager 中执行的活动范围取决于分配给您的角色以及该角色包含的权限。 
+---
+= 了解 Active IQ Unified Manager 中的用户角色
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+维护用户或应用程序管理员为每个用户分配一个角色。每个角色都包含某些特权。您可以在 Unified Manager 中执行的活动范围取决于分配给您的角色以及该角色包含的权限。
+
+Unified Manager 包括以下预定义的用户角色：
+
+* *操作员*
++
+查看存储系统信息以及 Unified Manager 收集的其他数据，包括历史记录和容量趋势。此角色使存储操作员能够查看、分配、确认、解决事件并为事件添加备注。
+
+* *存储管理员*
++
+在 Unified Manager 中配置存储管理操作。此角色使存储管理员能够配置阈值并创建警报和其他特定于存储管理的选项和策略。
+
+* *应用程序管理员*
++
+配置与存储管理无关的设置。此角色允许管理用户、安全证书、数据库访问和管理选项，包括身份验证、SMTP、网络和 AutoSupport。
+
++
+[NOTE]
+====
+在 Linux 系统上安装 Unified Manager 时，具有应用程序管理员角色的初始用户将自动命名为“`umadmin`”。
+
+====
+* *集成架构*
++
+此角色允许对 Unified Manager 数据库视图进行只读访问，以便将 Unified Manager 与 OnCommand Workflow Automation （WFA） 集成。
+
+* *报告架构*
++
+此角色可直接从 Unified Manager 数据库以只读方式访问报告和其他数据库视图。可查看的数据库包括：
+
++
+** netapp_model_view
+** netapp_performance
+** ocum
+** ocum_report
+** ocum_report_birt
+** opm
+** scalemonitor
+
+
+

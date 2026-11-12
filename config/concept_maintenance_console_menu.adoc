@@ -1,0 +1,37 @@
+---
+permalink: config/concept_maintenance_console_menu.html 
+sidebar: sidebar 
+keywords: maintenance, console, menus 
+summary: 维护控制台由不同的菜单组成，使您可以维护和管理 Unified Manager 服务器的特殊功能和配置设置。 
+---
+= 了解 Active IQ Unified Manager 中的维护控制台菜单
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+维护控制台由不同的菜单组成，使您可以维护和管理 Unified Manager 服务器的特殊功能和配置设置。
+
+根据已安装 Unified Manager 的操作系统，维护控制台包括以下菜单：
+
+* 升级 Unified Manager（仅限 VMware）
+* 网络配置（仅限 VMware）
+* 系统配置（仅限 VMware）
++
+.. 支持/诊断
+.. 重置服务器证书
+.. 重新生成客户端证书
+.. 备份还原
+.. 外部数据提供程序
+.. 性能轮询间隔配置
+.. 禁用 SAML 身份验证
+.. 查看/更改应用程序端口
+.. 调试日志配置
+.. 控制对 MySQL 端口 3306 的访问
+.. 退出
+
+
+
+
+您可以从列表中选择数字来访问特定的菜单选项。例如，对于备份和还原，您可以选择 _4_。

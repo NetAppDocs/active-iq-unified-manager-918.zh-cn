@@ -1,0 +1,25 @@
+---
+permalink: performance-checker/task_view_volume_and_lun_latency_charts_to_verify_performance_guarantee.html 
+sidebar: sidebar 
+keywords: view, volume, lun, latency, charts, verify, performance, guarantee 
+summary: 您可以查看已订阅“性能保证”计划的卷和 LUN，以验证延迟未超过已保证的水平。 
+---
+= 查看卷和 LUN 延迟图表以验证 Active IQ Unified Manager 中的性能保证
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以查看已订阅 "`Performance Guarantee`" 计划的卷和 LUN，以验证延迟未超过已保证的水平。
+
+延迟性能保证是一个不应超过的每操作毫秒数值。它基于每小时平均值，而不是默认的五分钟性能收集周期。
+
+.步骤
+. 在*性能：所有卷*视图或*性能：所有 LUN*视图中，选择您感兴趣的卷或 LUN。
+. 在您选择的卷或 LUN 的*性能资源管理器*页面中，从*在中查看统计信息*选择器中选择*每小时平均值*。
++
+当五分钟采集的数据替换为每小时平均值时，延迟图表中的水平线将显示更平滑的线条。
+
+. 如果您在同一聚合中有属于性能保证的其他卷，则可以添加这些卷以在同一图表中查看其延迟值。
+

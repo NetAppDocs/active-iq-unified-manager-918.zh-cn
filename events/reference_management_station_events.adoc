@@ -1,0 +1,190 @@
+---
+permalink: events/reference_management_station_events.html 
+sidebar: sidebar 
+keywords: management, station, events, impact area, configuration, performance 
+summary: 管理站事件可为您提供有关安装了 Unified Manager 的服务器状态的信息，以便您可以监控潜在问题。事件按影响区域分组，包括事件和陷阱名称、影响级别、来源类型和严重程度。 
+---
+= 了解 Active IQ Unified Manager 中的管理站事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+管理站事件可为您提供有关安装了 Unified Manager 的服务器状态的信息，以便您可以监控潜在问题。事件按影响区域分组，包括事件和陷阱名称、影响级别、来源类型和严重程度。
+
+
+
+[[impact-area-configuration]]
+== 影响区域：配置
+
+|===
+| 事件名称（陷阱名称） | 影响级别 | 源类型 | 严重性 
+
+
+ a| 
+管理服务器磁盘空间接近全满（ocumEvtUnifiedManagerDiskSpaceNearlyFull）
+ a| 
+风险
+ a| 
+管理站
+ a| 
+警告
+
+
+
+ a| 
+管理服务器磁盘空间已满（ocumEvtUnifiedManagerDiskSpaceFull）
+ a| 
+意外事件
+ a| 
+管理站
+ a| 
+关键
+
+
+
+ a| 
+管理服务器内存不足（ocumEvtUnifiedManagerMemoryLow）
+ a| 
+风险
+ a| 
+管理站
+ a| 
+警告
+
+
+
+ a| 
+管理服务器内存几乎用尽（ocumEvtUnifiedManagerMemoryAlmostOut）
+ a| 
+意外事件
+ a| 
+管理站
+ a| 
+关键
+
+
+
+ a| 
+MySQL 日志文件大小已增加；需要重新启动（ocumEvtMysqlLogFileSizeWarning）
+ a| 
+意外事件
+ a| 
+管理站
+ a| 
+警告
+
+
+
+ a| 
+审核日志总大小分配即将满
+ a| 
+风险
+ a| 
+管理站
+ a| 
+警告
+
+
+
+ a| 
+Syslog 服务器证书即将过期
+ a| 
+风险
+ a| 
+管理站
+ a| 
+警告
+
+
+
+ a| 
+Syslog 服务器证书已过期
+ a| 
+风险
+ a| 
+管理站
+ a| 
+错误
+
+
+
+ a| 
+审核日志文件已篡改
+ a| 
+风险
+ a| 
+管理站
+ a| 
+警告
+
+
+
+ a| 
+审核日志文件已删除
+ a| 
+风险
+ a| 
+管理站
+ a| 
+警告
+
+
+
+ a| 
+Syslog 服务器连接错误
+ a| 
+风险
+ a| 
+管理站
+ a| 
+错误
+
+
+
+ a| 
+Syslog 服务器配置已更改
+ a| 
+事件
+ a| 
+管理站
+ a| 
+警告
+
+|===
+
+
+[[impact-area-performance]]
+== 影响区域：性能
+
+|===
+| 事件名称（陷阱名称） | 影响级别 | 源类型 | 严重性 
+
+
+ a| 
+性能数据分析受影响（ocumEvtUnifiedManagerDataMissingAnalyze）
+ a| 
+风险
+ a| 
+管理站
+ a| 
+警告
+
+
+
+ a| 
+性能数据收集受影响（ocumEvtUnifiedManagerDataMissingCollection）
+ a| 
+意外事件
+ a| 
+管理站
+ a| 
+关键
+
+|===
+[NOTE]
+====
+最后两个性能事件仅适用于 Unified Manager 7.2。如果这些事件中的任何一个处于“新建”状态，然后您升级到较新版本的 Unified Manager 软件，则不会自动清除这些事件。您需要手动将事件移至“已解决”状态。
+
+====

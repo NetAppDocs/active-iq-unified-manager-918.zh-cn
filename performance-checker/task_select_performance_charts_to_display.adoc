@@ -1,0 +1,47 @@
+---
+permalink: performance-checker/task_select_performance_charts_to_display.html 
+sidebar: sidebar 
+keywords: select, performance, charts, display 
+summary: “选择图表”下拉列表用于选择要在“计数器图表”窗格中显示的性能计数器图表类型。这使您能够根据性能要求查看特定数据和计数器。 
+---
+= 选择要在 Active IQ Unified Manager 中显示的性能图表
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+“选择图表”下拉列表用于选择要在“计数器图表”窗格中显示的性能计数器图表类型。这使您能够根据性能要求查看特定数据和计数器。
+
+.步骤
+. 在*计数器图表*窗格中，单击*选择图表*下拉列表。
+. 添加或删除图表：
++
+|===
+| 目的 | 操作 
+
+
+ a| 
+添加或删除单个图表
+ a| 
+单击要显示或隐藏的图表旁边的复选框
+
+
+
+ a| 
+添加所有图表
+ a| 
+点击*全选*
+
+
+
+ a| 
+删除所有图表
+ a| 
+点击*取消全选*
+
+|===
++
+您的图表选择会显示在计数器图表窗格中。请注意，添加图表时，新图表会插入到计数器图表窗格中，以匹配“选择图表”下拉列表中列出的图表顺序。选择其他图表可能需要额外滚动。
+
+

@@ -1,0 +1,18 @@
+---
+permalink: performance-checker/concept_review_impact_of_configuration_changes.html 
+sidebar: sidebar 
+keywords: review, impact, configuration, changes, workload, performance 
+summary: 集群上的配置更改（例如磁盘故障、HA 故障转移或移动的卷）可能会对卷性能产生负面影响并导致延迟增加。 
+---
+= 评估配置更改如何影响 Active IQ Unified Manager 中的工作负载性能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+集群上的配置更改（例如磁盘故障、HA 故障转移或移动的卷）可能会对卷性能产生负面影响并导致延迟增加。
+
+在 Unified Manager 中，您可以查看“工作负载分析”页面，以查看最近的配置更改何时发生，并将其与操作和延迟（响应时间）进行比较，以查看选定卷工作负载的活动是否发生变化。
+
+Unified Manager 的性能页面只能检测有限数量的更改事件。运行状况页面为配置更改引起的其他事件提供警报。您可以在 Unified Manager 中搜索卷以查看事件历史记录。

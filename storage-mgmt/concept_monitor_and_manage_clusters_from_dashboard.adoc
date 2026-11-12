@@ -1,0 +1,83 @@
+---
+permalink: storage-mgmt/concept_monitor_and_manage_clusters_from_dashboard.html 
+sidebar: sidebar 
+keywords: monitor, manage, clusters, dashboard 
+summary: 仪表板提供有关受监控 ONTAP 系统当前运行状况的累积概览信息。仪表板提供“面板”，使您能够评估正在监控的集群的整体容量、性能和安全运行状况。 
+---
+= 通过 Active IQ Unified Manager 中的信息板监控和管理集群
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+仪表板提供有关受监控 ONTAP 系统当前运行状况的累积概览信息。仪表板提供“`panels`”，使您能够评估正在监控的集群的整体容量、性能和安全运行状况。
+
+此外，您可以直接从 Unified Manager 用户界面修复某些 ONTAP 问题，而不必使用 ONTAP System Manager 或 ONTAP CLI。
+
+可从信息板顶部选择让这些面板显示所有受监控集群的信息，还是仅显示单个集群的信息。您可以先查看所有集群的状态，然后深入查看各个集群以查看相关详细信息。
+
+[NOTE]
+====
+根据您的配置，下列部分面板可能不会显示在此页面上。
+
+====
+|===
+| 面板 | 问题描述 
+
+
+ a| 
+管理操作
+ a| 
+当 Unified Manager 可以诊断并确定问题的单一解决方案时，这些解决方案将通过 *修复* 按钮显示在此面板中。
+
+
+
+ a| 
+容量
+ a| 
+显示本地层和云层的总容量和已用容量，以及本地容量达到上限之前的天数。
+
+
+
+ a| 
+性能容量
+ a| 
+显示每个集群的性能容量值，以及性能容量达到上限之前的天数。
+
+
+
+ a| 
+工作负载 IOPS
+ a| 
+显示当前在特定 IOPS 范围内运行的工作负载总数。
+
+
+
+ a| 
+工作负载性能
+ a| 
+显示分配给每个已定义性能服务级别的符合和不符合工作负载的总数。
+
+
+
+ a| 
+安全性
+ a| 
+显示符合或不符合的群集数量、符合或不符合的 SVM 数量以及已加密或未加密的卷数量。
+
+
+
+ a| 
+数据保护
+ a| 
+显示受 SVM-DR 关系保护的 Storage VM 数量、受 SnapMirror 关系保护的卷、受 Snapshot 保护的卷以及受 MetroCluster 保护的集群。
+
+
+
+ a| 
+使用情况概述
+ a| 
+显示按最高 IOPS、最高吞吐量 (MBps) 或最高已用物理容量排序的集群。
+
+|===

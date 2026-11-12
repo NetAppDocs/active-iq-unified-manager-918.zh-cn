@@ -1,0 +1,30 @@
+---
+permalink: health-checker/task_retrieve_support_bundle_using_windows_client.html 
+sidebar: sidebar 
+keywords: retrieve, support bundle, windows client 
+summary: 如果您是 Windows 用户，可以下载并安装从 Unified Manager 服务器检索支持包的工具。您可以向技术支持发送支持包，以便更详细地诊断问题。Filezilla 或 WinSCP 是您可以使用的工具示例。 
+---
+= 使用 Windows 客户端在 Active IQ Unified Manager 中检索支持包
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您是 Windows 用户，可以下载并安装从 Unified Manager 服务器检索支持包的工具。您可以向技术支持发送支持包，以便更详细地诊断问题。Filezilla 或 WinSCP 是您可以使用的工具示例。
+
+.开始之前
+您必须是维护用户才能执行此任务。
+
+您必须使用支持 SCP 或 SFTP 的工具。
+
+.步骤
+. 下载并安装工具以检索支持包。
+. 打开工具。
+. 通过 SFTP 连接到 Unified Manager 管理服务器。
++
+该工具显示 /support 目录的内容，您可以查看所有现有的支持包。
+
+. 选择要复制的支持包的目标目录。
+. 选择要复制的支持捆绑包，并使用此工具将文件从 Unified Manager 服务器复制到本地系统。
+

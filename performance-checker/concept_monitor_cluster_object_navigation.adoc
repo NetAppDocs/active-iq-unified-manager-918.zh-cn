@@ -1,0 +1,28 @@
+---
+permalink: performance-checker/concept_monitor_cluster_object_navigation.html 
+sidebar: sidebar 
+keywords: monitor, cluster, object, navigation 
+summary: 您可以监控由 Unified Manager 管理的任何集群中所有对象的性能。监控存储对象可为您提供集群和对象性能的概述，并包括性能事件监控。您可以在高级别查看性能和事件，也可以进一步调查对象性能和性能事件的任何详细信息。 
+---
+= 在 Active IQ Unified Manager 中监控集群对象导航
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以监控由 Unified Manager 管理的任何集群中所有对象的性能。监控存储对象可为您提供集群和对象性能的概述，并包括性能事件监控。您可以在高级别查看性能和事件，也可以进一步调查对象性能和性能事件的任何详细信息。
+
+这是许多可能的集群对象导航的一个示例：
+
+. 在“仪表板”页面中，查看“性能容量”面板中的详细信息，以确定使用最多性能容量的集群，然后单击条形图以导航到该集群的节点列表。
+. 识别具有最高性能容量使用值的节点，然后单击该节点。
+. 从节点/性能资源管理器页面，单击查看和比较菜单中的*此节点上的聚合*。
+. 确定使用性能容量最多的聚合，然后单击该聚合。
+. 从聚合/性能资源管理器页面，单击查看和比较菜单中的*此聚合上的卷*。
+. 确定使用 IOPS 最多的卷。
+
+
+您应该调查这些卷，以确定是否应该应用 QoS 策略或性能服务级别策略，或更改策略设置，以便这些卷不会在集群上使用如此大的 IOPS 百分比。
+
+image::../media/monitor_cluster_object.png[显示许多可能的集群对象导航的一个示例的 UI 屏幕截图。]

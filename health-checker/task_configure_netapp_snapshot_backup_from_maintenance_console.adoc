@@ -1,0 +1,52 @@
+---
+permalink: health-checker/task_configure_netapp_snapshot_backup_from_maintenance_console.html 
+sidebar: sidebar 
+keywords: configure, backup, snapshot copy, copies maintenance console 
+summary: 要使用 Snapshot 副本进行 Active IQ Unified Manager 备份，应从维护控制台执行一些配置步骤。 
+---
+= 在 Active IQ Unified Manager 的维护控制台中配置 Snapshot 备份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要使用 Snapshot 副本进行 Active IQ Unified Manager 备份，应从维护控制台执行一些配置步骤。
+
+.开始之前
+您应具备系统的以下详细信息：
+
+* 集群 IP 地址
+* Storage VM 名称
+* Volume name
+* LUN 名称
+* 挂载路径
+* 存储系统凭据
+
+
+.步骤
+. 访问 Unified Manager 的维护控制台。
+. 输入 4 以选择*备份还原*。
+. 输入 2 以选择 *使用 NetApp 快照备份和还原*。
++
+[NOTE]
+====
+如果要更改备份配置，请输入 3 以选择 *更新 NetApp Snapshot 备份配置*。您只能更新密码。
+
+====
+. 从菜单中，输入 1 以选择 *配置 NetApp Snapshot 备份*。
+. 输入 1 以提供所需的信息。
+. 提供维护控制台的用户名和密码，然后确认 LUN 已挂载到主机上。
++
+然后，该过程会验证您提供的数据目录、LUN 路径、存储 VM、卷、空间可用性、驱动器等是否正确。在后台进行的操作包括：
+
++
+** 服务已停止
+** 数据库目录已移动到已挂载的存储
+** 数据库目录已删除，符号链接已建立
+** 服务重新启动。在 Active IQ Unified Manager 界面中完成配置后，备份类型将修改为 NetApp Snapshot，并在用户界面中显示为数据库备份（基于 Snapshot）。
+
+
+
+
+在开始备份操作之前，必须检查 Snapshot 配置中是否存在任何更改，因为这可能会导致快照无效。假设您在 G 驱动器中配置了备份，并创建了 Snapshot。您后来将备份重新配置为 E 驱动器，并根据新配置将数据保存到 E 驱动器。如果您尝试恢复在 G 驱动器中创建的 Snapshot，它将失败，并显示错误 G 驱动器不存在。

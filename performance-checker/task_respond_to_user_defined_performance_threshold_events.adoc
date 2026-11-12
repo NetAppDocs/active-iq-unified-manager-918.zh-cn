@@ -1,0 +1,51 @@
+---
+permalink: performance-checker/task_respond_to_user_defined_performance_threshold_events.html 
+sidebar: sidebar 
+keywords: user-defined, performance, threshold, events 
+summary: 您可以使用 Unified Manager 调查由性能计数器超出用户定义的警告或严重阈值引起的性能事件。您还可以使用 Unified Manager 检查集群组件的运行状况，以查看在组件上检测到的近期运行状况事件是否导致了性能事件。 
+---
+= 在 Active IQ Unified Manager 中响应用户定义的性能阈值事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 Unified Manager 调查由性能计数器超出用户定义的警告或严重阈值引起的性能事件。您还可以使用 Unified Manager 检查集群组件的运行状况，以查看在组件上检测到的近期运行状况事件是否导致了性能事件。
+
+.开始之前
+* 您必须具有操作员、应用程序管理员或存储管理员角色。
+* 必须有新的或过时的性能事件。
+
+
+.步骤
+. 显示*事件详细信息*页面以查看有关该事件的信息。
+. 查看*描述*，其中描述了导致此事件的阈值违规行为。
++
+例如，消息 "`Latency value of 456 ms/op has triggered a WARNING event based on threshold setting of 400 ms/op`" 表示该对象发生了延迟警告事件。
+
+. 将光标悬停在策略名称上，以显示有关触发此事件的阈值策略的详细信息。
++
+这包括策略名称、正在评估的性能计数器、必须突破才能被视为严重或警告事件的计数器值，以及计数器必须超过该值的持续时间。
+
+. 记下*事件触发时间*，以便调查是否有其他事件在同一时间发生，从而可能对此事件产生影响。
+. 按照以下选项之一进一步调查事件，以确定是否需要执行任何操作来解决性能问题：
++
+|===
+| 选项 | 可能的调查操作 
+
+
+ a| 
+单击源对象名称以显示该对象的“资源管理器”页面。
+ a| 
+通过此页面，您可以查看对象详细信息，并将此对象与其他类似的存储对象进行比较，以查看其他存储对象是否大约在同一时间存在性能问题。例如，查看同一聚合中的其他卷是否也存在性能问题。
+
+
+
+ a| 
+单击集群名称以显示“集群摘要”页面。
+ a| 
+通过此页面，您可以查看此对象所在集群的详细信息，以了解大约在同一时间是否发生了其他性能问题。
+
+|===
+

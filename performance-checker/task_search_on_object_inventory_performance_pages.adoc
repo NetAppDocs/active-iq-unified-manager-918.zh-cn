@@ -1,0 +1,36 @@
+---
+permalink: performance-checker/task_search_on_object_inventory_performance_pages.html 
+sidebar: sidebar 
+keywords: object, inventory, performance, pages 
+summary: 您可以在“对象清单性能”页面上搜索字符串。使用页面右上角的搜索字段，根据对象名称或策略名称快速查找数据。这使您能够快速定位特定对象及其关联数据，或快速定位策略并查看关联策略对象数据。 
+---
+= 在 Active IQ Unified Manager 的对象清单性能页面上搜索
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在“对象清单性能”页面上搜索字符串。使用页面右上角的*搜索*字段，根据对象名称或策略名称快速查找数据。这使您能够快速定位特定对象及其关联数据，或快速定位策略并查看关联策略对象数据。
+
+.步骤
+. 根据您的搜索要求，请执行以下选项之一：
++
+|===
+| 要找到这个…… | 键入此…… 
+
+
+ a| 
+特定对象
+ a| 
+将对象名称输入到 *搜索* 字段中，然后单击 *搜索*。将显示您搜索的对象及其相关数据。
+
+
+
+ a| 
+用户定义的性能阈值策略
+ a| 
+将全部或部分策略名称输入 *搜索* 字段，然后单击 *搜索*。将显示分配给您搜索的策略的对象。
+
+|===
+

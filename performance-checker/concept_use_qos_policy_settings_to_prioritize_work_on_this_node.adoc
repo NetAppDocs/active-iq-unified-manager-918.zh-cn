@@ -1,0 +1,26 @@
+---
+permalink: performance-checker/concept_use_qos_policy_settings_to_prioritize_work_on_this_node.html 
+sidebar: sidebar 
+keywords: qos, policy, settings, prioritize, work, node 
+summary: 可以对 QoS 策略组设置限制，以控制其包含的工作负载的每秒 I/O （IOPS） 或 MBps 吞吐量限制。如果工作负载位于没有设置限制的策略组中，例如默认策略组，或者设置的限制不满足您的需求，则可以增加设置的限制，或者将工作负载移动到具有所需限制的新策略组或现有策略组。 
+---
+= 使用 QoS 策略设置对 Active IQ Unified Manager 中的节点工作负载进行优先级排序
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+可以对 QoS 策略组设置限制，以控制其包含的工作负载的每秒 I/O （IOPS） 或 MBps 吞吐量限制。如果工作负载位于没有设置限制的策略组中，例如默认策略组，或者设置的限制不满足您的需求，则可以增加设置的限制，或者将工作负载移动到具有所需限制的新策略组或现有策略组。
+
+如果节点上的性能事件是由工作负载过度使用节点资源引起的，则“事件详细信息”页面上的事件描述将显示指向相关卷列表的链接。在“性能/卷”页面中，您可以按 IOPS 和 MBps 对受影响的卷进行排序，以查看哪些工作负载的使用率最高，从而可能导致了该事件。
+
+通过将过度使用节点资源的卷分配给更严格的策略组设置，策略组会限制工作负载以限制其活动，从而可以减少该节点上资源的使用。
+
+可以使用 ONTAP System Manager 或 ONTAP 命令来管理策略组，包括以下任务：
+
+* 创建策略组
+* 在策略组中添加或删除工作负载
+* 在策略组之间移动工作负载
+* 更改策略组的吞吐量限制
+

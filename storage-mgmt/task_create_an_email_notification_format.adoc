@@ -1,0 +1,26 @@
+---
+permalink: storage-mgmt/task_create_an_email_notification_format.html 
+sidebar: sidebar 
+keywords: create, email, notification, format, user, group, quotas 
+summary: 当存在配额相关问题（违反软限制或达到硬限制）时，您可以为发送给用户或用户组的电子邮件创建通知格式。 
+---
+= 在 Active IQ Unified Manager 中为用户和用户组配额创建电子邮件通知格式
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+当存在配额相关问题（违反软限制或达到硬限制）时，您可以为发送给用户或用户组的电子邮件创建通知格式。
+
+.开始之前
+您必须具有应用程序管理员或存储管理员角色。
+
+.步骤
+. 在左侧导航窗格中，单击 *常规* > *配额电子邮件格式*。
+. 在*发件人*、*主题*和*电子邮件详细信息*字段中输入或修改详细信息。
+. 单击 *Preview* 以预览电子邮件通知。
+. 单击*关闭*以关闭预览窗口。
+. 如果需要，请修改电子邮件通知的内容。
+. 单击 *Save*。
+

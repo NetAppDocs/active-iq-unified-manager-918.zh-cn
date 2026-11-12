@@ -1,0 +1,14 @@
+---
+permalink: performance-checker/concept_monitor_cluster_performance_from_dashboard.html 
+sidebar: sidebar 
+keywords: monitor, cluster, performance, dashboard 
+summary: Unified Manager 仪表板提供了几个面板，显示由此 Unified Manager 实例监控的所有集群的高级别性能状态。它使您能够评估受管集群的整体性能，并快速记录、定位或分配任何已识别的特定事件以解决问题。 
+---
+= 通过 Active IQ Unified Manager 中的信息板监控集群性能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 仪表板提供了几个面板，显示由此 Unified Manager 实例监控的所有集群的高级别性能状态。它使您能够评估受管集群的整体性能，并快速记录、定位或分配任何已识别的特定事件以解决问题。

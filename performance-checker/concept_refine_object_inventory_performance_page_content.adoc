@@ -1,0 +1,16 @@
+---
+permalink: performance-checker/concept_refine_object_inventory_performance_page_content.html 
+sidebar: sidebar 
+keywords: refining, performance, inventory, page, contents 
+summary: 性能对象的清单页面包含可帮助您优化对象清单数据内容的工具，使您能够轻松便捷地查找特定数据。 
+---
+= 在 Active IQ Unified Manager 中优化性能清单页面内容
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+性能对象的清单页面包含可帮助您优化对象清单数据内容的工具，使您能够轻松便捷地查找特定数据。
+
+性能对象清单页面中包含的信息可能非常广泛，通常会跨越多个页面。这种全面的数据非常适合监控、跟踪和提高性能；但是，定位特定数据需要使用工具，以便您能够快速定位要查找的数据。因此，性能对象清单页面包含用于搜索、排序和筛选的功能。此外，搜索和筛选可以协同工作，进一步缩小结果范围。

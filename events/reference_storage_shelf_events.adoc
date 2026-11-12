@@ -1,0 +1,56 @@
+---
+permalink: events/reference_storage_shelf_events.html 
+sidebar: sidebar 
+keywords: storage, shelf, events, impact area, availability 
+summary: 存储磁盘架事件会告诉您存储磁盘架是否出现异常，以便您监控潜在问题。事件按影响区域分组，包括事件和陷阱名称、影响级别、源类型和严重性。 
+---
+= 了解 Active IQ Unified Manager 中的存储架事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+存储磁盘架事件会告诉您存储磁盘架是否出现异常，以便您监控潜在问题。事件按影响区域分组，包括事件和陷阱名称、影响级别、源类型和严重性。
+
+
+
+[[impact-area-availability]]
+== 影响区域：可用性
+
+|===
+| 事件名称（陷阱名称） | 影响级别 | 源类型 | 严重性 
+
+
+ a| 
+电压范围异常（ocumEvtShelfVoltageAbnormal）
+ a| 
+风险
+ a| 
+存储架
+ a| 
+警告
+
+
+
+ a| 
+异常电流范围（ocumEvtShelfCurrentAbnormal）
+ a| 
+风险
+ a| 
+存储架
+ a| 
+警告
+
+
+
+ a| 
+温度异常（ocumEvtShelfTemperatureAbnormal）
+ a| 
+风险
+ a| 
+存储架
+ a| 
+警告
+
+|===

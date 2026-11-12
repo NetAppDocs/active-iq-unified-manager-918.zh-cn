@@ -1,0 +1,160 @@
+---
+permalink: events/reference_logical_interface_events.html 
+sidebar: sidebar 
+keywords: network, interface, lif events, impact area, availability, configuration, performance 
+summary: 网络接口事件提供有关网络接口（LIF）状态的信息，以便您可以监控潜在问题。事件按影响区域分组，包括事件和陷阱名称、影响级别、来源类型和严重程度。 
+---
+= Active IQ Unified Manager 中的网络接口事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+网络接口事件提供有关网络接口（LIF）状态的信息，以便您可以监控潜在问题。事件按影响区域分组，包括事件和陷阱名称、影响级别、来源类型和严重程度。
+
+
+
+[[impact-area-availability]]
+== 影响区域：可用性
+
+|===
+| 事件名称（陷阱名称） | 影响级别 | 源类型 | 严重性 
+
+
+ a| 
+网络接口状态已关闭（ocumEvtLifStatusDown）
+ a| 
+风险
+ a| 
+接口
+ a| 
+错误
+
+
+
+ a| 
+FC/FCoE 网络接口状态已关闭（ocumEvtFCLifStatusDown）
+ a| 
+风险
+ a| 
+接口
+ a| 
+错误
+
+
+
+ a| 
+无法进行网络接口故障转移（ocumEvtLifFailoverNotPossible）
+ a| 
+风险
+ a| 
+接口
+ a| 
+警告
+
+
+
+ a| 
+网络接口不位于主端口（ocumEvtLifNotAtHomePort）
+ a| 
+风险
+ a| 
+接口
+ a| 
+警告
+
+|===
+
+
+[[impact-area-configuration]]
+== 影响区域：配置
+
+|===
+| 事件名称（陷阱名称） | 影响级别 | 源类型 | 严重性 
+
+
+ a| 
+网络接口路由未配置（不适用）
+ a| 
+事件
+ a| 
+接口
+ a| 
+信息
+
+|===
+
+
+[[impact-area-performance]]
+== 影响区域：性能
+
+|===
+| 事件名称（陷阱名称） | 影响级别 | 源类型 | 严重性 
+
+
+ a| 
+已违反网络接口 MB/s 严重阈值（ocumNetworkLifMbpsIncident）
+ a| 
+意外事件
+ a| 
+接口
+ a| 
+关键
+
+
+
+ a| 
+已违反网络接口 MB/s 警告阈值（ocumNetworkLifMbpsWarning）
+ a| 
+风险
+ a| 
+接口
+ a| 
+警告
+
+
+
+ a| 
+已违反 FC 网络接口 MB/s 严重阈值（ocumFcpLifMbpsIncident）
+ a| 
+意外事件
+ a| 
+接口
+ a| 
+关键
+
+
+
+ a| 
+已违反 FC 网络接口 MB/s 警告阈值（ocumFcpLifMbpsWarning）
+ a| 
+风险
+ a| 
+接口
+ a| 
+警告
+
+
+
+ a| 
+已违反 NVMf FC 网络接口 MB/s 严重阈值（ocumNvmfFcLifMbpsIncident）
+ a| 
+意外事件
+ a| 
+接口
+ a| 
+关键
+
+
+
+ a| 
+已违反 NVMf FC 网络接口 MB/s 警告阈值（ocumNvmfFcLifMbpsWarning）
+ a| 
+风险
+ a| 
+接口
+ a| 
+警告
+
+|===

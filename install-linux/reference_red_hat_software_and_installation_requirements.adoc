@@ -1,0 +1,120 @@
+---
+permalink: install-linux/reference_red_hat_software_and_installation_requirements.html 
+sidebar: sidebar 
+keywords: linux software, installation requirements, system, authorization,  requirements 
+summary: 安装 Unified Manager 的 Linux 系统需要特定版本的操作系统和支持软件。 
+---
+= 了解 Active IQ Unified Manager 中的 Linux 软件和安装要求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+安装 Unified Manager 的 Linux 系统需要特定版本的操作系统和支持软件。对于 Linux 安装，只能在 Red Hat Enterprise Linux 操作系统上安装 Unified Manager。它不能安装在任何其他操作系统上。
+
+
+
+[[operating-system-software]]
+== 操作系统软件
+
+Linux 系统必须安装下列版本的操作系统和支持软件：
+
+* Red Hat Enterprise Linux 8.x 和 9.6 版，基于 x86_64 架构
+
+
+有关受支持的 Red Hat Enterprise Linux 版本的完整和最新列表，请参阅互操作性矩阵。
+
+https://mysupport.netapp.com/matrix["NetApp 互操作性矩阵"^]
+
+服务器应专用于运行 Unified Manager。不应在服务器上安装其他应用程序。在某些环境中，由于公司策略，已在 Linux 系统上安装 Qualys 等漏洞扫描程序。您应在安装 Unified Manager 之前禁用漏洞扫描程序，以防止安装失败。
+
+
+NOTE: 在内部（Unified Manager 和漏洞扫描程序安装在同一台虚拟机上）或外部（Unified Manager 和漏洞扫描程序安装在两台不同的服务器上，漏洞扫描程序扫描安装了 Unified Manager 的虚拟机）扫描虚拟机（VM）时，漏洞扫描程序（如 Qualys）可能会导致高 CPU 使用率。此问题通常会导致虚拟机无响应并影响 Unified Manager 服务。因此，NetApp 建议在安装了 Unified Manager 的虚拟机中禁用漏洞扫描程序。如果无法禁用扫描程序，请在非营业时间扫描虚拟机，并在扫描完成后重新启动服务。
+
+
+
+[[third-party-software]]
+== 第三方软件
+
+Unified Manager 部署在 WildFly Web 服务器上。WildFly 27.0.1.Final 与 Unified Manager 捆绑并配置。
+
+需要以下第三方软件包，但未包含在 Unified Manager 中。如果您已按照以下各节所述配置了存储库，则在安装过程中， `yum` 安装程序会自动安装这些软件包。
+
+* MySQL Community Edition 版本 8.4.10（来自 MySQL 存储库）
+* OpenJDK 版本 17.0.14+6（来自 Red Hat Extra Enterprise Linux Server 存储库）
+* Python 3.13.3 （来自 Red Hat Extra Enterprise Linux Server 存储库）
+* 7zip 版本 7z2301-linux-x64。有关详细信息，请查看 link:task_configure_7zip_package.html["配置 7-zip 软件包"]。
+
+
+[NOTE]
+====
+在升级任何第三方软件之前，必须关闭正在运行的 Unified Manager 实例。第三方软件安装完成后，您可以重新启动 Unified Manager。
+
+====
+
+
+[[user-authorization-requirements]]
+== 用户授权要求
+
+在 Linux 系统上安装 Unified Manager 可以由 root 用户或非 root 用户使用 `sudo`命令执行。
+
+此外，默认的 Unified Manager 安装会在  `/etc/sudoers.d/` 目录的 sudoers 文件 (`ocum_sudoers` 和 `ocie_sudoers`）中包含 umadmin 用户（默认维护用户）和 jboss 用户。如果由于安全策略或安全监控工具而从您的环境中删除了此内容，则必须将其重新添加回来。您需要保留 sudoers 配置，因为某些 Unified Manager 操作需要这些 sudo 权限。
+
+
+
+[[installation-requirements]]
+== 安装要求
+
+下面列出了在系统上安装 Red Hat Enterprise Linux 和相关存储库的最佳实践。以不同方式安装或配置的系统，或异地部署（在云中）的系统可能需要其他步骤，并且 Unified Manager 可能无法在此类部署中正常运行。
+
+* 您必须根据 Red Hat 最佳实践安装 Red Hat Enterprise Linux，并且应选择以下默认选项，这需要选择 "`Server with GUI`" 基本环境。
+* 在 Red Hat Enterprise Linux 上安装 Unified Manager 时，系统必须能够访问相应的存储库，以便安装程序可以访问和安装所有必需的软件依赖项。
+* 要使 `yum`安装程序在 Red Hat Enterprise Linux 存储库中查找依赖软件，必须在安装 Red Hat Enterprise Linux 期间或之后使用有效的 Red Hat 订阅注册系统。
++
+有关 Red Hat Subscription Manager 的信息，请参见 Red Hat 文档。
+
+* 必须启用 Extra Packages for Enterprise Linux （EPEL） 存储库，才能在系统上成功安装所需的第三方实用程序。
++
+如果未在系统上配置 EPEL 存储库，则必须手动下载并配置存储库。
+
++
+请参阅 link:task_manually_configure_epel_repository.html["手动配置 EPEL 存储库"]。
+
+* 如果未安装正确版本的 MySQL，则必须启用 MySQL 存储库才能在系统上成功安装 MySQL 软件。
++
+如果未在系统上配置 MySQL 存储库，则必须手动下载并配置存储库。
+
++
+请参阅 link:task_manually_configure_mysql_repository.html["手动配置 MySQL 存储库"]。
+
+* 只能在 Unified Manager 主机上安装一个版本的 Java；否则，系统可能无法确定要使用的版本。请参阅 https://kb.netapp.com/data-mgmt/AIQUM/AIQUM_Kbs/After_updating_Java_on_the_Active_IQ_Unified_Manager_host_services_will_not_start["在 Active IQ Unified Manager 主机上更新 Java 后，服务将无法启动"]。
+
+
+如果您的系统没有互联网访问权限，并且存储库未从连接互联网的系统镜像到未连接的系统，则应按照安装说明确定系统的外部软件依赖关系。然后，您可以将所需的软件下载到连接互联网的系统，并将 `.rpm`文件复制到计划安装 Unified Manager 的系统。要下载工件和软件包，必须使用 `yum install`命令。您必须确保两个系统运行相同的操作系统版本，并且订阅许可证适用于相应的 Red Hat Enterprise Linux。
+
+[NOTE]
+====
+您不得从此处列出的存储库以外的存储库安装所需的第三方软件。从 Red Hat 存储库安装的软件专为 Red Hat Enterprise Linux 设计，并符合 Red Hat 最佳实践（目录布局、权限等）。来自其他位置的软件可能不遵守这些准则，这可能会导致 Unified Manager 安装失败，或可能导致未来升级出现问题。
+
+====
+
+
+[[port-443-requirement]]
+== 端口 443 要求
+
+Red Hat Enterprise Linux 的通用映像可能会阻止对端口 443 的外部访问。由于此限制，安装 Unified Manager 后，您可能无法连接到管理员 Web UI。运行以下命令允许通用 Red Hat Enterprise Linux 上的所有外部用户和应用程序访问端口 443。
+
+`# firewall-cmd --zone=public --add-port=443/tcp --permanent; firewall-cmd --reload`
+
+必须使用“`Server with GUI`”基本环境安装 Red Hat Enterprise Linux。它提供了 Unified Manager 安装说明使用的命令。其他基本环境可能需要您安装其他命令以验证或完成安装。如果系统上  `firewall-cmd` 不可用，则必须通过运行以下命令进行安装：
+
+`# sudo yum install firewalld`
+
+请在运行命令之前联系您的 IT 部门，以查看您的安全策略是否需要不同的流程。
+
+[NOTE]
+====
+应在 Red Hat 系统上禁用 THP（Transparent Huge Pages）。启用后，在某些情况下，当某些进程占用过多内存并被终止时，可能会导致 Unified Manager 关闭。
+
+====

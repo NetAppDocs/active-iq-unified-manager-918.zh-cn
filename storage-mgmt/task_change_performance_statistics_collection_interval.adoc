@@ -1,0 +1,40 @@
+---
+permalink: storage-mgmt/task_change_performance_statistics_collection_interval.html 
+sidebar: sidebar 
+keywords: change, performance, statistics, collection, interval 
+summary: 性能统计的默认收集间隔为 5 分钟。如果发现大型集群的收集未在默认时间内完成，则可以将此时间间隔更改为 10 或 15 分钟。此设置会影响此 Unified Manager 实例正在监控的所有集群的统计信息收集。 
+---
+= 在 Active IQ Unified Manager 中更改性能统计信息收集间隔
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+性能统计的默认收集间隔为 5 分钟。如果发现大型集群的收集未在默认时间内完成，则可以将此时间间隔更改为 10 或 15 分钟。此设置会影响此 Unified Manager 实例正在监控的所有集群的统计信息收集。
+
+.开始之前
+您必须拥有已授权登录到 Unified Manager 服务器维护控制台的用户 ID 和密码。
+
+性能统计数据收集未按时完成的问题由横幅消息指示 `Unable to consistently collect from cluster <cluster_name> or Data collection is taking too long on cluster <cluster_name>.`
+
+只有在因统计信息收集问题而需要时，才应更改收集间隔。请勿出于任何其他原因更改此设置。
+
+[NOTE]
+====
+将此值从默认设置 5 分钟更改后，可能会影响 Unified Manager 报告的性能事件的数量和频率。例如，当超出策略 30 分钟时，系统定义的性能阈值会触发事件。使用 5 分钟收集时，必须连续六次收集超出策略。对于 15 分钟的收集，只需在两个收集期内超出策略即可。
+
+====
+集群设置页面底部的消息指示当前统计数据收集间隔。
+
+.步骤
+. 使用 SSH 作为维护用户登录到 Unified Manager 主机。
++
+此时将显示 Unified Managermaintenance 控制台提示。
+
+. 键入标记为*性能轮询间隔配置*的菜单选项的编号，然后按 Enter。
+. 如果出现提示，请再次输入维护用户密码。
+. 键入要设置的新轮询间隔的数值，然后按 Enter 键。
+
+
+如果您将 Unified Manager 收集时间间隔更改为 10 或 15 分钟，并且当前连接到外部数据提供程序（如 Graphite），则必须更改数据提供程序传输时间间隔，使其等于或大于 Unified Manager 收集时间间隔。

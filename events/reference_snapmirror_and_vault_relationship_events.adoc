@@ -1,0 +1,110 @@
+---
+permalink: events/reference_snapmirror_and_vault_relationship_events.html 
+sidebar: sidebar 
+keywords: asynchronous, mirror, vault, relationship, events, impact area, protection 
+summary: 异步镜像和 Vault 关系事件为您提供有关异步 SnapMirror 和 Vault 关系状态的信息，以便您可以监控潜在问题。卷和 Storage VM 保护关系均支持异步镜像和 Vault 关系事件。但是，只有 Vault 关系不支持 Storage VM 灾难恢复。事件按影响区域分组，包括事件和 trap 名称、影响级别、源类型和严重程度。 
+---
+= 了解 Active IQ Unified Manager 中的异步镜像和 Vault 关系事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+异步镜像和 Vault 关系事件为您提供有关异步 SnapMirror 和 Vault 关系状态的信息，以便您可以监控潜在问题。卷和 Storage VM 保护关系均支持异步镜像和 Vault 关系事件。但是，只有 Vault 关系不支持 Storage VM 灾难恢复。事件按影响区域分组，包括事件和 trap 名称、影响级别、源类型和严重程度。
+
+
+
+[[impact-area-protection]]
+== 影响区域：保护
+
+[NOTE]
+====
+还会为受 Storage VM 灾难恢复保护的 Storage VM 生成 SnapMirror 和 Vault 关系事件，但不会为任何组成对象关系生成。
+
+====
+|===
+| 事件名称（陷阱名称） | 影响级别 | 源类型 | 严重性 
+
+
+ a| 
+异步镜像和存储不正常（ocumEvtMirrorVaultRelationshipUnhealthy）
+ a| 
+风险
+ a| 
+SnapMirror 关系
+ a| 
+警告
+
+
+
+ a| 
+异步镜像和保管库已断开（ocumEvtMirrorVaultRelationshipStateBrokenoff）
+ a| 
+风险
+ a| 
+SnapMirror 关系
+ a| 
+错误
+
+
+
+ a| 
+异步镜像和存储库初始化失败（ocumEvtMirrorVaultRelationshipInitializeFailed）
+ a| 
+风险
+ a| 
+SnapMirror 关系
+ a| 
+错误
+
+
+
+ a| 
+异步镜像和存储更新失败（ocumEvtMirrorVaultRelationshipUpdateFailed）
+ a| 
+风险
+ a| 
+SnapMirror 关系
+ a| 
+错误
+
+
+
+ a| 
+异步镜像和存储滞后错误（ocumEvtMirrorVaultRelationshipLagError）
+ a| 
+风险
+ a| 
+SnapMirror 关系
+ a| 
+错误
+
+
+
+ a| 
+异步镜像和存储滞后警告（ocumEvtMirrorVaultRelationshipLagWarning）
+ a| 
+风险
+ a| 
+SnapMirror 关系
+ a| 
+警告
+
+
+
+ a| 
+异步镜像和存储库重新同步失败（ocumEvtMirrorVaultRelationshipResyncFailed）
+ a| 
+风险
+ a| 
+SnapMirror 关系
+ a| 
+错误
+
+|===
+[NOTE]
+====
+"SnapMirror 更新失败"事件由 Active IQ 门户（Config Advisor）引发。
+
+====

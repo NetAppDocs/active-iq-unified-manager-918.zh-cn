@@ -1,0 +1,28 @@
+---
+permalink: data-protection/task_delete_resource_pools.html 
+sidebar: sidebar 
+keywords: delete, resource, pools 
+summary: 您可以在不再需要资源池时将其删除。例如，您可能希望将成员聚合从一个资源池重新分配到其他几个资源池，从而使原始资源池被废弃。 
+---
+= 删除 Active IQ Unified Manager 中的资源池
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在不再需要资源池时将其删除。例如，您可能希望将成员聚合从一个资源池重新分配到其他几个资源池，从而使原始资源池被废弃。
+
+.开始之前
+您必须具有应用程序管理员或存储管理员角色。
+
+仅当至少选择了一个资源池时，才会启用*删除*按钮。
+
+.步骤
+. 在左侧导航窗格中，单击 *保护* > *资源池*。
+. 选择要删除的资源池。
+. 单击 *Delete*。
++
+资源池将从资源池列表中删除，其聚合将从成员列表中删除。
+
+

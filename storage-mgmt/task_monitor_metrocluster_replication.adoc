@@ -1,0 +1,56 @@
+---
+permalink: storage-mgmt/task_monitor_metrocluster_replication.html 
+sidebar: sidebar 
+keywords: monitor, metrocluster, replication 
+summary: 您可以在镜像数据的同时监控和诊断逻辑连接的整体健康状况。您可以识别中断聚合、节点和存储虚拟机等群集组件镜像的问题或任何风险。 
+---
+= 在 Active IQ Unified Manager 中监控 MetroCluster 复制
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在镜像数据的同时监控和诊断逻辑连接的整体健康状况。您可以识别中断聚合、节点和存储虚拟机等群集组件镜像的问题或任何风险。
+
+Unified Manager 使用系统健康警报来监控 MetroCluster 配置中组件和连接的状态。
+
+.开始之前
+MetroCluster 配置中的本地和远程集群都必须添加到 Unified Manager 中
+
+
+
+[[view-replication-for-metrocluster-over-ip-configurations]]
+== 查看 MetroCluster 跨 IP 配置的复制
+
+对于 MetroCluster over IP 配置，数据复制状态将从 Unified Manager 左侧导航窗格中的以下视图显示在由 MetroCluster over IP 保护的集群的拓扑 peek 视图中：
+
+* *存储* > *集群* > *保护：MetroCluster* 视图
+* *保护* > *关系* > *关系：MetroCluster* 视图
+
+
+有关信息，请参见 link:../storage-mgmt/task_monitor_metrocluster_configurations.html#monitor-connectivity-issues-in-metrocluster-over-ip-configuration["监控 MetroCluster over IP 中的连接问题"]。
+
+
+
+[[view-replication-for-metrocluster-over-fc-configurations]]
+== 查看基于 FC 的 MetroCluster 配置的复制
+
+按照以下步骤确定基于 FC 的 MetroCluster 配置的数据复制中的任何问题。
+
+.步骤
+. 在左侧导航窗格中，单击 *存储* > *集群*。
++
+此时将显示受监控集群的列表。
+
+. 在 *Health: All Clusters* 视图中，单击要查看 MetroCluster 复制详细信息的集群名称。在 *Cluster / Health details* 页面上，单击 *MetroCluster Replication* 选项卡。
++
+要复制的 MetroCluster 配置的拓扑显示在本地站点的相应集群对象区域中，其中包含有关正在镜像数据的远程站点的信息。如果将指针移到图标上，则可以查看有关生成的事件的详细信息。
+
+
+
+您可以使用“群集/运行状况详细信息”页面中显示的信息来纠正任何复制问题。如果在 MetroCluster 配置中发现镜像问题，则必须登录到 System Manager 或访问 ONTAP CLI 以解决问题。
+
+*相关信息*
+
+link:../health-checker/reference_health_cluster_details_page.html["集群/运行状况详细信息页面"]

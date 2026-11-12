@@ -1,0 +1,42 @@
+---
+permalink: data-protection/task_quiesce_protection_relationship_from_volume_relationships.html 
+sidebar: sidebar 
+keywords: quiesce, protection, relationship, volume, relationships page 
+summary: 从“卷关系”页面，您可以暂停保护关系，以暂时阻止发生数据传输。当您要为包含数据库的 SnapMirror 目标卷创建 Snapshot 副本，并且希望确保在 Snapshot 副本操作期间其内容稳定时，您可以暂停关系。 
+---
+= 从 Active IQ Unified Manager 的卷关系页面暂停保护关系
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+从“卷关系”页面，您可以暂停保护关系，以暂时阻止发生数据传输。当您要为包含数据库的 SnapMirror 目标卷创建 Snapshot 副本，并且希望确保在 Snapshot 副本操作期间其内容稳定时，您可以暂停关系。
+
+.开始之前
+* 您必须具有应用程序管理员或存储管理员角色。
+* 您必须已设置 Workflow Automation。
+
+
+在以下情况下不会显示静止操作：
+
+* 如果 RBAC 设置不允许此操作；例如，如果您只有操作员权限
+* 当卷 ID 未知时；例如，当您具有集群间关系并且尚未发现目标集群时
+* 未配对 Workflow Automation 和 Unified Manager 时
+
+
+.步骤
+. 要静默一个或多个保护关系的传输，请从*卷关系*页面中选择一个或多个卷，然后在工具栏上单击*静默*。
++
+此时将显示静默对话框。
+
+. 单击*继续*。
++
+静止作业的状态将显示在“卷/运行状况详细信息”页面的顶部，并提供指向作业详细信息的链接。
+
+. 单击*查看详细信息*链接转到*作业*详细信息页面以获取更多详细信息和作业进度。
+. *可选：*单击浏览器上的*后退*箭头返回*卷关系*页面。
++
+当所有作业任务成功完成时，静默作业即告完成。
+
+
